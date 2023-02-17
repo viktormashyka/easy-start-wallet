@@ -10,7 +10,11 @@ export const App = () => {
         color: '#010101',
       }}
     >
+<<<<<<< HEAD
       React Kapu$ta template - 7
+=======
+      React homework template
+>>>>>>> parent of b32bb2e (Update App.jsx)
     </div>
   );
 };
