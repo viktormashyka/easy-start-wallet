@@ -10,7 +10,7 @@ export const App = () => {
         color: '#010101',
       }}
     >
-      React Kapu$ta template - 8
+      React Kapu$ta template - 7
     </div>
   );
 };
