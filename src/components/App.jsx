@@ -10,7 +10,7 @@ export const App = () => {
         color: '#010101',
       }}
     >
-      React Kapu$ta template - 2
+      React homework template
     </div>
   );
 };
