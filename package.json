@@ -1,8 +1,8 @@
 {
-  "name": "team-proj-demo",
+  "name": "easy-start-wallet",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://viktormashyka.github.io/team-proj-demo/",
+  "homepage": "https://viktormashyka.github.io/easy-start-wallet/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.3",
     "@testing-library/react": "^12.1.4",
