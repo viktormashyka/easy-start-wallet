@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/easy-start-wallet/static/css/main.7acaea2f.css",
-    "main.js": "/easy-start-wallet/static/js/main.f0301eef.js",
+    "main.js": "/easy-start-wallet/static/js/main.3f743d6a.js",
     "index.html": "/easy-start-wallet/index.html",
     "main.7acaea2f.css.map": "/easy-start-wallet/static/css/main.7acaea2f.css.map",
-    "main.f0301eef.js.map": "/easy-start-wallet/static/js/main.f0301eef.js.map"
+    "main.3f743d6a.js.map": "/easy-start-wallet/static/js/main.3f743d6a.js.map"
   },
   "entrypoints": [
     "static/css/main.7acaea2f.css",
-    "static/js/main.f0301eef.js"
+    "static/js/main.3f743d6a.js"
   ]
 }
