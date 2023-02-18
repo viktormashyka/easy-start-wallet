@@ -18,7 +18,7 @@ export const Square = styled.div`
   transform: rotate(45deg);
 `;
 
-export const ModalComment = styled.div`
+export const ModalContent = styled.div`
   position: absolute;
   top: 10px;
   box-sizing: border-box;
