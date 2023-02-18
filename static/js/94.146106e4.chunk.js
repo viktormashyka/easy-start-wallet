@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkeasy_start_wallet=self.webpackChunkeasy_start_wallet||[]).push([[94],{2094:function(n,e,t){t.r(e),t.d(e,{default:function(){return l}});var r=t(4270),i=t(184),s=function(){return(0,i.jsx)("div",{children:"Login form on Login page"})};function l(){return(0,i.jsxs)("div",{children:[(0,i.jsx)(r.q,{children:(0,i.jsx)("title",{children:"Login"})}),(0,i.jsx)(s,{})]})}}}]);
+//# sourceMappingURL=94.146106e4.chunk.js.map

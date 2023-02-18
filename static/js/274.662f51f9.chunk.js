@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkeasy_start_wallet=self.webpackChunkeasy_start_wallet||[]).push([[274],{7274:function(e,n,s){s.r(n),s.d(n,{default:function(){return i}});var t=s(4270),r=s(184),a=function(){return(0,r.jsx)("div",{children:"Expenses form on Expenses page"})};function i(){return(0,r.jsxs)("div",{children:[(0,r.jsx)(t.q,{children:(0,r.jsx)("title",{children:"Expenses page"})}),(0,r.jsx)(a,{})]})}}}]);
+//# sourceMappingURL=274.662f51f9.chunk.js.map

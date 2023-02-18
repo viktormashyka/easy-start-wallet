@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkeasy_start_wallet=self.webpackChunkeasy_start_wallet||[]).push([[220],{6220:function(e,n,t){t.r(n),t.d(n,{default:function(){return a}});var r=t(4270),s=t(184),c=function(){return(0,s.jsx)("div",{children:"Income form on Income page"})};function a(){return(0,s.jsxs)("div",{children:[(0,s.jsx)(r.q,{children:(0,s.jsx)("title",{children:"Income page"})}),(0,s.jsx)(c,{})]})}}}]);
+//# sourceMappingURL=220.4acfa2d3.chunk.js.map
