@@ -3,7 +3,6 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { AppBar } from '../AppBar/AppBar';
 import { Suspense } from 'react';
-//example import from styled component
 import { LayoutForm } from './Layout.styled';
 
 export const Layout = () => {

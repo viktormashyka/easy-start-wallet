@@ -15,10 +15,10 @@ const RegisterPage = lazy(() => import('../pages/auth/Register'));
 const LoginPage = lazy(() => import('../pages/auth/Login'));
 const HomePage = lazy(() => import('../pages/transaction/Home'));
 
-const ReportPage = lazy(() => import('../pages/transaction/Report'));
 const ExpensesPage = lazy(() => import('../pages/transaction/Expenses'));
 const IncomePage = lazy(() => import('../pages/transaction/Income'));
 
+const ReportPage = lazy(() => import('../pages/transaction/Report'));
 // const ExpensesReportPage = lazy(() =>
 //   import('../pages/reports/ExpensesReport')
 // );
