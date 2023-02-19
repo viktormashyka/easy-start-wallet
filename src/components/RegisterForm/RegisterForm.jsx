@@ -7,7 +7,7 @@ import {
   Input,
   P,
   ErrorText,
-} from './LoginForm.styled';
+} from './RegisterForm.styled';
 import * as Yup from 'yup';
 import { useDispatch } from 'react-redux';
 
@@ -26,7 +26,7 @@ const FormError = ({ name }) => {
   );
 };
 
-export const LoginForm = () => {
+export const RegisterForm = () => {
   const dispatch = useDispatch();
   const handleSubmit = (value, { resetForm }) => {
     dispatch(register(value));
@@ -64,4 +64,3 @@ export const LoginForm = () => {
     </Container>
   );
 };
-
