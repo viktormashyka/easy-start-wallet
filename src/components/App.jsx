@@ -11,13 +11,13 @@ import { RestrictedRoute } from './RestrictedRoute';
 import { refreshUser } from 'redux/auth/authOperations';
 import { useAuth } from 'hooks/useAuth';
 
+const MainPage = lazy(() => import('../pages/auth/Main'));
 const RegisterPage = lazy(() => import('../pages/auth/Register'));
 const LoginPage = lazy(() => import('../pages/auth/Login'));
 const HomePage = lazy(() => import('../pages/transaction/Home'));
 
 const ExpensesPage = lazy(() => import('../pages/transaction/Expenses'));
 const IncomePage = lazy(() => import('../pages/transaction/Income'));
-
 const ReportPage = lazy(() => import('../pages/transaction/Report'));
 // const ExpensesReportPage = lazy(() =>
 //   import('../pages/reports/ExpensesReport')
@@ -46,6 +46,7 @@ export const App = () => {
       ) : (
         <Routes>
           <Route path="/" element={<Layout />}>
+            <Route index element={<MainPage />} />
             <Route
               path="/register"
               element={

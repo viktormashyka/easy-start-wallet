@@ -9,6 +9,7 @@ export const Layout = () => {
   return (
     <LayoutForm>
       <AppBar />
+      <div>Layout form</div>
       <Suspense fallback={null}>
         <Outlet />
       </Suspense>
