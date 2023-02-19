@@ -11,14 +11,29 @@ import { RestrictedRoute } from './RestrictedRoute';
 import { refreshUser } from 'redux/auth/authOperations';
 import { useAuth } from 'hooks/useAuth';
 
-const MainPage = lazy(() => import('../pages/auth/Main'));
+// const AuthPage = lazy(() => import('../pages/auth/Auth'));
+// const LoginForm = lazy(() => import('../components/LoginForm/LoginForm'));
+// const RegisterForm = lazy(() =>
+//   import('../components/RegisterForm/RegisterForm')
+// );
 const RegisterPage = lazy(() => import('../pages/auth/Register'));
 const LoginPage = lazy(() => import('../pages/auth/Login'));
-const HomePage = lazy(() => import('../pages/transaction/Home'));
 
-const ExpensesPage = lazy(() => import('../pages/transaction/Expenses'));
-const IncomePage = lazy(() => import('../pages/transaction/Income'));
-const ReportPage = lazy(() => import('../pages/transaction/Report'));
+const HomePage = lazy(() => import('../pages/transaction/Home'));
+const ExpensesForm = lazy(() =>
+  import('../components/ExpensesForm/ExpensesForm')
+);
+const IncomeForm = lazy(() => import('../components/IncomeForm/IncomeForm'));
+
+// const ExpensesPage = lazy(() => import('../pages/transaction/Expenses'));
+// const IncomePage = lazy(() => import('../pages/transaction/Income'));
+const ReportPage = lazy(() => import('../pages/reports/Report'));
+const ExpensesReportForm = lazy(() =>
+  import('../components/ExpensesReportForm/ExpensesReportForm')
+);
+const IncomeReportForm = lazy(() =>
+  import('../components/IncomeReportForm/IncomeReportForm')
+);
 // const ExpensesReportPage = lazy(() =>
 //   import('../pages/reports/ExpensesReport')
 // );
@@ -46,7 +61,35 @@ export const App = () => {
       ) : (
         <Routes>
           <Route path="/" element={<Layout />}>
-            <Route index element={<MainPage />} />
+            {/* <Route path="/" element={<AuthPage />}>
+              <Route
+                path="register"
+                element={
+                  <RestrictedRoute
+                    redirectTo="/login"
+                    component={<RegisterForm />}
+                  />
+                }
+              />
+              <Route
+                path="login"
+                element={
+                  <RestrictedRoute
+                    redirectTo="/login"
+                    component={<LoginForm />}
+                  />
+                }
+              />
+            </Route> */}
+            <Route
+              path="/login"
+              element={
+                <RestrictedRoute
+                  redirectTo="/login"
+                  component={<LoginPage />}
+                />
+              }
+            />
             <Route
               path="/register"
               element={
@@ -56,62 +99,56 @@ export const App = () => {
                 />
               }
             />
+
             <Route
-              path="/login"
+              path="/home"
               element={
-                <RestrictedRoute
-                  redirectTo="/expenses"
-                  component={<LoginPage />}
-                />
+                <PrivateRoute redirectTo="/login" component={<HomePage />} />
               }
-            />
-            <Route index element={<HomePage />}>
+            >
               <Route
-                path="/expenses"
+                path="expenses"
                 element={
                   <PrivateRoute
                     redirectTo="/login"
-                    component={<ExpensesPage />}
+                    component={<ExpensesForm />}
                   />
                 }
               />
               <Route
-                path="/income"
+                path="income"
                 element={
                   <PrivateRoute
                     redirectTo="/login"
-                    component={<IncomePage />}
+                    component={<IncomeForm />}
+                  />
+                }
+              />
+            </Route>
+            <Route
+              path="/report"
+              element={
+                <PrivateRoute redirectTo="/login" component={<ReportPage />} />
+              }
+            >
+              <Route
+                path="expenses-report"
+                element={
+                  <PrivateRoute
+                    redirectTo="/login"
+                    component={<ExpensesReportForm />}
                   />
                 }
               />
               <Route
-                path="/reports"
+                path="income-report"
                 element={
                   <PrivateRoute
                     redirectTo="/login"
-                    component={<ReportPage />}
+                    component={<IncomeReportForm />}
                   />
                 }
-              >
-                {/* <Route
-                  path="/expenses-report"
-                  element={
-                    <PrivateRoute
-                      redirectTo="/login"
-                      component={<ExpensesReportPage />}
-                    />
-                  }
-                /> */}
-                {/* <Route
-                  path="/income-report"
-                  element={
-                    <PrivateRoute
-                      redirectTo="/login"
-                      component={<IncomeReportPage />}
-                    />
-                  }
-                /> */}
-              </Route>
+              />
             </Route>
           </Route>
         </Routes>

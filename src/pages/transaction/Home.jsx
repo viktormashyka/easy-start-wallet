@@ -15,6 +15,7 @@ export default function Home() {
       <Helmet>
         <title>Home page</title>
       </Helmet>
+      <>This is home page</>
     </div>
   );
 }
