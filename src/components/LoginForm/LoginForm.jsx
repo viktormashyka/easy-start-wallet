@@ -14,9 +14,9 @@ import { useDispatch } from 'react-redux';
 import { logIn } from 'redux/auth/authOperations';
 
 // changed in const schema Yup on yup
-const schema = yup.object().shape({
-  email: yup.string().email('Invalid email').required('Enter your email'),
-  password: yup.string().min(8).max(20).required('Enter your password'),
+const schema = Yup.object().shape({
+  email: Yup.string().email('Invalid email').required('Enter your email'),
+  password: Yup.string().min(8).max(20).required('Enter your password'),
 });
 const FormError = ({ name }) => {
   return (
