@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkeasy_start_wallet=self.webpackChunkeasy_start_wallet||[]).push([[373],{2373:function(e,t,n){n.r(t),n.d(t,{default:function(){return a}});var r=n(4270),s=n(184),i=function(){return(0,s.jsx)("div",{children:"Register form on Register page"})};function a(){return(0,s.jsxs)("div",{children:[(0,s.jsx)(r.q,{children:(0,s.jsx)("title",{children:"Registration"})}),(0,s.jsx)(i,{})]})}}}]);
-//# sourceMappingURL=373.b682adb8.chunk.js.map

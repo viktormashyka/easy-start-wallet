@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/easy-start-wallet/static/css/main.9babed8c.css",
-    "main.js": "/easy-start-wallet/static/js/main.b341d768.js",
-    "static/js/373.b682adb8.chunk.js": "/easy-start-wallet/static/js/373.b682adb8.chunk.js",
-    "static/js/282.b6c25106.chunk.js": "/easy-start-wallet/static/js/282.b6c25106.chunk.js",
+    "main.js": "/easy-start-wallet/static/js/main.a6092715.js",
+    "static/js/584.161310e6.chunk.js": "/easy-start-wallet/static/js/584.161310e6.chunk.js",
+    "static/js/282.f18c8266.chunk.js": "/easy-start-wallet/static/js/282.f18c8266.chunk.js",
     "static/js/963.5b5fbd64.chunk.js": "/easy-start-wallet/static/js/963.5b5fbd64.chunk.js",
     "static/js/561.f7532d21.chunk.js": "/easy-start-wallet/static/js/561.f7532d21.chunk.js",
     "static/js/237.008e21ec.chunk.js": "/easy-start-wallet/static/js/237.008e21ec.chunk.js",
@@ -14,9 +14,9 @@
     "static/js/568.95c4e283.chunk.js": "/easy-start-wallet/static/js/568.95c4e283.chunk.js",
     "index.html": "/easy-start-wallet/index.html",
     "main.9babed8c.css.map": "/easy-start-wallet/static/css/main.9babed8c.css.map",
-    "main.b341d768.js.map": "/easy-start-wallet/static/js/main.b341d768.js.map",
-    "373.b682adb8.chunk.js.map": "/easy-start-wallet/static/js/373.b682adb8.chunk.js.map",
-    "282.b6c25106.chunk.js.map": "/easy-start-wallet/static/js/282.b6c25106.chunk.js.map",
+    "main.a6092715.js.map": "/easy-start-wallet/static/js/main.a6092715.js.map",
+    "584.161310e6.chunk.js.map": "/easy-start-wallet/static/js/584.161310e6.chunk.js.map",
+    "282.f18c8266.chunk.js.map": "/easy-start-wallet/static/js/282.f18c8266.chunk.js.map",
     "963.5b5fbd64.chunk.js.map": "/easy-start-wallet/static/js/963.5b5fbd64.chunk.js.map",
     "561.f7532d21.chunk.js.map": "/easy-start-wallet/static/js/561.f7532d21.chunk.js.map",
     "237.008e21ec.chunk.js.map": "/easy-start-wallet/static/js/237.008e21ec.chunk.js.map",
@@ -28,6 +28,6 @@
   },
   "entrypoints": [
     "static/css/main.9babed8c.css",
-    "static/js/main.b341d768.js"
+    "static/js/main.a6092715.js"
   ]
 }
