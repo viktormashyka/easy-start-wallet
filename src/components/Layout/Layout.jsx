@@ -8,8 +8,8 @@ import { LayoutForm } from './Layout.styled';
 export const Layout = () => {
   return (
     <LayoutForm>
-      <AppBar />
       <div>Layout form</div>
+      <AppBar />
       <Suspense fallback={null}>
         <Outlet />
       </Suspense>

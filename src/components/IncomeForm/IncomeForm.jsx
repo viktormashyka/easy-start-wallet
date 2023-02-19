@@ -1,5 +1,5 @@
 // import {} from './IncomeForm.styled';
 
 export const IncomeForm = () => {
-  return <div>Income form on Income page</div>;
+  return <div>Income form on Home page</div>;
 };

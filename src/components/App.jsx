@@ -132,7 +132,7 @@ export const App = () => {
               }
             >
               <Route
-                path="expenses-report"
+                path="expenses"
                 element={
                   <PrivateRoute
                     redirectTo="/login"
@@ -141,7 +141,7 @@ export const App = () => {
                 }
               />
               <Route
-                path="income-report"
+                path="income"
                 element={
                   <PrivateRoute
                     redirectTo="/login"
