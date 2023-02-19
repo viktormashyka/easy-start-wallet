@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/easy-start-wallet/static/css/main.9babed8c.css",
-    "main.js": "/easy-start-wallet/static/js/main.1a80b20e.js",
+    "main.js": "/easy-start-wallet/static/js/main.3dc41890.js",
     "static/js/584.161310e6.chunk.js": "/easy-start-wallet/static/js/584.161310e6.chunk.js",
     "static/js/282.f18c8266.chunk.js": "/easy-start-wallet/static/js/282.f18c8266.chunk.js",
     "static/js/963.e839c0fb.chunk.js": "/easy-start-wallet/static/js/963.e839c0fb.chunk.js",
@@ -11,10 +11,10 @@
     "static/js/816.9a7c1fcd.chunk.js": "/easy-start-wallet/static/js/816.9a7c1fcd.chunk.js",
     "static/js/71.62da532c.chunk.js": "/easy-start-wallet/static/js/71.62da532c.chunk.js",
     "static/js/270.4f890d65.chunk.js": "/easy-start-wallet/static/js/270.4f890d65.chunk.js",
-    "static/js/568.95c4e283.chunk.js": "/easy-start-wallet/static/js/568.95c4e283.chunk.js",
+    "static/js/568.3dbd6b6a.chunk.js": "/easy-start-wallet/static/js/568.3dbd6b6a.chunk.js",
     "index.html": "/easy-start-wallet/index.html",
     "main.9babed8c.css.map": "/easy-start-wallet/static/css/main.9babed8c.css.map",
-    "main.1a80b20e.js.map": "/easy-start-wallet/static/js/main.1a80b20e.js.map",
+    "main.3dc41890.js.map": "/easy-start-wallet/static/js/main.3dc41890.js.map",
     "584.161310e6.chunk.js.map": "/easy-start-wallet/static/js/584.161310e6.chunk.js.map",
     "282.f18c8266.chunk.js.map": "/easy-start-wallet/static/js/282.f18c8266.chunk.js.map",
     "963.e839c0fb.chunk.js.map": "/easy-start-wallet/static/js/963.e839c0fb.chunk.js.map",
@@ -24,10 +24,10 @@
     "816.9a7c1fcd.chunk.js.map": "/easy-start-wallet/static/js/816.9a7c1fcd.chunk.js.map",
     "71.62da532c.chunk.js.map": "/easy-start-wallet/static/js/71.62da532c.chunk.js.map",
     "270.4f890d65.chunk.js.map": "/easy-start-wallet/static/js/270.4f890d65.chunk.js.map",
-    "568.95c4e283.chunk.js.map": "/easy-start-wallet/static/js/568.95c4e283.chunk.js.map"
+    "568.3dbd6b6a.chunk.js.map": "/easy-start-wallet/static/js/568.3dbd6b6a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.9babed8c.css",
-    "static/js/main.1a80b20e.js"
+    "static/js/main.3dc41890.js"
   ]
 }
