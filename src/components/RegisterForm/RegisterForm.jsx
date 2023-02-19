@@ -26,7 +26,7 @@ const FormError = ({ name }) => {
   );
 };
 
-export const LoginForm = () => {
+export const RegisterForm = () => {
   const dispatch = useDispatch();
   const handleSubmit = (value, { resetForm }) => {
     dispatch(register(value));
@@ -64,4 +64,3 @@ export const LoginForm = () => {
     </Container>
   );
 };
-
