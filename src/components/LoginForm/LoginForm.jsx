@@ -8,7 +8,9 @@ import {
   P,
   ErrorText,
 } from './LoginForm.styled';
-import * as yup from 'yup';
+import * as Yup from 'yup';
+import { useDispatch } from 'react-redux';
+import { logIn } from 'redux/auth/authOperations';
 
 const schema = Yup.object().shape({
   email: Yup.string().email('Invalid email').required('Enter your email'),
@@ -24,8 +26,10 @@ const FormError = ({ name }) => {
 };
 
 export const LoginForm = () => {
-  const handleSubmit = (velues, { resetForm }) => {
-    console.log(velues);
+  const dispatch = useDispatch();
+  const handleSubmit = (value, { resetForm }) => {
+    dispatch(logIn(value));
+    console.log(value);
     resetForm();
   };
   return (
@@ -41,7 +45,7 @@ export const LoginForm = () => {
         <Form autoComplete="off">
           <label htmlFor="login">
             Email:
-            <Input type="text" name="email" placeholder="your email" />
+            <Input type="email" name="email" placeholder="your email" />
             <FormError name="email" component="div" />
             {/* <br /> */}
           </label>
@@ -52,6 +56,7 @@ export const LoginForm = () => {
           </label>
           <Div>
             <Button type="submit">LOG IN</Button>
+            <Button type="button">REGISTRATION</Button>
           </Div>
         </Form>
       </Formik>
