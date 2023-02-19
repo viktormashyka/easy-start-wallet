@@ -7,7 +7,7 @@ import {
   Input,
   P,
   ErrorText,
-} from './RegisterForm.styled';
+} from './RegisterFor.styled';
 import * as Yup from 'yup';
 import { useDispatch } from 'react-redux';
 
