@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkeasy_start_wallet=self.webpackChunkeasy_start_wallet||[]).push([[57],{57:function(e,t,n){n.r(t),n.d(t,{default:function(){return a}});var r=n(4270),s=n(184);function a(){return(0,s.jsx)("div",{children:(0,s.jsx)(r.q,{children:(0,s.jsx)("title",{children:"Report page"})})})}}}]);
+//# sourceMappingURL=57.08f972d1.chunk.js.map

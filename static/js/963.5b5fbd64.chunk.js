@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkeasy_start_wallet=self.webpackChunkeasy_start_wallet||[]).push([[963],{963:function(e,t,s){s.r(t),s.d(t,{default:function(){return a}});var n=s(4270),r=s(184);function a(){return(0,r.jsxs)("div",{children:[(0,r.jsx)(n.q,{children:(0,r.jsx)("title",{children:"Home page"})}),(0,r.jsx)(r.Fragment,{children:"This is home page"})]})}}}]);
+//# sourceMappingURL=963.5b5fbd64.chunk.js.map

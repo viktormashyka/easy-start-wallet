@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/561.f7532d21.chunk.js","mappings":"0LAEaA,EAAe,WAC1B,OAAO,2DACR,C","sources":["components/ExpensesForm/ExpensesForm.jsx"],"sourcesContent":["// import {} from './ExpensesForm.styled';\n\nexport const ExpensesForm = () => {\n  return <div>Expenses form on Expenses page</div>;\n};\n"],"names":["ExpensesForm"],"sourceRoot":""}
