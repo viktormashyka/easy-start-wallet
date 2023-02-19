@@ -1,10 +1,7 @@
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 import BCGImageTopTablet from '../../images/TopLogoTablet.png';
 import BCGImageBottom from '../../images/BottomLogo.png';
-import { ReactComponent as Calculator } from '../../images/Calculator.svg';
 import { ReactComponent as BackspaceIcon } from '../../images/KeyboardBackspace.svg';
-import { Field, Form, Formik, FormikProps } from 'formik';
-import { ReactComponent as SelectVectorIcon } from '../../images/VectorIcon.svg';
 
 // main container //
 
@@ -80,6 +77,41 @@ export const BackspaceVectorIcon = styled(BackspaceIcon)`
   }
 `;
 
+export const ButtonTopList = styled.ul`
+  display: none;
+  @media screen and (min-width: 768px) {
+    display: block;
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    display: flex;
+  }
+`;
+
+export const ButtonNavLink = styled.li`
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+`;
+export const ButtonLink = styled.a`
+  width: 138px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fafbfd;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  font-family: 'Roboto', sans-serif;
+  font-style: bold;
+  font-size: 12px;
+  text-transform: uppercase;
+  line-height: 1.17;
+  letter-spacing: 2%;
+  transition: color 250ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  &:hover {
+    color: #ff751d;
+  }
+`;
 // Form //
 
 export const FilterWrapper = styled.div`
@@ -87,169 +119,33 @@ export const FilterWrapper = styled.div`
   top: 15%;
   left: 50%;
   transform: translateX(-50%);
-  max-width: 280px;
-  @media screen and (min-width: 768px) {
-    display: none;
-  }
-`;
-
-export const FormBox = styled(Form)`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-`;
-
-export const FormInputWrapper = styled.div`
-  border: 2px solid #ffffff;
-  border-bottom-right-radius: 12px;
-  border-top-right-radius: 12px;
-  border-top-left-radius: 12px;
-  margin-bottom: 32px;
-`;
-
-export const InputField = styled(Field)`
-  width: 100%;
-  padding: 0;
-  min-height: 44px;
-  border: none;
-  background-color: transparent;
-  font-family: Roboto, sans-serif;
-  font-style: regular;
-  font-size: 12px;
-  line-height: 1.7;
-  letter-spacing: 0.02em;
-  color: #c7ccdc;
-  ::placeholder {
-    padding-left: 20px;
-    color: #c7ccdc;
-  }
-  transition: background-color 250ms cubic-bezier(0.075, 0.82, 0.165, 1);
-  &:hover {
-    background-color: #ffffff;
-  }
-`;
-
-export const SelectField = styled(Field)`
-  min-height: 44px;
-  width: 100%;
-  color: #c7ccdc;
-  padding: 10px 20px 10px 20px;
-  border: none;
-  border-top: 2px solid #ffffff;
-  background-color: transparent;
-  font-family: Roboto, sans-serif;
-  font-style: regular;
-  font-size: 12px;
-  line-height: 1.7;
-  letter-spacing: 0.02em;
-  border-bottom-right-radius: 12px;
-  appearance: none;
-  outline: none;
-  cursor: pointer;
-  transition: background-color 250ms cubic-bezier(0.075, 0.82, 0.165, 1);
-  &:hover {
-    background-color: #ffffff;
-  }
-
-  option {
-    padding: 10px 20px 10px 20px;
-    height: 33px;
-  }
-
-  option:checked {
-    color: #52555f;
-    background-color: #f5f6fb;
-  }
-`;
-
-// Secondary input
-
-export const SecondaryInputWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 183px;
-  border-radius: 22px;
-  border: 2px solid #ffffff;
-  margin-bottom: 80px;
-`;
-
-export const TextSecondary = styled.p`
-  border: none;
-  border-right: 2px solid #ffffff;
-  background-color: transparent;
-  width: 66.6666%;
-  padding: 12px 0 12px 25%;
-  font-family: Roboto, sans-serif;
-  font-style: regular;
-  font-size: 12px;
-  line-height: 1.7;
-  letter-spacing: 0.02em;
-  color: #000000;
-`;
-
-export const CalculatorIcon = styled(Calculator)`
-  width: 20px;
-  height: 20px;
-  padding: 12px 20px;
-  flex-shrink: 0;
-`;
-
-// Buttons for Submit
-
-export const BtnSubmitList = styled.ul`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   width: 280px;
-`;
-export const BtnSubmitItem = styled.li`
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  font-size: 23px;
-  border-radius: 16px;
-  background-color: #f5f6fb;
-  transition: background-color 250ms cubic-bezier(0.075, 0.82, 0.165, 1);
-`;
-export const BtnSubmit = styled.button`
-  background-color: transparent;
-  text-transform: uppercase;
-  color: #52555f;
-  width: 130px;
-  height: 44px;
-  border-radius: 16px;
-  font-family: Roboto, sans-serif;
-  font-style: bold;
-  font-size: 12px;
-  line-height: 1.17;
-  letter-spacing: 0.02em;
-  transition: background-color 250ms cubic-bezier(0.075, 0.82, 0.165, 1),
-    color 250ms cubic-bezier(0.075, 0.82, 0.165, 1);
-  &:hover {
-    background-color: #ff751d;
-    color: #ffffff;
+  @media screen and (min-width: 768px) {
+    top: 184px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 704px;
+    box-sizing: border-box;
+    padding: 24px 40px 42px 40px;
+    background-color: #fff;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    border-top-right-radius: 30px;
+    border-top-left-radius: 0px;
+    box-shadow: 0px 10px 60px 0px rgba(170, 178, 197, 0.2);
   }
-`;
-export const BtnSecondary = styled.button`
-  background-color: transparent;
-  text-transform: uppercase;
-  color: #52555f;
-  width: 130px;
-  height: 44px;
-  border-radius: 16px;
-  font-family: Roboto, sans-serif;
-  font-style: bold;
-  font-size: 12px;
-  line-height: 1.17;
-  letter-spacing: 0.02em;
-  transition: background-color 250ms cubic-bezier(0.075, 0.82, 0.165, 1),
-    color 250ms cubic-bezier(0.075, 0.82, 0.165, 1);
-  &:hover {
-    background-color: #ff751d;
-    color: #ffffff;
+  @media screen and (min-width: 1280px) {
+    top: 132px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1098px;
+    padding: 32px 32px 61px 32px;
+    background-color: #fff;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    border-top-right-radius: 30px;
+    border-top-left-radius: 0px;
+    box-shadow: 0px 10px 60px 0px rgba(170, 178, 197, 0.2);
   }
 `;
 
@@ -262,7 +158,8 @@ export const BtnWrapper = styled.div`
   transform: translateX(-50%);
   width: 100%;
   @media screen and (min-width: 768px) {
-    display: none;
+    top: 0;
+    left: 0;
   }
 `;
 
@@ -301,6 +198,7 @@ export const BtnLink = styled.a`
   letter-spacing: 2%;
   transition: background-color 250ms cubic-bezier(0.075, 0.82, 0.165, 1),
     color 250ms cubic-bezier(0.075, 0.82, 0.165, 1);
+
   &:hover {
     background-color: #ff751d;
     color: #ffffff;
