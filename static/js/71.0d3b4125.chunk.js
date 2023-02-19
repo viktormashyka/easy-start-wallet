@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkeasy_start_wallet=self.webpackChunkeasy_start_wallet||[]).push([[71],{3071:function(e,t,n){n.r(t),n.d(t,{IncomeReportForm:function(){return o}});var r=n(184),o=function(){return(0,r.jsx)("div",{children:"Income Report form on Income Report page"})}}}]);
-//# sourceMappingURL=71.0d3b4125.chunk.js.map

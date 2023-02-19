@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkeasy_start_wallet=self.webpackChunkeasy_start_wallet||[]).push([[561],{6561:function(e,n,s){s.r(n),s.d(n,{ExpensesForm:function(){return r}});var t=s(184),r=function(){return(0,t.jsx)("div",{children:"Expenses form on Home page"})}}}]);
+//# sourceMappingURL=561.3313e653.chunk.js.map
