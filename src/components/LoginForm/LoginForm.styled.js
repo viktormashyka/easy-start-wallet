@@ -97,3 +97,20 @@ export const Div = styled.div`
 export const ErrorText = styled.p`
   color: red;
 `;
+export const LoginButton = styled.button`
+  width: 122.17px;
+  height: 44px;
+
+  border-radius: 16px;
+  border-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: 700;
+  cursor: pointer;
+  background: #ff751d;
+  color: #ffffff;
+
+  border: none;
+`;
