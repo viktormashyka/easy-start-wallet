@@ -1,7 +1,10 @@
 import Select from 'react-select';
 
-export function CustomSelect({ onChange, options, value, type }) {
+export function CustomSelect({ onChange, options, value, type, isLoading }) {
   const defaultValue = (options, value) => {
+    if (value === '') {
+      return true;
+    }
     return options ? options.find(option => option.value === value) : '';
   };
 
@@ -14,6 +17,7 @@ export function CustomSelect({ onChange, options, value, type }) {
         onChange={value => onChange(value)}
         options={options}
         placeholder={type}
+        isLoading={isLoading}
         required
       />
     </>
