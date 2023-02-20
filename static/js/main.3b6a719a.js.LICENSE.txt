@@ -129,6 +129,8 @@
 
 //! axios defaults baseURL
 
+//! delete row
+
 //! МОЙ вариант:
 
 //! Проверка на старый токен
