@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateBalance, getBalance } from 'redux/auth/authOperations';
-import { selectBalance, selectisNotNewUser } from 'redux/auth/authSelectors';
+import { selectBalance, selectIsNotNewUser } from 'redux/auth/authSelectors';
 import {
   ReportBalance,
   BalanceLabel,
@@ -17,7 +17,7 @@ const Balance = () => {
   }, [dispatch]);
 
   const userBalance = useSelector(selectBalance);
-  const isNotNewUser = useSelector(selectisNotNewUser);
+  const isNotNewUser = useSelector(selectIsNotNewUser);
   const calculatedBalance = `${Number(userBalance)
     .toFixed(2)
     .padStart(5, 0)} UAH`;
