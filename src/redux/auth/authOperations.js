@@ -214,7 +214,7 @@ export const getBalance = createAsyncThunk(
         try {
             const { data } = await axios.get('/users/balance');
             console.log("auth/getBalance == >data.balance:", data.balance); //!
-            return data.balance;
+            return data;
         } catch (error) {
             console.log(error); //!
             toast.error(`Ошибка запроса: ${error.message === "Request failed with status code 404" ? "Нет такой коллекции пользователей" : error.message}`, { position: "top-center", autoClose: 2000 });

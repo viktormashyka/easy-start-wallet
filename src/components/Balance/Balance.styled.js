@@ -68,8 +68,9 @@ export const BalanceInput = styled.input`
   padding-left: 20px;
   padding-right: 20px;
   outline: none;
-  &::placeholder {
+  &:disabled::placeholder {
     color: #000;
+    opacity: 1;
   }
 
   @media screen and (min-width: 768px) {
