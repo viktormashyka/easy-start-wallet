@@ -6,5 +6,5 @@ export const LayoutForm = styled.div`
   justify-content: center;
   /* max-width: 960px; */
   margin: 0 auto;
-  padding: 16px; */
+  padding: 16px;
 `;
