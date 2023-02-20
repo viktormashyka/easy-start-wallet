@@ -3,14 +3,14 @@ import {
   Box,
   BackspaceVectorIcon,
   FilterWrapper,
-  ButtonLink,
-  ButtonNavLink,
-  ButtonTopList,
-  TopBalanceWrapper,
-  BtnList,
-  BtnLink,
-  BtnItem,
-  BtnWrapper,
+  // ButtonLink,
+  // ButtonNavLink,
+  // ButtonTopList,
+  // TopBalanceWrapper,
+  // BtnList,
+  // BtnLink,
+  // BtnItem,
+  // BtnWrapper,
 } from './MainHome.styled';
 import { MainWrapper } from '../MainWrapper/MainWrapper';
 import { BottomBtnWrapper } from '../BottomBtnWrapper/BottomBtnWrapper';

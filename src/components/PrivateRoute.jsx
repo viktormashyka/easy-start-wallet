@@ -1,5 +1,5 @@
-import { Navigate } from 'react-router-dom';
-import { useAuth } from 'hooks';
+// import { Navigate } from 'react-router-dom';
+// import { useAuth } from 'hooks';
 
 /**
  * - If the route is private and the user is logged in, render the component
