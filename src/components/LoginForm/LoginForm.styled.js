@@ -3,9 +3,9 @@ import { Field } from 'formik';
 
 export const Container = styled.div`
   margin: auto;
-  margin-top: 117px;
-  max-height: 552px;
-  max-width: 426px;
+  /* margin-top: 117px; */
+  /* max-height: 552px;
+  max-width: 426px; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -19,6 +19,14 @@ export const Container = styled.div`
   padding: 56px 83px 56px 83px;
   font-family: 'Roboto';
   font-style: normal;
+  width: 280px;
+  height: 496px;
+  background-color: #ffffff;
+
+  @media screen and (min-width: 768px) {
+    width: 426px;
+    height: 552px;
+  }
 `;
 
 export const Input = styled(Field)`
@@ -35,7 +43,7 @@ font-size: 22px;
   border-style: none;
   border: none;
    &: hover,  &:focus {
-    border:  non;
+    border:  none;
   }
 `;
 export const ButtonGoogl = styled.button`
