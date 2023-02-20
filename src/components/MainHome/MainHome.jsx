@@ -15,12 +15,13 @@ import {
 import { MainWrapper } from '../MainWrapper/MainWrapper';
 import { BottomBtnWrapper } from '../BottomBtnWrapper/BottomBtnWrapper';
 import { TopBtnWrapper } from '../TopButtonWrapper/TopBtnWrapper';
+// import { BalanceWrapper } from 'components/BalanceWrapper/BalanceWrapper';
 
 export const MainHome = ({ children }) => {
   return (
     <MainWrapper>
       {/* <TopBalanceWrapper> 
-       //тут рендеримо обгорнутий у дів баланс //  
+        <BalanceWrapper />
        </TopBalanceWrapper>  */}
       <TopWrapper />
       <Box>
