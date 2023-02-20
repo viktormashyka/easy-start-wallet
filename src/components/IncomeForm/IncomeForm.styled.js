@@ -313,3 +313,22 @@ export const BtnSecondary = styled.button`
     width: 136px;
   }
 `;
+
+export const ErrorNotification = styled.p`
+  position: absolute;
+  top: 2%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: block;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 13px;
+  color: red;
+`;
+
+export const ErrorMessageWrapper = styled.div`
+  display: block;
+  text-align: center;
+  text-transform: none;
+  font-size: 15px;
+`;

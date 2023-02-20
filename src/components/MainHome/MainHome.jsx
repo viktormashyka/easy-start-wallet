@@ -1,8 +1,8 @@
 import {
-  TopWrapper,
   Box,
   BackspaceVectorIcon,
   FilterWrapper,
+  TopBalanceWrapper,
   // ButtonLink,
   // ButtonNavLink,
   // ButtonTopList,
@@ -20,11 +20,8 @@ import { TopBtnWrapper } from '../TopButtonWrapper/TopBtnWrapper';
 export const MainHome = ({ children }) => {
   return (
     <MainWrapper>
-      {/* <TopBalanceWrapper> 
-        <BalanceWrapper />
-       </TopBalanceWrapper>  */}
-      <TopWrapper />
       <Box>
+        <TopBalanceWrapper>{/* <BalanceWrapper /> */}</TopBalanceWrapper>
         <BackspaceVectorIcon />
         <FilterWrapper>
           <TopBtnWrapper />

@@ -66,10 +66,10 @@ export const ExpensesForm = () => {
   const date = moment().format('DD.MM.YYYY');
 
   const [formValues, setformValues] = useState(initialValues);
-  const getFormData = values => {
-    console.log('getFormData::', values);
-  };
-  console.log('formValues::', formValues);
+  // const getFormData = values => {
+  //   console.log('getFormData::', values);
+  // };
+  // console.log('formValues::', formValues);
 
   return (
     <>
@@ -97,7 +97,7 @@ export const ExpensesForm = () => {
           resetForm,
         }) => {
           setformValues(values);
-          getFormData(values);
+          // getFormData(values);
           return (
             <FormBox onSubmit={handleSubmit}>
               <FormTopWrapper>
