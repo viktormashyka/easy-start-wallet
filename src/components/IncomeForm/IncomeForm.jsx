@@ -34,16 +34,16 @@ const validate = values => {
   return errors;
 };
 
-export const IncomeForm = () => {
+export const TransactionFormIncome = () => {
   const formik = useFormik({
     initialValues: {
       category: '',
       description: '',
-      amount: '',
+      sum: '',
     },
     validate,
     onSubmit: value => {
-      console.log({ ...value, type: 'income' });
+      console.log({ ...value, transactionsType: 'income' });
     },
   });
 
@@ -84,11 +84,11 @@ export const IncomeForm = () => {
               <TextSecondary
                 as="input"
                 type="text"
-                id="amount"
-                name="amount"
+                id="sum"
+                name="sum"
                 placeholder="00.00 UAH"
                 onChange={formik.handleChange}
-                values={formik.values.amount}
+                values={formik.values.sum}
               />
               <CalculatorIcon />
             </SecondaryInputWrapper>

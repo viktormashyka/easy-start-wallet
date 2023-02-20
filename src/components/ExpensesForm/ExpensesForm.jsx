@@ -1,3 +1,4 @@
+import moment from 'moment';
 import { Formik, useFormik } from 'formik';
 import { CustomSelect } from '../CustomSelect/CustomSelect';
 import {
@@ -16,7 +17,7 @@ import {
   CalendarIcon,
   CurrentData,
   DataBox,
-} from './ExpensesForm.styled';
+} from './ExpencesForm.styled';
 
 const options = [
   { value: 'transport', label: 'Transport' },
@@ -43,16 +44,22 @@ const validate = values => {
   return errors;
 };
 
-export const ExpensesForm = () => {
+export const ExpencesForm = () => {
+  const date = moment().format('DD-MM-YYYY');
+
   const formik = useFormik({
     initialValues: {
       category: '',
       description: '',
-      amount: '',
+      sum: '',
     },
     validate,
     onSubmit: value => {
-      console.log({ ...value, type: 'expenses' });
+      console.log({
+        ...value,
+        transactionsType: 'expenses',
+        date,
+      });
     },
   });
 
@@ -62,7 +69,7 @@ export const ExpensesForm = () => {
         <FormTopWrapper>
           <DataBox>
             <CalendarIcon />
-            <CurrentData>20.02.2023</CurrentData>
+            <CurrentData>{date}</CurrentData>
           </DataBox>
           <InputsBox>
             <FormInputWrapper>
@@ -93,11 +100,11 @@ export const ExpensesForm = () => {
               <TextSecondary
                 as="input"
                 type="text"
-                id="amount"
-                name="amount"
+                id="sum"
+                name="sum"
                 placeholder="00.00 UAH"
                 onChange={formik.handleChange}
-                values={formik.values.amount}
+                values={formik.values.sum}
               />
               <CalculatorIcon />
             </SecondaryInputWrapper>
