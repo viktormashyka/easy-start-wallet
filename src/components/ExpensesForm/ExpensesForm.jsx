@@ -17,6 +17,7 @@ import {
   CalendarIcon,
   CurrentData,
   DataBox,
+  IconWrapper,
 } from './ExpensesForm.styled';
 
 const options = [
@@ -45,7 +46,7 @@ const validate = values => {
 };
 
 export const ExpensesForm = () => {
-  const date = moment().format('DD-MM-YYYY');
+  const date = moment().format('DD.MM.YYYY');
 
   const formik = useFormik({
     initialValues: {
@@ -97,16 +98,21 @@ export const ExpensesForm = () => {
               {/* {formik.errors.category ? <div>{formik.errors.category}</div> : null} */}
             </FormInputWrapper>
             <SecondaryInputWrapper>
-              <TextSecondary
-                as="input"
-                type="text"
-                id="sum"
-                name="sum"
-                placeholder="00.00 UAH"
-                onChange={formik.handleChange}
-                values={formik.values.sum}
-              />
-              <CalculatorIcon />
+              <div>
+                <TextSecondary
+                  as="input"
+                  type="text"
+                  id="sum"
+                  name="sum"
+                  placeholder="00.00 UAH"
+                  onChange={formik.handleChange}
+                  values={formik.values.sum}
+                />
+                {/* <AdditionalInputTag>UAH</AdditionalInputTag> */}
+              </div>
+              <IconWrapper>
+                <CalculatorIcon />
+              </IconWrapper>
             </SecondaryInputWrapper>
           </InputsBox>
         </FormTopWrapper>

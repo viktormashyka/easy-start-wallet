@@ -1,3 +1,4 @@
+import moment from 'moment';
 import { Formik, useFormik } from 'formik';
 import { CustomSelect } from '../CustomSelect/CustomSelect';
 import {
@@ -16,6 +17,7 @@ import {
   CalendarIcon,
   CurrentData,
   DataBox,
+  IconWrapper,
 } from './IncomeForm.styled';
 
 const options = [
@@ -35,6 +37,7 @@ const validate = values => {
 };
 
 export const IncomeForm = () => {
+  const date = moment().format('DD.MM.YYYY');
   const formik = useFormik({
     initialValues: {
       category: '',
@@ -43,7 +46,11 @@ export const IncomeForm = () => {
     },
     validate,
     onSubmit: value => {
-      console.log({ ...value, transactionsType: 'income' });
+      console.log({
+        ...value,
+        transactionsType: 'income',
+        date,
+      });
     },
   });
 
@@ -53,7 +60,7 @@ export const IncomeForm = () => {
         <FormTopWrapper>
           <DataBox>
             <CalendarIcon />
-            <CurrentData>20.02.2023</CurrentData>
+            <CurrentData>{date}</CurrentData>
           </DataBox>
           <InputsBox>
             <FormInputWrapper>
@@ -81,16 +88,21 @@ export const IncomeForm = () => {
               {/* {formik.errors.category ? <div>{formik.errors.category}</div> : null} */}
             </FormInputWrapper>
             <SecondaryInputWrapper>
-              <TextSecondary
-                as="input"
-                type="text"
-                id="sum"
-                name="sum"
-                placeholder="00.00 UAH"
-                onChange={formik.handleChange}
-                values={formik.values.sum}
-              />
-              <CalculatorIcon />
+              <div>
+                <TextSecondary
+                  as="input"
+                  type="text"
+                  id="sum"
+                  name="sum"
+                  placeholder="00.00 UAH"
+                  onChange={formik.handleChange}
+                  values={formik.values.sum}
+                />
+                {/* <AdditionalInputTag>UAH</AdditionalInputTag> */}
+              </div>
+              <IconWrapper>
+                <CalculatorIcon />
+              </IconWrapper>
             </SecondaryInputWrapper>
           </InputsBox>
         </FormTopWrapper>

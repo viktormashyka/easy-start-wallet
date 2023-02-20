@@ -13,12 +13,10 @@ import {
   BtnWrapper,
 } from './MainHome.styled';
 import { MainWrapper } from '../MainWrapper/MainWrapper';
-import { ExpencesForm } from '../ExpencesForm/ExpencesForm';
-import { IncomeForm } from '../IncomeForm/IncomeForm';
 import { BottomBtnWrapper } from '../BottomBtnWrapper/BottomBtnWrapper';
 import { TopBtnWrapper } from '../TopButtonWrapper/TopBtnWrapper';
 
-export const MainHome = () => {
+export const MainHome = ({ children }) => {
   return (
     <MainWrapper>
       {/* <TopBalanceWrapper> 
@@ -29,11 +27,10 @@ export const MainHome = () => {
         <BackspaceVectorIcon />
         <FilterWrapper>
           <TopBtnWrapper />
-          <ExpencesForm />
-          {/* <IncomeForm /> */}
+          {children}
         </FilterWrapper>
       </Box>
-      <BottomBtnWrapper /> --//рендеримо тільки з балансом
+      <BottomBtnWrapper />
     </MainWrapper>
   );
 };
