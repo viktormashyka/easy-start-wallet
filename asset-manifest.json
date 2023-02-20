@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/easy-start-wallet/static/css/main.fa7a131f.css",
-    "main.js": "/easy-start-wallet/static/js/main.feb429fc.js",
-    "static/js/649.bf5a48c9.chunk.js": "/easy-start-wallet/static/js/649.bf5a48c9.chunk.js",
-    "static/js/628.30a633f8.chunk.js": "/easy-start-wallet/static/js/628.30a633f8.chunk.js",
+    "main.js": "/easy-start-wallet/static/js/main.0976c393.js",
+    "static/js/649.ed13f43b.chunk.js": "/easy-start-wallet/static/js/649.ed13f43b.chunk.js",
+    "static/js/628.6b468f23.chunk.js": "/easy-start-wallet/static/js/628.6b468f23.chunk.js",
     "static/js/227.a453c2d4.chunk.js": "/easy-start-wallet/static/js/227.a453c2d4.chunk.js",
     "static/js/54.f9bde129.chunk.js": "/easy-start-wallet/static/js/54.f9bde129.chunk.js",
     "static/js/85.35cee912.chunk.js": "/easy-start-wallet/static/js/85.35cee912.chunk.js",
@@ -21,9 +21,9 @@
     "index.html": "/easy-start-wallet/index.html",
     "static/media/KeyboardBackspace.svg": "/easy-start-wallet/static/media/KeyboardBackspace.8616407ae2c848099afed2ec7f6d2583.svg",
     "main.fa7a131f.css.map": "/easy-start-wallet/static/css/main.fa7a131f.css.map",
-    "main.feb429fc.js.map": "/easy-start-wallet/static/js/main.feb429fc.js.map",
-    "649.bf5a48c9.chunk.js.map": "/easy-start-wallet/static/js/649.bf5a48c9.chunk.js.map",
-    "628.30a633f8.chunk.js.map": "/easy-start-wallet/static/js/628.30a633f8.chunk.js.map",
+    "main.0976c393.js.map": "/easy-start-wallet/static/js/main.0976c393.js.map",
+    "649.ed13f43b.chunk.js.map": "/easy-start-wallet/static/js/649.ed13f43b.chunk.js.map",
+    "628.6b468f23.chunk.js.map": "/easy-start-wallet/static/js/628.6b468f23.chunk.js.map",
     "227.a453c2d4.chunk.js.map": "/easy-start-wallet/static/js/227.a453c2d4.chunk.js.map",
     "54.f9bde129.chunk.js.map": "/easy-start-wallet/static/js/54.f9bde129.chunk.js.map",
     "85.35cee912.chunk.js.map": "/easy-start-wallet/static/js/85.35cee912.chunk.js.map",
@@ -39,6 +39,6 @@
   },
   "entrypoints": [
     "static/css/main.fa7a131f.css",
-    "static/js/main.feb429fc.js"
+    "static/js/main.0976c393.js"
   ]
 }
