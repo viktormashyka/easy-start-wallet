@@ -230,9 +230,10 @@ export const updateBalance = createAsyncThunk(
     async (credentials, thunkAPI) => {
         console.log("auth/changeBalance --> credentials:", credentials); //!
         try {
-            const { data } = await axios.patch('/users/balance', credentials);
-            console.log("auth/changeBalance == >data.balance:", data.balance); //!
-            return data.balance;
+            // const { data } = await axios.patch('/users/balance', credentials);
+            // console.log("auth/changeBalance == >data.balance:", data.balance); //!
+            // return data.balance;
+            return credentials;
         } catch (error) {
             console.log(error); //!
             toast.error(`Ошибка запроса: ${error.message === "Request failed with status code 404" ? "Нет такой коллекции пользователей" : error.message}`, { position: "top-center", autoClose: 2000 });

@@ -4,6 +4,7 @@ import { ExpensesForm } from 'components/ExpensesForm/ExpensesForm';
 import { IncomeForm } from '../components/IncomeForm/IncomeForm';
 import { MainHome } from '../components/MainHome/MainHome';
 import { Helmet } from 'react-helmet';
+import { BalanceWrapper } from 'components/BalanceWrapper/BalanceWrapper';
 // import { selectIsLoading } from 'redux/contacts/selectors';
 
 export default function Home() {
@@ -19,6 +20,7 @@ export default function Home() {
         <title>Home page</title>
       </Helmet>
       <>This is home page</>
+      <BalanceWrapper />
       <MainHome>
         <ExpensesForm />
         {/* <IncomeForm /> */}
