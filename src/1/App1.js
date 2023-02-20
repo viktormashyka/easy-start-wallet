@@ -16,7 +16,7 @@ import { useAuth } from 'hooks';
 const HomePage = lazy(() => import('../pages/Home/Home.js'));
 //! Маршруты REGISTRATION и LOG IN
 const RegisterPage = lazy(() => import('../pages/Register.js'));
-const LoginPage = lazy(() => import('../pages/auth/Login.jsx'));
+const LoginPage = lazy(() => import('../pages/Login.jsx'));
 //! Маршруты EXPENSES и INCOME
 const ExpensesPage = lazy(() =>
   import('../pages/ExpensesPage/ExpensesPage.js')
