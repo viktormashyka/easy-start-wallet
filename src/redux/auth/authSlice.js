@@ -13,14 +13,15 @@ import {
 
 
 const initialState = {
-    // user: { name: null, email: null },
-    user: { name: null, email: null, avatarURL: null },
-    balance: 0,
-    token: null,
-    isLoggedIn: false,
-    isRegistrIn: false, //? for Kapu$ta
-    isRefreshing: false,
-    error: null,
+  // user: { name: null, email: null },
+  user: { name: null, email: null, avatarURL: null },
+  balance: 0,
+  token: null,
+  isLoggedIn: false,
+  isRegistrIn: false, //? for Kapu$ta
+  isRefreshing: false,
+  error: null,
+  isNotNewUser: false,
 };
 
 
@@ -156,7 +157,8 @@ const authSlice = createSlice({
         },
         [getBalance.fulfilled](state, { payload }) {
             console.log("getBalance.fulfilled --> payload:", payload); //!
-            state.balance = payload;
+            state.balance = payload.balance;
+            state.isNotNewUser = payload.isNotNewUser;
             state.isRefreshing = false;
             state.error = null;
         },
