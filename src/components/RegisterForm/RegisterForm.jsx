@@ -7,11 +7,13 @@ import {
   Input,
   P,
   ErrorText,
+  RegisterButton,
 } from './RegisterForm.styled';
 import * as Yup from 'yup';
 import { useDispatch } from 'react-redux';
 
 import { register } from 'redux/auth/authOperations';
+import { Link } from 'react-router-dom';
 
 const schema = Yup.object().shape({
   email: Yup.string().email('Invalid email').required('Enter your email'),
@@ -26,19 +28,19 @@ const FormError = ({ name }) => {
   );
 };
 
-console.log("RegisterForm ---> start"); //!
+console.log('RegisterForm ---> start'); //!
 
 export const RegisterForm = () => {
   const dispatch = useDispatch();
 
   const handleSubmit = (value, { resetForm }) => {
-    console.log("RegisterForm ---> handleSubmit"); //!
-    console.log("RegisterForm ---> value:", value); //!
+    console.log('RegisterForm ---> handleSubmit'); //!
+    console.log('RegisterForm ---> value:', value); //!
     dispatch(register(value));
     resetForm();
   };
 
-  console.log("RegisterForm ---> render"); //!
+  console.log('RegisterForm ---> render'); //!
   return (
     <Container>
       <P>You can log in with your Google Account:</P>
@@ -62,8 +64,10 @@ export const RegisterForm = () => {
             <FormError name="password" />
           </label>
           <Div>
-            <Button type="button">LOG IN</Button>
-            <Button type="submit">REGISTRATION</Button>
+            <Link to="/login">
+              <Button type="button">LOG IN</Button>
+            </Link>
+            <RegisterButton type="submit">REGISTRATION</RegisterButton>
           </Div>
         </Form>
       </Formik>
