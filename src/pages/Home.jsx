@@ -1,7 +1,7 @@
 // import { useEffect } from 'react';
 // import { useDispatch, useSelector } from 'react-redux';
 import { ExpensesForm } from 'components/ExpensesForm/ExpensesForm';
-import { IncomeForm } from '../components/IncomeForm/IncomeForm';
+// import { IncomeForm } from '../components/IncomeForm/IncomeForm';
 import { MainHome } from '../components/MainHome/MainHome';
 import { Helmet } from 'react-helmet';
 // import { selectIsLoading } from 'redux/contacts/selectors';
