@@ -12,7 +12,7 @@ export const TopWrapper = styled.section`
   background-color: #f5f6fb;
   border-bottom-left-radius: 80px;
   overflow-x: hidden;
-  overflow-y: visible;
+  /* overflow-y: visible; */
   @media screen and (min-width: 768px) {
     padding: 0 32px;
     min-height: 526px;
@@ -26,7 +26,6 @@ export const TopWrapper = styled.section`
 
 export const TopBalanceWrapper = styled.section`
   position: relative;
-  padding: 0 20px;
   min-height: 258px;
   background-color: #f5f6fb;
   border-bottom-left-radius: 80px;
@@ -34,15 +33,15 @@ export const TopBalanceWrapper = styled.section`
   display: flex;
   justify-content: center;
   @media screen and (min-width: 768px) {
-    display: none;
-    /* padding: 0 32px;
     min-height: 526px;
     border-bottom-left-radius: 180px;
   }
   @media screen and (min-width: 1280px) {
-    padding: 0 91px;
-    border-bottom-left-radius: 110px; */
+    border-bottom-left-radius: 110px;
   }
+  /* @media screen and (min-width: 768px) {
+    display: none;
+  } */
 `;
 
 export const Box = styled.div`
