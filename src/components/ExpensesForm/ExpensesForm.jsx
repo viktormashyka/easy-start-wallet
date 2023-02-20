@@ -17,7 +17,7 @@ import {
   CalendarIcon,
   CurrentData,
   DataBox,
-} from './ExpencesForm.styled';
+} from './ExpensesForm.styled';
 
 const options = [
   { value: 'transport', label: 'Transport' },
@@ -44,7 +44,7 @@ const validate = values => {
   return errors;
 };
 
-export const ExpencesForm = () => {
+export const ExpensesForm = () => {
   const date = moment().format('DD-MM-YYYY');
 
   const formik = useFormik({

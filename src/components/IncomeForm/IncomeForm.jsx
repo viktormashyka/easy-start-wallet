@@ -34,7 +34,7 @@ const validate = values => {
   return errors;
 };
 
-export const TransactionFormIncome = () => {
+export const IncomeForm = () => {
   const formik = useFormik({
     initialValues: {
       category: '',
