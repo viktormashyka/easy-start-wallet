@@ -82,6 +82,7 @@ export const DataBox = styled.div`
 `;
 
 export const InputsBox = styled.div`
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -102,8 +103,9 @@ export const InputsBox = styled.div`
 `;
 
 export const InputField = styled(Field)`
+  box-sizing: border-box;
   padding-left: 20px;
-  width: 260px;
+  width: 280px;
   height: 44px;
   border-top-right-radius: 16px;
   border-top-left-radius: 16px;
@@ -115,6 +117,7 @@ export const InputField = styled(Field)`
   line-height: 1.7;
   letter-spacing: 0.02em;
   color: #52555f;
+  border: 2px solid #f5f6fb;
   &:-internal-autofill-selected {
     background-image: none !important;
     background-color: #ffffff !important;
@@ -124,8 +127,9 @@ export const InputField = styled(Field)`
   }
   @media screen and (min-width: 768px) {
     width: 164px;
+    border: none;
     border-top-right-radius: 0px;
-    border-top-left-radius: 0px;
+    border-top-left-radius: 12px;
     border-right: 2px solid #f5f6fb;
     box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0),
       inset 0 0 0 100px rgba(255, 255, 255, 1);
@@ -141,7 +145,7 @@ export const SecondaryInputWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 183px;
+  /* width: 183px; */
   border-radius: 22px;
   border: 2px solid #ffffff;
   margin-bottom: 80px;
@@ -156,13 +160,12 @@ export const SecondaryInputWrapper = styled.div`
 `;
 
 export const TextSecondary = styled(Field)`
-  width: 124px;
+  width: 125px;
   height: 44px;
   border: none;
   border-right: 2px solid #ffffff;
   border-top-left-radius: 22px;
   border-bottom-left-radius: 22px;
-  /* padding: 12px 0 12px 28px; */
   text-align: center;
   font-family: Roboto, sans-serif;
   font-style: regular;
@@ -185,7 +188,7 @@ export const TextSecondary = styled(Field)`
     /* color: #52555f; */
   }
   @media screen and (min-width: 768px) {
-    /* padding: 10px 0px 10px 20px; */
+    /* padding-left: 25px; */
     width: 73px;
     border-left: 2px solid #f5f6fb;
     border-radius: 0px;
@@ -197,15 +200,30 @@ export const TextSecondary = styled(Field)`
 export const CalculatorIcon = styled(Calculator)`
   width: 20px;
   height: 20px;
-  padding: 12px 20px;
   flex-shrink: 0;
   @media screen and (min-width: 768px) {
     margin-bottom: 0px;
-    padding: 10px 20px 10px 0;
   }
   @media screen and (min-width: 768px) {
     margin-bottom: 0px;
-    padding: 10px 22px 10px 0;
+  }
+`;
+
+export const IconWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 44px;
+  flex-shrink: 0;
+  @media screen and (min-width: 768px) {
+    width: 40px;
+    margin-bottom: 0px;
+    justify-content: start;
+  }
+  @media screen and (min-width: 768px) {
+    margin-bottom: 0px;
+    /* padding: 10px 22px 10px 0; */
   }
 `;
 
