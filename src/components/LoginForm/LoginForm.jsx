@@ -27,13 +27,19 @@ const FormError = ({ name }) => {
   );
 };
 
+console.log("LoginForm ---> start"); //!
+
 export const LoginForm = () => {
   const dispatch = useDispatch();
+  
   const handleSubmit = (value, { resetForm }) => {
+    console.log("LoginForm ---> handleSubmit"); //!
+    console.log("LoginForm ---> value:", value); //!
     dispatch(logIn(value));
-    console.log(value);
     resetForm();
   };
+
+  console.log("LoginForm ---> render"); //!
   return (
     <Container>
       <P>You can log in with your Google Account:</P>

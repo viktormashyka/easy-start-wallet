@@ -26,13 +26,19 @@ const FormError = ({ name }) => {
   );
 };
 
+console.log("RegisterForm ---> start"); //!
+
 export const RegisterForm = () => {
   const dispatch = useDispatch();
+
   const handleSubmit = (value, { resetForm }) => {
+    console.log("RegisterForm ---> handleSubmit"); //!
+    console.log("RegisterForm ---> value:", value); //!
     dispatch(register(value));
-    console.log(value);
     resetForm();
   };
+
+  console.log("RegisterForm ---> render"); //!
   return (
     <Container>
       <P>You can log in with your Google Account:</P>
