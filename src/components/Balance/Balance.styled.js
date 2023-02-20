@@ -68,6 +68,9 @@ export const BalanceInput = styled.input`
   padding-left: 20px;
   padding-right: 20px;
   outline: none;
+  &::placeholder {
+    color: #000;
+  }
 
   @media screen and (min-width: 768px) {
     margin-left: 21px;
@@ -107,13 +110,18 @@ export const BalanceButton = styled.button`
     color: rgba(82, 85, 95, 0.7);
     font-size: 12px;
     line-height: 1.17;
+    text-transform: uppercase;
     cursor: pointer;
   }
 
   &:hover {
-    background-color: #cfd1d4;
-    color: #f5f6fb;
+    /* background-color: #cfd1d4; */
+    background-color: #f5f6fb;
+    color: #fff;
     transition: 0.5s linear;
+  }
+  :disabled {
+    color: #ffffff;
   }
 
   @media screen and (min-width: 768px) {
