@@ -16,8 +16,12 @@ import {
 import { MainWrapper } from '../MainWrapper/MainWrapper';
 import { BottomBtnWrapper } from '../BottomBtnWrapper/BottomBtnWrapper';
 import { TopBtnWrapper } from '../TopButtonWrapper/TopBtnWrapper';
+
+// import { BalanceWrapper } from 'components/BalanceWrapper/BalanceWrapper';
+
 import { BalanceWrapper } from '../BalanceWrapper/BalanceWrapper';
 import { useState } from 'react';
+
 
 export const MainHome = ({ children }) => {
   const [isTransactionsShown, setIsTransactionsShown] = useState(false);
@@ -33,6 +37,14 @@ export const MainHome = ({ children }) => {
   };
   return (
     <MainWrapper>
+
+      {/* <TopBalanceWrapper> 
+        <BalanceWrapper />
+       </TopBalanceWrapper>  */}
+      <TopWrapper />
+      <Box>
+        <BackspaceVectorIcon />
+
       <TopBalanceWrapper />
       {!isTransactionsShown && (
         <>
@@ -53,6 +65,7 @@ export const MainHome = ({ children }) => {
       )}
       <Box />
       {isTransactionsShown && (
+
         <FilterWrapper>
           <button
             style={{
