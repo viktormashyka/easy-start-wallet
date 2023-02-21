@@ -81,7 +81,7 @@ export const BackspaceVectorIcon = styled(BackspaceIcon)`
   }
 
   @media screen and (min-width: 768px) {
-    display: none;
+    /* display: none; */
   }
 `;
 

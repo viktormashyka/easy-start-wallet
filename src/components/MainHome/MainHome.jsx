@@ -42,9 +42,9 @@ export const MainHome = ({ children }) => {
       {/* <TopBalanceWrapper> 
         <BalanceWrapper />
        </TopBalanceWrapper>  */}
-      <TopWrapper />
-      <Box>
-        <BackspaceVectorIcon />
+      {/* <TopWrapper /> */}
+      {/* <Box> */}
+        {/* <BackspaceVectorIcon /> */}
 
       <TopBalanceWrapper />
       {!isTransactionsShown && (

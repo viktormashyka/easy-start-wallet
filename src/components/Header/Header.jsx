@@ -1,5 +1,5 @@
-import { useDispatch } from 'react-redux';
-import { useSelector } from 'react-redux';
+// import { useDispatch } from 'react-redux';
+// import { useSelector } from 'react-redux';
 
 import { SectionHeader } from './Header.styled';
 
