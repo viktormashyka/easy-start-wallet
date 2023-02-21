@@ -34,7 +34,7 @@ const Balance = () => {
   const handleSetBalance = e => {
     e.preventDefault();
     console.log(Number(balance));
-    dispatch(updateBalance(Number(balance)));
+    dispatch(updateBalance({ balance }));
     setBalance('');
   };
 
