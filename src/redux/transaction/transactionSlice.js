@@ -4,6 +4,7 @@ import {
   getAllTransactions,
   addTransactionExpenses,
   deleteTransaction,
+  getAllTransactionsReport,
   // editContact,
   // fetchContactsFromMmockapiIo,
   // deleteContactFromMmockapiIo
@@ -32,6 +33,7 @@ const transactionsSlice = createSlice({
     //     sum: null,
     // },
     allTransactions: [],
+    report: {},
     isLoading: false,
     isDeleting: false,
     error: null,
@@ -40,6 +42,7 @@ const transactionsSlice = createSlice({
     [getAllTransactions.pending]: handlePending,
     [addTransactionExpenses.pending]: handlePending, //!!!
     [deleteTransaction.pending]: handlePending,
+    [getAllTransactionsReport.pending]: handlePending,
     // [editContact.pending]: handlePending,
     // [fetchContactsFromMmockapiIo.pending]: handlePending,
     // [deleteContactFromMmockapiIo.pending]: handlePending,
@@ -47,6 +50,7 @@ const transactionsSlice = createSlice({
     [getAllTransactions.rejected]: handleRejected,
     [addTransactionExpenses.rejected]: handleRejected, //!!!
     [deleteTransaction.rejected]: handleRejected,
+    [getAllTransactionsReport.rejected]: handleRejected,
     // [editContact.rejected]: handleRejected,
     // [fetchContactsFromMmockapiIo.rejected]: handleRejected,
     // [deleteContactFromMmockapiIo.rejected]: handleRejected,
@@ -89,6 +93,13 @@ const transactionsSlice = createSlice({
       );
       // console.log("deleteTransaction==>state.items:", state.items); //!
       // state = { items: newContact }
+    },
+
+    [getAllTransactionsReport.fulfilled](state, { payload }) {
+      console.log('getAllTransactionsReport.fulfilled --> payload:', payload); //!
+      state.report = payload;
+      state.isLoading = false;
+      state.error = null;
     },
 
     // [editContact.fulfilled](state, { payload }) {

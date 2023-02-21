@@ -123,3 +123,18 @@ export const deleteTransaction = createAsyncThunk(
 //         }
 //     }
 // );
+
+export const getAllTransactionsReport = createAsyncThunk(
+  'contacts/getAllTransactionsReport',
+  async ({ month, year }, thunkAPI) => {
+    try {
+      const response = await axios.get(
+        `/transactions/report?month=${month}&year=${year}`
+      );
+      console.log('🚀 ~ file: operations.js:54 ~ response:', response.data);
+      return response.data;
+    } catch (e) {
+      return thunkAPI.rejectWithValue(e.message);
+    }
+  }
+);

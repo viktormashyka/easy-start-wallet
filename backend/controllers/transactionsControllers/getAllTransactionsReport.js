@@ -4,22 +4,16 @@ const { User } = require('../../models');
 const { Unauthorized } = require('http-errors');
 
 const getAllTransactionsReport = async (req, res) => {
-  // const transactions = await Contact.Transaction({});
-
   const { month: theMonth = 1, year: theYear = 2000 } = req.query;
 
-  //   const limit = 1;
-  //   const skip = (theMonth - 1) * limit;
   let normalizedMonth = theMonth.toString().padStart(2, '0');
+
+  let normalizedYear = theYear.toString();
 
   const { id: userId } = req.user;
 
   const user = await User.findOne({ _id: userId });
   const { balance } = user;
-  console.log(
-    '🚀 ~ file: getAllTransactionsReport.js:23 ~ getAllTransactionsReport ~ balance',
-    balance
-  );
 
   const transactions = await Transaction.find({ owner: userId })
     .sort('date') //! сортировка по полю "sum"
@@ -29,16 +23,12 @@ const getAllTransactionsReport = async (req, res) => {
     const dateString = transaction.date;
     const [year, month, day] = dateString.split('-');
 
-    if (month === normalizedMonth && year === theYear) {
+    if (month === normalizedMonth && year === normalizedYear) {
       return true;
     }
 
     return false;
   });
-  console.log(
-    '🚀 ~ file: getAllTransactionsReport.js:57 ~ filterTransactions ~ filterTransactions',
-    filterTransactions
-  );
 
   res.status(200).json({ balance, filterTransactions });
 };
