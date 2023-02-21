@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addTransactionExpenses } from '../../redux/transaction/transactionOperations';
 import * as Yup from 'yup';
 import moment from 'moment';
 import { Formik, ErrorMessage } from 'formik';
@@ -63,26 +64,27 @@ const FormError = ({ name }) => {
 };
 
 export const ExpensesForm = () => {
-  const date = moment().format('DD.MM.YYYY');
+  const dispatch = useDispatch();
 
-  const [formValues, setformValues] = useState(initialValues);
+  const date = moment().format('DD.MM.YYYY');
 
   // const getFormData = values => {
   //   console.log('getFormData::', values);
   // };
-  // console.log('formValues::', formValues);
 
   return (
     <>
       <Formik
         initialValues={initialValues}
         validationSchema={schema}
-        onSubmit={(values, { setSubmitting, resetForm }) => {
-          console.log({
-            ...formValues,
-            transactionsType: 'expenses',
-            date,
-          });
+        onSubmit={(values, { resetForm }) => {
+          dispatch(
+            addTransactionExpenses({
+              ...values,
+              transactionsType: 'expenses',
+              date,
+            })
+          );
           resetForm();
         }}
       >
@@ -91,14 +93,11 @@ export const ExpensesForm = () => {
           errors,
           touched,
           handleChange,
-          handleBlur,
           handleSubmit,
           isSubmitting,
           setFieldValue,
           resetForm,
         }) => {
-          setformValues(values);
-          // getFormData(values);
           return (
             <FormBox onSubmit={handleSubmit}>
               <FormTopWrapper>
@@ -133,23 +132,24 @@ export const ExpensesForm = () => {
                     <div>
                       <TextSecondary
                         as="input"
-                        type="text"
+                        type="number"
                         id="sum"
                         name="sum"
+                        pattern="^(([0-9]*)|(([0-9]*)\.([0-9]*)))$"
+                        title="Вalance must be whole numbers (or decimal numbers)"
                         placeholder="00.00 UAH"
                         onChange={handleChange}
                         value={values.sum}
                       />
                       <ErrorMessageWrapper>
                         {errors.description && touched.description ? (
-                          <FormError name="category" component="p" />
-                        ) : errors.category && touched.category ? (
-                          <FormError name="sum" component="p" />
-                        ) : errors.sum && touched.sum ? (
                           <FormError name="description" component="p" />
+                        ) : errors.category && touched.category ? (
+                          <FormError name="category" component="p" />
+                        ) : errors.sum && touched.sum ? (
+                          <FormError name="sum" component="p" />
                         ) : null}
                       </ErrorMessageWrapper>
-                      {/* <AdditionalInputTag>UAH</AdditionalInputTag> */}
                     </div>
                     <IconWrapper>
                       <CalculatorIcon />
