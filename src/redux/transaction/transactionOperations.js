@@ -6,6 +6,7 @@ import { toast } from 'react-toastify';
 //! axios defaults baseURL (возможно, это не надо, т.к. уже есть в authOperations.js)
 // axios.defaults.baseURL = 'http://localhost:3033/api';
 // axios.defaults.baseURL = 'https://contact-book-backend52.onrender.com/api';
+axios.defaults.headers.common.Authorization = `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZjM5YTZmMGZjYzM4ZDE4MjA0MTcyYyIsImVtYWlsIjoiZXhhbXBsZUBleGFtcGxlLmNvbSIsImlhdCI6MTY3Njk4NTQ2NH0.RugzqN4DJPkhtZtnc2vEKQHmBgvYJJw6m1Tep213dDo`;
 
 //!!! GET @ /transactions
 export const getAllTransactions = createAsyncThunk(
@@ -123,3 +124,18 @@ export const deleteTransaction = createAsyncThunk(
 //         }
 //     }
 // );
+
+export const getAllTransactionsReport = createAsyncThunk(
+  'contacts/getAllTransactionsReport',
+  async ({ month, year }, thunkAPI) => {
+    try {
+      const response = await axios.get(
+        `/transactions/report?month=${month}&year=${year}`
+      );
+      console.log('🚀 ~ file: operations.js:54 ~ response:', response.data);
+      return response.data;
+    } catch (e) {
+      return thunkAPI.rejectWithValue(e.message);
+    }
+  }
+);

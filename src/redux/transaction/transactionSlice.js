@@ -4,6 +4,7 @@ import {
   getAllTransactions,
   addTransactionExpenses,
   deleteTransaction,
+  getAllTransactionsReport,
   // editContact,
   // fetchContactsFromMmockapiIo,
   // deleteContactFromMmockapiIo
@@ -32,6 +33,7 @@ const transactionsSlice = createSlice({
     //     sum: null,
     // },
     allTransactions: [],
+    report: {},
     isLoading: false,
     isDeleting: false,
     error: null,
@@ -89,6 +91,13 @@ const transactionsSlice = createSlice({
       );
       // console.log("deleteTransaction==>state.items:", state.items); //!
       // state = { items: newContact }
+    },
+
+    [getAllTransactionsReport.fulfilled](state, { payload }) {
+      console.log('getAllTransactionsReport.fulfilled --> payload:', payload); //!
+      state.report = payload;
+      state.isLoading = false;
+      state.error = null;
     },
 
     // [editContact.fulfilled](state, { payload }) {
