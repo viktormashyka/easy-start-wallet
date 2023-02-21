@@ -1,4 +1,3 @@
-import { Outlet } from 'react-router-dom';
 import {
   Box,
   BackspaceVectorIcon,
@@ -18,52 +17,57 @@ import { MainWrapper } from '../MainWrapper/MainWrapper';
 import { BottomBtnWrapper } from '../BottomBtnWrapper/BottomBtnWrapper';
 import { TopBtnWrapper } from '../TopButtonWrapper/TopBtnWrapper';
 import { BalanceWrapper } from '../BalanceWrapper/BalanceWrapper';
-import { BackLink } from '../BackLink/BackLink';
 import { useState } from 'react';
 
 export const MainHome = ({ children }) => {
-  // const [isTransactionsShown, setIsTransactionsShown] = useState(false);
+  const [isTransactionsShown, setIsTransactionsShown] = useState(false);
 
   // const handleClick = () => {
   //   setIsTransactionsShown(prevState => ({
   //     isTransactionsShown: !prevState.isTransactionsShown,
   //   }));
   // };
+
+  const handleClick = () => {
+    setIsTransactionsShown(!isTransactionsShown);
+  };
   return (
     <MainWrapper>
       <TopBalanceWrapper />
-      <div
-        style={{
-          position: 'absolute',
-          top: '10px',
-          left: '10px;',
-        }}
-      >
-        <button
-        // onClick={handleClick}
-        >
-          ///
-        </button>
-      </div>
-      <ContentContainer>
-        <BalanceWrapper />
-      </ContentContainer>
-      <BottomBtnWrapper />
-      <button
-        style={{
-          position: 'absolute',
-          top: '5%',
-          left: '8%',
-        }}
-        // onClick={handleClick}
-      >
-        <BackspaceVectorIcon />
-      </button>
+      {!isTransactionsShown && (
+        <>
+          <div
+            style={{
+              position: 'absolute',
+              top: '20px',
+              left: '20px',
+            }}
+          >
+            <button onClick={handleClick}>to transaction</button>
+          </div>
+          <ContentContainer>
+            <BalanceWrapper />
+          </ContentContainer>
+          <BottomBtnWrapper />
+        </>
+      )}
       <Box />
-      <FilterWrapper>
-        <TopBtnWrapper />
-        {children}
-      </FilterWrapper>
+      {isTransactionsShown && (
+        <FilterWrapper>
+          <button
+            style={{
+              position: 'absolute',
+              top: '-60px',
+              left: '-60px',
+            }}
+            onClick={handleClick}
+          >
+            <BackspaceVectorIcon />
+          </button>
+          <TopBtnWrapper />
+          {children}
+        </FilterWrapper>
+      )}
     </MainWrapper>
   );
 };

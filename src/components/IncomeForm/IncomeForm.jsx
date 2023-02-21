@@ -53,6 +53,7 @@ const FormError = ({ name }) => {
 export const IncomeForm = () => {
   const date = moment().format('DD.MM.YYYY');
   const [formValues, setformValues] = useState(initialValues);
+  console.log(formValues);
   // const getFormData = values => {
   //   console.log('getFormData::', values);
   // };

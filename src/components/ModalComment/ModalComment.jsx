@@ -1,4 +1,4 @@
-import * as SC from 'components/Modal/Modal.styled';
+import * as SC from './ModalComment.styled';
 
 export const ModalComment = () => {
   return (
