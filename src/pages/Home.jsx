@@ -20,7 +20,7 @@ export default function Home() {
         <title>Home page</title>
       </Helmet>
       <>This is home page</>
-      <BalanceWrapper />
+      {/* <BalanceWrapper /> */}
       <MainHome>
         <ExpensesForm />
         {/* <IncomeForm /> */}
