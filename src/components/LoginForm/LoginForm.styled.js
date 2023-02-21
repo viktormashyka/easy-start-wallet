@@ -35,7 +35,6 @@ font-size: 12px;
   margin-top: 5px;
   display: flex;
   padding-left: 19.54px;
-  // flex-direction: column;
   width: 258.92px;
   height: 52px;
   border-radius: 30px;
@@ -71,6 +70,9 @@ export const P = styled.p`
   // justify-content: center;
 `;
 export const Button = styled.button`
+ @media screen and (max-width: 320px) {
+    width: 116px;
+  }
   width: 122.17px;
   height: 44px;
   background: #f5f6fb;
@@ -98,7 +100,11 @@ export const ErrorText = styled.p`
   color: red;
 `;
 export const LoginButton = styled.button`
+  @media screen and (max-width: 320px) {
+    width: 116px;
+  }
   width: 122.17px;
+
   height: 44px;
 
   border-radius: 16px;

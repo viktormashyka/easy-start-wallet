@@ -11,9 +11,11 @@ import {
 } from './LoginForm.styled';
 import * as Yup from 'yup';
 import { useDispatch } from 'react-redux';
+import { GoogleLogin } from 'react-google-login';
 
 import { logIn } from 'redux/auth/authOperations';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
 // changed in const schema Yup on yup
 const schema = Yup.object().shape({
@@ -32,6 +34,18 @@ const FormError = ({ name }) => {
 console.log('LoginForm ---> start'); //!
 
 export const LoginForm = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [user, setUser] = useState({});
+
+  const onSuccess = res => {
+    setIsLoggedIn(true);
+    setUser(res.profileObj);
+  };
+
+  const onFailure = res => {
+    console.log('Login failed:', res);
+  };
+
   const dispatch = useDispatch();
 
   const handleSubmit = (value, { resetForm }) => {
@@ -46,6 +60,21 @@ export const LoginForm = () => {
     <Container>
       <P>You can log in with your Google Account:</P>
       <ButtonGoogl type="button">Google</ButtonGoogl>
+      <div>
+        {isLoggedIn ? (
+          <div>
+            <p>You are logged in as {user.name}.</p>
+          </div>
+        ) : (
+          <GoogleLogin
+            clientId="YOUR_CLIENT_ID_HERE"
+            buttonText="Login with Google"
+            onSuccess={onSuccess}
+            onFailure={onFailure}
+            cookiePolicy={'single_host_origin'}
+          />
+        )}
+      </div>
       <P>Or log in using an email and password, after registering:</P>
       <Formik
         initialValues={{ email: '', password: '' }}
