@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
 
 export const ButtonTopList = styled.ul`
   display: none;
@@ -15,7 +16,7 @@ export const ButtonNavLink = styled.li`
   border-top-left-radius: 16px;
   border-top-right-radius: 16px;
 `;
-export const ButtonLink = styled.a`
+export const ButtonLink = styled(NavLink)`
   width: 138px;
   height: 40px;
   display: flex;

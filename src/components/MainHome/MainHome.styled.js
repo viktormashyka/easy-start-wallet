@@ -5,6 +5,10 @@ import { ReactComponent as BackspaceIcon } from '../../images/KeyboardBackspace.
 
 // main container //
 
+export const ContentContainer = styled.div`
+  padding: 56px 20px 0 20px;
+`;
+
 export const TopWrapper = styled.section`
   position: relative;
   padding: 56px 20px 0 20px;
@@ -25,8 +29,10 @@ export const TopWrapper = styled.section`
 `;
 
 export const TopBalanceWrapper = styled.section`
-  position: relative;
-  min-height: 258px;
+  position: absolute;
+  z-index: -10;
+  width: 100%;
+  min-height: 300px;
   background-color: #f5f6fb;
   border-bottom-left-radius: 80px;
   overflow: hidden;
@@ -45,6 +51,7 @@ export const TopBalanceWrapper = styled.section`
 `;
 
 export const Box = styled.div`
+  z-index: -20;
   position: absolute;
   top: 0;
   left: 0;
