@@ -72,6 +72,7 @@ export const Box = styled.div`
 `;
 
 export const BackspaceVectorIcon = styled(BackspaceIcon)`
+  display: inline-flex;
   position: absolute;
   top: 5%;
   left: 8%;

@@ -53,7 +53,7 @@ const FormError = ({ name }) => {
 export const IncomeForm = () => {
   const date = moment().format('DD.MM.YYYY');
   const [formValues, setformValues] = useState(initialValues);
-  console.log(formValues);
+
   // const getFormData = values => {
   //   console.log('getFormData::', values);
   // };
@@ -66,7 +66,7 @@ export const IncomeForm = () => {
         validationSchema={schema}
         onSubmit={(values, { setSubmitting, resetForm }) => {
           console.log({
-            ...values,
+            ...formValues,
             transactionsType: 'income',
             date,
           });
@@ -115,7 +115,6 @@ export const IncomeForm = () => {
                         setFieldValue('category', values.value)
                       }
                     ></CustomSelect>
-                    {/* {formik.errors.category ? <div>{formik.errors.category}</div> : null} */}
                   </FormInputWrapper>
                   <SecondaryInputWrapper>
                     <div>
@@ -129,9 +128,13 @@ export const IncomeForm = () => {
                         value={values.sum}
                       />
                       <ErrorMessageWrapper>
-                        <FormError name="category" component="p" />
-                        <FormError name="description" component="p" />
-                        <FormError name="sum" component="p" />
+                        {errors.description && touched.description ? (
+                          <FormError name="category" component="p" />
+                        ) : errors.category && touched.category ? (
+                          <FormError name="sum" component="p" />
+                        ) : errors.sum && touched.sum ? (
+                          <FormError name="description" component="p" />
+                        ) : null}
                       </ErrorMessageWrapper>
                       {/* <AdditionalInputTag>UAH</AdditionalInputTag> */}
                     </div>

@@ -20,6 +20,7 @@ import { TopBtnWrapper } from '../TopButtonWrapper/TopBtnWrapper';
 // import { BalanceWrapper } from 'components/BalanceWrapper/BalanceWrapper';
 
 import { BalanceWrapper } from '../BalanceWrapper/BalanceWrapper';
+import { BackspaceBtn } from '../BackspaceBtn/BackspaceBtn';
 import { useState } from 'react';
 
 
@@ -48,15 +49,7 @@ export const MainHome = ({ children }) => {
       <TopBalanceWrapper />
       {!isTransactionsShown && (
         <>
-          <div
-            style={{
-              position: 'absolute',
-              top: '20px',
-              left: '20px',
-            }}
-          >
-            <button onClick={handleClick}>to transaction</button>
-          </div>
+          <BackspaceBtn handleClick={handleClick} />
           <ContentContainer>
             <BalanceWrapper />
           </ContentContainer>
