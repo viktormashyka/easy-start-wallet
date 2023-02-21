@@ -2,6 +2,7 @@ import { ExpensesReportForm } from 'components/ExpensesReportForm/ExpensesReport
 import { IncomeReportForm } from 'components/IncomeReportForm/IncomeReportForm';
 import { ArrowToGoHome } from 'components/ArrowToGoHome/ArrowToGoHome';
 import { Helmet } from 'react-helmet';
+// import { InOutSummary } from 'components/InOutSummary/InOutSummary';
 
 export default function Report() {
   return (
@@ -11,6 +12,7 @@ export default function Report() {
       </Helmet>
       <>This is Report page</>
       <ArrowToGoHome />
+      {/* <InOutSummary /> */}
       <ExpensesReportForm />
       <IncomeReportForm />
     </div>
