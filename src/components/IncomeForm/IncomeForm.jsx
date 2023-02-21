@@ -1,7 +1,8 @@
-import { useState } from 'react';
 import * as Yup from 'yup';
 import moment from 'moment';
 import { Formik, ErrorMessage } from 'formik';
+import { useDispatch } from 'react-redux';
+import { addTransactionExpenses } from '../../redux/transaction/transactionOperations';
 import { CustomSelect } from '../CustomSelect/CustomSelect';
 import {
   InputField,
@@ -51,25 +52,27 @@ const FormError = ({ name }) => {
 };
 
 export const IncomeForm = () => {
+  const dispatch = useDispatch();
+
   const date = moment().format('DD.MM.YYYY');
-  const [formValues, setformValues] = useState(initialValues);
 
   // const getFormData = values => {
   //   console.log('getFormData::', values);
   // };
-  // console.log('formValues::', formValues);
 
   return (
     <>
       <Formik
         initialValues={initialValues}
         validationSchema={schema}
-        onSubmit={(values, { setSubmitting, resetForm }) => {
-          console.log({
-            ...formValues,
-            transactionsType: 'income',
-            date,
-          });
+        onSubmit={(values, { resetForm }) => {
+          dispatch(
+            addTransactionExpenses({
+              ...values,
+              transactionsType: 'income',
+              date,
+            })
+          );
           resetForm();
         }}
       >
@@ -78,13 +81,11 @@ export const IncomeForm = () => {
           errors,
           touched,
           handleChange,
-          handleBlur,
           handleSubmit,
           isSubmitting,
           setFieldValue,
           resetForm,
         }) => {
-          setformValues(values);
           // getFormData(values);
           return (
             <FormBox onSubmit={handleSubmit}>
@@ -123,20 +124,21 @@ export const IncomeForm = () => {
                         type="text"
                         id="sum"
                         name="sum"
+                        pattern="^(([0-9]*)|(([0-9]*)\.([0-9]*)))$"
+                        title="Вalance must be whole numbers (or decimal numbers)"
                         placeholder="00.00 UAH"
                         onChange={handleChange}
                         value={values.sum}
                       />
                       <ErrorMessageWrapper>
                         {errors.description && touched.description ? (
-                          <FormError name="category" component="p" />
-                        ) : errors.category && touched.category ? (
-                          <FormError name="sum" component="p" />
-                        ) : errors.sum && touched.sum ? (
                           <FormError name="description" component="p" />
+                        ) : errors.category && touched.category ? (
+                          <FormError name="category" component="p" />
+                        ) : errors.sum && touched.sum ? (
+                          <FormError name="sum" component="p" />
                         ) : null}
                       </ErrorMessageWrapper>
-                      {/* <AdditionalInputTag>UAH</AdditionalInputTag> */}
                     </div>
                     <IconWrapper>
                       <CalculatorIcon />
