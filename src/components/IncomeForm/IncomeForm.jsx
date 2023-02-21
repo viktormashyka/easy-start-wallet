@@ -2,7 +2,7 @@ import * as Yup from 'yup';
 import moment from 'moment';
 import { Formik, ErrorMessage } from 'formik';
 import { useDispatch } from 'react-redux';
-import { addTransactionExpenses } from '../../redux/transaction/transactionOperations';
+import { addTransaction } from '../../redux/transaction/transactionOperations';
 import { CustomSelect } from '../CustomSelect/CustomSelect';
 import {
   InputField,
@@ -26,8 +26,8 @@ import {
 } from './IncomeForm.styled';
 
 const options = [
-  { value: 'salary', label: 'Salary' },
-  { value: 'add income', label: 'Add income' },
+  { value: 'Salary', label: 'Salary' },
+  { value: 'Add.Income', label: 'Add.Income' },
 ];
 
 const initialValues = {
@@ -67,7 +67,7 @@ export const IncomeForm = () => {
         validationSchema={schema}
         onSubmit={(values, { resetForm }) => {
           dispatch(
-            addTransactionExpenses({
+            addTransaction({
               ...values,
               transactionsType: 'income',
               date,
