@@ -18,6 +18,7 @@ const transactionsCategory = [
     "Communal, communication",
     "Sports, hobbies",
     "Education",
+    "Hobbies",
     "Other",
     "Salary",
     "Add.Income"

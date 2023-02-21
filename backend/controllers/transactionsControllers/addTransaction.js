@@ -24,7 +24,7 @@ const addTransaction = async (req, res, next) => {
   console.log(req.body);
   //* =======================================================================
   const dateString = req.body.date;
-  const [day, month, year] = dateString.split('-');
+  const [day, month, year] = dateString.split('.');
   const date = new Date(`${year}-${month}-${day}`);
   const isoString = date.toISOString();
 
