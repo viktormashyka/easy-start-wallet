@@ -4,9 +4,11 @@ import * as Yup from 'yup';
 import moment from 'moment';
 import { Formik, ErrorMessage } from 'formik';
 import { CustomSelect } from '../CustomSelect/CustomSelect';
+import { DataBox } from '../DataBox/DataBox';
 import {
   InputField,
   FormBox,
+  DataWrapper,
   FormInputWrapper,
   SecondaryInputWrapper,
   CalculatorIcon,
@@ -17,9 +19,6 @@ import {
   BtnSecondary,
   InputsBox,
   FormTopWrapper,
-  CalendarIcon,
-  CurrentData,
-  DataBox,
   IconWrapper,
   ErrorNotification,
   ErrorMessageWrapper,
@@ -101,10 +100,9 @@ export const ExpensesForm = () => {
           return (
             <FormBox onSubmit={handleSubmit}>
               <FormTopWrapper>
-                <DataBox>
-                  <CalendarIcon />
-                  <CurrentData>{date}</CurrentData>
-                </DataBox>
+                <DataWrapper>
+                  <DataBox date={date} />
+                </DataWrapper>
                 <InputsBox>
                   <FormInputWrapper>
                     <InputField
