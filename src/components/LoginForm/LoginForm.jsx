@@ -7,11 +7,13 @@ import {
   Input,
   P,
   ErrorText,
+  LoginButton,
 } from './LoginForm.styled';
 import * as Yup from 'yup';
 import { useDispatch } from 'react-redux';
 
 import { logIn } from 'redux/auth/authOperations';
+import { Link } from 'react-router-dom';
 
 // changed in const schema Yup on yup
 const schema = Yup.object().shape({
@@ -27,19 +29,19 @@ const FormError = ({ name }) => {
   );
 };
 
-console.log("LoginForm ---> start"); //!
+console.log('LoginForm ---> start'); //!
 
 export const LoginForm = () => {
   const dispatch = useDispatch();
-  
+
   const handleSubmit = (value, { resetForm }) => {
-    console.log("LoginForm ---> handleSubmit"); //!
-    console.log("LoginForm ---> value:", value); //!
+    console.log('LoginForm ---> handleSubmit'); //!
+    console.log('LoginForm ---> value:', value); //!
     dispatch(logIn(value));
     resetForm();
   };
 
-  console.log("LoginForm ---> render"); //!
+  console.log('LoginForm ---> render'); //!
   return (
     <Container>
       <P>You can log in with your Google Account:</P>
@@ -63,8 +65,10 @@ export const LoginForm = () => {
             <FormError name="password" />
           </label>
           <Div>
-            <Button type="submit">LOG IN</Button>
-            <Button type="button">REGISTRATION</Button>
+            <LoginButton type="submit">LOG IN</LoginButton>
+            <Link to="/register">
+              <Button type="button">REGISTRATION</Button>
+            </Link>
           </Div>
         </Form>
       </Formik>

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
 
 export const ButtonTopList = styled.ul`
   display: none;
@@ -15,7 +16,7 @@ export const ButtonNavLink = styled.li`
   border-top-left-radius: 16px;
   border-top-right-radius: 16px;
 `;
-export const ButtonLink = styled.a`
+export const ButtonLink = styled(NavLink)`
   width: 138px;
   height: 40px;
   display: flex;
@@ -30,8 +31,10 @@ export const ButtonLink = styled.a`
   text-transform: uppercase;
   line-height: 1.17;
   letter-spacing: 2%;
-  transition: color 250ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: color 250ms cubic-bezier(0.075, 0.82, 0.165, 1),
+    background-color 250ms cubic-bezier(0.075, 0.82, 0.165, 1);
   &:hover {
     color: #ff751d;
+    background-color: #fefefe;
   }
 `;

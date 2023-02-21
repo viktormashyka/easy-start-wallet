@@ -9,10 +9,10 @@ export function TopBtnWrapper() {
     <>
       <ButtonTopList>
         <ButtonNavLink>
-          <ButtonLink>Expences</ButtonLink>
+          <ButtonLink to="expenses">Expences</ButtonLink>
         </ButtonNavLink>
         <ButtonNavLink>
-          <ButtonLink>Income</ButtonLink>
+          <ButtonLink to="income">Income</ButtonLink>
         </ButtonNavLink>
       </ButtonTopList>
     </>
