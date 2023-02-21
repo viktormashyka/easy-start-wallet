@@ -1,8 +1,8 @@
-import { useDispatch } from 'react-redux';
-import { useSelector } from 'react-redux';
+// import { useDispatch } from 'react-redux';
+// import { useSelector } from 'react-redux';
 
 import { SectionHeader } from './Header.styled';
-
+// Icon for header
 import Rectangle19 from '../../images/Rectangle19.svg';
 import Rectangle20 from '../../images/Rectangle20.svg';
 import Union from '../../images/Union.svg';
@@ -19,6 +19,8 @@ import { LogOutIcon } from './Header.styled';
 import { LogOutButton } from './Header.styled';
 import { LogOutTitle } from './Header.styled';
 import { UserTite } from './Header.styled';
+
+// Mikhaylo Pobochikh
 
 export const Header = () => {
   const isUserLogin = true;

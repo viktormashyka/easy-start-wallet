@@ -131,8 +131,8 @@ export const InputField = styled(Field)`
     border-top-right-radius: 0px;
     border-top-left-radius: 12px;
     border-right: 2px solid #f5f6fb;
-    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0),
-      inset 0 0 0 100px rgba(255, 255, 255, 1);
+    /* box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0),
+      inset 0 0 0 100px rgba(255, 255, 255, 1); */
   }
   @media screen and (min-width: 1280px) {
     width: 290px;
@@ -167,6 +167,7 @@ export const TextSecondary = styled(Field)`
   border-top-left-radius: 22px;
   border-bottom-left-radius: 22px;
   text-align: center;
+  background-color: transparent;
   font-family: Roboto, sans-serif;
   font-style: regular;
   font-size: 12px;
@@ -192,8 +193,8 @@ export const TextSecondary = styled(Field)`
     width: 73px;
     border-left: 2px solid #f5f6fb;
     border-radius: 0px;
-    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0),
-      inset 0 0 0 100px rgba(255, 255, 255, 1);
+    /* box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0),
+      inset 0 0 0 100px rgba(255, 255, 255, 1); */
   }
 `;
 
@@ -249,8 +250,15 @@ export const BtnSubmitItem = styled.li`
   font-size: 23px;
   border-radius: 16px;
   background-color: #f5f6fb;
-  transition: background-color 250ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: background-color 250ms cubic-bezier(0.075, 0.82, 0.165, 1),
+    color 250ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  &:hover {
+    background-color: #ff751d;
+    color: #ffffff;
+  }
   @media screen and (min-width: 768px) {
+    background-color: #ffffff;
+    border: 2px solid #f5f6fb;
     :not(:last-child) {
       margin-right: 15px;
     }
@@ -280,6 +288,7 @@ export const BtnSubmit = styled.button`
   }
   @media screen and (min-width: 768px) {
     width: 125px;
+    box-shadow: none;
   }
   @media screen and (min-width: 768px) {
     width: 136px;
@@ -308,8 +317,28 @@ export const BtnSecondary = styled.button`
   }
   @media screen and (min-width: 768px) {
     width: 125px;
+    box-shadow: none;
   }
   @media screen and (min-width: 768px) {
     width: 136px;
   }
+`;
+
+export const ErrorNotification = styled.p`
+  position: absolute;
+  top: 2%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: block;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 13px;
+  color: red;
+`;
+
+export const ErrorMessageWrapper = styled.div`
+  display: block;
+  text-align: center;
+  text-transform: none;
+  font-size: 15px;
 `;

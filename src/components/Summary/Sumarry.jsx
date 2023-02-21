@@ -1,13 +1,11 @@
-import { Table } from './Summary.styled';
-import { Tr } from './Summary.styled';
-import { Td } from './Summary.styled';
-import { Th } from './Summary.styled';
-import { SummaryFalse } from './Summary.styled';
-import { SummaryTitle } from './Summary.styled';
+import { Table, Tr, Td, Th, SummaryFalse, SummaryTitle } from './Summary.styled';
 
-export const Summary = () => {
+export const Summary = ({ transactions }) => {
+
+  if (transactions.length > 6) {
+    transactions = transactions.slice(0, 6);
+  }
   const isUserLogin = true;
-
   return isUserLogin ? (
     <div>
       <Table>
@@ -16,19 +14,11 @@ export const Summary = () => {
             <Th colSpan="2">Summary</Th>
           </Tr>
         </thead>
-        <tbody>
-          <Tr>
-            <Td>November</Td>
-            <Td>14000</Td>
-          </Tr>
-          <Tr>
-            <Td>November</Td>
-            <Td>14000</Td>
-          </Tr>
-          <Tr>
-            <Td>November</Td>
-            <Td>14000</Td>
-          </Tr>
+        <tbody>{transactions.map(({ id, month, money }) =>
+          <Tr key={id}>
+            <Td>{month}</Td>
+            <Td>{money}</Td>
+          </Tr>)}
         </tbody>
       </Table>
     </div>
