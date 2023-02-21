@@ -11,7 +11,7 @@ import {
 } from './LoginForm.styled';
 import * as Yup from 'yup';
 import { useDispatch } from 'react-redux';
-import { GoogleLogin } from 'react-google-login';
+// import { GoogleLogin } from 'react-google-login';
 
 import { logIn } from 'redux/auth/authOperations';
 import { Link } from 'react-router-dom';
@@ -34,17 +34,17 @@ const FormError = ({ name }) => {
 console.log('LoginForm ---> start'); //!
 
 export const LoginForm = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [user, setUser] = useState({});
+  // const [isLoggedIn, setIsLoggedIn] = useState(false);
+  // const [user, setUser] = useState({});
 
-  const onSuccess = res => {
-    setIsLoggedIn(true);
-    setUser(res.profileObj);
-  };
+  // const onSuccess = res => {
+  //   setIsLoggedIn(true);
+  //   setUser(res.profileObj);
+  // };
 
-  const onFailure = res => {
-    console.log('Login failed:', res);
-  };
+  // const onFailure = res => {
+  //   console.log('Login failed:', res);
+  // };
 
   const dispatch = useDispatch();
 
@@ -60,7 +60,7 @@ export const LoginForm = () => {
     <Container>
       <P>You can log in with your Google Account:</P>
       <ButtonGoogl type="button">Google</ButtonGoogl>
-      <div>
+      {/* <div>
         {isLoggedIn ? (
           <div>
             <p>You are logged in as {user.name}.</p>
@@ -74,7 +74,7 @@ export const LoginForm = () => {
             cookiePolicy={'single_host_origin'}
           />
         )}
-      </div>
+      </div> */}
       <P>Or log in using an email and password, after registering:</P>
       <Formik
         initialValues={{ email: '', password: '' }}
