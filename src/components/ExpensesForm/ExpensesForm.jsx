@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { addTransactionExpenses } from '../../redux/transaction/transactionOperations';
+import { addTransaction } from '../../redux/transaction/transactionOperations';
 import * as Yup from 'yup';
 import moment from 'moment';
 import { Formik, ErrorMessage } from 'formik';
@@ -26,17 +26,18 @@ import {
 } from './ExpensesForm.styled';
 
 const options = [
-  { value: 'transport', label: 'Transport' },
-  { value: 'products', label: 'Products' },
-  { value: 'health', label: 'Health' },
-  { value: 'alcohol', label: 'Alcohol' },
-  { value: 'entertainment', label: 'Entertainment' },
-  { value: 'housing', label: 'Housing' },
-  { value: 'technique', label: 'Technique' },
-  { value: 'communal, communication', label: 'Communal, communication' },
-  { value: 'sports', label: 'Sports' },
-  { value: 'hobbies', label: 'Hobbies' },
-  { value: 'others', label: 'Others' },
+  { value: 'Transport', label: 'Transport' },
+  { value: 'Products', label: 'Products' },
+  { value: 'Health', label: 'Health' },
+  { value: 'Alcohol', label: 'Alcohol' },
+  { value: 'Entertainment', label: 'Entertainment' },
+  { value: 'Housing', label: 'Housing' },
+  { value: 'Technique', label: 'Technique' },
+  { value: 'Communal, communication', label: 'Communal, communication' },
+  { value: 'Sports, hobbies', label: 'Sports' },
+  { value: 'Education', label: 'Education' },
+  { value: 'Hobbies', label: 'Hobbies' },
+  { value: 'Other', label: 'Others' },
 ];
 
 const initialValues = {
@@ -79,7 +80,7 @@ export const ExpensesForm = () => {
         validationSchema={schema}
         onSubmit={(values, { resetForm }) => {
           dispatch(
-            addTransactionExpenses({
+            addTransaction({
               ...values,
               transactionsType: 'expenses',
               date,

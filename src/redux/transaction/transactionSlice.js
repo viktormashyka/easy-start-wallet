@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import { logOut } from 'redux/auth/authOperations';
 import {
   getAllTransactions,
-  addTransactionExpenses,
+  addTransaction,
   deleteTransaction,
   getAllTransactionsReport,
   // editContact,
@@ -40,7 +40,7 @@ const transactionsSlice = createSlice({
   },
   extraReducers: {
     [getAllTransactions.pending]: handlePending,
-    [addTransactionExpenses.pending]: handlePending, //!!!
+    [addTransaction.pending]: handlePending, //!!!
     [deleteTransaction.pending]: handlePending,
     [getAllTransactionsReport.pending]: handlePending,
     // [editContact.pending]: handlePending,
@@ -48,7 +48,7 @@ const transactionsSlice = createSlice({
     // [deleteContactFromMmockapiIo.pending]: handlePending,
 
     [getAllTransactions.rejected]: handleRejected,
-    [addTransactionExpenses.rejected]: handleRejected, //!!!
+    [addTransaction.rejected]: handleRejected, //!!!
     [deleteTransaction.rejected]: handleRejected,
     [getAllTransactionsReport.rejected]: handleRejected,
     // [editContact.rejected]: handleRejected,
@@ -63,8 +63,8 @@ const transactionsSlice = createSlice({
       state.error = null;
     },
     //!!!
-    [addTransactionExpenses.fulfilled](state, { payload }) {
-      console.log('addTransactionExpenses.fulfilled --> payload:', payload); //!
+    [addTransaction.fulfilled](state, { payload }) {
+      console.log('addTransaction.fulfilled --> payload:', payload); //!
       // state.transaction = payload; //! Пишет весь объект transaction
       // state.transaction.transactionsType = payload.transactionsType
       // state.transaction.date = payload.date
