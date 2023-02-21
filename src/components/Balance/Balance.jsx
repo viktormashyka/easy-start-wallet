@@ -1,3 +1,4 @@
+// import { ModalComment } from '../ModalComment/ModalComment';
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateBalance, getBalance } from 'redux/auth/authOperations';
@@ -54,6 +55,9 @@ const Balance = () => {
           </BalanceButton>
         </ButtonsGroup>
       </BalanceLabel>
+      {/* {!isBalanceDisabled && (
+        <ModalComment />
+      )} */}
     </ReportBalance>
   );
 };
