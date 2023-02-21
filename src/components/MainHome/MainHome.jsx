@@ -41,8 +41,8 @@ export const MainHome = ({ children }) => {
       {/* <TopBalanceWrapper> 
         <BalanceWrapper />
        </TopBalanceWrapper>  */}
-      <TopWrapper />
-      <Box>
+      {/* <TopWrapper /> */}
+      {/* <Box> */}
         <BackspaceVectorIcon />
 
       <TopBalanceWrapper />
