@@ -6,7 +6,7 @@ export const ContainerHeader = styled.div`
   padding-left: 20px;
   padding-right: 20px;
 
-  outline: 1px solid red;
+  margin: auto;
   @media screen and (min-width: 320px) {
     max-width: 480px;
   }

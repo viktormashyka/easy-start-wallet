@@ -35,7 +35,9 @@ export const TableStyle = styled.div`
     width: 6px;
     border-radius: 9em;
   }
-
+  button {
+    background-color: transparent;
+  }
   table {
     width: 100%;
     border-collapse: collapse;
