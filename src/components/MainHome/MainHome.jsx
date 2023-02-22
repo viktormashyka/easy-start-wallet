@@ -1,13 +1,4 @@
-import {
-  Box,
-  FilterWrapper,
-  TopBalanceWrapper,
-  ContentContainer,
-  BottomBtnBox,
-  BtnTopWrapper,
-  BackspaceWrapper,
-  ToBackBtnWrapper,
-} from './MainHome.styled';
+import useScreenResizing from '../../hooks/useScreenResizing';
 import { MainWrapper } from '../MainWrapper/MainWrapper';
 import { BottomBtnWrapper } from '../BottomBtnWrapper/BottomBtnWrapper';
 import { TopBtnList } from '../TopBtnList/TopBtnList';
@@ -15,15 +6,21 @@ import { TopBtnList } from '../TopBtnList/TopBtnList';
 import { BalanceWrapper } from '../BalanceWrapper/BalanceWrapper';
 import { BackspaceBtn } from '../BackspaceBtn/BackspaceBtn';
 import { useState } from 'react';
+import { DataBox } from '../DataBox/DataBox';
+import {
+  Box,
+  FilterWrapper,
+  TopBalanceWrapper,
+  ContentBalanceContainer,
+  ContentFormContainer,
+  BottomBtnBox,
+  BtnTopWrapper,
+  BackspaceWrapper,
+} from './MainHome.styled';
 
 export const MainHome = ({ children }) => {
+  const viewPort = useScreenResizing();
   const [isTransactionsShown, setIsTransactionsShown] = useState(false);
-
-  // const handleClick = () => {
-  //   setIsTransactionsShown(prevState => ({
-  //     isTransactionsShown: !prevState.isTransactionsShown,
-  //   }));
-  // };
 
   const handleClick = () => {
     setIsTransactionsShown(!isTransactionsShown);
@@ -36,9 +33,10 @@ export const MainHome = ({ children }) => {
           <BackspaceWrapper>
             <BackspaceBtn handleClick={handleClick} title="to transactions" />
           </BackspaceWrapper>
-          <ContentContainer>
+          <ContentBalanceContainer>
             <BalanceWrapper />
-          </ContentContainer>
+            {viewPort.width < 767 ? <DataBox /> : null}
+          </ContentBalanceContainer>
           <BottomBtnBox>
             <BottomBtnWrapper />
           </BottomBtnBox>
@@ -46,15 +44,17 @@ export const MainHome = ({ children }) => {
       )}
       <Box />
       {isTransactionsShown && (
-        <FilterWrapper>
-          <ToBackBtnWrapper>
-            <BackspaceBtn handleClick={handleClick} />
-          </ToBackBtnWrapper>
-          <BtnTopWrapper>
-            <TopBtnList />
-          </BtnTopWrapper>
-          {children}
-        </FilterWrapper>
+        <ContentFormContainer>
+          <FilterWrapper>
+            <BackspaceWrapper>
+              <BackspaceBtn handleClick={handleClick} />
+            </BackspaceWrapper>
+            <BtnTopWrapper>
+              <TopBtnList />
+            </BtnTopWrapper>
+            {children}
+          </FilterWrapper>
+        </ContentFormContainer>
       )}
     </MainWrapper>
   );

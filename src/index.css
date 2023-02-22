@@ -75,7 +75,7 @@ button {
   border-top-right-radius: 0px !important;
   border-top-left-radius: 0px !important;
   border-top: 2px solid #ffffff !important;
-  width: 185px !important;
+  /* width: 100% !important; */
 }
 
 @media screen and (min-width: 1280px) {
