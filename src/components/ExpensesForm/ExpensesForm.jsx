@@ -64,7 +64,7 @@ const FormError = ({ name }) => {
   );
 };
 
-export const ExpensesForm = () => {
+const ExpensesForm = () => {
   const viewPort = useScreenResizing();
   const dispatch = useDispatch();
 
@@ -183,3 +183,5 @@ export const ExpensesForm = () => {
     </>
   );
 };
+
+export default ExpensesForm;

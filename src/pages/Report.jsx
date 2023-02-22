@@ -6,7 +6,6 @@ import { Helmet } from 'react-helmet';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllTransactionsReport } from 'redux/transaction/transactionOperations';
 import { selectAllTransactionsReport } from 'redux/transaction/transactionSelectors';
-import { ArrowToGoHome } from 'components/ArrowToGoHome/ArrowToGoHome';
 import { ReportIconBlock } from '../components/ReportIconBlock/ReportIconBlock';
 
 export default function Report() {
@@ -36,7 +35,6 @@ export default function Report() {
         <title>Report page</title>
       </Helmet>
       <>This is Report page</>
-      <ArrowToGoHome />
       <ReportsTopWrapper />
       <ExpensesReportForm />
       <IncomeReportForm />

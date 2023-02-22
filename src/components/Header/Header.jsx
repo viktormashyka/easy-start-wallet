@@ -1,4 +1,4 @@
-// import { useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 // import { useSelector } from 'react-redux';
 
 import { SectionHeader } from './Header.styled';
@@ -19,15 +19,18 @@ import { LogOutIcon } from './Header.styled';
 import { LogOutButton } from './Header.styled';
 import { LogOutTitle } from './Header.styled';
 import { UserTite } from './Header.styled';
+import { logOut } from 'redux/auth/authOperations';
 
 // Mikhaylo Pobochikh
 
-export const Header = () => {
-  const isUserLogin = true;
-  // const dispatch = useDispatch();
+export const Header = ({ isLoggedIn }) => {
+  console.log(isLoggedIn);
+  const dispatch = useDispatch();
+  // const isUserLogin = true;
   const onHandleClick = e => {
     e.preventDefault();
     console.log('Click on button Logout');
+    dispatch(logOut());
   };
 
   return (
@@ -38,7 +41,7 @@ export const Header = () => {
           <Logo2 src={Rectangle20} alt="Logo" />
           <LogoTitle src={Union} alt="Logo" />
         </LogoWrapper>
-        {isUserLogin && (
+        {isLoggedIn && (
           <AuthWrapper>
             <UserLogo>U</UserLogo>
             <UserTite>User Name</UserTite>
