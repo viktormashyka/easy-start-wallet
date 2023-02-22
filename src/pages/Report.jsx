@@ -1,5 +1,6 @@
 import { ExpensesReportForm } from 'components/ExpensesReportForm/ExpensesReportForm';
 import { IncomeReportForm } from 'components/IncomeReportForm/IncomeReportForm';
+import { ReportsTopWrapper } from 'components/ReportsTopWrapper/ReportsTopWrapper';
 import { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { useDispatch, useSelector } from 'react-redux';
@@ -33,6 +34,7 @@ export default function Report() {
         <title>Report page</title>
       </Helmet>
       <>This is Report page</>
+      <ReportsTopWrapper />
       <ExpensesReportForm />
       <IncomeReportForm />
       <button onClick={() => setMonth(month - 1)}>prev</button>
