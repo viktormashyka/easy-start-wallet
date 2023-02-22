@@ -26,7 +26,7 @@ export const Table = ({ columns, data, onHandleClick }) => {
         {rows.map((row, i) => {
           prepareRow(row);
           return (
-            <tr {...row.getRowProps()}>
+            <tr {...row.getRowProps()} >
               {row.cells.map(cell => {
                 console.log('cell', cell);
                 // console.log('cell header', cell.column.Header);
@@ -51,20 +51,20 @@ export const Table = ({ columns, data, onHandleClick }) => {
                   );
                 }
                 if (cell.column.id === 'icon') {
-                  console.log('cell.row.original.id', cell.row.original.id);
+                  console.log('cell.row.original.id', cell.row.original._id);
                   return (
-                    <td>
+                    <td key={cell.row.original._id}>
                       <button
                         type="button"
-                        id={cell.row.original.id}
-                        onClick={() => onHandleClick(cell.row.original.id)}
+                        id={cell.row.original._id}
+                        onClick={() => onHandleClick(cell.row.original._id)}
                       >
                         <DeleteIcon />
                       </button>
                     </td>
                   );
                 }
-                return <td {...cell.getCellProps()}>{cell.render('Cell')}</td>;
+                return <td {...cell.getCellProps()} >{cell.render('Cell')}</td>;
               })}
             </tr>
           );
