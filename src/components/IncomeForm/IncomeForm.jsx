@@ -4,11 +4,13 @@ import { Formik, ErrorMessage } from 'formik';
 import { useDispatch } from 'react-redux';
 import { addTransaction } from '../../redux/transaction/transactionOperations';
 import { CustomSelect } from '../CustomSelect/CustomSelect';
+import { DataBox } from '../DataBox/DataBox';
 import {
   InputField,
   FormBox,
   FormInputWrapper,
   SecondaryInputWrapper,
+  DataWrapper,
   CalculatorIcon,
   TextSecondary,
   BtnSubmitList,
@@ -17,13 +19,10 @@ import {
   BtnSecondary,
   InputsBox,
   FormTopWrapper,
-  CalendarIcon,
-  CurrentData,
-  DataBox,
   IconWrapper,
   ErrorNotification,
   ErrorMessageWrapper,
-} from './IncomeForm.styled';
+} from '../ExpensesForm/ExpensesForm.styled';
 
 const options = [
   { value: 'Salary', label: 'Salary' },
@@ -90,10 +89,9 @@ export const IncomeForm = () => {
           return (
             <FormBox onSubmit={handleSubmit}>
               <FormTopWrapper>
-                <DataBox>
-                  <CalendarIcon />
-                  <CurrentData>{date}</CurrentData>
-                </DataBox>
+                <DataWrapper>
+                  <DataBox date={date} />
+                </DataWrapper>
                 <InputsBox>
                   <FormInputWrapper>
                     <InputField

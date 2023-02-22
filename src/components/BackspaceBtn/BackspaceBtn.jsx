@@ -1,16 +1,10 @@
-import {
-  BackspaceVectorIcon,
-  BackspaceWrapper,
-  BackButton,
-} from './BackspaceBtn.styled';
+import { BackspaceVectorIcon, BackButton } from './BackspaceBtn.styled';
 
-export const BackspaceBtn = ({ handleClick }) => {
+export const BackspaceBtn = ({ handleClick, title }) => {
   return (
-    <BackspaceWrapper>
-      <BackButton onClick={handleClick}>
-        <BackspaceVectorIcon />
-        to transaction
-      </BackButton>
-    </BackspaceWrapper>
+    <BackButton onClick={handleClick}>
+      <BackspaceVectorIcon size="24" />
+      {title}
+    </BackButton>
   );
 };

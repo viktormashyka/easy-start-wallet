@@ -9,17 +9,6 @@ export const BackspaceVectorIcon = styled(BackspaceIcon)`
   &:hover {
     fill: #ffffff;
   }
-
-  @media screen and (min-width: 768px) {
-    display: none;
-  }
-`;
-
-export const BackspaceWrapper = styled.div`
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  text-transform: uppercase;
 `;
 
 export const BackButton = styled.button`
@@ -32,4 +21,11 @@ export const BackButton = styled.button`
   font-size: 10px;
   font-weight: bold;
   letter-spacing: 0.02em;
+  :hover {
+    color: #ff751d;
+  }
+
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
 `;
