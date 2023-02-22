@@ -10,23 +10,23 @@ export const GoHomeBox = styled.div`
 `;
 
 export const StyledLink = styled(NavLink)`
-display: flex;
-align-items: center;
-margin-left: 23px;
+  display: flex;
+  align-items: center;
+  margin-left: 23px;
 
   font-size: 12px;
   line-height: 14px;
   letter-spacing: 0.04em;
   color: rgba(82, 85, 95, 0.7);
   text-decoration: none;
-} 
-@media screen and (min-width: 768px) {
-margin-left: 35px;
-}
-@media screen and (max-width: 1279px) {
- margin-right: auto;
- 
-  }`;
+
+  @media screen and (min-width: 768px) {
+    margin-left: 35px;
+  }
+  @media screen and (max-width: 1279px) {
+    margin-right: auto;
+  }
+`;
 
 export const Arrow = styled.svg`
   width: 18px;
