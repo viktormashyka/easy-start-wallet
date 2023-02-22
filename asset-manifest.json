@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/easy-start-wallet/static/css/main.38a17907.css",
-    "main.js": "/easy-start-wallet/static/js/main.d57cd52c.js",
-    "static/js/649.ed13f43b.chunk.js": "/easy-start-wallet/static/js/649.ed13f43b.chunk.js",
-    "static/js/628.6b468f23.chunk.js": "/easy-start-wallet/static/js/628.6b468f23.chunk.js",
+    "main.js": "/easy-start-wallet/static/js/main.25a0bad3.js",
+    "static/js/649.6d3f1b7f.chunk.js": "/easy-start-wallet/static/js/649.6d3f1b7f.chunk.js",
+    "static/js/628.d16eb0c1.chunk.js": "/easy-start-wallet/static/js/628.d16eb0c1.chunk.js",
     "static/js/58.9af86142.chunk.js": "/easy-start-wallet/static/js/58.9af86142.chunk.js",
     "static/js/561.d006d7f4.chunk.js": "/easy-start-wallet/static/js/561.d006d7f4.chunk.js",
     "static/js/237.ea366f5e.chunk.js": "/easy-start-wallet/static/js/237.ea366f5e.chunk.js",
@@ -14,9 +14,10 @@
     "static/js/270.4f890d65.chunk.js": "/easy-start-wallet/static/js/270.4f890d65.chunk.js",
     "static/js/764.ad756dda.chunk.js": "/easy-start-wallet/static/js/764.ad756dda.chunk.js",
     "static/js/809.256e802b.chunk.js": "/easy-start-wallet/static/js/809.256e802b.chunk.js",
+    "static/js/915.42859481.chunk.js": "/easy-start-wallet/static/js/915.42859481.chunk.js",
     "static/js/803.7ebfd04b.chunk.js": "/easy-start-wallet/static/js/803.7ebfd04b.chunk.js",
-    "static/js/91.185a881d.chunk.js": "/easy-start-wallet/static/js/91.185a881d.chunk.js",
     "static/media/icon.svg": "/easy-start-wallet/static/media/icon.96692dc3d2e0c27c0d513383e6e874fa.svg",
+    "static/media/google.svg": "/easy-start-wallet/static/media/google.d64f9163b8f61487544747b482817a75.svg",
     "static/media/Union.svg": "/easy-start-wallet/static/media/Union.85ed3a2c3c5348dbbb2eaf9b3257d4e5.svg",
     "static/media/Calendar.svg": "/easy-start-wallet/static/media/Calendar.38646e5b2bec379ee675e9d7335592a6.svg",
     "static/media/Calculator.svg": "/easy-start-wallet/static/media/Calculator.bd74ce3461a4518efe3d33f529d436cb.svg",
@@ -28,9 +29,9 @@
     "static/media/date-period-left-arrow.svg": "/easy-start-wallet/static/media/date-period-left-arrow.7b73b0e17ede841e7c6a861453ce9b2c.svg",
     "static/media/date-period-right-arrow.svg": "/easy-start-wallet/static/media/date-period-right-arrow.55fc299de937d224756cafce0ff35b50.svg",
     "main.38a17907.css.map": "/easy-start-wallet/static/css/main.38a17907.css.map",
-    "main.d57cd52c.js.map": "/easy-start-wallet/static/js/main.d57cd52c.js.map",
-    "649.ed13f43b.chunk.js.map": "/easy-start-wallet/static/js/649.ed13f43b.chunk.js.map",
-    "628.6b468f23.chunk.js.map": "/easy-start-wallet/static/js/628.6b468f23.chunk.js.map",
+    "main.25a0bad3.js.map": "/easy-start-wallet/static/js/main.25a0bad3.js.map",
+    "649.6d3f1b7f.chunk.js.map": "/easy-start-wallet/static/js/649.6d3f1b7f.chunk.js.map",
+    "628.d16eb0c1.chunk.js.map": "/easy-start-wallet/static/js/628.d16eb0c1.chunk.js.map",
     "58.9af86142.chunk.js.map": "/easy-start-wallet/static/js/58.9af86142.chunk.js.map",
     "561.d006d7f4.chunk.js.map": "/easy-start-wallet/static/js/561.d006d7f4.chunk.js.map",
     "237.ea366f5e.chunk.js.map": "/easy-start-wallet/static/js/237.ea366f5e.chunk.js.map",
@@ -41,11 +42,11 @@
     "270.4f890d65.chunk.js.map": "/easy-start-wallet/static/js/270.4f890d65.chunk.js.map",
     "764.ad756dda.chunk.js.map": "/easy-start-wallet/static/js/764.ad756dda.chunk.js.map",
     "809.256e802b.chunk.js.map": "/easy-start-wallet/static/js/809.256e802b.chunk.js.map",
-    "803.7ebfd04b.chunk.js.map": "/easy-start-wallet/static/js/803.7ebfd04b.chunk.js.map",
-    "91.185a881d.chunk.js.map": "/easy-start-wallet/static/js/91.185a881d.chunk.js.map"
+    "915.42859481.chunk.js.map": "/easy-start-wallet/static/js/915.42859481.chunk.js.map",
+    "803.7ebfd04b.chunk.js.map": "/easy-start-wallet/static/js/803.7ebfd04b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.38a17907.css",
-    "static/js/main.d57cd52c.js"
+    "static/js/main.25a0bad3.js"
   ]
 }
