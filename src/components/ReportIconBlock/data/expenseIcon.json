@@ -1,0 +1,13 @@
+[
+  { "id": "1", "label": "Transport" },
+  { "id": "2", "label": "Products" },
+  { "id": "3", "label": "Health" },
+  { "id": "4", "label": "Alcohol" },
+  { "id": "5", "label": "Entertainment" },
+  { "id": "6", "label": "Housing" },
+  { "id": "7", "label": "Technique" },
+  { "id": "8", "label": "Communal, communication" },
+  { "id": "9", "label": "Education" },
+  { "id": "10", "label": "Sports, hobbies" },
+  { "id": "11", "label": "Other" }
+]

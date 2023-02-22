@@ -108,3 +108,53 @@ export const ReportCard = styled.li`
     }
   }
 `;
+export const IconSvg = styled.svg`
+  @media screen and (min-width: 320px) {
+    max-width: 56px;
+    max-height: 56px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+    &:hover {
+      fill: #ff751d;
+      background-image: radial-gradient(
+        75% 60% at 50% 50%,
+        #ffdac0 15%,
+        #ffdac0 15%,
+        #ffdac0 40%,
+        #ffdac0 40%,
+        #ffdac0 65%,
+        #fff 65%
+      );
+      transform: rotate(5deg);
+      transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    &:focus {
+      fill: #ff751d;
+      background-image: radial-gradient(
+        75% 60% at 50% 50%,
+        #ffdac0 15%,
+        #ffdac0 15%,
+        #ffdac0 40%,
+        #ffdac0 40%,
+        #ffdac0 65%,
+        #fff 65%
+      );
+      transform: rotate(5deg);
+      transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+  }
+  @media screen and (min-width: 1280px) {
+    max-width: 58px;
+    max-height: 58px;
+  }
+`;
+export const ReportCardTitle = styled.p`
+  @media screen and (min-width: 320px) {
+    text-transform: uppercase;
+    font-size: 12px;
+    line-height: 14px;
+    padding-top: 10px;
+  }
+`;
