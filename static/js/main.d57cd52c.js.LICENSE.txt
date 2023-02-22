@@ -129,10 +129,6 @@
 
 //! axios defaults baseURL
 
-//! delete row
-
-//! moment.js
-
 //! МОЙ вариант:
 
 //! Проверка на старый токен
