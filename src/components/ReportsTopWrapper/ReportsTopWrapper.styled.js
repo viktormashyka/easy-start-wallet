@@ -6,6 +6,7 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   padding-top: 56px;
+  margin-bottom: 32px;
 
   @media screen and (min-width: 768px) {
     flex-direction: row;
