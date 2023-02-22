@@ -2,11 +2,18 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
 export const GoHomeBox = styled.div`
+  position: absolute;
+  top: 16px;
+  left: 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 
   cursor: pointer;
+
+  @media screen and (min-width: 768px) {
+    position: static;
+  }
 `;
 
 export const StyledLink = styled(NavLink)`

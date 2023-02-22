@@ -13,11 +13,11 @@ export const CurrentPeriod = () => {
     <DateContainer>
       <Title>Current period:</Title>
       <DateWrapper>
-        <ArrowButton>
+        <ArrowButton type="button">
           <LeftArrowIcon />
         </ArrowButton>
         <Date>NOVEMBER 2019</Date>
-        <ArrowButton>
+        <ArrowButton type="button">
           <RightArrowIcon />
         </ArrowButton>
       </DateWrapper>
