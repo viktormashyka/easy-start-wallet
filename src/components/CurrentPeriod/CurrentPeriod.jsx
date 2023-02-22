@@ -28,9 +28,7 @@ export const CurrentPeriod = () => {
       setYear(year + 1);
     }
 
-    // Создаем новый объект Date с указанным годом и месяцем
     const date = new Date(year, month);
-    // Используем метод toLocaleString() для получения названия месяца
     const monthName = date.toLocaleString('en-US', { month: 'long' });
     setMonthName(monthName.toUpperCase());
 
