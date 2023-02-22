@@ -124,13 +124,15 @@ export const InputField = styled(Field)`
   }
   ::placeholder {
     color: #c7ccdc;
+    opacity: 1;
   }
   @media screen and (min-width: 768px) {
-    width: 164px;
+    width: 180px;
     border: none;
     border-top-right-radius: 0px;
     border-top-left-radius: 12px;
     border-right: 2px solid #f5f6fb;
+
     /* box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0),
       inset 0 0 0 100px rgba(255, 255, 255, 1); */
   }
@@ -151,7 +153,7 @@ export const SecondaryInputWrapper = styled.div`
   margin-bottom: 80px;
   @media screen and (min-width: 768px) {
     margin-bottom: 0px;
-    width: 110px;
+    /* width: 110px; */
     border: none;
     border-top-left-radius: 0px;
     border-bottom-left-radius: 0px;
@@ -169,7 +171,6 @@ export const TextSecondary = styled(Field)`
   text-align: center;
   background-color: transparent;
   font-family: Roboto, sans-serif;
-  font-style: regular;
   font-size: 12px;
   line-height: 1.7;
   letter-spacing: 0.02em;
@@ -181,18 +182,26 @@ export const TextSecondary = styled(Field)`
   ::placeholder {
     font-family: 'Roboto', sans-serif;
     font-style: regular;
+    font-weight: bold;
     font-size: 12px;
     line-height: 1.17;
     letter-spacing: 0.02em;
+    color: #000000;
+    opacity: 1;
+    text-align: end;
   }
-  &:hover {
-    /* color: #52555f; */
-  }
+
   @media screen and (min-width: 768px) {
     /* padding-left: 25px; */
-    width: 73px;
+    width: 70px;
     border-left: 2px solid #f5f6fb;
     border-radius: 0px;
+    ::placeholder {
+      color: #c7ccdc;
+      font-weight: normal;
+      text-align: end;
+      margin-right: 3px;
+    }
     /* box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0),
       inset 0 0 0 100px rgba(255, 255, 255, 1); */
   }
@@ -319,14 +328,14 @@ export const BtnSecondary = styled.button`
     width: 125px;
     box-shadow: none;
   }
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1280px) {
     width: 136px;
   }
 `;
 
 export const ErrorNotification = styled.p`
   position: absolute;
-  top: 2%;
+  bottom: 102%;
   left: 50%;
   transform: translateX(-50%);
   display: block;
@@ -334,6 +343,11 @@ export const ErrorNotification = styled.p`
   text-transform: uppercase;
   font-size: 13px;
   color: red;
+  @media screen and (min-width: 768px) {
+    top: 2%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 `;
 
 export const ErrorMessageWrapper = styled.div`
