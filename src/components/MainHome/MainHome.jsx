@@ -2,7 +2,6 @@ import useScreenResizing from '../../hooks/useScreenResizing';
 import { MainWrapper } from '../MainWrapper/MainWrapper';
 import { BottomBtnWrapper } from '../BottomBtnWrapper/BottomBtnWrapper';
 import { TopBtnList } from '../TopBtnList/TopBtnList';
-
 import { BalanceWrapper } from '../BalanceWrapper/BalanceWrapper';
 import { BackspaceBtn } from '../BackspaceBtn/BackspaceBtn';
 import { useState } from 'react';
@@ -17,6 +16,7 @@ import {
   BtnTopWrapper,
   BackspaceWrapper,
 } from './MainHome.styled';
+import { OperationList } from 'components/OperationList/OperationList';
 
 export const MainHome = ({ children }) => {
   const viewPort = useScreenResizing();
@@ -35,7 +35,7 @@ export const MainHome = ({ children }) => {
           </BackspaceWrapper>
           <ContentBalanceContainer>
             <BalanceWrapper />
-            {viewPort.width < 767 ? <DataBox /> : null}
+            {viewPort.width < 768 ? <DataBox /> : null}
           </ContentBalanceContainer>
           <BottomBtnBox>
             <BottomBtnWrapper />
@@ -44,17 +44,21 @@ export const MainHome = ({ children }) => {
       )}
       <Box />
       {isTransactionsShown && (
-        <ContentFormContainer>
-          <FilterWrapper>
-            <BackspaceWrapper>
-              <BackspaceBtn handleClick={handleClick} />
-            </BackspaceWrapper>
-            <BtnTopWrapper>
-              <TopBtnList />
-            </BtnTopWrapper>
-            {children}
-          </FilterWrapper>
-        </ContentFormContainer>
+        <>
+          <ContentFormContainer>
+            <FilterWrapper>
+              <BackspaceWrapper>
+                <BackspaceBtn handleClick={handleClick} />
+              </BackspaceWrapper>
+              <BtnTopWrapper>
+                <TopBtnList />
+              </BtnTopWrapper>
+              {children}
+              {viewPort.width >= 768 && <OperationList />}
+            </FilterWrapper>
+            {viewPort.width < 768 ? <OperationList /> : null}
+          </ContentFormContainer>
+        </>
       )}
     </MainWrapper>
   );

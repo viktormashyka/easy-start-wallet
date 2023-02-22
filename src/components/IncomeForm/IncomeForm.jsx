@@ -1,6 +1,7 @@
 import * as Yup from 'yup';
 import moment from 'moment';
 import { Formik, ErrorMessage } from 'formik';
+import useScreenResizing from '../../hooks/useScreenResizing';
 import { useDispatch } from 'react-redux';
 import { addTransaction } from '../../redux/transaction/transactionOperations';
 import { CustomSelect } from '../CustomSelect/CustomSelect';
@@ -38,7 +39,9 @@ const initialValues = {
 const schema = Yup.object().shape({
   category: Yup.string().required('Select category'),
   description: Yup.string().min(3).max(16).required('Enter income description'),
-  sum: Yup.number('Invalid sum, only numbers').required('Enter sum'),
+  sum: Yup.number('Invalid sum, only numbers')
+    .positive('Only positive value')
+    .required('Enter sum'),
 });
 
 const FormError = ({ name }) => {
@@ -51,6 +54,7 @@ const FormError = ({ name }) => {
 };
 
 export const IncomeForm = () => {
+  const viewPort = useScreenResizing();
   const dispatch = useDispatch();
 
   const date = moment().format('DD.MM.YYYY');
@@ -119,12 +123,14 @@ export const IncomeForm = () => {
                     <div>
                       <TextSecondary
                         as="input"
-                        type="text"
+                        type="number"
                         id="sum"
                         name="sum"
                         pattern="^(([0-9]*)|(([0-9]*)\.([0-9]*)))$"
-                        title="Вalance must be whole numbers (or decimal numbers)"
-                        placeholder="00.00 UAH"
+                        title="Sum must be whole numbers (or decimal numbers)"
+                        placeholder={
+                          viewPort.width > 767 ? '00.00' : '00.00UAH'
+                        }
                         onChange={handleChange}
                         value={values.sum}
                       />
