@@ -1,12 +1,12 @@
 {
   "files": {
     "main.css": "/easy-start-wallet/static/css/main.fa7a131f.css",
-    "main.js": "/easy-start-wallet/static/js/main.1ce27e50.js",
+    "main.js": "/easy-start-wallet/static/js/main.4d31ecd8.js",
     "static/js/649.ed13f43b.chunk.js": "/easy-start-wallet/static/js/649.ed13f43b.chunk.js",
     "static/js/628.6b468f23.chunk.js": "/easy-start-wallet/static/js/628.6b468f23.chunk.js",
-    "static/js/818.8aca01cd.chunk.js": "/easy-start-wallet/static/js/818.8aca01cd.chunk.js",
-    "static/js/54.69f89afe.chunk.js": "/easy-start-wallet/static/js/54.69f89afe.chunk.js",
-    "static/js/85.51ffb14d.chunk.js": "/easy-start-wallet/static/js/85.51ffb14d.chunk.js",
+    "static/js/275.665d8282.chunk.js": "/easy-start-wallet/static/js/275.665d8282.chunk.js",
+    "static/js/561.816d4286.chunk.js": "/easy-start-wallet/static/js/561.816d4286.chunk.js",
+    "static/js/237.a966eebe.chunk.js": "/easy-start-wallet/static/js/237.a966eebe.chunk.js",
     "static/js/473.66a7ed6a.chunk.js": "/easy-start-wallet/static/js/473.66a7ed6a.chunk.js",
     "static/js/816.9a7c1fcd.chunk.js": "/easy-start-wallet/static/js/816.9a7c1fcd.chunk.js",
     "static/js/71.62da532c.chunk.js": "/easy-start-wallet/static/js/71.62da532c.chunk.js",
@@ -14,6 +14,7 @@
     "static/js/270.4f890d65.chunk.js": "/easy-start-wallet/static/js/270.4f890d65.chunk.js",
     "static/js/764.ad756dda.chunk.js": "/easy-start-wallet/static/js/764.ad756dda.chunk.js",
     "static/js/809.256e802b.chunk.js": "/easy-start-wallet/static/js/809.256e802b.chunk.js",
+    "static/js/803.816fcb09.chunk.js": "/easy-start-wallet/static/js/803.816fcb09.chunk.js",
     "static/js/91.185a881d.chunk.js": "/easy-start-wallet/static/js/91.185a881d.chunk.js",
     "static/media/Union.svg": "/easy-start-wallet/static/media/Union.85ed3a2c3c5348dbbb2eaf9b3257d4e5.svg",
     "static/media/Calendar.svg": "/easy-start-wallet/static/media/Calendar.38646e5b2bec379ee675e9d7335592a6.svg",
@@ -24,12 +25,12 @@
     "static/media/Rectangle20.svg": "/easy-start-wallet/static/media/Rectangle20.36200b9c233aa7a44c7082d59692ca15.svg",
     "static/media/Rectangle19.svg": "/easy-start-wallet/static/media/Rectangle19.1007f0da4d939995755bc75fbe4d300d.svg",
     "main.fa7a131f.css.map": "/easy-start-wallet/static/css/main.fa7a131f.css.map",
-    "main.1ce27e50.js.map": "/easy-start-wallet/static/js/main.1ce27e50.js.map",
+    "main.4d31ecd8.js.map": "/easy-start-wallet/static/js/main.4d31ecd8.js.map",
     "649.ed13f43b.chunk.js.map": "/easy-start-wallet/static/js/649.ed13f43b.chunk.js.map",
     "628.6b468f23.chunk.js.map": "/easy-start-wallet/static/js/628.6b468f23.chunk.js.map",
-    "818.8aca01cd.chunk.js.map": "/easy-start-wallet/static/js/818.8aca01cd.chunk.js.map",
-    "54.69f89afe.chunk.js.map": "/easy-start-wallet/static/js/54.69f89afe.chunk.js.map",
-    "85.51ffb14d.chunk.js.map": "/easy-start-wallet/static/js/85.51ffb14d.chunk.js.map",
+    "275.665d8282.chunk.js.map": "/easy-start-wallet/static/js/275.665d8282.chunk.js.map",
+    "561.816d4286.chunk.js.map": "/easy-start-wallet/static/js/561.816d4286.chunk.js.map",
+    "237.a966eebe.chunk.js.map": "/easy-start-wallet/static/js/237.a966eebe.chunk.js.map",
     "473.66a7ed6a.chunk.js.map": "/easy-start-wallet/static/js/473.66a7ed6a.chunk.js.map",
     "816.9a7c1fcd.chunk.js.map": "/easy-start-wallet/static/js/816.9a7c1fcd.chunk.js.map",
     "71.62da532c.chunk.js.map": "/easy-start-wallet/static/js/71.62da532c.chunk.js.map",
@@ -37,10 +38,11 @@
     "270.4f890d65.chunk.js.map": "/easy-start-wallet/static/js/270.4f890d65.chunk.js.map",
     "764.ad756dda.chunk.js.map": "/easy-start-wallet/static/js/764.ad756dda.chunk.js.map",
     "809.256e802b.chunk.js.map": "/easy-start-wallet/static/js/809.256e802b.chunk.js.map",
+    "803.816fcb09.chunk.js.map": "/easy-start-wallet/static/js/803.816fcb09.chunk.js.map",
     "91.185a881d.chunk.js.map": "/easy-start-wallet/static/js/91.185a881d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.fa7a131f.css",
-    "static/js/main.1ce27e50.js"
+    "static/js/main.4d31ecd8.js"
   ]
 }
