@@ -6,7 +6,8 @@ import { AppBarForm } from './AppBar.styled';
 import { Header } from 'components/Header/Header';
 
 // for test
-// import { OperationList } from 'components/OperationList/OperationList';
+import { OperationList } from 'components/OperationList/OperationList';
+import { IncomeForm } from 'components/IncomeForm/IncomeForm';
 
 export const AppBar = () => {
   const { isLoggedIn } = useAuth();
@@ -14,8 +15,9 @@ export const AppBar = () => {
     <AppBarForm>
       {/* Header - Misha Pobochikh */}
       <Header />
-      {/* <OperationList /> */}
+      <OperationList />
       <Navigation />
+      <IncomeForm />
       {isLoggedIn ? <UserMenu /> : <AuthNav />}
     </AppBarForm>
   );

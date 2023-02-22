@@ -13,70 +13,54 @@ import { List } from './OperationList.styles';
 import { Table } from 'components/Table/Table';
 import { TableStyle } from '../Table/Table.styled';
 
+import { deleteTransaction } from '../../redux/transaction/transactionOperations';
+import { useDispatch } from 'react-redux';
+
 // Mikhaylo Pobochikh
 
 export const OperationList = () => {
-  const onHandleClick = e => {
-    e.preventDefault();
-    console.log('Click Delete');
+  const dispatch = useDispatch();
+
+  const onHandleClick = id => {
+    console.log('Click Delete on id', id);
+    dispatch(deleteTransaction(id));
   };
 
-  const button = () => {
-    return (
-      <button type="button" onClick={onHandleClick}>
-        <DeleteIcon />
-      </button>
-    );
-  };
-
-  const testSum = '200';
-
-  const data = [
-    {
-      data: 'Hello',
-      description: 'World',
-      category: 'Test',
-      sum: '- 100',
-      icon: button(),
-    },
-    {
-      data: 'react-table',
-      description: 'rdsdsdsdsdsdcx',
-      category: 'Test',
-      sum: '- 100',
-      icon: button(),
-    },
-    {
-      data: 'whatever',
-      description: 'you want',
-      category: 'Test',
-      sum: '- 100',
-    },
-    {
-      data: 'whatever',
-      description: 'you want',
-      category: 'Test',
-      sum: 'test',
-    },
-    {
-      data: 'whatever',
-      description: 'you want',
-      category: 'Test',
-      sum: 'test',
-    },
-    {
-      data: 'whatever',
-      description: 'you want',
-      category: 'Test',
-      sum: 'test',
-    },
-  ];
+  const testFromBack = React.useMemo(
+    () => [
+      {
+        id: '63f60d6e219c60079b2bc95a',
+        transactionsType: 'income',
+        date: '22.02.23',
+        description: 'bla bla bla',
+        category: 'Category test',
+        sum: '100',
+      },
+      {
+        id: '63f603bb219c60079b2bc94d',
+        transactionsType: 'expenses',
+        date: '22.02.23',
+        description: 'bla bla bla',
+        category: 'Category test',
+        sum: '100',
+      },
+      {
+        id: '63f603bb219c60079b2bc94d',
+        transactionsType: 'expenses',
+        date: '22.02.23',
+        description: 'bla bla bla',
+        category: 'Category test',
+        sum: '100',
+      },
+    ],
+    []
+  );
 
   const columns = React.useMemo(
     () => [
       {
         Header: 'Date',
-        accessor: 'data', // accessor is the "key" in the data
+        accessor: 'date', // accessor is the "key" in the data
       },
       {
         Header: 'Description',
@@ -98,33 +82,49 @@ export const OperationList = () => {
     []
   );
 
-  const testSumMinus = testSum.includes('-');
   return (
     <>
-      <List>
-        <OperationListWrapper>
-          <OperationListDiv>
-            <OperationListTitle>Bonus</OperationListTitle>
-            <OperationListDivDate>
-              <OperationListDateTitle>date</OperationListDateTitle>
-              <OperationListDateTitle>Add</OperationListDateTitle>
-            </OperationListDivDate>
-          </OperationListDiv>
-          <OperationListDivBalance>
-            {testSumMinus ? (
-              <OperationListDivBalanceTextMinus>{` ${testSum} UAH`}</OperationListDivBalanceTextMinus>
-            ) : (
-              <OperationListDivBalanceText>{` ${testSum} UAH`}</OperationListDivBalanceText>
-            )}
+      {testFromBack.map(el => {
+        const expenses = el.transactionsType === 'expenses';
+        console.log('el.id', el.id);
+        return (
+          // Від 320 px до 768
+          <List>
+            <OperationListWrapper>
+              <OperationListDiv>
+                <OperationListTitle>{el.description}</OperationListTitle>
+                <OperationListDivDate>
+                  <OperationListDateTitle>{el.date}</OperationListDateTitle>
+                  <OperationListDateTitle>{el.category}</OperationListDateTitle>
+                </OperationListDivDate>
+              </OperationListDiv>
+              <OperationListDivBalance>
+                {expenses ? (
+                  <OperationListDivBalanceTextMinus>{`- ${el.sum} UAH`}</OperationListDivBalanceTextMinus>
+                ) : (
+                  <OperationListDivBalanceText>{` ${el.sum} UAH`}</OperationListDivBalanceText>
+                )}
 
-            <DeleteBtn type="button" onClick={onHandleClick}>
-              <DeleteIcon />
-            </DeleteBtn>
-          </OperationListDivBalance>
-        </OperationListWrapper>
-      </List>
+                <DeleteBtn
+                  type="button"
+                  id={el.id}
+                  onClick={() => onHandleClick(el.id)}
+                >
+                  <DeleteIcon />
+                </DeleteBtn>
+              </OperationListDivBalance>
+            </OperationListWrapper>
+          </List>
+        );
+      })}
+
+      {/* Для 769 px + */}
       <TableStyle>
-        <Table columns={columns} data={data} />
+        <Table
+          columns={columns}
+          data={testFromBack}
+          onHandleClick={onHandleClick}
+        />
       </TableStyle>
     </>
   );

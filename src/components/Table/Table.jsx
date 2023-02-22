@@ -1,10 +1,13 @@
 import { useTable } from 'react-table';
 import React from 'react';
 import { TdMinus } from './Table.styled';
+import { TdPlus } from './Table.styled';
+
+import { ReactComponent as DeleteIcon } from '../../images/delete.svg';
 
 // Misha Pobochikh
 
-export const Table = ({ columns, data }) => {
+export const Table = ({ columns, data, onHandleClick }) => {
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
     useTable({ columns, data });
 
@@ -25,13 +28,40 @@ export const Table = ({ columns, data }) => {
           return (
             <tr {...row.getRowProps()}>
               {row.cells.map(cell => {
-                console.log(cell.row.values.sum);
-                if (cell.row.values.sum.includes('-')) {
-                  console.log(cell.row.values.sum);
+                console.log('cell', cell);
+                // console.log('cell header', cell.column.Header);
+
+                // Перевіряємо в якій категорії ?console.log(cell.row.original);
+
+                if (
+                  cell.row.original.transactionsType === 'expenses' &&
+                  cell.column.Header === 'Sum'
+                ) {
                   return (
                     <TdMinus {...cell.getCellProps()}>
-                      {cell.render('Cell')}
+                      - {cell.render('Cell')} UAH
                     </TdMinus>
+                  );
+                }
+                if (cell.column.Header === 'Sum') {
+                  return (
+                    <TdPlus {...cell.getCellProps()}>
+                      {cell.render('Cell')} UAH
+                    </TdPlus>
+                  );
+                }
+                if (cell.column.id === 'icon') {
+                  console.log('cell.row.original.id', cell.row.original.id);
+                  return (
+                    <td>
+                      <button
+                        type="button"
+                        id={cell.row.original.id}
+                        onClick={() => onHandleClick(cell.row.original.id)}
+                      >
+                        <DeleteIcon />
+                      </button>
+                    </td>
                   );
                 }
                 return <td {...cell.getCellProps()}>{cell.render('Cell')}</td>;
