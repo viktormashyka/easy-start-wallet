@@ -3,21 +3,51 @@ import {
   Title,
   DateWrapper,
   ArrowButton,
-  Date,
+  DateMonthAndYear,
 } from './CurrentPeriod.styled';
 import { ReactComponent as LeftArrowIcon } from '../../images/date-period-left-arrow.svg';
 import { ReactComponent as RightArrowIcon } from '../../images/date-period-right-arrow.svg';
+import { getAllTransactionsReport } from 'redux/transaction/transactionOperations';
+import { useDispatch } from 'react-redux';
+import { useState, useEffect } from 'react';
 
 export const CurrentPeriod = () => {
+  const dispatch = useDispatch();
+  const [month, setMonth] = useState(1);
+  const [year, setYear] = useState(2000);
+  const [monthName, setMonthName] = useState(null);
+
+  useEffect(() => {
+    if (month < 1) {
+      setMonth(12);
+      setYear(year - 1);
+    }
+
+    if (month > 12) {
+      setMonth(1);
+      setYear(year + 1);
+    }
+
+    // Создаем новый объект Date с указанным годом и месяцем
+    const date = new Date(year, month);
+    // Используем метод toLocaleString() для получения названия месяца
+    const monthName = date.toLocaleString('en-US', { month: 'long' });
+    setMonthName(monthName.toUpperCase());
+
+    dispatch(getAllTransactionsReport({ month, year }));
+  }, [dispatch, month, year]);
+
   return (
     <DateContainer>
       <Title>Current period:</Title>
       <DateWrapper>
-        <ArrowButton type="button">
+        <ArrowButton type="button" onClick={() => setMonth(month - 1)}>
           <LeftArrowIcon />
         </ArrowButton>
-        <Date>NOVEMBER 2019</Date>
-        <ArrowButton type="button">
+        <DateMonthAndYear>
+          {monthName} {year}
+        </DateMonthAndYear>
+        <ArrowButton type="button" onClick={() => setMonth(month + 1)}>
           <RightArrowIcon />
         </ArrowButton>
       </DateWrapper>
