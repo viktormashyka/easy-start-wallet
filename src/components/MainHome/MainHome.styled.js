@@ -4,7 +4,11 @@ import BCGImageBottom from '../../images/BottomLogo.png';
 
 // main container //
 
-export const ContentContainer = styled.div`
+export const ContentBalanceContainer = styled.div`
+  padding: 50px 20px 0 20px;
+`;
+
+export const ContentFormContainer = styled.div`
   padding: 56px 20px 0 20px;
 `;
 
@@ -15,7 +19,6 @@ export const TopWrapper = styled.section`
   background-color: #f5f6fb;
   border-bottom-left-radius: 80px;
   overflow-x: hidden;
-  /* overflow-y: visible; */
   @media screen and (min-width: 768px) {
     padding: 0 32px;
     min-height: 526px;
@@ -31,7 +34,8 @@ export const TopBalanceWrapper = styled.section`
   position: absolute;
   z-index: -10;
   width: 100%;
-  min-height: 300px;
+  min-height: 258px;
+  padding-bottom: 40px;
   background-color: #f5f6fb;
   border-bottom-left-radius: 80px;
   overflow: hidden;
@@ -44,9 +48,6 @@ export const TopBalanceWrapper = styled.section`
   @media screen and (min-width: 1280px) {
     border-bottom-left-radius: 110px;
   }
-  /* @media screen and (min-width: 768px) {
-    display: none;
-  } */
 `;
 
 export const Box = styled.div`
@@ -80,12 +81,10 @@ export const ToBackBtnWrapper = styled.div`
 // Form //
 
 export const FilterWrapper = styled.div`
-  position: absolute;
-  top: 15%;
-  left: 50%;
-  transform: translateX(-50%);
   width: 280px;
+  margin: 0 auto;
   @media screen and (min-width: 768px) {
+    position: absolute;
     top: 184px;
     left: 50%;
     transform: translateX(-50%);
