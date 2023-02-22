@@ -71,6 +71,13 @@ export const Box = styled.div`
   }
 `;
 
+export const ToBackBtnWrapper = styled.div`
+  width: 24px;
+  height: 24px;
+  background-color: transparent;
+  margin-bottom: 16px;
+`;
+
 // Form //
 
 export const FilterWrapper = styled.div`

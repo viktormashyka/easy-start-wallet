@@ -1,9 +1,11 @@
+import { useLocation } from 'react-router';
 import { GoReport, StyledLink } from './ToGoReport.styled';
 
 const ToGoReport = () => {
+  const location = useLocation();
   return (
     <GoReport>
-      <StyledLink to="/report">
+      <StyledLink to="/report/expenses" state={{ from: location }}>
         <p style={{ marginRight: 20 }}>Reports</p>
         <svg
           width="14"

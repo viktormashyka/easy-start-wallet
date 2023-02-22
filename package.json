@@ -4,6 +4,8 @@
   "private": true,
   "homepage": "https://viktormashyka.github.io/easy-start-wallet/",
   "dependencies": {
+    "@mui/icons-material": "^5.11.9",
+    "@mui/material": "^5.11.10",
     "@reduxjs/toolkit": "^1.8.5",
     "@testing-library/jest-dom": "^5.16.3",
     "@testing-library/react": "^12.1.4",
