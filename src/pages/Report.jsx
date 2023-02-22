@@ -1,6 +1,5 @@
 import { ExpensesReportForm } from 'components/ExpensesReportForm/ExpensesReportForm';
 import { IncomeReportForm } from 'components/IncomeReportForm/IncomeReportForm';
-import { InOutSummary } from 'components/InOutSummary/InOutSummary';
 import { ReportsTopWrapper } from 'components/ReportsTopWrapper/ReportsTopWrapper';
 import { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
@@ -36,7 +35,6 @@ export default function Report() {
       </Helmet>
       <>This is Report page</>
       <ReportsTopWrapper />
-      <InOutSummary />
       <ExpensesReportForm />
       <IncomeReportForm />
       <button onClick={() => setMonth(month - 1)}>prev</button>
