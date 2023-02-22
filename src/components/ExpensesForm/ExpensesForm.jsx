@@ -3,6 +3,7 @@ import { addTransaction } from '../../redux/transaction/transactionOperations';
 import * as Yup from 'yup';
 import moment from 'moment';
 import { Formik, ErrorMessage } from 'formik';
+import useScreenResizing from '../../hooks/useScreenResizing';
 import { CustomSelect } from '../CustomSelect/CustomSelect';
 import { DataBox } from '../DataBox/DataBox';
 import {
@@ -64,6 +65,7 @@ const FormError = ({ name }) => {
 };
 
 export const ExpensesForm = () => {
+  const viewPort = useScreenResizing();
   const dispatch = useDispatch();
 
   const date = moment().format('DD.MM.YYYY');
@@ -136,7 +138,9 @@ export const ExpensesForm = () => {
                         name="sum"
                         pattern="^(([0-9]*)|(([0-9]*)\.([0-9]*)))$"
                         title="Вalance must be whole numbers (or decimal numbers)"
-                        placeholder="00.00 UAH"
+                        placeholder={
+                          viewPort.width > 767 ? '00.00' : '00.00 UAH'
+                        }
                         onChange={handleChange}
                         value={values.sum}
                       />
