@@ -3,6 +3,12 @@ import styled from 'styled-components';
 export const TdMinus = styled.td`
   :nth-child(4) {
     color: red;
+    text-align: left;
+  }
+`;
+export const TdPlus = styled.td`
+  :nth-child(4) {
+    color: green;
   }
 `;
 
@@ -76,6 +82,7 @@ export const TableStyle = styled.div`
       border-top: 0;
       padding-top: 14px;
       padding-bottom: 14px;
+
       :first-child {
         padding-left: 20px;
       }
