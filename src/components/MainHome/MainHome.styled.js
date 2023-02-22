@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import BCGImageTopTablet from '../../images/TopLogoTablet.png';
 import BCGImageBottom from '../../images/BottomLogo.png';
-import { ReactComponent as BackspaceIcon } from '../../images/KeyboardBackspace.svg';
 
 // main container //
 
@@ -71,18 +70,11 @@ export const Box = styled.div`
   }
 `;
 
-export const BackspaceVectorIcon = styled(BackspaceIcon)`
-  display: inline-flex;
-  position: absolute;
-  top: 5%;
-  left: 8%;
-  &:hover {
-    fill: #ffffff;
-  }
-
-  @media screen and (min-width: 768px) {
-    /* display: none; */
-  }
+export const ToBackBtnWrapper = styled.button`
+  width: 24px;
+  height: 24px;
+  background-color: transparent;
+  margin-bottom: 16px;
 `;
 
 // Form //
@@ -120,4 +112,32 @@ export const FilterWrapper = styled.div`
     border-top-left-radius: 0px;
     box-shadow: 0px 10px 60px 0px rgba(170, 178, 197, 0.2);
   }
+`;
+
+export const BottomBtnBox = styled.div`
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+`;
+
+export const BtnTopWrapper = styled.div`
+  display: none;
+  @media screen and (min-width: 768px) {
+    display: block;
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+  }
+`;
+
+export const BackspaceWrapper = styled.div`
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  text-transform: uppercase;
 `;

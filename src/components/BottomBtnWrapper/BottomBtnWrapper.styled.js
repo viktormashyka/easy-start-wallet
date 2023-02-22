@@ -1,16 +1,5 @@
 import styled from 'styled-components';
-export const BtnWrapper = styled.div`
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  @media screen and (min-width: 768px) {
-    /* top: 0;
-    left: 0; */
-    display: none;
-  }
-`;
+import { NavLink } from 'react-router-dom';
 
 export const BtnList = styled.ul`
   display: flex;
@@ -31,7 +20,7 @@ export const BtnItem = styled.li`
     background-color: #ff751d;
   }
 `;
-export const BtnLink = styled.a`
+export const BtnLink = styled(NavLink)`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -41,14 +30,14 @@ export const BtnLink = styled.a`
   text-transform: uppercase;
   color: #000000;
   font-family: 'Roboto', sans-serif;
-  font-style: bold;
+  font-weight: bold;
   font-size: 12px;
   line-height: 1.17;
-  letter-spacing: 2%;
+  letter-spacing: 0.02em;
   transition: background-color 250ms cubic-bezier(0.075, 0.82, 0.165, 1),
     color 250ms cubic-bezier(0.075, 0.82, 0.165, 1);
-
-  &:hover {
+  &:hover,
+  &:active {
     background-color: #ff751d;
     color: #ffffff;
   }
