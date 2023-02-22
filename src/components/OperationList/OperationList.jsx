@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { OperationListWrapper } from './OperationList.styles';
 import { OperationListDiv } from './OperationList.styles';
 import { OperationListDivDate } from './OperationList.styles';
@@ -14,47 +14,59 @@ import { Table } from 'components/Table/Table';
 import { TableStyle } from '../Table/Table.styled';
 
 import { deleteTransaction } from '../../redux/transaction/transactionOperations';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { getAllTransactions } from 'redux/transaction/transactionOperations';
+import { selectAllTransactions } from 'redux/transaction/transactionSelectors';
 
 // Mikhaylo Pobochikh
 
 export const OperationList = () => {
   const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getAllTransactions());
+  }, [dispatch]);
 
   const onHandleClick = id => {
     console.log('Click Delete on id', id);
     dispatch(deleteTransaction(id));
   };
 
-  const testFromBack = React.useMemo(
-    () => [
-      {
-        id: '63f60d6e219c60079b2bc95a',
-        transactionsType: 'income',
-        date: '22.02.23',
-        description: 'bla bla bla',
-        category: 'Category test',
-        sum: '100',
-      },
-      {
-        id: '63f603bb219c60079b2bc94d',
-        transactionsType: 'expenses',
-        date: '22.02.23',
-        description: 'bla bla bla',
-        category: 'Category test',
-        sum: '100',
-      },
-      {
-        id: '63f603bb219c60079b2bc94d',
-        transactionsType: 'expenses',
-        date: '22.02.23',
-        description: 'bla bla bla',
-        category: 'Category test',
-        sum: '100',
-      },
-    ],
-    []
-  );
+  const testFromBack = useSelector(selectAllTransactions);
+  console.log(testFromBack);
+  // const expensesTransactions = transactions.filter(({ transactionsType }) => transactionsType === "expenses");
+  // const testFromBack = React.useMemo(
+  //   () =>
+  //   transactions, []);
+
+  // const testFromBack = React.useMemo(
+  //   () => [
+  //     {
+  //       id: '63f60d6e219c60079b2bc95a',
+  //       transactionsType: 'income',
+  //       date: '22.02.23',
+  //       description: 'bla bla bla',
+  //       category: 'Category test',
+  //       sum: '100',
+  //     },
+  //     {
+  //       id: '63f603bb219c60079b2bc94d',
+  //       transactionsType: 'expenses',
+  //       date: '22.02.23',
+  //       description: 'bla bla bla',
+  //       category: 'Category test',
+  //       sum: '100',
+  //     },
+  //     {
+  //       id: '63f603bb219c60079b2bc94d',
+  //       transactionsType: 'expenses',
+  //       date: '22.02.23',
+  //       description: 'bla bla bla',
+  //       category: 'Category test',
+  //       sum: '100',
+  //     },
+  //   ],
+  //   []
+  // );
 
   const columns = React.useMemo(
     () => [
@@ -86,12 +98,12 @@ export const OperationList = () => {
     <>
       {testFromBack.map(el => {
         const expenses = el.transactionsType === 'expenses';
-        console.log('el.id', el.id);
+        console.log('el._id', el._id);
         return (
           // Від 320 px до 768
-          <List>
-            <OperationListWrapper>
-              <OperationListDiv>
+          <List key={el._id}>
+            <OperationListWrapper >
+              <OperationListDiv >
                 <OperationListTitle>{el.description}</OperationListTitle>
                 <OperationListDivDate>
                   <OperationListDateTitle>{el.date}</OperationListDateTitle>
@@ -107,8 +119,8 @@ export const OperationList = () => {
 
                 <DeleteBtn
                   type="button"
-                  id={el.id}
-                  onClick={() => onHandleClick(el.id)}
+                  id={el._id}
+                  onClick={() => onHandleClick(el._id)}
                 >
                   <DeleteIcon />
                 </DeleteBtn>
