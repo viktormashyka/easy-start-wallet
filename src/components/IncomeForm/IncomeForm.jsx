@@ -54,6 +54,7 @@ const FormError = ({ name }) => {
 };
 
 const IncomeForm = () => {
+  const viewPort = useScreenResizing();
   const dispatch = useDispatch();
 
   const date = moment().format('DD.MM.YYYY');

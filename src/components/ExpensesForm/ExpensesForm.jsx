@@ -141,7 +141,7 @@ const ExpensesForm = () => {
                         pattern="^(([0-9]*)|(([0-9]*)\.([0-9]*)))$"
                         title="Sum must be whole numbers (or decimal numbers)"
                         placeholder={
-                          viewPort.width < 768 ? '00.00' : '00.00UAH'
+                          viewPort.width > 767 ? '00.00' : '00.00UAH'
                         }
                         onChange={handleChange}
                         value={values.sum}

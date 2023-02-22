@@ -54,9 +54,9 @@ export const MainHome = ({ children }) => {
                 <TopBtnList />
               </BtnTopWrapper>
               {children}
-              {viewPort.width >= 768 && <OperationList />}
+              {viewPort.width > 767 && <OperationList />}
             </FilterWrapper>
-            {viewPort.width < 768 ? <OperationList /> : null}
+            {viewPort.width < 768 && <OperationList />}
           </ContentFormContainer>
         </>
       )}
