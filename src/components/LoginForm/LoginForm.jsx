@@ -10,14 +10,13 @@ import {
   LoginButton,
 } from './LoginForm.styled';
 import * as Yup from 'yup';
+import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-// import { GoogleLogin } from 'react-google-login';
+import { ReactComponent as GoogleSvg } from 'images/google.svg';
 
 import { logIn } from 'redux/auth/authOperations';
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
 
-// changed in const schema Yup on yup
 const schema = Yup.object().shape({
   email: Yup.string().email('Invalid email').required('Enter your email'),
   password: Yup.string().min(8).max(20).required('Enter your password'),
@@ -34,18 +33,11 @@ const FormError = ({ name }) => {
 console.log('LoginForm ---> start'); //!
 
 export const LoginForm = () => {
-  // const [isLoggedIn, setIsLoggedIn] = useState(false);
-  // const [user, setUser] = useState({});
-
-  // const onSuccess = res => {
-  //   setIsLoggedIn(true);
-  //   setUser(res.profileObj);
-  // };
-
-  // const onFailure = res => {
-  //   console.log('Login failed:', res);
-  // };
-
+  const navigate = useNavigate(); ///для возможности переходить по ссылке при нажатии на кнопку типа баттон
+  const handleClick = () => {
+    navigate('/register'); //// у цьому місці треба прописати шлях до бекенду.нижче розшифрувала
+  };
+  ///('   ')---'доменне ім'я серверу/шлях до ресурсу на сервері де відбувається аутентифікація/додатковий шлях де аутентифікація відбувається через google'
   const dispatch = useDispatch();
 
   const handleSubmit = (value, { resetForm }) => {
@@ -59,22 +51,10 @@ export const LoginForm = () => {
   return (
     <Container>
       <P>You can log in with your Google Account:</P>
-      <ButtonGoogl type="button">Google</ButtonGoogl>
-      {/* <div>
-        {isLoggedIn ? (
-          <div>
-            <p>You are logged in as {user.name}.</p>
-          </div>
-        ) : (
-          <GoogleLogin
-            clientId="YOUR_CLIENT_ID_HERE"
-            buttonText="Login with Google"
-            onSuccess={onSuccess}
-            onFailure={onFailure}
-            cookiePolicy={'single_host_origin'}
-          />
-        )}
-      </div> */}
+      <ButtonGoogl type="button" onClick={handleClick}>
+        <GoogleSvg />
+      </ButtonGoogl>
+
       <P>Or log in using an email and password, after registering:</P>
       <Formik
         initialValues={{ email: '', password: '' }}
@@ -86,7 +66,6 @@ export const LoginForm = () => {
             Email:
             <Input type="email" name="email" placeholder="your email" />
             <FormError name="email" component="div" />
-            {/* <br /> */}
           </label>
           <label htmlFor="password">
             Password:

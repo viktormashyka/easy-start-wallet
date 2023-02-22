@@ -10,6 +10,9 @@ import {
   RegisterButton,
 } from './RegisterForm.styled';
 import * as Yup from 'yup';
+import { useNavigate } from 'react-router-dom';
+import { ReactComponent as GoogleSvg } from 'images/google.svg';
+
 import { useDispatch } from 'react-redux';
 
 import { register } from 'redux/auth/authOperations';
@@ -31,9 +34,16 @@ const FormError = ({ name }) => {
 console.log('RegisterForm ---> start'); //!
 
 export const RegisterForm = () => {
+  const navigate = useNavigate(); ///для возможности переходить по ссылке при нажатии на кнопку типа баттон
+  const handleClick = () => {
+    navigate('/register'); //// у цьому місці треба прописати шлях до бекенду.нижче розшифрувала
+  };
+
   const dispatch = useDispatch();
 
   const handleSubmit = (value, { resetForm }) => {
+    navigate('/register'); //// у цьому місці треба прописати шлях до бекенду.нижче розшифрувала
+    ///('   ')---'доменне ім'я серверу/шлях до ресурсу на сервері де відбувається аутентифікація/додатковий шлях де аутентифікація відбувається через google'
     console.log('RegisterForm ---> handleSubmit'); //!
     console.log('RegisterForm ---> value:', value); //!
     dispatch(register(value));
@@ -44,7 +54,11 @@ export const RegisterForm = () => {
   return (
     <Container>
       <P>You can log in with your Google Account:</P>
-      <ButtonGoogl type="button">Google</ButtonGoogl>
+
+      <ButtonGoogl type="button" onClick={handleClick}>
+        <GoogleSvg />
+      </ButtonGoogl>
+
       <P>Or log in using an email and password, after registering:</P>
       <Formik
         initialValues={{ email: '', password: '' }}
