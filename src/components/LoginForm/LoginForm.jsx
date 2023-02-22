@@ -8,6 +8,7 @@ import {
   P,
   ErrorText,
   LoginButton,
+  Span,
 } from './LoginForm.styled';
 import * as Yup from 'yup';
 import { useNavigate } from 'react-router-dom';
@@ -61,24 +62,31 @@ export const LoginForm = () => {
         validationSchema={schema}
         onSubmit={handleSubmit}
       >
-        <Form autoComplete="off">
-          <label htmlFor="login">
-            Email:
-            <Input type="email" name="email" placeholder="your email" />
-            <FormError name="email" component="div" />
-          </label>
-          <label htmlFor="password">
-            Password:
-            <Input type="password" name="password" />
-            <FormError name="password" />
-          </label>
-          <Div>
-            <LoginButton type="submit">LOG IN</LoginButton>
-            <Link to="/register">
-              <Button type="button">REGISTRATION</Button>
-            </Link>
-          </Div>
-        </Form>
+        {({ errors, touched }) => (
+          <Form autoComplete="off">
+            <div style={{ position: 'relative' }}>
+              <label htmlFor="login">
+                {errors.email && touched.email ? <Span>*</Span> : null} Email:
+                <Input type="email" name="email" placeholder="your email" />
+                <FormError name="email" component="div" />
+              </label>
+            </div>
+            <label htmlFor="password">
+              {errors.password && touched.password ? <Span>*</Span> : null}{' '}
+              Password:
+              {/* <span style={{ color: '#EB5757', fontSize: 10, paddingTop: 4 }}> */}
+              {/* </span> */}
+              <Input type="password" name="password" />
+              <FormError name="password" />
+            </label>
+            <Div>
+              <LoginButton type="submit">LOG IN</LoginButton>
+              <Link to="/register">
+                <Button type="button">REGISTRATION</Button>
+              </Link>
+            </Div>
+          </Form>
+        )}
       </Formik>
     </Container>
   );

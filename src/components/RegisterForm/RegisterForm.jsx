@@ -8,6 +8,7 @@ import {
   P,
   ErrorText,
   RegisterButton,
+  Span,
 } from './RegisterForm.styled';
 import * as Yup from 'yup';
 import { useNavigate } from 'react-router-dom';
@@ -40,6 +41,7 @@ export const RegisterForm = () => {
   };
 
   const dispatch = useDispatch();
+  // const [errorSymbol, setErrorSymbol] = useState('*');
 
   const handleSubmit = (value, { resetForm }) => {
     navigate('/register'); //// у цьому місці треба прописати шлях до бекенду.нижче розшифрувала
@@ -65,25 +67,34 @@ export const RegisterForm = () => {
         validationSchema={schema}
         onSubmit={handleSubmit}
       >
-        <Form autoComplete="off">
-          <label htmlFor="login">
-            Email:
-            <Input type="text" name="email" placeholder="your email" />
-            <FormError name="email" component="div" />
-            {/* <br /> */}
-          </label>
-          <label htmlFor="password">
-            Password:
-            <Input type="password" name="password" />
-            <FormError name="password" />
-          </label>
-          <Div>
-            <Link to="/login">
-              <Button type="button">LOG IN</Button>
-            </Link>
-            <RegisterButton type="submit">REGISTRATION</RegisterButton>
-          </Div>
-        </Form>
+        {({ errors, touched }) => (
+          <Form autoComplete="off">
+            <label
+              htmlFor="login"
+              style={{
+                position: 'relative',
+                outline: '1px solid red',
+                width: 100,
+              }}
+            >
+              {errors.email && touched.email ? <Span>*</Span> : null} Email:
+              <Input type="email" name="email" placeholder="your email" />
+              <FormError name="email" component="div" />
+            </label>
+            <label htmlFor="password">
+              {errors.password && touched.password ? <Span>*</Span> : null}{' '}
+              Password:
+              <Input type="password" name="password" />
+              <FormError name="password" />
+            </label>
+            <Div>
+              <Link to="/login">
+                <Button type="button">LOG IN</Button>
+              </Link>
+              <RegisterButton type="submit">REGISTRATION</RegisterButton>
+            </Div>
+          </Form>
+        )}
       </Formik>
     </Container>
   );

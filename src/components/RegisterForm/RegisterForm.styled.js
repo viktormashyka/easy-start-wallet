@@ -53,18 +53,24 @@ export const Input = styled(Field)`
   }
 `;
 export const ButtonGoogl = styled.button`
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 16px;
-  width: 119.2px;
-  height: 40px;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 32px;
-  background: #f6f7fb;
-  border-radius: 26px;
-  border-style: none;
-  letter-spacing: 0.02em;
+  display: inline-flex;
+  align-items: center;
   cursor: pointer;
-  border: none;
+  background-color: #f6f7fb;
+  border-radius: 26px;
+  border: 0;
+  padding: 10px 18px 10px 20px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: #000000;
 `;
 export const P = styled.p`
   @media screen and (min-width: 767px) {
@@ -112,7 +118,12 @@ export const Div = styled.div`
   justify-content: space-between;
 `;
 export const ErrorText = styled.p`
-  color: red;
+  color: #eb5757;
+  position: absolute;
+`;
+export const Span = styled.span`
+  color: #eb5757;
+  font-size: 11px;
 `;
 export const RegisterButton = styled.button`
   @media screen and (max-width: 767px) {
