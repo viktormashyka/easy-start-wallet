@@ -31,11 +31,12 @@ export const Container = styled.div`
 `;
 
 export const Input = styled(Field)`
+
 @media screen and (max-width: 767px) {
     width: 240px;
-   margin-bottom: 20px; 
+  top:20px;
   }
- 
+
   width: 258.92px;
   height: 52px;
   font-size: 12px;
@@ -79,7 +80,6 @@ export const P = styled.p`
     padding-right: 8px;
     padding-left: 8px;
   }
-
   margin-bottom: 20px;
   font-size: 12px;
   line-height: 14px;
@@ -117,13 +117,23 @@ export const Div = styled.div`
   padding-top: 20px;
   justify-content: space-between;
 `;
+export const Block = styled.div`
+  position: relative;
+`;
 export const ErrorText = styled.p`
   color: #eb5757;
   position: absolute;
+  bottom: -18px;
+  left: 0;
+  font-size: 10px;
+  line-height: 12px;
+  letter-spacing: 0.04em;
 `;
 export const Span = styled.span`
   color: #eb5757;
-  font-size: 11px;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.04em;
 `;
 export const RegisterButton = styled.button`
   @media screen and (max-width: 767px) {

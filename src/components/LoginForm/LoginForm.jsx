@@ -9,6 +9,7 @@ import {
   ErrorText,
   LoginButton,
   Span,
+  Block,
 } from './LoginForm.styled';
 import * as Yup from 'yup';
 import { useNavigate } from 'react-router-dom';
@@ -52,6 +53,7 @@ export const LoginForm = () => {
   return (
     <Container>
       <P>You can log in with your Google Account:</P>
+
       <ButtonGoogl type="button" onClick={handleClick}>
         <GoogleSvg />
       </ButtonGoogl>
@@ -64,21 +66,29 @@ export const LoginForm = () => {
       >
         {({ errors, touched }) => (
           <Form autoComplete="off">
-            <div style={{ position: 'relative' }}>
-              <label htmlFor="login">
-                {errors.email && touched.email ? <Span>*</Span> : null} Email:
-                <Input type="email" name="email" placeholder="your email" />
+            <label htmlFor="login" style={{ position: 'relative' }}>
+              {errors.email && touched.email ? <Span>*</Span> : null} Email:
+              <Block>
+                <Input type="email" name="email" placeholder="Email address" />
                 <FormError name="email" component="div" />
-              </label>
-            </div>
-            <label htmlFor="password">
-              {errors.password && touched.password ? <Span>*</Span> : null}{' '}
-              Password:
-              {/* <span style={{ color: '#EB5757', fontSize: 10, paddingTop: 4 }}> */}
-              {/* </span> */}
-              <Input type="password" name="password" />
-              <FormError name="password" />
+              </Block>
             </label>
+
+            <Block>
+              <label htmlFor="password">
+                {errors.password && touched.password ? <Span>*</Span> : null}{' '}
+                Password:
+                <Input
+                  type="password"
+                  name="password"
+                  placeholder="Security password"
+                />
+                <FormError
+                  name="password"
+                  style={{ position: 'absolute', bottom: 0, left: 0 }}
+                />
+              </label>
+            </Block>
             <Div>
               <LoginButton type="submit">LOG IN</LoginButton>
               <Link to="/register">
