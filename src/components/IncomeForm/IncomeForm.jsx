@@ -50,7 +50,7 @@ const FormError = ({ name }) => {
   );
 };
 
-export const IncomeForm = () => {
+const IncomeForm = () => {
   const dispatch = useDispatch();
 
   const date = moment().format('DD.MM.YYYY');
@@ -167,3 +167,5 @@ export const IncomeForm = () => {
     </>
   );
 };
+
+export default IncomeForm;

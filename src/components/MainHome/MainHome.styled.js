@@ -70,7 +70,7 @@ export const Box = styled.div`
   }
 `;
 
-export const ToBackBtnWrapper = styled.button`
+export const ToBackBtnWrapper = styled.div`
   width: 24px;
   height: 24px;
   background-color: transparent;
