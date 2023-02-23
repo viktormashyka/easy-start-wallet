@@ -5,10 +5,10 @@ export function BottomBtnWrapper() {
     <>
       <BtnList>
         <BtnItem>
-          <BtnLink>Expenses</BtnLink>
+          <BtnLink to="/home">Expenses</BtnLink>
         </BtnItem>
         <BtnItem>
-          <BtnLink>Income</BtnLink>
+          <BtnLink to="/home/income">Income</BtnLink>
         </BtnItem>
       </BtnList>
     </>

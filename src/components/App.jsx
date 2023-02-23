@@ -26,6 +26,7 @@ const ExpensesReportForm = lazy(() =>
 const IncomeReportForm = lazy(() =>
   import('../components/IncomeReportForm/IncomeReportForm')
 );
+const NotFoundPage = lazy(() => import('../pages/NotFound/NotFound'));
 
 // const UploadContactsPage = lazy(() =>
 //   import('../pages/UploadContacts/UploadContacts.js')
@@ -125,6 +126,7 @@ export const App = () => {
               />
             </Route>
           </Route>
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       )}
       <ToastContainer autoClose={1500} theme={'colored'} />

@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import BCGImageTopTablet from '../../images/TopLogoTablet.png';
 import BCGImageBottom from '../../images/BottomLogo.png';
+import { NavLink } from 'react-router-dom';
 
 // main container //
 
@@ -140,3 +141,28 @@ export const BackspaceWrapper = styled.div`
   left: 20px;
   text-transform: uppercase;
 `;
+
+export const ButtonLink = styled(NavLink)`
+width: 138px;
+height: 40px;
+border-top-right-radius: 25px;
+border-top-left-radius: 25px;
+font-family: Roboto, sans-serif;;
+font-weight: 700;
+font-size: 12px;
+line-height: 14px;
+color: #000000;
+background: #FAFBFD;
+text-align: center;
+&.active {
+    color: #FF751D;
+     background: #FEFEFE;
+  }
+`
+export const Nav = styled.nav`
+margin-top:20px;
+display: flex;
+ailgn-items:center;
+@media screen and (max-width: 768px) {
+ display: none;
+  }`

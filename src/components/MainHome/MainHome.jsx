@@ -15,8 +15,11 @@ import {
   BottomBtnBox,
   BtnTopWrapper,
   BackspaceWrapper,
+  ButtonLink,
+  Nav
 } from './MainHome.styled';
 import { OperationList } from 'components/OperationList/OperationList';
+
 
 export const MainHome = ({ children }) => {
   const viewPort = useScreenResizing();
@@ -35,6 +38,12 @@ export const MainHome = ({ children }) => {
           </BackspaceWrapper>
           <ContentBalanceContainer>
             <BalanceWrapper />
+            <Nav>
+              <ButtonLink to="/home" end>
+                EXPENSES
+              </ButtonLink>
+              <ButtonLink to="/home/income">INCOME</ButtonLink>
+            </Nav>
             {children}
             {viewPort.width < 768 ? <DataBox /> : null}
           </ContentBalanceContainer>

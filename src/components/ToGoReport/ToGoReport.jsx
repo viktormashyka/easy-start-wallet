@@ -5,7 +5,7 @@ const ToGoReport = () => {
   const location = useLocation();
   return (
     <GoReport>
-      <StyledLink to="/report/expenses" state={{ from: location }}>
+      <StyledLink to="/report" state={{ from: location }}>
         <p style={{ marginRight: 20 }}>Reports</p>
         <svg
           width="14"
