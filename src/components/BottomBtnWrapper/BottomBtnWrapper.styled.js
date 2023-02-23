@@ -37,7 +37,7 @@ export const BtnLink = styled(NavLink)`
   transition: background-color 250ms cubic-bezier(0.075, 0.82, 0.165, 1),
     color 250ms cubic-bezier(0.075, 0.82, 0.165, 1);
   &:hover,
-  &:active {
+  &.active {
     background-color: #ff751d;
     color: #ffffff;
   }
