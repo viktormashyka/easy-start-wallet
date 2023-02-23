@@ -17,6 +17,7 @@ import { deleteTransaction } from '../../redux/transaction/transactionOperations
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllTransactions } from 'redux/transaction/transactionOperations';
 import { selectAllTransactions } from 'redux/transaction/transactionSelectors';
+import moment from 'moment';
 
 // Mikhaylo Pobochikh
 
@@ -31,43 +32,16 @@ export const OperationList = () => {
     dispatch(deleteTransaction(id));
   };
 
-  const testFromBack = useSelector(selectAllTransactions);
-  console.log(testFromBack);
-  // const expensesTransactions = transactions.filter(({ transactionsType }) => transactionsType === "expenses");
-  // const testFromBack = React.useMemo(
-  //   () =>
-  //   transactions, []);
-
-  // const testFromBack = React.useMemo(
-  //   () => [
-  //     {
-  //       id: '63f60d6e219c60079b2bc95a',
-  //       transactionsType: 'income',
-  //       date: '22.02.23',
-  //       description: 'bla bla bla',
-  //       category: 'Category test',
-  //       sum: '100',
-  //     },
-  //     {
-  //       id: '63f603bb219c60079b2bc94d',
-  //       transactionsType: 'expenses',
-  //       date: '22.02.23',
-  //       description: 'bla bla bla',
-  //       category: 'Category test',
-  //       sum: '100',
-  //     },
-  //     {
-  //       id: '63f603bb219c60079b2bc94d',
-  //       transactionsType: 'expenses',
-  //       date: '22.02.23',
-  //       description: 'bla bla bla',
-  //       category: 'Category test',
-  //       sum: '100',
-  //     },
-  //   ],
-  //   []
-  // );
-
+  const dataFromBack = useSelector(selectAllTransactions);
+  console.log(dataFromBack);
+  //Сортуємо по датах, потрібен такий формат '2012-01-26T13:51:50.417-07:00'
+// const sortedTransactions = dataFromBack.sort((firstTransaction, secondTransaction) => Date.parse(secondTransaction.date) - Date.parse(firstTransaction.date));  
+//Вибираємо лише витрати:
+  const expensesTransactions = dataFromBack.filter(({ transactionsType }) => transactionsType === "expenses");
+  console.log('expensesTransactions:', expensesTransactions);
+//Вибираємо лише доходи: 
+  // const incomeTransactions = dataFromBack.filter(({ transactionsType }) => transactionsType === "income");
+  // console.log('incomeTransactions:', incomeTransactions);
   const columns = React.useMemo(
     () => [
       {
@@ -96,7 +70,7 @@ export const OperationList = () => {
 
   return (
     <>
-      {testFromBack.map(el => {
+      {expensesTransactions.map(el => {
         const expenses = el.transactionsType === 'expenses';
         console.log('el._id', el._id);
         return (
@@ -106,7 +80,7 @@ export const OperationList = () => {
               <OperationListDiv >
                 <OperationListTitle>{el.description}</OperationListTitle>
                 <OperationListDivDate>
-                  <OperationListDateTitle>{el.date}</OperationListDateTitle>
+                  <OperationListDateTitle>{moment(el.date).format('DD.MM.YYYY')}</OperationListDateTitle>
                   <OperationListDateTitle>{el.category}</OperationListDateTitle>
                 </OperationListDivDate>
               </OperationListDiv>
@@ -134,7 +108,7 @@ export const OperationList = () => {
       <TableStyle>
         <Table
           columns={columns}
-          data={testFromBack}
+          data={expensesTransactions}
           onHandleClick={onHandleClick}
         />
       </TableStyle>
