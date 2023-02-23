@@ -21,6 +21,7 @@ export const BackButton = styled.button`
   font-size: 10px;
   font-weight: bold;
   letter-spacing: 0.02em;
+  cursor: pointer;
   :hover {
     color: #ff751d;
   }

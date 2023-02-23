@@ -13,9 +13,10 @@ export const TdPlus = styled.td`
 `;
 
 export const TableStyle = styled.div`
-  @media screen and (max-width: 768px) {
-    display: none;
-  }
+  /* @media screen and (max-width: 768px) {
+    display: none;   //закоментувала Юля Зозуля
+  } */
+
   height: 300px; /*Наталія змінила з 150px*/
   overflow-y: scroll;
 
