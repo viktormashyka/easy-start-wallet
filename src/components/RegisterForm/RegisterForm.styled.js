@@ -31,12 +31,11 @@ export const Container = styled.div`
 `;
 
 export const Input = styled(Field)`
-
 @media screen and (max-width: 767px) {
     width: 240px;
-  top:20px;
+   margin-bottom: 20px; 
   }
-
+ 
   width: 258.92px;
   height: 52px;
   font-size: 12px;
@@ -80,6 +79,7 @@ export const P = styled.p`
     padding-right: 8px;
     padding-left: 8px;
   }
+
   margin-bottom: 20px;
   font-size: 12px;
   line-height: 14px;

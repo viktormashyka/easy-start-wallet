@@ -64,7 +64,7 @@ export const RegisterForm = () => {
         <GoogleSvg />
       </ButtonGoogl>
 
-      <P>Or log in using an email and password, after registering:</P>
+      <P>Or log in using an email and password for registeration:</P>
       <Formik
         initialValues={{ email: '', password: '' }}
         validationSchema={schema}
