@@ -15,8 +15,6 @@ import {
   BottomBtnBox,
   BtnTopWrapper,
   BackspaceWrapper,
-  ButtonLink,
-  Nav,
 } from './MainHome.styled';
 import { OperationList } from 'components/OperationList/OperationList';
 
