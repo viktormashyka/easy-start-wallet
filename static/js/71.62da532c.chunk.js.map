@@ -1,1 +1,0 @@
-{"version":3,"file":"static/js/71.62da532c.chunk.js","mappings":"6LAEaA,EAAmB,WAC9B,OAAO,2DACR,C","sources":["components/IncomeReportForm/IncomeReportForm.jsx"],"sourcesContent":["// import {} from './ExpensesForm.styled';\n\nexport const IncomeReportForm = () => {\n  return <div>Income Report form Report page</div>;\n};\n"],"names":["IncomeReportForm"],"sourceRoot":""}
