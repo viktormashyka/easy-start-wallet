@@ -4,10 +4,12 @@ export function TopBtnList() {
   return (
     <ButtonNavList>
       <ButtonNavLink>
-        <ButtonLink to="expenses">Expences</ButtonLink>
+        <ButtonLink to="/home" end>
+          Expences
+        </ButtonLink>
       </ButtonNavLink>
       <ButtonNavLink>
-        <ButtonLink to="income">Income</ButtonLink>
+        <ButtonLink to="/home/income">Income</ButtonLink>
       </ButtonNavLink>
     </ButtonNavList>
   );
