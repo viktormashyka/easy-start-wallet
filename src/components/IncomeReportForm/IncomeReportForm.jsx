@@ -1,5 +1,7 @@
 // import {} from './ExpensesForm.styled';
 
-export const IncomeReportForm = () => {
+const IncomeReportForm = () => {
   return <div>Income Report form Report page</div>;
 };
+
+export default IncomeReportForm
