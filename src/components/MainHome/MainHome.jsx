@@ -25,25 +25,27 @@ export const MainHome = ({ children }) => {
   const handleClick = () => {
     setIsTransactionsShown(!isTransactionsShown);
   };
+
   return (
     <MainWrapper>
       <TopBalanceWrapper />
       <Box />
-      {viewPort.width > 319 && !isTransactionsShown && (
+      {!isTransactionsShown && viewPort.width < 768 && (
         <>
           <BackspaceWrapper>
             <BackspaceBtn handleClick={handleClick} title="to transactions" />
           </BackspaceWrapper>
           <ContentBalanceContainer>
             <BalanceWrapper />
-            {viewPort.width < 768 ? <DataBox /> : null}
+            <DataBox />
           </ContentBalanceContainer>
+          <OperationList />
           <BottomBtnBox>
             <BottomBtnWrapper />
           </BottomBtnBox>
         </>
       )}
-      {viewPort.width > 319 && isTransactionsShown && (
+      {isTransactionsShown && viewPort.width < 768 && (
         <>
           <ContentFormContainer>
             <FilterWrapper>
@@ -55,12 +57,14 @@ export const MainHome = ({ children }) => {
               </BtnTopWrapper>
               {children}
             </FilterWrapper>
-            {viewPort.width < 768 && <OperationList />}
           </ContentFormContainer>
         </>
       )}
       {viewPort.width > 767 && (
         <>
+          <ContentBalanceContainer>
+            <BalanceWrapper />
+          </ContentBalanceContainer>
           <ContentFormContainer>
             <FilterWrapper>
               <BackspaceWrapper>
@@ -70,7 +74,7 @@ export const MainHome = ({ children }) => {
                 <TopBtnList />
               </BtnTopWrapper>
               {children}
-              {viewPort.width > 767 && <OperationList />}
+              <OperationList />
             </FilterWrapper>
           </ContentFormContainer>
         </>

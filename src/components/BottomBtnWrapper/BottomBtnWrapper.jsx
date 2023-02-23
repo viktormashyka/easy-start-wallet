@@ -5,7 +5,9 @@ export function BottomBtnWrapper() {
     <>
       <BtnList>
         <BtnItem>
-          <BtnLink to="/home">Expenses</BtnLink>
+          <BtnLink to="/home" end>
+            Expenses
+          </BtnLink>
         </BtnItem>
         <BtnItem>
           <BtnLink to="/home/income">Income</BtnLink>

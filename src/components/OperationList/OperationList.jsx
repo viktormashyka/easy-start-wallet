@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import useScreenResizing from '../../hooks/useScreenResizing';
 import { OperationListWrapper } from './OperationList.styles';
 import { OperationListDiv } from './OperationList.styles';
 import { OperationListDivDate } from './OperationList.styles';
@@ -22,6 +23,7 @@ import moment from 'moment';
 // Mikhaylo Pobochikh
 
 export const OperationList = () => {
+  const viewPort = useScreenResizing();
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getAllTransactions());
@@ -35,11 +37,13 @@ export const OperationList = () => {
   const dataFromBack = useSelector(selectAllTransactions);
   console.log(dataFromBack);
   //Сортуємо по датах, потрібен такий формат '2012-01-26T13:51:50.417-07:00'
-// const sortedTransactions = dataFromBack.sort((firstTransaction, secondTransaction) => Date.parse(secondTransaction.date) - Date.parse(firstTransaction.date));  
-//Вибираємо лише витрати:
-  const expensesTransactions = dataFromBack.filter(({ transactionsType }) => transactionsType === "expenses");
+  // const sortedTransactions = dataFromBack.sort((firstTransaction, secondTransaction) => Date.parse(secondTransaction.date) - Date.parse(firstTransaction.date));
+  //Вибираємо лише витрати:
+  const expensesTransactions = dataFromBack.filter(
+    ({ transactionsType }) => transactionsType === 'expenses'
+  );
   console.log('expensesTransactions:', expensesTransactions);
-//Вибираємо лише доходи: 
+  //Вибираємо лише доходи:
   // const incomeTransactions = dataFromBack.filter(({ transactionsType }) => transactionsType === "income");
   // console.log('incomeTransactions:', incomeTransactions);
   const columns = React.useMemo(
@@ -75,12 +79,15 @@ export const OperationList = () => {
         console.log('el._id', el._id);
         return (
           // Від 320 px до 768
+
           <List key={el._id}>
-            <OperationListWrapper >
-              <OperationListDiv >
+            <OperationListWrapper>
+              <OperationListDiv>
                 <OperationListTitle>{el.description}</OperationListTitle>
                 <OperationListDivDate>
-                  <OperationListDateTitle>{moment(el.date).format('DD.MM.YYYY')}</OperationListDateTitle>
+                  <OperationListDateTitle>
+                    {moment(el.date).format('DD.MM.YYYY')}
+                  </OperationListDateTitle>
                   <OperationListDateTitle>{el.category}</OperationListDateTitle>
                 </OperationListDivDate>
               </OperationListDiv>
@@ -103,15 +110,16 @@ export const OperationList = () => {
           </List>
         );
       })}
-
       {/* Для 769 px + */}
-      <TableStyle>
-        <Table
-          columns={columns}
-          data={expensesTransactions}
-          onHandleClick={onHandleClick}
-        />
-      </TableStyle>
+      {viewPort.width > 767 /*Наталія змінила з 150px*/ && (
+        <TableStyle TableStyle>
+          <Table
+            columns={columns}
+            data={expensesTransactions}
+            onHandleClick={onHandleClick}
+          />
+        </TableStyle>
+      )}
     </>
   );
 };

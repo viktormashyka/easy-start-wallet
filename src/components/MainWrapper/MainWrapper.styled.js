@@ -7,5 +7,5 @@ export const BoxWrapper = styled.main`
   justify-content: space-between;
   width: 100%;
   min-height: 100vh;
-  margin: 0;
+  align-items: center;
 `;
