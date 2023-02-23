@@ -7,14 +7,16 @@ import { BackspaceBtn } from '../BackspaceBtn/BackspaceBtn';
 import { useState } from 'react';
 import { DataBox } from '../DataBox/DataBox';
 import {
-  Box,
+  BCGLogoBox,
   FilterWrapper,
-  TopBalanceWrapper,
+  TopWrapper,
   ContentBalanceContainer,
-  ContentFormContainer,
   BottomBtnBox,
   BtnTopWrapper,
   BackspaceWrapper,
+  ContentContainer,
+  BottomContentWrapper,
+  ContentBox,
 } from './MainHome.styled';
 import { OperationList } from 'components/OperationList/OperationList';
 
@@ -28,26 +30,26 @@ export const MainHome = ({ children }) => {
 
   return (
     <MainWrapper>
-      <TopBalanceWrapper />
-      <Box />
-      {!isTransactionsShown && viewPort.width < 768 && (
-        <>
-          <BackspaceWrapper>
-            <BackspaceBtn handleClick={handleClick} title="to transactions" />
-          </BackspaceWrapper>
-          <ContentBalanceContainer>
-            <BalanceWrapper />
-            <DataBox />
-          </ContentBalanceContainer>
-          <OperationList />
-          <BottomBtnBox>
-            <BottomBtnWrapper />
-          </BottomBtnBox>
-        </>
-      )}
-      {isTransactionsShown && viewPort.width < 768 && (
-        <>
-          <ContentFormContainer>
+      <TopWrapper />
+      <BCGLogoBox />
+      <ContentContainer>
+        {!isTransactionsShown && viewPort.width < 768 && (
+          <>
+            <BackspaceWrapper>
+              <BackspaceBtn handleClick={handleClick} title="to transactions" />
+            </BackspaceWrapper>
+            <ContentBalanceContainer>
+              <BalanceWrapper />
+              <DataBox />
+            </ContentBalanceContainer>
+            <OperationList />
+            <BottomBtnBox>
+              <BottomBtnWrapper />
+            </BottomBtnBox>
+          </>
+        )}
+        {isTransactionsShown && viewPort.width < 768 && (
+          <>
             <FilterWrapper>
               <BackspaceWrapper>
                 <BackspaceBtn handleClick={handleClick} />
@@ -57,28 +59,57 @@ export const MainHome = ({ children }) => {
               </BtnTopWrapper>
               {children}
             </FilterWrapper>
-          </ContentFormContainer>
-        </>
-      )}
-      {viewPort.width > 767 && (
-        <>
-          <ContentBalanceContainer>
-            <BalanceWrapper />
-          </ContentBalanceContainer>
-          <ContentFormContainer>
+          </>
+        )}
+        {/* {viewPort.width > 767 && (
+          <>
+            <ContentBalanceContainer>
+              <BalanceWrapper />
+            </ContentBalanceContainer>
+            <BottomContentWrapper>
+              <ContentBox>
+                <FilterWrapper>
+                  <BtnTopWrapper>
+                    <TopBtnList />
+                  </BtnTopWrapper>
+                  {children}
+                  <OperationList />
+                </FilterWrapper>
+                <div
+                  style={{
+                    width: '230px',
+                    height: '278px',
+                    backgroundColor: 'black',
+                  }}
+                ></div>
+              </ContentBox>
+            </BottomContentWrapper>
+          </>
+        )} */}
+        {viewPort.width > 1279 && (
+          <>
+            <ContentBalanceContainer>
+              <BalanceWrapper />
+            </ContentBalanceContainer>
             <FilterWrapper>
-              <BackspaceWrapper>
-                <BackspaceBtn handleClick={handleClick} />
-              </BackspaceWrapper>
               <BtnTopWrapper>
                 <TopBtnList />
               </BtnTopWrapper>
               {children}
-              <OperationList />
+              <MainContentWrapper>
+                <OperationList />
+                <div
+                  style={{
+                    width: '230px',
+                    height: '278px',
+                    backgroundColor: 'black',
+                  }}
+                ></div>
+              </MainContentWrapper>
             </FilterWrapper>
-          </ContentFormContainer>
-        </>
-      )}
+          </>
+        )}
+      </ContentContainer>
     </MainWrapper>
   );
 };
