@@ -16,7 +16,7 @@ const getAllTransactionsReport = async (req, res) => {
   const { balance } = user;
 
   const transactions = await Transaction.find({ owner: userId })
-    .sort('date') //! сортировка по полю "sum"
+    .sort({ sum: -1 }) //! сортировка по полю "date"
     .select({ owner: 0, updatedAt: 0 }); //! не показывать эти поля
 
   const filterTransactions = transactions.filter(transaction => {

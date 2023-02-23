@@ -14,7 +14,7 @@ import { useState, useEffect } from 'react';
 export const CurrentPeriod = () => {
   const dispatch = useDispatch();
   const [month, setMonth] = useState(1);
-  const [year, setYear] = useState(2000);
+  const [year, setYear] = useState(2023);
   const [monthName, setMonthName] = useState(null);
 
   useEffect(() => {
