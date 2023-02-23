@@ -37,7 +37,7 @@ export const ArrowButton = styled.button`
   margin: 0 7px;
 `;
 
-export const Date = styled.p`
+export const DateMonthAndYear = styled.p`
   font-weight: 700;
   font-size: 14px;
   line-height: 16px;
