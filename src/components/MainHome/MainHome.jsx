@@ -35,6 +35,7 @@ export const MainHome = ({ children }) => {
           </BackspaceWrapper>
           <ContentBalanceContainer>
             <BalanceWrapper />
+            {children}
             {viewPort.width < 768 ? <DataBox /> : null}
           </ContentBalanceContainer>
           <BottomBtnBox>

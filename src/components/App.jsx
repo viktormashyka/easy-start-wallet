@@ -53,7 +53,7 @@ export const App = () => {
               path="/"
               element={
                 <RestrictedRoute
-                  redirectTo="/home/expenses"
+                  redirectTo="/home"
                   component={<LoginPage />}
                 />
               }
@@ -62,7 +62,7 @@ export const App = () => {
               path="/login"
               element={
                 <RestrictedRoute
-                  redirectTo="/home/expenses"
+                  redirectTo="/home"
                   component={<LoginPage />}
                 />
               }
@@ -83,8 +83,7 @@ export const App = () => {
               }
             >
               <Route
-                path="expenses"
-                element={
+                index element={
                   <PrivateRoute
                     redirectTo="/login"
                     component={<ExpensesForm />}
@@ -108,8 +107,7 @@ export const App = () => {
               }
             >
               <Route
-                path="expenses"
-                element={
+                index element={
                   <PrivateRoute
                     redirectTo="/login"
                     component={<ExpensesReportForm />}
