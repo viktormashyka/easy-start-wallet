@@ -4,7 +4,7 @@ import { TdMinus } from './Table.styled';
 import { TdPlus } from './Table.styled';
 
 import { ReactComponent as DeleteIcon } from '../../images/delete.svg';
-
+import moment from 'moment';
 // Misha Pobochikh
 
 export const Table = ({ columns, data, onHandleClick }) => {
@@ -28,9 +28,16 @@ export const Table = ({ columns, data, onHandleClick }) => {
           return (
             <tr {...row.getRowProps()} >
               {row.cells.map(cell => {
-                console.log('cell', cell);
-                // console.log('cell header', cell.column.Header);
+                // console.log('cell', cell);
+                if (cell.column.id === 'date') {
 
+                  const newCell = moment(cell.value).format('DD.MM.YYYY');
+                  // console.log('newCell', newCell);
+                  return (<td {...cell.getCellProps()}>
+                    {newCell}
+                  </td>)
+                }
+                // console.log('cell header', cell.column.Header);
                 // Перевіряємо в якій категорії ?console.log(cell.row.original);
 
                 if (
@@ -51,7 +58,7 @@ export const Table = ({ columns, data, onHandleClick }) => {
                   );
                 }
                 if (cell.column.id === 'icon') {
-                  console.log('cell.row.original.id', cell.row.original._id);
+                  // console.log('cell.row.original.id', cell.row.original._id);
                   return (
                     <td key={cell.row.original._id}>
                       <button
