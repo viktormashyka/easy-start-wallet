@@ -43,6 +43,22 @@ export const MainHome = ({ children }) => {
           </BottomBtnBox>
         </>
       )}
+      {viewPort.width > 319 && isTransactionsShown && (
+        <>
+          <ContentFormContainer>
+            <FilterWrapper>
+              <BackspaceWrapper>
+                <BackspaceBtn handleClick={handleClick} />
+              </BackspaceWrapper>
+              <BtnTopWrapper>
+                <TopBtnList />
+              </BtnTopWrapper>
+              {children}
+            </FilterWrapper>
+            {viewPort.width < 768 && <OperationList />}
+          </ContentFormContainer>
+        </>
+      )}
       {viewPort.width > 767 && (
         <>
           <ContentFormContainer>
@@ -56,7 +72,6 @@ export const MainHome = ({ children }) => {
               {children}
               {viewPort.width > 767 && <OperationList />}
             </FilterWrapper>
-            {viewPort.width < 768 && <OperationList />}
           </ContentFormContainer>
         </>
       )}
