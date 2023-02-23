@@ -16,7 +16,7 @@ export const TableStyle = styled.div`
   @media screen and (max-width: 768px) {
     display: none;
   }
-  height: 150px;
+  height: 300px; /*Наталія змінила з 150px*/
   overflow-y: scroll;
 
   border-radius: 20px;
