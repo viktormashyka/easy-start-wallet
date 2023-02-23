@@ -13,8 +13,12 @@ export const FormBox = styled(Form)`
   justify-content: center;
   align-items: center;
   width: 100%;
+  @media screen and (min-width: 768px) {
+    margin-bottom: 48px;
+  }
   @media screen and (min-width: 1280px) {
     flex-direction: row;
+    margin-bottom: 60px;
   }
 `;
 
@@ -151,7 +155,7 @@ export const TextSecondary = styled(Field)`
     letter-spacing: 0.02em;
     color: #000000;
     opacity: 1;
-    text-align: end;
+    text-align: center;
   }
 
   @media screen and (min-width: 768px) {
@@ -163,6 +167,7 @@ export const TextSecondary = styled(Field)`
       font-weight: normal;
       text-align: end;
       margin-right: 3px;
+      text-align: end;
     }
   }
 `;
@@ -292,7 +297,7 @@ export const BtnSecondary = styled.button`
 
 export const ErrorNotification = styled.p`
   position: absolute;
-  bottom: 102%;
+  top: 5%;
   left: 50%;
   transform: translateX(-50%);
   display: block;

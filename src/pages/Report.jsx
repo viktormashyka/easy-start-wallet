@@ -2,7 +2,6 @@ import { ExpensesReportForm } from 'components/ExpensesReportForm/ExpensesReport
 import { IncomeReportForm } from 'components/IncomeReportForm/IncomeReportForm';
 import { ReportsTopWrapper } from 'components/ReportsTopWrapper/ReportsTopWrapper';
 import { Helmet } from 'react-helmet';
-import { ArrowToGoHome } from 'components/ArrowToGoHome/ArrowToGoHome';
 import { ReportIconBlock } from '../components/ReportIconBlock/ReportIconBlock';
 
 export default function Report() {
@@ -12,7 +11,6 @@ export default function Report() {
         <title>Report page</title>
       </Helmet>
       <>This is Report page</>
-      <ArrowToGoHome />
       <ReportsTopWrapper />
       <ExpensesReportForm />
       <IncomeReportForm />

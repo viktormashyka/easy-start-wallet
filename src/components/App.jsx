@@ -49,11 +49,13 @@ export const App = () => {
       ) : (
         <Routes>
           <Route path="/" element={<Layout />}>
-            {/* <Redirect exact from="/" to="/login" /> */}
             <Route
               path="/login"
               element={
-                <RestrictedRoute redirectTo="/home" component={<LoginPage />} />
+                <RestrictedRoute
+                  redirectTo="/home/expenses"
+                  component={<LoginPage />}
+                />
               }
             />
             <Route
