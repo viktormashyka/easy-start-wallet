@@ -25,7 +25,7 @@ const initialState = {
   isRegistrIn: false, //? for Kapu$ta
   isRefreshing: false,
   error: null,
-  isNotNewUser: false,
+  isNotNewUser: true,
 };
 
 

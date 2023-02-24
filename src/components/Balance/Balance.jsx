@@ -29,13 +29,12 @@ const Balance = () => {
   const calculatedBalance = `${Number(userBalance)
     .toFixed(2)
     .padStart(5, 0)} UAH`;
-  
-  const location = useLocation()
-  console.log(location);
-  const buttonIsNotShown =
-    location.pathname === '/report' || location.pathname === '/report/income';
-  console.log(buttonIsNotShown);
-  
+
+  const location = useLocation();
+  const buttonIsShown =
+    location.pathname === '/home' || location.pathname === '/home/income';
+  console.log('buttonIsShown', buttonIsShown);
+
   const [balance, setBalance] = useState('');
   const handleChangeInput = e => setBalance(e.currentTarget.value);
 
@@ -44,7 +43,7 @@ const Balance = () => {
     console.log(Number(balance));
     dispatch(updateBalance({ balance }));
     setBalance('');
-    dispatch(changeIsNotNewUser({ isNotNewUser: true}));
+    dispatch(changeIsNotNewUser({ isNotNewUser: true }));
   };
 
   return (
@@ -52,7 +51,7 @@ const Balance = () => {
       <BalanceLabel htmlFor="balans">
         Balance:
         <ButtonsGroup>
-          {!buttonIsNotShown && (
+          {buttonIsShown && (
             <>
               <BalanceInput
                 type="text"
@@ -71,7 +70,7 @@ const Balance = () => {
               </BalanceButton>
             </>
           )}
-          {buttonIsNotShown && (
+          {!buttonIsShown && (
             <BalanceReportInput
               placeholder={calculatedBalance}
               disabled={isBalanceDisabled}
