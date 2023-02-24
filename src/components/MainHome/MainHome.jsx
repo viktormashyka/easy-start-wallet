@@ -87,31 +87,9 @@ export const MainHome = ({ children }) => {
                 ></div>
               </ContentBox>
             </BottomContentWrapper>
-            {/* 1279 +*/}
+
+            {/* 1280 +*/}
             <BigFilterWrapper>
-              <BtnTopWrapper>
-                <TopBtnList />
-              </BtnTopWrapper>
-              {children}
-              <MainContentWrapper>
-                <OperationList />{' '}
-                <div
-                  style={{
-                    width: '230px',
-                    height: '278px',
-                    backgroundColor: 'black',
-                  }}
-                ></div>
-              </MainContentWrapper>
-            </BigFilterWrapper>
-          </>
-        )}
-        {/* {viewPort.width > 1279 && (
-          <>
-            <ContentBalanceContainer>
-              <BalanceWrapper />
-            </ContentBalanceContainer>
-            <FilterWrapper>
               <BtnTopWrapper>
                 <TopBtnList />
               </BtnTopWrapper>
@@ -120,15 +98,15 @@ export const MainHome = ({ children }) => {
                 <OperationList />
                 <div
                   style={{
-                    width: '230px',
-                    height: '278px',
+                    width: '213px',
+                    height: '251px',
                     backgroundColor: 'black',
                   }}
                 ></div>
               </MainContentWrapper>
-            </FilterWrapper>
+            </BigFilterWrapper>
           </>
-        )} */}
+        )}
       </ContentContainer>
     </MainWrapper>
   );
