@@ -72,7 +72,7 @@ const transactionsSlice = createSlice({
       // state.transaction.description = payload.description
       // state.transaction.category = payload.category
       // state.transaction.sum = payload.sum
-      state.allTransactions.push(payload);
+      state.allTransactions.push(payload.transaction);
       state.isLoading = false;
       state.error = null;
     },
@@ -86,10 +86,10 @@ const transactionsSlice = createSlice({
       // state.items.splice(index, 1);
       //! МОЙ вариант:
       // const newContact = state.items.filter(contact => contact.id !== payload);
-      // console.log("deleteTransaction==>payload:", payload); //!
+      console.log('deleteTransaction==>payload:', payload.transactionId); //!
       // state.items = state.items.filter(contact => contact.id !== payload); //??
       state.allTransactions = state.allTransactions.filter(
-        transaction => transaction._id !== payload
+        transaction => transaction._id !== payload.transactionId
       );
       // console.log("deleteTransaction==>state.items:", state.items); //!
       // state = { items: newContact }

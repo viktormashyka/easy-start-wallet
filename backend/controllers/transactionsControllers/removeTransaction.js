@@ -96,7 +96,7 @@ const removeTransaction = async (req, res, next) => {
 
 
 
-    res.status(200).json({ transactionId });
+    res.status(200).json({ transactionId, balanceNew });
 
     //! OLD
     // res.status(200).json({
