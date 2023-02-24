@@ -8,7 +8,7 @@ export const ReportBalance = styled.form`
   }
   @media screen and (min-width: 768px) {
     display: flex;
-    margin-right: auto;
+    /* margin-right: auto; */
   }
 `;
 
@@ -142,5 +142,53 @@ export const BalanceButton = styled.button`
     font-size: 12px;
     line-height: 1.17;
     margin-left: 0px;
+  }
+`;
+
+export const BalanceReportInput = styled.input`
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  height: 44px;
+  width: 183px;
+  border: 2px solid #ffffff;
+  background-color: transparent;
+  border-radius: 22px;
+  font-weight: 700;
+  padding-left: 20px;
+  padding-right: 20px;
+  outline: none;
+  &:disabled::placeholder {
+    color: #000;
+    opacity: 1;
+    text-align: center;
+  }
+
+  @media screen and (min-width: 768px) {
+    margin-left: 20px;
+    margin-top: 0px;
+    min-width: 125px;
+    border: 2px solid #ffffff;
+    background-color: transparent;
+    border-radius: 16px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.17;
+    font-weight: bold;
+    color: black;
+  }
+  @media screen and (min-width: 1280px) {
+    margin-left: 40px;
+    margin-right: 15px;
+    border: 2px solid #ffffff;
+    background-color: transparent;
+    border-radius: 16px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.17;
+    font-weight: bold;
+    color: black;
   }
 `;

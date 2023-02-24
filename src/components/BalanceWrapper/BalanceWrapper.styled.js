@@ -15,6 +15,7 @@ export const ContainerBalance = styled.div`
   @media screen and (min-width: 768px) {
     align-items: center;
     flex-direction: row-reverse;
+    justify-content: space-between;
     /* padding-left: 50px;
     padding-right: 50px; закоментувала Юля Зозуля*/
     /* width: 768px; */

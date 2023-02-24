@@ -1,16 +1,16 @@
 import styled from 'styled-components';
 
 export const DateContainer = styled.div`
-  /* margin-bottom: 32px; */
+  margin-bottom: 34px;
   display: flex;
   flex-direction: column;
   align-items: center;
   @media screen and (min-width: 768px) {
-    margin-left: 100px;
-    /* margin-bottom: 0; */
+    /* margin-left: 100px; */
+    margin-bottom: 0;
   }
   @media screen and (min-width: 1280px) {
-    margin-left: 214px;
+    /* margin-left: 214px; */
   }
 `;
 

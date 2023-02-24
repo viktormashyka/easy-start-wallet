@@ -2,6 +2,7 @@ import { ReportsTopWrapper } from 'components/ReportsTopWrapper/ReportsTopWrappe
 import { Helmet } from 'react-helmet';
 import { ReportIconBlock } from '../components/ReportIconBlock/ReportIconBlock';
 import { Outlet } from 'react-router-dom/dist';
+import { InOutSummary } from 'components/InOutSummary/InOutSummary';
 
 export default function Report() {
   return (
@@ -11,6 +12,7 @@ export default function Report() {
       </Helmet>
       <>This is Report page</>
       <ReportsTopWrapper />
+      <InOutSummary />
       <Outlet />
       <ReportIconBlock />
     </div>
