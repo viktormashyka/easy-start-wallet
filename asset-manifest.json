@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/easy-start-wallet/static/css/main.82899f73.css",
+    "main.css": "/easy-start-wallet/static/css/main.b2a8f3ba.css",
     "main.js": "/easy-start-wallet/static/js/main.24d28c66.js",
     "static/js/649.e95f12b0.chunk.js": "/easy-start-wallet/static/js/649.e95f12b0.chunk.js",
     "static/js/628.d16eb0c1.chunk.js": "/easy-start-wallet/static/js/628.d16eb0c1.chunk.js",
@@ -32,7 +32,7 @@
     "static/media/Rectangle19.svg": "/easy-start-wallet/static/media/Rectangle19.1007f0da4d939995755bc75fbe4d300d.svg",
     "static/media/date-period-left-arrow.svg": "/easy-start-wallet/static/media/date-period-left-arrow.7b73b0e17ede841e7c6a861453ce9b2c.svg",
     "static/media/date-period-right-arrow.svg": "/easy-start-wallet/static/media/date-period-right-arrow.55fc299de937d224756cafce0ff35b50.svg",
-    "main.82899f73.css.map": "/easy-start-wallet/static/css/main.82899f73.css.map",
+    "main.b2a8f3ba.css.map": "/easy-start-wallet/static/css/main.b2a8f3ba.css.map",
     "main.24d28c66.js.map": "/easy-start-wallet/static/js/main.24d28c66.js.map",
     "649.e95f12b0.chunk.js.map": "/easy-start-wallet/static/js/649.e95f12b0.chunk.js.map",
     "628.d16eb0c1.chunk.js.map": "/easy-start-wallet/static/js/628.d16eb0c1.chunk.js.map",
@@ -53,7 +53,7 @@
     "153.1c340e27.chunk.js.map": "/easy-start-wallet/static/js/153.1c340e27.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.82899f73.css",
+    "static/css/main.b2a8f3ba.css",
     "static/js/main.24d28c66.js"
   ]
 }
