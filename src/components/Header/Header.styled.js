@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
 
 export const SectionHeader = styled.section`
   background-color: #ffffff;
@@ -41,7 +42,8 @@ export const AuthWrapper = styled.div`
   align-items: center;
 `;
 
-export const UserLogo = styled.div`
+export const UserLogo = styled(NavLink)`
+  overflow: hidden;
   border-radius: 50%;
   width: 32px;
   height: 32px;
@@ -49,6 +51,11 @@ export const UserLogo = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  color: black;
+
+  &.active {
+    color: orange;
+  }
 `;
 export const LogOutIcon = styled.img`
   @media screen and (min-width: 768px) {
