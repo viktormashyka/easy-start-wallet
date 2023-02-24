@@ -240,3 +240,29 @@ export const updateBalance = createAsyncThunk(
         }
     }
 );
+
+//! ИЗМЕНИТЬ isNotNewUser
+export const changeIsNotNewUser = createAsyncThunk(
+  'auth/changeIsNotNewUser',
+  async (credentials, thunkAPI) => {
+    try {
+      const { data } = await axios.patch('/users/isnotnewuser', credentials);
+      console.log(
+        'auth/changeIsNotNewUser == >data.isNotNewUser:',
+        data.isNotNewUser
+      ); //!
+      return data.isNotNewUser;
+    } catch (error) {
+      console.log(error); //!
+      toast.error(
+        `Ошибка запроса: ${
+          error.message === 'Request failed with status code 404'
+            ? 'Нет такой коллекции пользователей'
+            : error.message
+        }`,
+        { position: 'top-center', autoClose: 2000 }
+      );
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);

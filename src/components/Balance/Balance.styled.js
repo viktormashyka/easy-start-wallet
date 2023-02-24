@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 export const ReportBalance = styled.form`
   @media screen and (min-width: 320px) {
+    position: relative;
     display: table-footer-group;
     font-size: 12px;
     color: rgba(82, 85, 95, 0.7);
@@ -13,7 +14,6 @@ export const ReportBalance = styled.form`
 
 export const BalanceLabel = styled.label`
   @media screen and (min-width: 320px) {
-    position: relative;
     display: block;
     text-align: center;
     align-items: center;
@@ -55,7 +55,7 @@ export const BalanceInput = styled.input`
   display: flex;
   text-align: center;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   color: #000;
   max-height: 44px;
   max-width: 140px;
@@ -69,6 +69,7 @@ export const BalanceInput = styled.input`
   &:disabled::placeholder {
     color: #000;
     opacity: 1;
+    text-align: end;
   }
 
   @media screen and (min-width: 768px) {
