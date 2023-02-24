@@ -1,6 +1,7 @@
 // import { useDispatch, useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from "react-router-dom";
+import { NavLink } from 'react-router-dom';
 
 import { changeAvatar } from 'redux/auth/authOperations';
 
@@ -44,6 +45,9 @@ export default function UploadAvatarPage() {
           Отправить файл
         </button>
       </form>
+      <NavLink to="/home">
+        <span>Go to home page</span>
+      </NavLink>
     </div>
   );
 }
