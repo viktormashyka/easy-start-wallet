@@ -3,8 +3,8 @@ import { useSelector } from 'react-redux';
 import { selectAllTransactionsReport } from 'redux/transaction/transactionSelectors';
 
 import sprite from '../../images/icon.svg';
-import expenseIconCategories from './data/expenseIcon.json';
-import incomeIconCategories from './data/incomeIcon.json';
+// import expenseIconCategories from './data/expenseIcon.json';
+// import incomeIconCategories from './data/incomeIcon.json';
 import { nanoid } from 'nanoid/non-secure';
 import {
   Container,
