@@ -21,6 +21,7 @@ import {
   BigFilterWrapper,
 } from './MainHome.styled';
 import { OperationList } from 'components/OperationList/OperationList';
+import { Summary } from 'components/Summary/Sumarry';
 
 export const MainHome = ({ children }) => {
   const viewPort = useScreenResizing();
@@ -78,16 +79,9 @@ export const MainHome = ({ children }) => {
                   {children}
                   <OperationList />
                 </FilterWrapper>
-                <div
-                  style={{
-                    width: '230px',
-                    height: '278px',
-                    backgroundColor: 'black',
-                  }}
-                ></div>
+                <Summary />
               </ContentBox>
             </BottomContentWrapper>
-
             {/* 1280 +*/}
             <BigFilterWrapper>
               <BtnTopWrapper>
@@ -96,13 +90,7 @@ export const MainHome = ({ children }) => {
               {children}
               <MainContentWrapper>
                 <OperationList />
-                <div
-                  style={{
-                    width: '213px',
-                    height: '251px',
-                    backgroundColor: 'black',
-                  }}
-                ></div>
+                <Summary />
               </MainContentWrapper>
             </BigFilterWrapper>
           </>
