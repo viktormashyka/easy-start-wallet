@@ -1,10 +1,17 @@
 import styled from 'styled-components';
 
 export const ModalWrap = styled.div`
-  position: relative;
+  position: absolute;
+  top: 74px;
   width: 280px;
   height: 163px;
+  z-index: 99;
+  @media screen and (min-width: 768px) {
+    top: 49px;
+    left: 80px;
+  }
   @media screen and (min-width: 1280px) {
+    left: 90px;
     width: 288px;
   }
 `;

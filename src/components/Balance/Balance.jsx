@@ -1,10 +1,10 @@
 
 
-// import { ModalComment } from '../ModalComment/ModalComment';
+import { ModalComment } from '../ModalComment/ModalComment';
 
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { updateBalance, getBalance } from 'redux/auth/authOperations';
+import { updateBalance, getBalance, changeIsNotNewUser } from 'redux/auth/authOperations';
 import { selectBalance, selectIsNotNewUser } from 'redux/auth/authSelectors';
 import {
   ReportBalance,
@@ -13,6 +13,7 @@ import {
   BalanceInput,
   BalanceButton,
 } from './Balance.styled';
+
 const Balance = () => {
   const dispatch = useDispatch();
 
@@ -25,7 +26,7 @@ const Balance = () => {
   const calculatedBalance = `${Number(userBalance)
     .toFixed(2)
     .padStart(5, 0)} UAH`;
-
+  
   const [balance, setBalance] = useState('');
   const handleChangeInput = e => setBalance(e.currentTarget.value);
 
@@ -36,6 +37,7 @@ const Balance = () => {
     console.log(Number(balance));
     dispatch(updateBalance({ balance }));
     setBalance('');
+    dispatch(changeIsNotNewUser({ isNotNewUser: true}));
   };
 
   return (
@@ -59,9 +61,9 @@ const Balance = () => {
           </BalanceButton>
         </ButtonsGroup>
       </BalanceLabel>
-      {/* {!isBalanceDisabled && (
+      {!isBalanceDisabled && (
         <ModalComment />
-      )} */}
+      )}
     </ReportBalance>
   );
 };
