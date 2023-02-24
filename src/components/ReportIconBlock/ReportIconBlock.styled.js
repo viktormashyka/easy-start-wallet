@@ -1,4 +1,26 @@
 import styled from 'styled-components';
+export const Container = styled.div`
+  width: 100%;
+
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-top: 32px;
+
+  margin: auto;
+  @media screen and (min-width: 320px) {
+    max-width: 480px;
+    margin-bottom: 31px;
+  }
+  @media screen and (min-width: 768px) {
+    max-width: 768px;
+    margin-bottom: 32px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    max-width: 1280px;
+    margin-bottom: 40px;
+  }
+`;
 
 export const ReportWrapper = styled.div`
   @media screen and (min-width: 320px) {
