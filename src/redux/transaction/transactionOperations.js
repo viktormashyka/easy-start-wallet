@@ -47,7 +47,7 @@ export const addTransaction = createAsyncThunk(
         'transactions/addTransaction ==> data.transaction:',
         data.transaction
       ); //!
-      return data.transaction;
+      return data;
     } catch (error) {
       console.log(error); //!
       toast.error(
@@ -72,11 +72,16 @@ export const deleteTransaction = createAsyncThunk(
         'transactions/deleteTransaction ==> transactionId:',
         transactionId
       ); //!
+      // const {
+      //   data: { contactId },
+      // } = await axios.delete(`/transactions/${transactionId}`);
       const {
-        data: { contactId },
+        data,
       } = await axios.delete(`/transactions/${transactionId}`);
-      console.log('transactions/deleteTransaction ==> contactId:', contactId); //!
-      return contactId;
+      // console.log('transactions/deleteTransaction ==> contactId:', contactId); //!
+      // return contactId;
+      console.log('transactions/deleteTransaction ==> data:', data);
+      return data;
     } catch (error) {
       console.log(error); //!
       toast.error(

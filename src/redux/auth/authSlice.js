@@ -1,5 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
 import {
+  addTransaction,
+  deleteTransaction,
+} from 'redux/transaction/transactionOperations';
+import {
     register,
     logIn,
     logOut,
@@ -209,6 +213,12 @@ const authSlice = createSlice({
       // state.isLoggedIn = false;
       state.isRefreshing = false;
       state.error = payload;
+    },
+    [addTransaction.fulfilled](state, { payload }) {
+      state.balance = payload.balanceNew;
+    },
+    [deleteTransaction.fulfilled](state, { payload }) {
+      state.balance = payload.balanceNew;
     },
   },
 });

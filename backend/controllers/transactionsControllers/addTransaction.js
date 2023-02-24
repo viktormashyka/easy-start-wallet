@@ -79,7 +79,7 @@ const addTransaction = async (req, res, next) => {
 
   res.status(201).json({
     transaction,
-    // balanceNew //! как вариант дублирования user.balance (пока не надо)
+    balanceNew //! как вариант дублирования user.balance (пока не надо)
   });
 };
 

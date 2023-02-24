@@ -23,14 +23,13 @@ const Balance = () => {
 
   const userBalance = useSelector(selectBalance);
   const isNotNewUser = useSelector(selectIsNotNewUser);
+  const isBalanceDisabled = isNotNewUser || userBalance !== 0;
   const calculatedBalance = `${Number(userBalance)
     .toFixed(2)
     .padStart(5, 0)} UAH`;
   
   const [balance, setBalance] = useState('');
   const handleChangeInput = e => setBalance(e.currentTarget.value);
-
-  const isBalanceDisabled = isNotNewUser;
 
   const handleSetBalance = e => {
     e.preventDefault();
