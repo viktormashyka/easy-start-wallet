@@ -1,3 +1,4 @@
+import { useLocation } from 'react-router-dom';
 import useScreenResizing from '../../hooks/useScreenResizing';
 import { MainWrapper } from '../MainWrapper/MainWrapper';
 import { BottomBtnWrapper } from '../BottomBtnWrapper/BottomBtnWrapper';
@@ -22,14 +23,37 @@ import {
 } from './MainHome.styled';
 import { OperationList } from 'components/OperationList/OperationList';
 import { Summary } from 'components/Summary/Sumarry';
+import { useDispatch, useSelector } from 'react-redux';
+import { getAllTransactions } from '1/redux/transaction/transactionOperations';
+import { useEffect } from 'react';
+import { selectAllTransactions } from 'redux/transaction/transactionSelectors';
 
 export const MainHome = ({ children }) => {
   const viewPort = useScreenResizing();
   const [isTransactionsShown, setIsTransactionsShown] = useState(false);
+  const location = useLocation();
+  const dispatch = useDispatch();
+  const dataFromBack = useSelector(selectAllTransactions);
+
+  useEffect(() => {
+    dispatch(getAllTransactions());
+  }, [dispatch]);
+
+  console.log('dataFromBack:', dataFromBack);
 
   const handleClick = () => {
     setIsTransactionsShown(!isTransactionsShown);
   };
+
+  const sortedTransactions = 
+    location.pathname === '/home'
+  ? dataFromBack.filter(
+    ({ transactionsType }) => transactionsType === 'expenses'
+      )
+      :
+      dataFromBack.filter(
+        ({ transactionsType }) => transactionsType === "income");  
+  console.log('sortedTransactions:', sortedTransactions)
 
   return (
     <MainWrapper>
@@ -45,7 +69,7 @@ export const MainHome = ({ children }) => {
               <BalanceWrapper />
               <DataBox />
             </ContentBalanceContainer>
-            <OperationList />
+            <OperationList sortedTransactions={sortedTransactions}/>
             <BottomBtnBox>
               <BottomBtnWrapper />
             </BottomBtnBox>
@@ -77,7 +101,7 @@ export const MainHome = ({ children }) => {
                     <TopBtnList />
                   </BtnTopWrapper>
                   {children}
-                  <OperationList />
+                  <OperationList sortedTransactions={sortedTransactions}/>
                 </FilterWrapper>
                 <Summary />
               </ContentBox>
@@ -89,7 +113,7 @@ export const MainHome = ({ children }) => {
               </BtnTopWrapper>
               {children}
               <MainContentWrapper>
-                <OperationList />
+                <OperationList sortedTransactions={sortedTransactions}/>
                 <Summary />
               </MainContentWrapper>
             </BigFilterWrapper>

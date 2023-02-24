@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import useScreenResizing from '../../hooks/useScreenResizing';
 import { OperationListWrapper } from './OperationList.styles';
 import { OperationListDiv } from './OperationList.styles';
@@ -15,37 +15,21 @@ import { Table } from 'components/Table/Table';
 import { TableStyle } from '../Table/Table.styled';
 
 import { deleteTransaction } from '../../redux/transaction/transactionOperations';
-import { useDispatch, useSelector } from 'react-redux';
-import { getAllTransactions } from 'redux/transaction/transactionOperations';
-import { selectAllTransactions } from 'redux/transaction/transactionSelectors';
+import { useDispatch } from 'react-redux';
 import moment from 'moment';
 
 // Mikhaylo Pobochikh
 
-export const OperationList = () => {
+export const OperationList = ({sortedTransactions}) => {
   const viewPort = useScreenResizing();
   const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(getAllTransactions());
-  }, [dispatch]);
-
+ 
   const onHandleClick = id => {
     console.log('Click Delete on id', id);
     dispatch(deleteTransaction(id));
   };
 
-  const dataFromBack = useSelector(selectAllTransactions);
-  console.log(dataFromBack);
-  //Сортуємо по датах, потрібен такий формат '2012-01-26T13:51:50.417-07:00'
-  // const sortedTransactions = dataFromBack.sort((firstTransaction, secondTransaction) => Date.parse(secondTransaction.date) - Date.parse(firstTransaction.date));
-  //Вибираємо лише витрати:
-  const expensesTransactions = dataFromBack.filter(
-    ({ transactionsType }) => transactionsType === 'expenses'
-  );
-  console.log('expensesTransactions:', expensesTransactions);
-  //Вибираємо лише доходи:
-  // const incomeTransactions = dataFromBack.filter(({ transactionsType }) => transactionsType === "income");
-  // console.log('incomeTransactions:', incomeTransactions);
+  
   const columns = React.useMemo(
     () => [
       {
@@ -74,7 +58,7 @@ export const OperationList = () => {
 
   return (
     <>
-      {expensesTransactions.map(el => {
+      {sortedTransactions.map(el => {
         const expenses = el.transactionsType === 'expenses';
         console.log('el._id', el._id);
         return (
@@ -111,11 +95,11 @@ export const OperationList = () => {
         );
       })}
       {/* Для 769 px + */}
-      {viewPort.width > 767 /*Наталія змінила з 150px*/ && (
+      {viewPort.width > 767 && (
         <TableStyle TableStyle>
           <Table
             columns={columns}
-            data={expensesTransactions}
+            data={sortedTransactions}
             onHandleClick={onHandleClick}
           />
         </TableStyle>
