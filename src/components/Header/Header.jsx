@@ -1,4 +1,4 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 // import { useSelector } from 'react-redux';
 
 import { SectionHeader } from './Header.styled';
@@ -7,6 +7,7 @@ import Rectangle19 from '../../images/Rectangle19.svg';
 import Rectangle20 from '../../images/Rectangle20.svg';
 import Union from '../../images/Union.svg';
 import Logout from '../../images/logout.svg';
+import DefaultAvatar from '../../images/defaultAvatar.svg';
 
 import { LogoWrapper } from './Header.styled';
 import { Logo } from './Header.styled';
@@ -23,11 +24,15 @@ import { logOut } from 'redux/auth/authOperations';
 import { UniversalModal } from 'components/UniversalModal/UniversalModal';
 import { useState } from 'react';
 
+import { selectUser } from 'redux/auth/authSelectors';
+
 // Mikhaylo Pobochikh
-const modalQuestion = 'Do you really want to leave?'
+const modalQuestion = 'Do you really want to leave?';
 
 export const Header = ({ isLoggedIn }) => {
   const [showModal, setShowModal] = useState(false);
+  const user = useSelector(selectUser);
+
   console.log(isLoggedIn);
   const dispatch = useDispatch();
   const onHandleClick = () => {
@@ -44,14 +49,23 @@ export const Header = ({ isLoggedIn }) => {
         </LogoWrapper>
         {isLoggedIn && (
           <AuthWrapper>
-            <UserLogo>U</UserLogo>
-            <UserTite>User Name</UserTite>
+            <UserLogo to="/avatar">
+              <img src={user?.avatarURL ?? DefaultAvatar} alt="" width="32" />
+            </UserLogo>
+            <UserTite>{user?.email ?? 'User Name'}</UserTite>
             <LogOutButton type="button" onClick={() => setShowModal(true)}>
               <LogOutIcon src={Logout} alt="Logout icon" />
               <LogOutTitle>Exit</LogOutTitle>
             </LogOutButton>
           </AuthWrapper>
-        )}{showModal && <UniversalModal closeModal={setShowModal} agreeLogout={onHandleClick} question={modalQuestion} />}
+        )}
+        {showModal && (
+          <UniversalModal
+            closeModal={setShowModal}
+            agreeLogout={onHandleClick}
+            question={modalQuestion}
+          />
+        )}
       </SectionHeader>
     </header>
   );
