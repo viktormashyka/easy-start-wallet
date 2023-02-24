@@ -25,7 +25,6 @@ export const FormBox = styled(Form)`
 export const FormTopWrapper = styled.div`
   @media screen and (min-width: 768px) {
     display: flex;
-    justify-content: center;
     align-items: center;
     margin-bottom: 32px;
   }
@@ -209,10 +208,7 @@ export const BtnSubmitList = styled.ul`
   justify-content: space-between;
   width: 280px;
   @media screen and (min-width: 768px) {
-    width: 265px;
-  }
-  @media screen and (min-width: 1280px) {
-    width: 100%;
+    width: auto;
   }
 `;
 
@@ -262,7 +258,7 @@ export const BtnSubmit = styled.button`
     width: 125px;
     box-shadow: none;
   }
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1280px) {
     width: 136px;
   }
 `;
@@ -306,7 +302,7 @@ export const ErrorNotification = styled.p`
   font-size: 13px;
   color: red;
   @media screen and (min-width: 768px) {
-    top: 2%;
+    top: 1%;
     left: 50%;
     transform: translateX(-50%);
   }

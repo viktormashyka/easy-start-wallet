@@ -4,38 +4,25 @@ import BCGImageBottom from '../../images/BottomLogo.png';
 
 // main container //
 
-export const ContentBalanceContainer = styled.div`
-  padding: 50px 20px 0 20px;
-`;
-
-export const ContentFormContainer = styled.div`
-  padding: 56px 20px 0 20px;
-`;
-
-export const TopWrapper = styled.section`
-  position: relative;
-  padding: 56px 20px 0 20px;
-  min-height: 258px;
-  background-color: #f5f6fb;
-  border-bottom-left-radius: 80px;
-  overflow-x: hidden;
+export const ContentContainer = styled.div`
+  padding-top: 44px;
   @media screen and (min-width: 768px) {
-    padding: 0 32px;
-    min-height: 526px;
-    border-bottom-left-radius: 180px;
-  }
-  @media screen and (min-width: 1280px) {
-    padding: 0 91px;
-    border-bottom-left-radius: 110px;
+    padding-top: 40px;
   }
 `;
 
-export const TopBalanceWrapper = styled.section`
+export const ContentBalanceContainer = styled.div`
+  margin-bottom: 50px;
+  @media screen and (min-width: 768px) {
+    margin-bottom: 0px;
+  }
+`;
+
+export const TopWrapper = styled.div`
   position: absolute;
   z-index: -10;
   width: 100%;
   min-height: 258px;
-  padding-bottom: 40px;
   background-color: #f5f6fb;
   border-bottom-left-radius: 80px;
   overflow: hidden;
@@ -50,12 +37,13 @@ export const TopBalanceWrapper = styled.section`
   }
 `;
 
-export const Box = styled.div`
+export const BCGLogoBox = styled.div`
   z-index: -20;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
+  /* height: 100%; */
   min-height: 100vh;
   @media screen and (min-width: 768px) {
     background-image: url(${BCGImageBottom});
@@ -65,30 +53,76 @@ export const Box = styled.div`
   }
   @media screen and (min-width: 1280px) {
     background: url(${BCGImageTopTablet});
-    background-position: 0 100%;
+    background-position: 100% 100%;
     background-repeat: repeat-x;
     background-size: auto auto;
   }
 `;
 
-export const ToBackBtnWrapper = styled.div`
-  width: 24px;
-  height: 24px;
-  background-color: transparent;
-  margin-bottom: 16px;
+export const BottomContentWrapper = styled.div`
+  position: absolute;
+  width: 100%;
+  top: 184px;
+  left: 50%;
+  transform: translateX(-50%);
+  @media screen and (min-width: 1280px) {
+    display: none;
+  }
 `;
 
 // Form //
+
+export const ContentBox = styled.div`
+  position: relative;
+  width: 704px;
+  height: 100%;
+  margin: 0 auto;
+  background-color: transparent;
+  padding-bottom: 60px;
+  @media screen and (min-width: 1280px) {
+    display: none;
+  }
+`;
+
+export const MainContentWrapper = styled.div`
+  display: none;
+  @media screen and (min-width: 1280px) {
+    display: flex;
+    justify-content: space-between;
+  }
+`;
+
+export const BigFilterWrapper = styled.div`
+  display: none;
+  @media screen and (min-width: 1280px) {
+    display: block;
+    position: absolute;
+    top: 132px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1098px;
+    margin-bottom: 40px;
+    box-sizing: border-box;
+    padding: 32px 32px 61px 32px;
+    background-color: #fff;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    border-top-right-radius: 30px;
+    border-top-left-radius: 0px;
+    box-shadow: 0px 10px 60px 0px rgba(170, 178, 197, 0.2);
+  }
+`;
 
 export const FilterWrapper = styled.div`
   width: 280px;
   margin: 0 auto;
   @media screen and (min-width: 768px) {
-    position: absolute;
-    top: 184px;
+    /* position: absolute; */
+    /* top: 184px;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%); */
     width: 704px;
+    margin-bottom: 40px;
     box-sizing: border-box;
     padding: 24px 40px 42px 40px;
     background-color: #fff;
@@ -99,6 +133,7 @@ export const FilterWrapper = styled.div`
     box-shadow: 0px 10px 60px 0px rgba(170, 178, 197, 0.2);
   }
   @media screen and (min-width: 1280px) {
+    position: absolute;
     top: 132px;
     left: 50%;
     transform: translateX(-50%);

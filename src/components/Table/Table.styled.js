@@ -17,6 +17,10 @@ export const TableStyle = styled.div`
     display: none;   //закоментувала Юля Зозуля
   } */
 
+  @media screen and (min-width: 1280px) {
+    width: 746px; //додала Юля Зозуля
+  }
+
   height: 300px; /*Наталія змінила з 150px*/
   overflow-y: scroll;
 

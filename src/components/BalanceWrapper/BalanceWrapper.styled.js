@@ -13,13 +13,13 @@ export const ContainerBalance = styled.div`
   @media screen and (min-width: 768px) {
     align-items: center;
     flex-direction: row-reverse;
-    padding-left: 50px;
-    padding-right: 50px;
+    /* padding-left: 50px;
+    padding-right: 50px; закоментувала Юля Зозуля*/
     width: 768px;
   }
   @media screen and (min-width: 1280px) {
     width: 1260px;
-    padding-left: 100px;
-    padding-right: 100px;
+    /* padding-left: 100px; закоментувала Юля Зозуля
+    padding-right: 100px; */
   }
 `;
