@@ -14,9 +14,9 @@ import {
 
 const modalRoot = document.querySelector('#modal-root');
 
-const LogOutModal = ({ closeModal, agreeLogout, question }) => {
+export const UniversalModal = ({ closeModal, agreeLogout, question }) => {
   // closeModal - Пропс в який передається сет стейт для закриття модалки в компоненті кнопкт LogOut
-  //   agreeLogout - Пропс в який передається функція запиту на бекенд для виходу з профілю
+  //  agreeLogout - Пропс в який передається функція запиту на бекенд для виходу з профілю
   // question - Пропс в який передається запитання що буде відображене в модалці
 
   useEffect(() => {
@@ -62,4 +62,4 @@ const LogOutModal = ({ closeModal, agreeLogout, question }) => {
   );
 };
 
-export default LogOutModal;
+
