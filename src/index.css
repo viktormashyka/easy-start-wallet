@@ -78,9 +78,15 @@ button {
   width: 100% !important;
 }
 
+@media screen and (min-width: 768px) {
+  .custom-select__control {
+    width: 186px !important;
+  }
+}
+
 @media screen and (min-width: 1280px) {
   .custom-select__control {
-    width: 169px;
+    width: 169px !important;
   }
 }
 
