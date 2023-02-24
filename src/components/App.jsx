@@ -28,12 +28,9 @@ const IncomeReportForm = lazy(() =>
 );
 const NotFoundPage = lazy(() => import('../pages/NotFound/NotFound'));
 
-// const UploadContactsPage = lazy(() =>
-//   import('../pages/UploadContacts/UploadContacts.js')
-// );
-// const UploadAvatarPage = lazy(() =>
-//   import('../pages/UploadAvatarPage/UploadAvatarPage.js')
-// );
+const UploadAvatarPage = lazy(() =>
+  import('../pages/UploadAvatarPage/UploadAvatarPage.js')
+);
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -124,7 +121,14 @@ export const App = () => {
                   />
                 }
               />
-            </Route>
+              </Route>
+              {/* //! Маршрут АВТАР */}
+              <Route
+                  path="/avatar"
+                  element={
+                      <PrivateRoute redirectTo="/login" component={<UploadAvatarPage />} />
+                  }
+              />
           </Route>
           <Route path="*" element={<NotFoundPage />} />
         </Routes>

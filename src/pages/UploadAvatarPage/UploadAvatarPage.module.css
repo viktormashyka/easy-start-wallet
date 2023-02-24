@@ -1,0 +1,96 @@
+/* import styled from '@emotion/styled'; */
+
+
+.Сontainer {
+  display: flex;
+  flex-direction: column;
+  /* align-items: flex-start; */
+  align-items: center;
+  width: 600px;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 50px;
+  padding-right: 50px;
+  outline: auto;
+  outline-color: #8b8b8b;
+
+}
+
+.UserProfileTitle {
+  font-weight: 700;
+  font-size: 24px;
+  /* align-items: center; */
+  /* justify-content: center; */
+  /* align-items: flex-start; */
+  margin-bottom: 50px;
+}
+
+.Title {
+  font-weight: 700;
+  font-size: 18px;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+
+.UploadContactsBtn {
+    /* display: none; */
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  outline: none;
+
+  /* margin-left: auto; */
+  border-radius: 4px;
+  padding: 12px 24px;
+  background-color: #14006d;
+  color: #ffffff;
+  font-weight: 500;
+
+  box-shadow: 0px 4px 4px #00000026;
+}
+
+.UploadContactsBtn:hover,
+.UploadContactsBtn:focus {
+  background-color: #2400c4;;
+}
+
+
+.AddUploadContactsBtn {
+    /* display: none; */
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  outline: none;
+
+  /* margin-left: auto; */
+  border-radius: 4px;
+  padding: 12px 132px;
+  background-color: #14006d;
+  color: #ffffff;
+  font-weight: 500;
+
+  box-shadow: 0px 4px 4px #00000026;
+}
+
+
+
+.AddUploadContactsBtn:hover,
+.AddUploadContactsBtn:focus {
+  background-color: #2400c4;
+}
+
+.hide {
+  display: none;
+}
+
+.TotalUploadContacts {
+  margin-top: 8px;
+  margin-bottom: 8px;
+  font-size: 24px;
+  font-weight: 700;
+  color: #2400c4;
+}
