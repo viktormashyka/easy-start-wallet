@@ -7,6 +7,7 @@ import BCGImageTopMob from '../../images/HeroImg_mob.png';
 
 export const HeroWrapper = styled.section`
   position: relative;
+  width: 100%;
   min-height: 286px;
   background-color: #f5f6fb;
   border-bottom-left-radius: 80px;
