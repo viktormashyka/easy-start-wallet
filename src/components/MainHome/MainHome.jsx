@@ -45,15 +45,15 @@ export const MainHome = ({ children }) => {
     setIsTransactionsShown(!isTransactionsShown);
   };
 
-  const sortedTransactions = 
+  const sortedTransactions =
     location.pathname === '/home'
-  ? dataFromBack.filter(
-    ({ transactionsType }) => transactionsType === 'expenses'
-      )
-      :
-      dataFromBack.filter(
-        ({ transactionsType }) => transactionsType === "income");  
-  console.log('sortedTransactions:', sortedTransactions)
+      ? dataFromBack.filter(
+          ({ transactionsType }) => transactionsType === 'expenses'
+        )
+      : dataFromBack.filter(
+          ({ transactionsType }) => transactionsType === 'income'
+        );
+  console.log('sortedTransactions:', sortedTransactions);
 
   return (
     <MainWrapper>
@@ -69,7 +69,7 @@ export const MainHome = ({ children }) => {
               <BalanceWrapper />
               <DataBox />
             </ContentBalanceContainer>
-            <OperationList sortedTransactions={sortedTransactions}/>
+            <OperationList sortedTransactions={sortedTransactions} />
             <BottomBtnBox>
               <BottomBtnWrapper />
             </BottomBtnBox>
@@ -101,9 +101,9 @@ export const MainHome = ({ children }) => {
                     <TopBtnList />
                   </BtnTopWrapper>
                   {children}
-                  <OperationList sortedTransactions={sortedTransactions}/>
+                  <OperationList sortedTransactions={sortedTransactions} />
                 </FilterWrapper>
-                <Summary />
+                <Summary sortedTransactions={sortedTransactions} />
               </ContentBox>
             </BottomContentWrapper>
             {/* 1280 +*/}
@@ -113,8 +113,8 @@ export const MainHome = ({ children }) => {
               </BtnTopWrapper>
               {children}
               <MainContentWrapper>
-                <OperationList sortedTransactions={sortedTransactions}/>
-                <Summary />
+                <OperationList sortedTransactions={sortedTransactions} />
+                <Summary sortedTransactions={sortedTransactions} />
               </MainContentWrapper>
             </BigFilterWrapper>
           </>

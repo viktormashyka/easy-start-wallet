@@ -6,18 +6,11 @@ import {
   SummaryFalse,
   SummaryTitle,
 } from './Summary.styled';
-import { useSelector } from 'react-redux';
-import { selectAllTransactions } from '../../redux/transaction/transactionSelectors.js';
 import moment from 'moment';
 
-export const Summary = () => {
-  const transactions = useSelector(selectAllTransactions);
-  const transactionsTypeValue = 'income';
-  // transactionsTypeValue - у майбутньому пропс який буде приходити в залежності від локейшн
-  const typeArray = transactions.filter(
-    ({ transactionsType }) => transactionsType === transactionsTypeValue
-  );
-  let result = typeArray.reduce((accumulator, current) => {
+export const Summary = ({ sortedTransactions }) => {
+  console.log(sortedTransactions);
+  let result = sortedTransactions.reduce((accumulator, current) => {
     const existing = accumulator.find(item => item.date === current.date);
     if (existing) {
       existing.sum += current.sum;
