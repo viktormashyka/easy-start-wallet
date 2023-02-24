@@ -14,7 +14,16 @@ export const ContentContainer = styled.div`
 export const ContentBalanceContainer = styled.div`
   margin-bottom: 50px;
   @media screen and (min-width: 768px) {
-    margin-bottom: 0px;
+    margin-bottom: 60px;
+    padding-left: 32px;
+    padding-right: 32px;
+    width: 768px;
+  }
+  @media screen and (min-width: 1280px) {
+    margin-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+    width: 1098px;
   }
 `;
 
