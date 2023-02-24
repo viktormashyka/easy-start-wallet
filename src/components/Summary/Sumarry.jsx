@@ -35,7 +35,7 @@ export const Summary = () => {
     );
   }
   if (result.length > 6) {
-    result = transactions.slice(0, 6);
+    result = result.slice(0, 6);
   }
   return (
     <div>
