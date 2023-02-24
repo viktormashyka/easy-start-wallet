@@ -28,7 +28,8 @@ export const StyledLink = styled(NavLink)`
   text-decoration: none;
 
   @media screen and (min-width: 768px) {
-    margin-left: 35px;
+    /* margin-left: 35px; */
+    margin-left: 0;
   }
   @media screen and (max-width: 1279px) {
     margin-right: auto;

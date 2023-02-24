@@ -12,7 +12,9 @@ import {
   ButtonsGroup,
   BalanceInput,
   BalanceButton,
+  BalanceReportInput,
 } from './Balance.styled';
+import { useLocation } from 'react-router';
 
 const Balance = () => {
   const dispatch = useDispatch();
@@ -27,6 +29,12 @@ const Balance = () => {
   const calculatedBalance = `${Number(userBalance)
     .toFixed(2)
     .padStart(5, 0)} UAH`;
+  
+  const location = useLocation()
+  console.log(location);
+  const buttonIsNotShown =
+    location.pathname === '/report' || location.pathname === '/report/income';
+  console.log(buttonIsNotShown);
   
   const [balance, setBalance] = useState('');
   const handleChangeInput = e => setBalance(e.currentTarget.value);
@@ -44,25 +52,34 @@ const Balance = () => {
       <BalanceLabel htmlFor="balans">
         Balance:
         <ButtonsGroup>
-          <BalanceInput
-            type="text"
-            name="balance"
-            pattern="^(([0-9]*)|(([0-9]*)\.([0-9]*)))$"
-            title="Вalance must be whole numbers (or decimal numbers)"
-            placeholder={calculatedBalance}
-            value={balance}
-            autoComplete="off"
-            disabled={isBalanceDisabled}
-            onChange={handleChangeInput}
-          />
-          <BalanceButton type="submit" disabled={isBalanceDisabled}>
-            Confirm
-          </BalanceButton>
+          {!buttonIsNotShown && (
+            <>
+              <BalanceInput
+                type="text"
+                name="balance"
+                pattern="^(([0-9]*)|(([0-9]*)\.([0-9]*)))$"
+                title="Вalance must be whole numbers (or decimal numbers)"
+                placeholder={calculatedBalance}
+                value={balance}
+                autoComplete="off"
+                disabled={isBalanceDisabled}
+                onChange={handleChangeInput}
+              />
+
+              <BalanceButton type="submit" disabled={isBalanceDisabled}>
+                Confirm
+              </BalanceButton>
+            </>
+          )}
+          {buttonIsNotShown && (
+            <BalanceReportInput
+              placeholder={calculatedBalance}
+              disabled={isBalanceDisabled}
+            />
+          )}
         </ButtonsGroup>
       </BalanceLabel>
-      {!isBalanceDisabled && (
-        <ModalComment />
-      )}
+      {!isBalanceDisabled && <ModalComment />}
     </ReportBalance>
   );
 };
