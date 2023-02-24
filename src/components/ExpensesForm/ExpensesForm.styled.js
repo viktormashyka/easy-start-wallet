@@ -293,7 +293,7 @@ export const BtnSecondary = styled.button`
 
 export const ErrorNotification = styled.p`
   position: absolute;
-  top: 5%;
+  top: 3%;
   left: 50%;
   transform: translateX(-50%);
   display: block;
