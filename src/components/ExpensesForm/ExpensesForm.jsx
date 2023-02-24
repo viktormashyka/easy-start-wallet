@@ -34,9 +34,8 @@ const options = [
   { value: 'Housing', label: 'Housing' },
   { value: 'Technique', label: 'Technique' },
   { value: 'Communal, communication', label: 'Communal, communication' },
-  { value: 'Sports, hobbies', label: 'Sports' },
+  { value: 'Sports, hobbies', label: 'Sports, hobbies' },
   { value: 'Education', label: 'Education' },
-  { value: 'Hobbies', label: 'Hobbies' },
   { value: 'Other', label: 'Others' },
 ];
 
