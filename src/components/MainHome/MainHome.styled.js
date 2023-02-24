@@ -43,6 +43,7 @@ export const BCGLogoBox = styled.div`
   top: 0;
   left: 0;
   width: 100%;
+  /* height: 100%; */
   min-height: 100vh;
   @media screen and (min-width: 768px) {
     background-image: url(${BCGImageBottom});
@@ -52,7 +53,7 @@ export const BCGLogoBox = styled.div`
   }
   @media screen and (min-width: 1280px) {
     background: url(${BCGImageTopTablet});
-    background-position: 0 100%;
+    background-position: 100% 100%;
     background-repeat: repeat-x;
     background-size: auto auto;
   }
@@ -65,7 +66,7 @@ export const BottomContentWrapper = styled.div`
   left: 50%;
   transform: translateX(-50%);
   @media screen and (min-width: 1280px) {
-    top: 132px;
+    display: none;
   }
 `;
 
@@ -78,14 +79,45 @@ export const ContentBox = styled.div`
   margin: 0 auto;
   background-color: transparent;
   padding-bottom: 60px;
+  @media screen and (min-width: 1280px) {
+    display: none;
+  }
+`;
+
+export const MainContentWrapper = styled.div`
+  display: none;
+  @media screen and (min-width: 1280px) {
+    display: flex;
+    justify-content: space-between;
+  }
+`;
+
+export const BigFilterWrapper = styled.div`
+  display: none;
+  @media screen and (min-width: 1280px) {
+    display: block;
+    position: absolute;
+    top: 132px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1098px;
+    margin-bottom: 40px;
+    box-sizing: border-box;
+    padding: 32px 32px 61px 32px;
+    background-color: #fff;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    border-top-right-radius: 30px;
+    border-top-left-radius: 0px;
+    box-shadow: 0px 10px 60px 0px rgba(170, 178, 197, 0.2);
+  }
 `;
 
 export const FilterWrapper = styled.div`
   width: 280px;
   margin: 0 auto;
   @media screen and (min-width: 768px) {
-    position: absolute;
-
+    /* position: absolute; */
     /* top: 184px;
     left: 50%;
     transform: translateX(-50%); */
@@ -101,6 +133,7 @@ export const FilterWrapper = styled.div`
     box-shadow: 0px 10px 60px 0px rgba(170, 178, 197, 0.2);
   }
   @media screen and (min-width: 1280px) {
+    position: absolute;
     top: 132px;
     left: 50%;
     transform: translateX(-50%);

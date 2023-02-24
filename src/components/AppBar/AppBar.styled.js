@@ -7,4 +7,5 @@ export const AppBarForm = styled.div`
   /* max-width: 960px; */
   margin: 0 auto;
   /* padding: 16px; */
+  /* min-height: 100vh; */
 `;

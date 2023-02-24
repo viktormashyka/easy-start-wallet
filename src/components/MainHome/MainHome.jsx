@@ -17,6 +17,8 @@ import {
   ContentContainer,
   BottomContentWrapper,
   ContentBox,
+  MainContentWrapper,
+  BigFilterWrapper,
 } from './MainHome.styled';
 import { OperationList } from 'components/OperationList/OperationList';
 
@@ -61,11 +63,12 @@ export const MainHome = ({ children }) => {
             </FilterWrapper>
           </>
         )}
-        {/* {viewPort.width > 767 && (
+        {viewPort.width > 767 && (
           <>
             <ContentBalanceContainer>
               <BalanceWrapper />
             </ContentBalanceContainer>
+            {/* 767-1279 */}
             <BottomContentWrapper>
               <ContentBox>
                 <FilterWrapper>
@@ -84,9 +87,26 @@ export const MainHome = ({ children }) => {
                 ></div>
               </ContentBox>
             </BottomContentWrapper>
+            {/* 1279 +*/}
+            <BigFilterWrapper>
+              <BtnTopWrapper>
+                <TopBtnList />
+              </BtnTopWrapper>
+              {children}
+              <MainContentWrapper>
+                <OperationList />{' '}
+                <div
+                  style={{
+                    width: '230px',
+                    height: '278px',
+                    backgroundColor: 'black',
+                  }}
+                ></div>
+              </MainContentWrapper>
+            </BigFilterWrapper>
           </>
-        )} */}
-        {viewPort.width > 1279 && (
+        )}
+        {/* {viewPort.width > 1279 && (
           <>
             <ContentBalanceContainer>
               <BalanceWrapper />
@@ -108,7 +128,7 @@ export const MainHome = ({ children }) => {
               </MainContentWrapper>
             </FilterWrapper>
           </>
-        )}
+        )} */}
       </ContentContainer>
     </MainWrapper>
   );
