@@ -20,16 +20,17 @@ import { LogOutButton } from './Header.styled';
 import { LogOutTitle } from './Header.styled';
 import { UserTite } from './Header.styled';
 import { logOut } from 'redux/auth/authOperations';
+import { UniversalModal } from 'components/UniversalModal/UniversalModal';
+import { useState } from 'react';
 
 // Mikhaylo Pobochikh
+const modalQuestion = 'Do you really want to leave?'
 
 export const Header = ({ isLoggedIn }) => {
+  const [showModal, setShowModal] = useState(false);
   console.log(isLoggedIn);
   const dispatch = useDispatch();
-  // const isUserLogin = true;
-  const onHandleClick = e => {
-    e.preventDefault();
-    console.log('Click on button Logout');
+  const onHandleClick = () => {
     dispatch(logOut());
   };
 
@@ -45,14 +46,12 @@ export const Header = ({ isLoggedIn }) => {
           <AuthWrapper>
             <UserLogo>U</UserLogo>
             <UserTite>User Name</UserTite>
-
-            <LogOutButton type="button" onClick={onHandleClick}>
+            <LogOutButton type="button" onClick={() => setShowModal(true)}>
               <LogOutIcon src={Logout} alt="Logout icon" />
-
               <LogOutTitle>Exit</LogOutTitle>
             </LogOutButton>
           </AuthWrapper>
-        )}
+        )}{showModal && <UniversalModal closeModal={setShowModal} agreeLogout={onHandleClick} question={modalQuestion} />}
       </SectionHeader>
     </header>
   );
