@@ -2,16 +2,19 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
 export const GoReport = styled.div`
+  margin-bottom: 30px;
   @media screen and (min-width: 768px) {
     display: flex;
-    width: 154px;
+    /* width: 154px; */
     height: 24px;
     align-items: center;
-    margin-left: 111px;
+    /* margin-left: 111px; */
+    margin-bottom: 0;
+    margin-left: auto;
   }
   @media screen and (min-width: 1280px) {
-      margin-left: 205px;
-    }
+    margin-left: 205px;
+  }
 `;
 
 export const StyledLink = styled(NavLink)`

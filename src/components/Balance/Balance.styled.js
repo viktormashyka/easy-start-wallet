@@ -19,8 +19,6 @@ export const BalanceLabel = styled.label`
     align-items: center;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 30px;
-    padding-top: 30px;
   }
   @media screen and (min-width: 768px) {
     display: flex;
