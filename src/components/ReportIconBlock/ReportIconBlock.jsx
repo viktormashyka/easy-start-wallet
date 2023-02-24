@@ -5,7 +5,7 @@ import { selectAllTransactionsReport } from 'redux/transaction/transactionSelect
 import sprite from '../../images/icon.svg';
 import expenseIconCategories from './data/expenseIcon.json';
 import incomeIconCategories from './data/incomeIcon.json';
-
+import { nanoid } from 'nanoid/non-secure';
 import {
   Container,
   ReportWrapper,
@@ -22,16 +22,17 @@ export const ReportIconBlock = () => {
   // eslint-disable-next-line no-unused-vars
   const [category, setCategory] = useState('');
   const [type, setType] = useState('expenses');
+  const report = useSelector(selectAllTransactionsReport);
+  const transaction = report.filterTransactions;
+  // const { category, date, description, sum, transactionsType, _id } =
+  //   transaction;
 
-  const categories =
-    type === 'expenses' ? expenseIconCategories : incomeIconCategories;
+  // const categories =
+  //   type === 'expenses' ? expenseIconCategories : incomeIconCategories;
+
   const getCategory = e => {
     setCategory(e.target.attributes.title.nodeValue);
   };
-
-  const report = useSelector(selectAllTransactionsReport);
-
-  const transaction = report.filterTransactions;
 
   const getTransactionByType = type => {
     if (transaction) {
@@ -44,15 +45,31 @@ export const ReportIconBlock = () => {
   };
 
   // eslint-disable-next-line no-unused-vars
-  const categoryLabel = categories.map(el => el.label);
+  // const categoryLabel = categories.map(el => el.label);
 
-  const findTotalSumByCategory = (type, categoryLabel) => {
-    let totalExpense = 0;
-    getTransactionByType(type)
-      .filter(tr => tr.category === categoryLabel)
-      .map(el => (totalExpense += el.sum));
-    return totalExpense;
+  const filterObjByTypeAndCategory = () => {
+    if (!getTransactionByType(type)) return;
+
+    const result = getTransactionByType(type).reduce((acc, obj) => {
+      if (!acc[obj.category]) {
+        acc[obj.category] = { category: obj.category, sum: 0 };
+      }
+      acc[obj.category].sum += obj.sum;
+
+      return acc;
+    }, {});
+    return Object.values(result).sort((a, b) => b.sum - a.sum);
   };
+
+  // const arrays = filterObjByTypeAndCategory();
+
+  // const findTotalSumByCategory = (type, categoryLabel) => {
+  //   let totalExpense = 0;
+  //   getTransactionByType(type)
+  //     .filter(tr => tr.category === categoryLabel)
+  //     .map(el => (totalExpense += el.sum));
+  //   return totalExpense;
+  // };
 
   const onHandleChangeType = () => {
     if (type === 'expenses') {
@@ -97,25 +114,40 @@ export const ReportIconBlock = () => {
               доходах и расходах за выбранный период.
             </p>
           ) : (
-            categories.map(event => {
-              let sum = findTotalSumByCategory(type, event.label);
-              if (sum === 0) {
-                return null;
-              }
-
+            filterObjByTypeAndCategory().map(array => {
+              const id = nanoid();
               return (
-                <ReportCard key={event.id}>
-                  <p>{`${sum.toLocaleString('ru')}.00`}</p>
-                  <IconSvg title={event.label} onClick={getCategory}>
+                <ReportCard key={id}>
+                  <p>{`${array.sum.toLocaleString('ru')}.00`}</p>
+                  <IconSvg title={array.category} onClick={getCategory}>
                     <use
-                      xlinkHref={`${sprite}#${event.label}`}
-                      title={event.label}
+                      xlinkHref={`${sprite}#${array.category}`}
+                      title={array.category}
                     />
                   </IconSvg>
-                  <ReportCardTitle>{event.label}</ReportCardTitle>
+                  <ReportCardTitle>{array.category}</ReportCardTitle>
                 </ReportCard>
               );
             })
+            // categories.map(event => {
+            //   let sum = findTotalSumByCategory(type, event.label);
+            //   if (sum === 0) {
+            //     return null;
+            //   }
+
+            //   return (
+            //     <ReportCard key={event.id}>
+            //       <p>{`${sum.toLocaleString('ru')}.00`}</p>
+            //       <IconSvg title={event.label} onClick={getCategory}>
+            //         <use
+            //           xlinkHref={`${sprite}#${event.label}`}
+            //           title={event.label}
+            //         />
+            //       </IconSvg>
+            //       <ReportCardTitle>{event.label}</ReportCardTitle>
+            //     </ReportCard>
+            //   );
+            // })
           )}
         </ReportList>
       </ReportWrapper>
