@@ -85,6 +85,18 @@ export const LoaderWrapper = styled.div`
   align-items: center;
 `;
 
+export const LoaderWrapperBig = styled.div`
+  @media screen and (min-width: 768px) {
+    width: 624px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 746px;
+  }
+`;
 // Form //
 
 export const ContentBox = styled.div`
@@ -132,10 +144,6 @@ export const FilterWrapper = styled.div`
   width: 280px;
   margin: 0 auto;
   @media screen and (min-width: 768px) {
-    /* position: absolute; */
-    /* top: 184px;
-    left: 50%;
-    transform: translateX(-50%); */
     width: 704px;
     margin-bottom: 40px;
     box-sizing: border-box;

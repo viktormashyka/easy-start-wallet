@@ -1,9 +1,5 @@
 import styled from 'styled-components';
-// &:hover,
-// &:focus {
-//   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12),
-//     0px 4px 10px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
-// }
+// import { NavLink } from 'react-router-dom';
 import { ReactComponent as Calculator } from '../../images/Calculator.svg';
 import { Field, Form } from 'formik';
 

@@ -8,6 +8,7 @@ import { OperationListTitle } from './OperationList.styles';
 import { OperationListDateTitle } from './OperationList.styles';
 import { OperationListDivBalanceText } from './OperationList.styles';
 import { OperationListDivBalanceTextMinus } from './OperationList.styles';
+import { LoaderWrapper } from './OperationList.styles';
 import { ReactComponent as DeleteIcon } from '../../images/delete.svg';
 import { DeleteBtn } from './OperationList.styles';
 import { List } from './OperationList.styles';
@@ -103,9 +104,8 @@ export const OperationList = ({ sortedTransactions, isLoading }) => {
         );
       })}
       {/* Для 769 px + */}
-      {viewPort.width > 767 && isLoading ? (
-        <Loader />
-      ) : (
+
+      {viewPort.width > 767 && !isLoading && (
         <TableStyle TableStyle>
           <Table
             columns={columns}
