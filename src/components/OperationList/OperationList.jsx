@@ -17,19 +17,26 @@ import { TableStyle } from '../Table/Table.styled';
 import { deleteTransaction } from '../../redux/transaction/transactionOperations';
 import { useDispatch } from 'react-redux';
 import moment from 'moment';
-
+import { UniversalModal } from 'components/UniversalModal/UniversalModal';
+import { useState } from 'react';
+const modalQuestion = 'Are you sure?';
 // Mikhaylo Pobochikh
 
-export const OperationList = ({sortedTransactions}) => {
+export const OperationList = ({ sortedTransactions }) => {
+  const [showModal, setShowModal] = useState(false);
+  const [selectedId, setSelectedId] = useState(null);
   const viewPort = useScreenResizing();
   const dispatch = useDispatch();
- 
-  const onHandleClick = id => {
-    console.log('Click Delete on id', id);
-    dispatch(deleteTransaction(id));
+
+  const onHandleClick = () => {
+    console.log('Click Delete on id', selectedId);
+    dispatch(deleteTransaction(selectedId));
+  };
+  const clickButton = id => {
+    setSelectedId(id);
+    setShowModal(true);
   };
 
-  
   const columns = React.useMemo(
     () => [
       {
@@ -85,7 +92,7 @@ export const OperationList = ({sortedTransactions}) => {
                 <DeleteBtn
                   type="button"
                   id={el._id}
-                  onClick={() => onHandleClick(el._id)}
+                  onClick={() => clickButton(el._id)}
                 >
                   <DeleteIcon />
                 </DeleteBtn>
@@ -100,9 +107,16 @@ export const OperationList = ({sortedTransactions}) => {
           <Table
             columns={columns}
             data={sortedTransactions}
-            onHandleClick={onHandleClick}
+            onHandleClick={clickButton}
           />
         </TableStyle>
+      )}
+      {showModal && (
+        <UniversalModal
+          closeModal={setShowModal}
+          agreeLogout={onHandleClick}
+          question={modalQuestion}
+        />
       )}
     </>
   );
