@@ -17,7 +17,7 @@ export const CurrentPeriod = () => {
     const currentMonth = new Date().getMonth();
     return currentMonth + 1;
   });
-  const [year, setYear] = useState(2023);
+  const [year, setYear] = useState(() => new Date().getFullYear());
   const [monthName, setMonthName] = useState(null);
 
   useEffect(() => {
