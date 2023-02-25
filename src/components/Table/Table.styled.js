@@ -13,9 +13,9 @@ export const TdPlus = styled.td`
 `;
 
 export const TableStyle = styled.div`
-  /* @media screen and (max-width: 768px) {
-    display: none;   //закоментувала Юля Зозуля
-  } */
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 
   @media screen and (min-width: 1280px) {
     width: 746px; //додала Юля Зозуля

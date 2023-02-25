@@ -26,16 +26,13 @@ export const Table = ({ columns, data, onHandleClick }) => {
         {rows.map((row, i) => {
           prepareRow(row);
           return (
-            <tr {...row.getRowProps()} >
+            <tr {...row.getRowProps()}>
               {row.cells.map(cell => {
                 // console.log('cell', cell);
                 if (cell.column.id === 'date') {
-
                   const newCell = moment(cell.value).format('DD.MM.YYYY');
                   // console.log('newCell', newCell);
-                  return (<td {...cell.getCellProps()}>
-                    {newCell}
-                  </td>)
+                  return <td {...cell.getCellProps()}>{newCell}</td>;
                 }
                 // console.log('cell header', cell.column.Header);
                 // Перевіряємо в якій категорії ?console.log(cell.row.original);
@@ -71,7 +68,7 @@ export const Table = ({ columns, data, onHandleClick }) => {
                     </td>
                   );
                 }
-                return <td {...cell.getCellProps()} >{cell.render('Cell')}</td>;
+                return <td {...cell.getCellProps()}>{cell.render('Cell')}</td>;
               })}
             </tr>
           );
