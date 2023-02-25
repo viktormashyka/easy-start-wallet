@@ -1,10 +1,10 @@
 {
   "files": {
     "main.css": "/easy-start-wallet/static/css/main.b2a8f3ba.css",
-    "main.js": "/easy-start-wallet/static/js/main.286c2a8d.js",
+    "main.js": "/easy-start-wallet/static/js/main.b0e0fb55.js",
     "static/js/649.e95f12b0.chunk.js": "/easy-start-wallet/static/js/649.e95f12b0.chunk.js",
     "static/js/628.d16eb0c1.chunk.js": "/easy-start-wallet/static/js/628.d16eb0c1.chunk.js",
-    "static/js/697.1586173f.chunk.js": "/easy-start-wallet/static/js/697.1586173f.chunk.js",
+    "static/js/697.de29d147.chunk.js": "/easy-start-wallet/static/js/697.de29d147.chunk.js",
     "static/js/561.f44d51c8.chunk.js": "/easy-start-wallet/static/js/561.f44d51c8.chunk.js",
     "static/js/237.b3f3e0e2.chunk.js": "/easy-start-wallet/static/js/237.b3f3e0e2.chunk.js",
     "static/js/694.a02e0e43.chunk.js": "/easy-start-wallet/static/js/694.a02e0e43.chunk.js",
@@ -36,10 +36,10 @@
     "static/media/date-period-left-arrow.svg": "/easy-start-wallet/static/media/date-period-left-arrow.7b73b0e17ede841e7c6a861453ce9b2c.svg",
     "static/media/date-period-right-arrow.svg": "/easy-start-wallet/static/media/date-period-right-arrow.55fc299de937d224756cafce0ff35b50.svg",
     "main.b2a8f3ba.css.map": "/easy-start-wallet/static/css/main.b2a8f3ba.css.map",
-    "main.286c2a8d.js.map": "/easy-start-wallet/static/js/main.286c2a8d.js.map",
+    "main.b0e0fb55.js.map": "/easy-start-wallet/static/js/main.b0e0fb55.js.map",
     "649.e95f12b0.chunk.js.map": "/easy-start-wallet/static/js/649.e95f12b0.chunk.js.map",
     "628.d16eb0c1.chunk.js.map": "/easy-start-wallet/static/js/628.d16eb0c1.chunk.js.map",
-    "697.1586173f.chunk.js.map": "/easy-start-wallet/static/js/697.1586173f.chunk.js.map",
+    "697.de29d147.chunk.js.map": "/easy-start-wallet/static/js/697.de29d147.chunk.js.map",
     "561.f44d51c8.chunk.js.map": "/easy-start-wallet/static/js/561.f44d51c8.chunk.js.map",
     "237.b3f3e0e2.chunk.js.map": "/easy-start-wallet/static/js/237.b3f3e0e2.chunk.js.map",
     "694.a02e0e43.chunk.js.map": "/easy-start-wallet/static/js/694.a02e0e43.chunk.js.map",
@@ -59,6 +59,6 @@
   },
   "entrypoints": [
     "static/css/main.b2a8f3ba.css",
-    "static/js/main.286c2a8d.js"
+    "static/js/main.b0e0fb55.js"
   ]
 }
