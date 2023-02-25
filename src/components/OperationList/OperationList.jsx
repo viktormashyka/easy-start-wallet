@@ -8,7 +8,6 @@ import { OperationListTitle } from './OperationList.styles';
 import { OperationListDateTitle } from './OperationList.styles';
 import { OperationListDivBalanceText } from './OperationList.styles';
 import { OperationListDivBalanceTextMinus } from './OperationList.styles';
-import { LoaderWrapper } from './OperationList.styles';
 import { ReactComponent as DeleteIcon } from '../../images/delete.svg';
 import { DeleteBtn } from './OperationList.styles';
 import { List } from './OperationList.styles';
@@ -20,7 +19,6 @@ import { useDispatch } from 'react-redux';
 import moment from 'moment';
 import { UniversalModal } from 'components/UniversalModal/UniversalModal';
 import { useState } from 'react';
-import { Loader } from '../Loader/Loader';
 const modalQuestion = 'Are you sure?';
 // Mikhaylo Pobochikh
 
