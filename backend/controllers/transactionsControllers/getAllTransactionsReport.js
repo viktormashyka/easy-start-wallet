@@ -4,7 +4,7 @@ const { User } = require('../../models');
 const { Unauthorized } = require('http-errors');
 
 const getAllTransactionsReport = async (req, res) => {
-  const { month: theMonth = 1, year: theYear = 2000 } = req.query;
+  const { month: theMonth = 1, year: theYear = 2023 } = req.query;
 
   let normalizedMonth = theMonth.toString().padStart(2, '0');
 
