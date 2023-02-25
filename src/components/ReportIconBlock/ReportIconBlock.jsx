@@ -3,8 +3,6 @@ import { useSelector } from 'react-redux';
 import { selectAllTransactionsReport } from 'redux/transaction/transactionSelectors';
 
 import sprite from '../../images/icon.svg';
-// import expenseIconCategories from './data/expenseIcon.json';
-// import incomeIconCategories from './data/incomeIcon.json';
 import { nanoid } from 'nanoid/non-secure';
 import {
   Container,
@@ -16,6 +14,7 @@ import {
   ReportCard,
   IconSvg,
   ReportCardTitle,
+  Notificate,
 } from './ReportIconBlock.styled';
 
 export const ReportIconBlock = () => {
@@ -24,11 +23,6 @@ export const ReportIconBlock = () => {
   const [type, setType] = useState('expenses');
   const report = useSelector(selectAllTransactionsReport);
   const transaction = report.filterTransactions;
-  // const { category, date, description, sum, transactionsType, _id } =
-  //   transaction;
-
-  // const categories =
-  //   type === 'expenses' ? expenseIconCategories : incomeIconCategories;
 
   const getCategory = e => {
     setCategory(e.target.attributes.title.nodeValue);
@@ -44,9 +38,6 @@ export const ReportIconBlock = () => {
     }
   };
 
-  // eslint-disable-next-line no-unused-vars
-  // const categoryLabel = categories.map(el => el.label);
-
   const filterObjByTypeAndCategory = () => {
     if (!getTransactionByType(type)) return;
 
@@ -61,16 +52,6 @@ export const ReportIconBlock = () => {
     return Object.values(result).sort((a, b) => b.sum - a.sum);
   };
 
-  // const arrays = filterObjByTypeAndCategory();
-
-  // const findTotalSumByCategory = (type, categoryLabel) => {
-  //   let totalExpense = 0;
-  //   getTransactionByType(type)
-  //     .filter(tr => tr.category === categoryLabel)
-  //     .map(el => (totalExpense += el.sum));
-  //   return totalExpense;
-  // };
-
   const onHandleChangeType = () => {
     if (type === 'expenses') {
       setType('income');
@@ -82,15 +63,6 @@ export const ReportIconBlock = () => {
     }
   };
 
-  //   const SortTrBySum = (type, categoryLabel) => {
-  //     return getTransactionByType(type)
-  //       .filter(tr => tr.category === categoryLabel)
-  //       .sort((first, second) => second.sum - first.sum);
-  //   };
-
-  //   console.log('SortTrBySum', SortTrBySum());
-  //   //   const label = categories.map(cat => cat.label);
-  //   const id = categories.map(cat => cat.id);
   return (
     <Container>
       <ReportWrapper>
@@ -108,11 +80,14 @@ export const ReportIconBlock = () => {
           </ArrowСhangeMonth>
         </TransactionWrapper>
         <ReportList>
-          {!getTransactionByType(type) ? (
-            <p>
-              Отчет будет доступен после того как вы внесете данные о своих
-              доходах и расходах за выбранный период.
-            </p>
+          {!getTransactionByType(type) ||
+          getTransactionByType(type).length === 0 ? (
+            <li>
+              <Notificate>
+                The report will be available after you enter data on your income
+                and expenses for the selected period.
+              </Notificate>
+            </li>
           ) : (
             filterObjByTypeAndCategory().map(array => {
               const id = nanoid();
@@ -129,25 +104,6 @@ export const ReportIconBlock = () => {
                 </ReportCard>
               );
             })
-            // categories.map(event => {
-            //   let sum = findTotalSumByCategory(type, event.label);
-            //   if (sum === 0) {
-            //     return null;
-            //   }
-
-            //   return (
-            //     <ReportCard key={event.id}>
-            //       <p>{`${sum.toLocaleString('ru')}.00`}</p>
-            //       <IconSvg title={event.label} onClick={getCategory}>
-            //         <use
-            //           xlinkHref={`${sprite}#${event.label}`}
-            //           title={event.label}
-            //         />
-            //       </IconSvg>
-            //       <ReportCardTitle>{event.label}</ReportCardTitle>
-            //     </ReportCard>
-            //   );
-            // })
           )}
         </ReportList>
       </ReportWrapper>
