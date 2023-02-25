@@ -23,6 +23,7 @@ export const Container = styled.div`
 `;
 
 export const ReportWrapper = styled.div`
+  margin-top: 32px;
   @media screen and (min-width: 320px) {
     display: flex;
     text-align: center;
@@ -37,11 +38,12 @@ export const ReportWrapper = styled.div`
     background: #ffffff;
     box-shadow: 0px 10px 60px rgba(170, 178, 197, 0.2);
     border-radius: 30px;
-    padding: 20px;
+    padding-top: 20px;
   }
   @media screen and (min-width: 1280px) {
-    padding-left: 37px;
-    padding-right: 37px;
+    max-width: 1034px;
+    padding-left: 175px;
+    padding-right: 175px;
   }
 `;
 export const TransactionWrapper = styled.div`
@@ -179,4 +181,8 @@ export const ReportCardTitle = styled.p`
     line-height: 14px;
     padding-top: 10px;
   }
+`;
+export const Notificate = styled.p`
+  margin: 20px;
+  font-size: 20px;
 `;
