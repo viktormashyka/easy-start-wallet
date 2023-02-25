@@ -75,9 +75,7 @@ export const deleteTransaction = createAsyncThunk(
       // const {
       //   data: { contactId },
       // } = await axios.delete(`/transactions/${transactionId}`);
-      const {
-        data,
-      } = await axios.delete(`/transactions/${transactionId}`);
+      const { data } = await axios.delete(`/transactions/${transactionId}`);
       // console.log('transactions/deleteTransaction ==> contactId:', contactId); //!
       // return contactId;
       console.log('transactions/deleteTransaction ==> data:', data);
@@ -131,7 +129,7 @@ export const getAllTransactionsReport = createAsyncThunk(
       const response = await axios.get(
         `/transactions/report?month=${month}&year=${year}`
       );
-      console.log('🚀 ~ file: operations.js:54 ~ response:', response.data);
+      // console.log('🚀 ~ file: operations.js:54 ~ response:', response.data);
       return response.data;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);

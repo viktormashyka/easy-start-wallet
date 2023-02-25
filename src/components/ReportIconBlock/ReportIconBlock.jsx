@@ -39,7 +39,7 @@ export const ReportIconBlock = () => {
       const filteredByType = transaction.filter(
         transaction => transaction.transactionsType === type
       );
-      console.log('filteredByType', filteredByType);
+      // console.log('filteredByType', filteredByType);
       return filteredByType;
     }
   };
