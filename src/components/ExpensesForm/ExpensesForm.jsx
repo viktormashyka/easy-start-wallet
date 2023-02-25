@@ -6,6 +6,7 @@ import { Formik, ErrorMessage } from 'formik';
 import useScreenResizing from '../../hooks/useScreenResizing';
 import { CustomSelect } from '../CustomSelect/CustomSelect';
 import { DataBox } from '../DataBox/DataBox';
+import { Loader } from '../Loader/Loader';
 import {
   InputField,
   FormBox,
@@ -161,22 +162,26 @@ const ExpensesForm = () => {
                   </SecondaryInputWrapper>
                 </InputsBox>
               </FormTopWrapper>
-              <BtnSubmitList>
-                <BtnSubmitItem>
-                  <BtnSubmit type="submit" disabled={isSubmitting}>
-                    Input
-                  </BtnSubmit>
-                </BtnSubmitItem>
-                <BtnSubmitItem>
-                  <BtnSecondary
-                    type="reset"
-                    onClick={resetForm}
-                    disabled={isSubmitting}
-                  >
-                    Clear
-                  </BtnSecondary>
-                </BtnSubmitItem>
-              </BtnSubmitList>
+              {isSubmitting ? (
+                <Loader />
+              ) : (
+                <BtnSubmitList>
+                  <BtnSubmitItem>
+                    <BtnSubmit type="submit" disabled={isSubmitting}>
+                      Input
+                    </BtnSubmit>
+                  </BtnSubmitItem>
+                  <BtnSubmitItem>
+                    <BtnSecondary
+                      type="reset"
+                      onClick={resetForm}
+                      disabled={isSubmitting}
+                    >
+                      Clear
+                    </BtnSecondary>
+                  </BtnSubmitItem>
+                </BtnSubmitList>
+              )}
             </FormBox>
           );
         }}
