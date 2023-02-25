@@ -17,9 +17,8 @@ export const Container = styled.div`
   }
 
   @media screen and (min-width: 1280px) {
-    padding-left: 34px;
-    min-width: 1102px;
-    padding-right: 34px;
+    max-width: 1280px;
+    margin-bottom: 40px;
   }
 `;
 
@@ -33,17 +32,16 @@ export const ReportWrapper = styled.div`
     align-items: center;
     margin-bottom: 30px;
     display: block;
-    margin-top: 32px;
   }
   @media screen and (min-width: 768px) {
     background: #ffffff;
     box-shadow: 0px 10px 60px rgba(170, 178, 197, 0.2);
     border-radius: 30px;
-    padding-top: 20px;
+    padding: 20px;
   }
   @media screen and (min-width: 1280px) {
-    padding-left: 190px;
-    padding-right: 190px;
+    padding-left: 37px;
+    padding-right: 37px;
   }
 `;
 export const TransactionWrapper = styled.div`
@@ -181,8 +179,4 @@ export const ReportCardTitle = styled.p`
     line-height: 14px;
     padding-top: 10px;
   }
-`;
-export const Notificate = styled.p`
-  margin: 20px;
-  font-size: 20px;
 `;
