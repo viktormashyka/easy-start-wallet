@@ -36,6 +36,7 @@
     "node-fetch": "2.6.9",
     "nodemailer": "^6.9.0",
     "supertest": "^6.3.3",
+    "swagger-ui-express": "^4.6.1",
     "uniqid": "^5.4.0",
     "uuid": "^9.0.0"
   },

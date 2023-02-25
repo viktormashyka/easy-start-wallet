@@ -18,6 +18,10 @@ export const CurrentPeriod = () => {
   const [monthName, setMonthName] = useState(null);
 
   useEffect(() => {
+    const date = new Date(year, month - 1);
+    const monthName = date.toLocaleString('en-US', { month: 'long' });
+    setMonthName(monthName.toUpperCase());
+
     if (month < 1) {
       setMonth(12);
       setYear(year - 1);
@@ -27,10 +31,6 @@ export const CurrentPeriod = () => {
       setMonth(1);
       setYear(year + 1);
     }
-
-    const date = new Date(year, month);
-    const monthName = date.toLocaleString('en-US', { month: 'long' });
-    setMonthName(monthName.toUpperCase());
 
     dispatch(getAllTransactionsReport({ month, year }));
   }, [dispatch, month, year]);
