@@ -27,6 +27,8 @@ export const Title = styled.p`
 
 export const DateWrapper = styled.div`
   display: flex;
+  width: 136px;
+  justify-content: space-between;
 `;
 
 export const ArrowButton = styled.button`
@@ -34,7 +36,7 @@ export const ArrowButton = styled.button`
   border: none;
   outline: none;
   cursor: pointer;
-  margin: 0 7px;
+  /* margin: 0 7px; */
 `;
 
 export const DateMonthAndYear = styled.p`
