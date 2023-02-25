@@ -20,15 +20,21 @@ import {
   ContentBox,
   MainContentWrapper,
   BigFilterWrapper,
+  LoaderWrapper,
 } from './MainHome.styled';
 import { OperationList } from 'components/OperationList/OperationList';
 import { Summary } from 'components/Summary/Sumarry';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllTransactions } from '1/redux/transaction/transactionOperations';
 import { useEffect } from 'react';
-import { selectAllTransactions } from 'redux/transaction/transactionSelectors';
+import {
+  selectAllTransactions,
+  selectLoadingTransactions,
+} from 'redux/transaction/transactionSelectors';
+import { Loader } from 'components/Loader/Loader';
 
 export const MainHome = ({ children }) => {
+  const isLoading = useSelector(selectLoadingTransactions);
   const viewPort = useScreenResizing();
   const [isTransactionsShown, setIsTransactionsShown] = useState(false);
   const location = useLocation();
@@ -69,7 +75,13 @@ export const MainHome = ({ children }) => {
               <BalanceWrapper />
               <DataBox />
             </ContentBalanceContainer>
-            <OperationList sortedTransactions={sortedTransactions} />
+            {isLoading ? (
+              <LoaderWrapper>
+                <Loader />
+              </LoaderWrapper>
+            ) : (
+              <OperationList sortedTransactions={sortedTransactions} />
+            )}
             <BottomBtnBox>
               <BottomBtnWrapper />
             </BottomBtnBox>

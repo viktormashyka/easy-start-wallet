@@ -3,18 +3,20 @@ import { Helmet } from 'react-helmet';
 import { ReportIconBlock } from '../components/ReportIconBlock/ReportIconBlock';
 import { Outlet } from 'react-router-dom/dist';
 import { InOutSummary } from 'components/InOutSummary/InOutSummary';
+import { MainReportsWrapper } from 'components/MainReportsWrapper/MainReportsWrapper';
 
 export default function Report() {
   return (
-    <div>
+    <main>
       <Helmet>
         <title>Report page</title>
       </Helmet>
-      <>This is Report page</>
-      <ReportsTopWrapper />
-      <InOutSummary />
-      <Outlet />
-      <ReportIconBlock />
-    </div>
+      <MainReportsWrapper>
+        <ReportsTopWrapper />
+        <InOutSummary />
+        <Outlet />
+        <ReportIconBlock />
+      </MainReportsWrapper>
+    </main>
   );
 }

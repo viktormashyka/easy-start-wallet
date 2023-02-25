@@ -52,14 +52,8 @@ export const BCGLogoBox = styled.div`
   top: 0;
   left: 0;
   width: 100%;
-  /* height: 100%; */
   min-height: 100vh;
-  /* @media screen and (min-width: 768px) {
-    background-image: url(${BCGImageBottom});
-    background-position: 90% 90%;
-    background-repeat: no-repeat;
-    background-size: 183px 146px;
-  } */
+
   @media screen and (min-width: 1280px) {
     background: url(${BCGImageTopTablet});
     background-position: 0 125%;
@@ -83,6 +77,12 @@ export const BottomContentWrapper = styled.div`
   @media screen and (min-width: 1280px) {
     display: none;
   }
+`;
+
+export const LoaderWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 // Form //
