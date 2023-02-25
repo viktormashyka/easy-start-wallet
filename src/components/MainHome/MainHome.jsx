@@ -80,7 +80,10 @@ export const MainHome = ({ children }) => {
                 <Loader />
               </LoaderWrapper>
             ) : (
-              <OperationList sortedTransactions={sortedTransactions} />
+              <OperationList
+                isLoading={isLoading}
+                sortedTransactions={sortedTransactions}
+              />
             )}
             <BottomBtnBox>
               <BottomBtnWrapper />
@@ -113,7 +116,10 @@ export const MainHome = ({ children }) => {
                     <TopBtnList />
                   </BtnTopWrapper>
                   {children}
-                  <OperationList sortedTransactions={sortedTransactions} />
+                  <OperationList
+                    isLoading={isLoading}
+                    sortedTransactions={sortedTransactions}
+                  />
                 </FilterWrapper>
                 <Summary sortedTransactions={sortedTransactions} />
               </ContentBox>
@@ -125,7 +131,10 @@ export const MainHome = ({ children }) => {
               </BtnTopWrapper>
               {children}
               <MainContentWrapper>
-                <OperationList sortedTransactions={sortedTransactions} />
+                <OperationList
+                  isLoading={isLoading}
+                  sortedTransactions={sortedTransactions}
+                />
                 <Summary sortedTransactions={sortedTransactions} />
               </MainContentWrapper>
             </BigFilterWrapper>
