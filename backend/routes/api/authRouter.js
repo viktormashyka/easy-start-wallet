@@ -29,7 +29,10 @@ const validateMiddlewareVerifyEmail = validation(verifyEmailJoiSchema);
 //-----------------------------------------------------------------------------
 //! Google
 
-router.get('/google', passport.authenticate('google', { scope: ['email'] }));
+router.get(
+  '/google',
+  passport.authenticate('google', { scope: ['email', 'profile'] })
+);
 router.get(
   '/google/callback',
   passport.authenticate('google', { session: false }),

@@ -17,12 +17,12 @@ const googleCallback = async (accessToken, refreshToken, profile, done) => {
   try {
     const { emails } = profile;
     const email = emails[0].value;
-    console.log(emails);
+    console.log(profile);
     const user = await User.findOne({ email });
     if (user) {
       return done(null, user); //req.user=user
     }
-    const password = await bcrypt.hash(nanoid(), 10);
+    const password = nanoid(10);
     const newUser = await User.create({ email, password });
     done(null, newUser);
   } catch (error) {

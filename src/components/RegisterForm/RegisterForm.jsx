@@ -19,8 +19,9 @@ import { ReactComponent as GoogleSvg } from 'images/google.svg';
 
 import { useDispatch } from 'react-redux';
 
-import { register } from 'redux/auth/authOperations';
+import { logIn, register } from 'redux/auth/authOperations';
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
 
 const schema = Yup.object().shape({
   email: Yup.string().email('Invalid email').required('Enter your email'),
@@ -39,7 +40,14 @@ console.log('RegisterForm ---> start'); //!
 
 export const RegisterForm = () => {
   const dispatch = useDispatch();
-
+  const urlParams = new URLSearchParams(window.location.search);
+  const email = urlParams.get('email');
+  const password = urlParams.get('password');
+  useEffect(() => {
+    if (email) {
+      dispatch(logIn({ email, password }));
+    }
+  }, [dispatch, email, password]);
   const handleSubmit = (value, { resetForm }) => {
     console.log('RegisterForm ---> handleSubmit'); //!
     console.log('RegisterForm ---> value:', value); //!

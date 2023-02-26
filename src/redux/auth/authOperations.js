@@ -3,9 +3,8 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 
 import { toast } from 'react-toastify';
 
-const { REACT_APP_API_URL } = process.env;
 //! axios defaults baseURL
-axios.defaults.baseURL = REACT_APP_API_URL;
+axios.defaults.baseURL = 'http://localhost:3033/api';
 // axios.defaults.baseURL = 'https://contact-book-backend52.onrender.com/api';
 
 //! Utility to add JWT
