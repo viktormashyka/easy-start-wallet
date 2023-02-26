@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/easy-start-wallet/static/css/main.b2a8f3ba.css",
-    "main.js": "/easy-start-wallet/static/js/main.c7a0c667.js",
+    "main.js": "/easy-start-wallet/static/js/main.d8a73644.js",
     "static/js/649.4c7cdab4.chunk.js": "/easy-start-wallet/static/js/649.4c7cdab4.chunk.js",
     "static/js/628.9e427422.chunk.js": "/easy-start-wallet/static/js/628.9e427422.chunk.js",
     "static/js/697.5a33453c.chunk.js": "/easy-start-wallet/static/js/697.5a33453c.chunk.js",
     "static/js/561.839eac48.chunk.js": "/easy-start-wallet/static/js/561.839eac48.chunk.js",
     "static/js/237.7c627557.chunk.js": "/easy-start-wallet/static/js/237.7c627557.chunk.js",
-    "static/js/64.8242dbf7.chunk.js": "/easy-start-wallet/static/js/64.8242dbf7.chunk.js",
+    "static/js/64.ea6a1934.chunk.js": "/easy-start-wallet/static/js/64.ea6a1934.chunk.js",
     "static/js/816.47591ddc.chunk.js": "/easy-start-wallet/static/js/816.47591ddc.chunk.js",
     "static/js/71.ab358f6e.chunk.js": "/easy-start-wallet/static/js/71.ab358f6e.chunk.js",
     "static/js/877.204a892f.chunk.js": "/easy-start-wallet/static/js/877.204a892f.chunk.js",
@@ -37,13 +37,13 @@
     "static/media/date-period-left-arrow.svg": "/easy-start-wallet/static/media/date-period-left-arrow.7b73b0e17ede841e7c6a861453ce9b2c.svg",
     "static/media/date-period-right-arrow.svg": "/easy-start-wallet/static/media/date-period-right-arrow.55fc299de937d224756cafce0ff35b50.svg",
     "main.b2a8f3ba.css.map": "/easy-start-wallet/static/css/main.b2a8f3ba.css.map",
-    "main.c7a0c667.js.map": "/easy-start-wallet/static/js/main.c7a0c667.js.map",
+    "main.d8a73644.js.map": "/easy-start-wallet/static/js/main.d8a73644.js.map",
     "649.4c7cdab4.chunk.js.map": "/easy-start-wallet/static/js/649.4c7cdab4.chunk.js.map",
     "628.9e427422.chunk.js.map": "/easy-start-wallet/static/js/628.9e427422.chunk.js.map",
     "697.5a33453c.chunk.js.map": "/easy-start-wallet/static/js/697.5a33453c.chunk.js.map",
     "561.839eac48.chunk.js.map": "/easy-start-wallet/static/js/561.839eac48.chunk.js.map",
     "237.7c627557.chunk.js.map": "/easy-start-wallet/static/js/237.7c627557.chunk.js.map",
-    "64.8242dbf7.chunk.js.map": "/easy-start-wallet/static/js/64.8242dbf7.chunk.js.map",
+    "64.ea6a1934.chunk.js.map": "/easy-start-wallet/static/js/64.ea6a1934.chunk.js.map",
     "816.47591ddc.chunk.js.map": "/easy-start-wallet/static/js/816.47591ddc.chunk.js.map",
     "71.ab358f6e.chunk.js.map": "/easy-start-wallet/static/js/71.ab358f6e.chunk.js.map",
     "877.204a892f.chunk.js.map": "/easy-start-wallet/static/js/877.204a892f.chunk.js.map",
@@ -60,6 +60,6 @@
   },
   "entrypoints": [
     "static/css/main.b2a8f3ba.css",
-    "static/js/main.c7a0c667.js"
+    "static/js/main.d8a73644.js"
   ]
 }
