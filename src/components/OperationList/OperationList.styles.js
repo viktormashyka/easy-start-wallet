@@ -83,4 +83,19 @@ export const DeleteBtn = styled.button`
   background-color: transparent;
   fill: red;
   color: red;
+  cursor: pointer;
+`;
+
+export const LoaderWrapper = styled.div`
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+  width: 624px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media screen and (min-width: 1280px) {
+    width: 746px;
+  }
 `;

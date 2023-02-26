@@ -13,12 +13,12 @@ export const TdPlus = styled.td`
 `;
 
 export const TableStyle = styled.div`
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     display: none;
   }
 
   @media screen and (min-width: 1280px) {
-    width: 746px; //додала Юля Зозуля
+    width: 746px;
   }
 
   height: 300px; /*Наталія змінила з 150px*/
@@ -42,6 +42,7 @@ export const TableStyle = styled.div`
   }
   button {
     background-color: transparent;
+    cursor: pointer;
   }
   table {
     width: 100%;

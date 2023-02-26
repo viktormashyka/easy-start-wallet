@@ -2,7 +2,6 @@ import { useTable } from 'react-table';
 import React from 'react';
 import { TdMinus } from './Table.styled';
 import { TdPlus } from './Table.styled';
-
 import { ReactComponent as DeleteIcon } from '../../images/delete.svg';
 import moment from 'moment';
 // Misha Pobochikh

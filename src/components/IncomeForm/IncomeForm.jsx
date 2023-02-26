@@ -39,7 +39,7 @@ const initialValues = {
 
 const schema = Yup.object().shape({
   category: Yup.string().required('Select category'),
-  description: Yup.string().min(3).max(16).required('Enter income description'),
+  description: Yup.string().min(3).max(20).required('Enter income description'),
   sum: Yup.number('Invalid sum, only numbers')
     .positive('Only positive value')
     .required('Enter sum'),

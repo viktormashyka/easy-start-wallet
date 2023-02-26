@@ -5,7 +5,6 @@ import { BottomBtnWrapper } from '../BottomBtnWrapper/BottomBtnWrapper';
 import { TopBtnList } from '../TopBtnList/TopBtnList';
 import { BalanceWrapper } from '../BalanceWrapper/BalanceWrapper';
 import { BackspaceBtn } from '../BackspaceBtn/BackspaceBtn';
-import { useState } from 'react';
 import { DataBox } from '../DataBox/DataBox';
 import {
   BCGLogoBox,
@@ -21,12 +20,13 @@ import {
   MainContentWrapper,
   BigFilterWrapper,
   LoaderWrapper,
+  LoaderWrapperBig,
 } from './MainHome.styled';
 import { OperationList } from 'components/OperationList/OperationList';
 import { Summary } from 'components/Summary/Sumarry';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllTransactions } from '1/redux/transaction/transactionOperations';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import {
   selectAllTransactions,
   selectLoadingTransactions,
@@ -66,7 +66,7 @@ export const MainHome = ({ children }) => {
       <TopWrapper />
       <BCGLogoBox />
       <ContentContainer>
-        {!isTransactionsShown && viewPort.width < 768 && (
+        {viewPort.width < 768 && !isTransactionsShown && (
           <>
             <BackspaceWrapper>
               <BackspaceBtn handleClick={handleClick} title="to transactions" />
@@ -90,7 +90,7 @@ export const MainHome = ({ children }) => {
             </BottomBtnBox>
           </>
         )}
-        {isTransactionsShown && viewPort.width < 768 && (
+        {viewPort.width < 768 && isTransactionsShown && (
           <>
             <FilterWrapper>
               <BackspaceWrapper>
@@ -108,7 +108,7 @@ export const MainHome = ({ children }) => {
             <ContentBalanceContainer>
               <BalanceWrapper />
             </ContentBalanceContainer>
-            {/* 767-1279 */}
+            {/* 768-1279 */}
             <BottomContentWrapper>
               <ContentBox>
                 <FilterWrapper>
@@ -116,10 +116,16 @@ export const MainHome = ({ children }) => {
                     <TopBtnList />
                   </BtnTopWrapper>
                   {children}
-                  <OperationList
-                    isLoading={isLoading}
-                    sortedTransactions={sortedTransactions}
-                  />
+                  {isLoading ? (
+                    <LoaderWrapperBig>
+                      <Loader />
+                    </LoaderWrapperBig>
+                  ) : (
+                    <OperationList
+                      isLoading={isLoading}
+                      sortedTransactions={sortedTransactions}
+                    />
+                  )}
                 </FilterWrapper>
                 <Summary sortedTransactions={sortedTransactions} />
               </ContentBox>
@@ -131,10 +137,16 @@ export const MainHome = ({ children }) => {
               </BtnTopWrapper>
               {children}
               <MainContentWrapper>
-                <OperationList
-                  isLoading={isLoading}
-                  sortedTransactions={sortedTransactions}
-                />
+                {isLoading ? (
+                  <LoaderWrapperBig>
+                    <Loader />
+                  </LoaderWrapperBig>
+                ) : (
+                  <OperationList
+                    isLoading={isLoading}
+                    sortedTransactions={sortedTransactions}
+                  />
+                )}
                 <Summary sortedTransactions={sortedTransactions} />
               </MainContentWrapper>
             </BigFilterWrapper>
