@@ -42,13 +42,7 @@
         "responses": {
           "201": {
             "description": "Successful operation",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/RegistrationResponse"
-                }
-              }
-            }
+            "content": {}
           },
           "400": {
             "description": "Validation error",
@@ -72,7 +66,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/RegistrationRequest"
+                "$ref": "#/components/schemas/LoginRequest"
               }
             }
           }
@@ -80,13 +74,7 @@
         "responses": {
           "200": {
             "description": "Successful operation",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/RegistrationResponse"
-                }
-              }
-            }
+            "content": {}
           },
           "400": {
             "description": "Validation error",
@@ -103,29 +91,21 @@
       "get": {
         "tags": ["User"],
         "summary": "User logout",
-        "parameters": [],
-        "security": [{ "Bearer": [] }],
-        "requestBody": {
-          "description": "Registration's object",
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/RegistrationRequest"
-              }
-            }
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Authorization",
+            "description": "The token issued to the current user.",
+            "required": true,
+            "type": "string"
           }
-        },
+        ],
+        "security": [{ "Bearer": [] }],
+
         "responses": {
           "204": {
             "description": "No content",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/RegistrationResponse"
-                }
-              }
-            }
+            "content": {}
           },
           "400": {
             "description": "Validation error",
@@ -142,29 +122,20 @@
       "get": {
         "tags": ["User"],
         "summary": "Get information about the current user",
-        "parameters": [],
-        "security": [{ "Bearer": [] }],
-        "requestBody": {
-          "description": "Registration's object",
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/RegistrationRequest"
-              }
-            }
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Authorization",
+            "description": "The token issued to the current user.",
+            "required": true,
+            "type": "string"
           }
-        },
+        ],
+        "security": [{ "Bearer": [] }],
         "responses": {
           "200": {
             "description": "Successful operation",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/RegistrationResponse"
-                }
-              }
-            }
+            "content": {}
           },
           "400": {
             "description": "Validation error",
@@ -185,7 +156,15 @@
       "patch": {
         "tags": ["User"],
         "summary": "Updating a user's subscription",
-        "parameters": [],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Authorization",
+            "description": "The token issued to the current user.",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "security": [{ "Bearer": [] }],
         "requestBody": {
           "description": "Registration's object",
@@ -193,7 +172,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/RegistrationRequest"
+                "$ref": "#/components/schemas/UsersRequest"
               }
             }
           }
@@ -201,13 +180,7 @@
         "responses": {
           "200": {
             "description": "Successful operation",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/RegistrationResponse"
-                }
-              }
-            }
+            "content": {}
           },
           "400": {
             "description": "Subscription update failed.",
@@ -224,7 +197,15 @@
       "patch": {
         "tags": ["User"],
         "summary": "User avatar update",
-        "parameters": [],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Authorization",
+            "description": "The token issued to the current user.",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "security": [{ "Bearer": [] }],
         "requestBody": {
           "description": "Registration's object",
@@ -232,7 +213,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/RegistrationRequest"
+                "$ref": "#/components/schemas/AvatarsRequest"
               }
             }
           }
@@ -240,13 +221,7 @@
         "responses": {
           "200": {
             "description": "Successful operation",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/RegistrationResponse"
-                }
-              }
-            }
+            "content": {}
           },
           "400": {
             "description": "Avatars update failed.",
@@ -272,27 +247,10 @@
             "type": "string"
           }
         ],
-        "requestBody": {
-          "description": "Registration's object",
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/RegistrationRequest"
-              }
-            }
-          }
-        },
         "responses": {
           "200": {
             "description": "Successful operation",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/RegistrationResponse"
-                }
-              }
-            }
+            "content": {}
           },
           "401": {
             "description": "Missing header with authorization token.",
@@ -312,7 +270,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/RegistrationRequest"
+                "$ref": "#/components/schemas/VerifyRequest"
               }
             }
           }
@@ -320,13 +278,7 @@
         "responses": {
           "201": {
             "description": "Successful operation",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/RegistrationResponse"
-                }
-              }
-            }
+            "content": {}
           },
           "400": {
             "description": "Validation error",
@@ -339,29 +291,20 @@
       "get": {
         "tags": ["User"],
         "summary": "Get user balance",
-        "parameters": [],
-        "security": [{ "Bearer": [] }],
-        "requestBody": {
-          "description": "Registration's object",
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/RegistrationRequest"
-              }
-            }
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Authorization",
+            "description": "The token issued to the current user.",
+            "required": true,
+            "type": "string"
           }
-        },
+        ],
+        "security": [{ "Bearer": [] }],
         "responses": {
           "200": {
             "description": "Successful operation",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/RegistrationResponse"
-                }
-              }
-            }
+            "content": {}
           },
           "401": {
             "description": "Missing header with authorization token.",
@@ -372,7 +315,15 @@
       "patch": {
         "tags": ["User"],
         "summary": "Change user balance",
-        "parameters": [],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Authorization",
+            "description": "The token issued to the current user.",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "security": [{ "Bearer": [] }],
         "requestBody": {
           "description": "Registration's object",
@@ -380,7 +331,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/RegistrationRequest"
+                "$ref": "#/components/schemas/BalanceRequest"
               }
             }
           }
@@ -411,7 +362,15 @@
       "patch": {
         "tags": ["User"],
         "summary": "Change user status",
-        "parameters": [],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Authorization",
+            "description": "The token issued to the current user.",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "security": [{ "Bearer": [] }],
         "requestBody": {
           "description": "Registration's object",
@@ -419,7 +378,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/RegistrationRequest"
+                "$ref": "#/components/schemas/IsnotnewuserRequest"
               }
             }
           }
@@ -427,13 +386,7 @@
         "responses": {
           "201": {
             "description": "Successful operation",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/RegistrationResponse"
-                }
-              }
-            }
+            "content": {}
           },
           "400": {
             "description": "Bad request (invalid request body)",
@@ -450,7 +403,15 @@
       "get": {
         "tags": ["Transactions"],
         "summary": "Get transactions by user",
-        "parameters": [],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Authorization",
+            "description": "The token issued to the current user.",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "security": [{ "Bearer": [] }],
         "requestBody": {
           "description": "Registration's object",
@@ -466,13 +427,7 @@
         "responses": {
           "201": {
             "description": "Successful operation",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/RegistrationResponse"
-                }
-              }
-            }
+            "content": {}
           },
           "400": {
             "description": "Bad request (invalid request body)",
@@ -487,7 +442,15 @@
       "post": {
         "tags": ["Transactions"],
         "summary": "Add a transaction",
-        "parameters": [],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Authorization",
+            "description": "The token issued to the current user.",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "security": [{ "Bearer": [] }],
         "requestBody": {
           "description": "Registration's object",
@@ -495,7 +458,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/RegistrationRequest"
+                "$ref": "#/components/schemas/TransactionsRequest"
               }
             }
           }
@@ -528,6 +491,13 @@
         "summary": "Remove a transaction",
         "parameters": [
           {
+            "in": "header",
+            "name": "Authorization",
+            "description": "The token issued to the current user.",
+            "required": true,
+            "type": "string"
+          },
+          {
             "in": "path",
             "name": "transactionId",
             "description": "Verification token",
@@ -536,27 +506,10 @@
           }
         ],
         "security": [{ "Bearer": [] }],
-        "requestBody": {
-          "description": "Registration's object",
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/RegistrationRequest"
-              }
-            }
-          }
-        },
         "responses": {
           "200": {
             "description": "Successful operation",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/RegistrationResponse"
-                }
-              }
-            }
+            "content": {}
           },
           "401": {
             "description": "Missing header with authorization token.",
@@ -574,6 +527,13 @@
         "tags": ["Transactions"],
         "summary": "Get all transactions by user",
         "parameters": [
+          {
+            "in": "header",
+            "name": "Authorization",
+            "description": "The token issued to the current user.",
+            "required": true,
+            "type": "string"
+          },
           {
             "in": "query",
             "name": "month",
@@ -604,13 +564,7 @@
         "responses": {
           "200": {
             "description": "Successful operation",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/RegistrationResponse"
-                }
-              }
-            }
+            "content": {}
           },
           "401": {
             "description": "Missing header with authorization token.",
@@ -647,27 +601,87 @@
           }
         }
       },
-      "RegistrationResponse": {
-        "type": "array",
-        "items": {
-          "type": "object",
-          "properties": {
-            "email": {
-              "type": "string",
-              "description": "User's email",
-              "format": "email"
-            },
-            "userId": {
-              "type": "number",
-              "description": "User's id",
-              "example": "32143232436545474"
-            }
+      "LoginRequest": {
+        "type": "object",
+        "required": ["email", "password"],
+        "properties": {
+          "email": {
+            "type": "string",
+            "description": "User's email",
+            "format": "email"
+          },
+          "password": {
+            "type": "string",
+            "description": "User's password",
+            "example": "qwerty123"
           }
-        },
-        "example": [
-          { "email": "1@gmail.com", "userId": "1" },
-          { "email": "2@gmail.com", "userId": "2" }
-        ]
+        }
+      },
+      "UsersRequest": {
+        "type": "object",
+        "required": ["email", "password"],
+        "properties": {
+          "subscription": {
+            "type": "string",
+            "description": "User's subscription",
+            "example": "subscription"
+          }
+        }
+      },
+      "AvatarsRequest": {
+        "type": "object",
+        "required": ["email", "password"],
+        "properties": {
+          "file": {
+            "type": "string",
+            "format": "binary",
+            "description": "Gift's image"
+          }
+        }
+      },
+      "VerifyRequest": {
+        "type": "object",
+        "required": ["email"],
+        "properties": {
+          "email": {
+            "type": "string",
+            "description": "User's email",
+            "format": "email"
+          }
+        }
+      },
+      "BalanceRequest": {
+        "type": "object",
+        "required": ["balance"],
+        "properties": {
+          "balance": {
+            "type": "number",
+            "description": "User's balance",
+            "example": "213213213"
+          }
+        }
+      },
+      "IsnotnewuserRequest": {
+        "type": "object",
+        "required": ["isNotNewUser"],
+        "properties": {
+          "isNotNewUser": {
+            "type": "boolean",
+            "description": "User's status",
+            "example": "213213213"
+          }
+        }
+      },
+      "TransactionsRequest": {
+        "type": "object",
+        "required": ["date"],
+        "properties": {
+          "date": {
+            "type": "string",
+            "description": "Transactions date",
+            "example": "25.02.2023"
+          }
+        }
       }
     },
     "securitySchemes": {

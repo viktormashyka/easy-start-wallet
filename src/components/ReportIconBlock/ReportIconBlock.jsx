@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { selectAllTransactionsReport } from 'redux/transaction/transactionSelectors';
-
+import { ReportCharts } from 'components/ReportCharts/ReportCharts';
 import sprite from '../../images/icon.svg';
 import { nanoid } from 'nanoid/non-secure';
 import {
@@ -23,6 +23,7 @@ export const ReportIconBlock = () => {
   const [type, setType] = useState('expenses');
   const report = useSelector(selectAllTransactionsReport);
   const transaction = report.filterTransactions;
+  let typeDataForCarts = [];
 
   const getCategory = e => {
     setCategory(e.target.attributes.title.nodeValue);
@@ -39,9 +40,10 @@ export const ReportIconBlock = () => {
   };
 
   const filterObjByTypeAndCategory = () => {
-    if (!getTransactionByType(type)) return;
-
-    const result = getTransactionByType(type).reduce((acc, obj) => {
+    const filteredTransactions = getTransactionByType(type);
+    if (!filteredTransactions) return;
+    typeDataForCarts = filteredTransactions;
+    const result = filteredTransactions.reduce((acc, obj) => {
       if (!acc[obj.category]) {
         acc[obj.category] = { category: obj.category, sum: 0 };
       }
@@ -64,49 +66,53 @@ export const ReportIconBlock = () => {
   };
 
   return (
-    <Container>
-      <ReportWrapper>
-        <TransactionWrapper>
-          <ArrowСhangeMonth viewBox="0 0 7 12" onClick={onHandleChangeType}>
-            <path d="M6 1L2 6L6 11" stroke="#FF751D" />
-          </ArrowСhangeMonth>
-          {type === 'expenses' ? (
-            <ReportTitle>Expenses</ReportTitle>
-          ) : (
-            <ReportTitle>Income</ReportTitle>
-          )}
-          <ArrowСhangeMonth viewBox="0 0 7 12" onClick={onHandleChangeType}>
-            <path d="M1 1L5 6L1 11" stroke="#FF751D" width="4" height="10" />
-          </ArrowСhangeMonth>
-        </TransactionWrapper>
-        <ReportList>
-          {!getTransactionByType(type) ||
-          getTransactionByType(type).length === 0 ? (
-            <li>
-              <Notificate>
-                The report will be available after you enter data on your income
-                and expenses for the selected period.
-              </Notificate>
-            </li>
-          ) : (
-            filterObjByTypeAndCategory().map(array => {
-              const id = nanoid();
-              return (
-                <ReportCard key={id}>
-                  <p>{`${array.sum.toLocaleString('ru')}.00`}</p>
-                  <IconSvg title={array.category} onClick={getCategory}>
-                    <use
-                      xlinkHref={`${sprite}#${array.category}`}
-                      title={array.category}
-                    />
-                  </IconSvg>
-                  <ReportCardTitle>{array.category}</ReportCardTitle>
-                </ReportCard>
-              );
-            })
-          )}
-        </ReportList>
-      </ReportWrapper>
-    </Container>
+    <>
+      <Container>
+        <ReportWrapper>
+          <TransactionWrapper>
+            <ArrowСhangeMonth viewBox="0 0 7 12" onClick={onHandleChangeType}>
+              <path d="M6 1L2 6L6 11" stroke="#FF751D" />
+            </ArrowСhangeMonth>
+            {type === 'expenses' ? (
+              <ReportTitle>Expenses</ReportTitle>
+            ) : (
+              <ReportTitle>Income</ReportTitle>
+            )}
+            <ArrowСhangeMonth viewBox="0 0 7 12" onClick={onHandleChangeType}>
+              <path d="M1 1L5 6L1 11" stroke="#FF751D" width="4" height="10" />
+            </ArrowСhangeMonth>
+          </TransactionWrapper>
+          <ReportList>
+            {!getTransactionByType(type) ||
+            getTransactionByType(type).length === 0 ? (
+              <li>
+                <Notificate>
+                  The report will be available after you enter data on your
+                  income and expenses for the selected period.
+                </Notificate>
+              </li>
+            ) : (
+              filterObjByTypeAndCategory().map(array => {
+                const id = nanoid();
+                return (
+                  <ReportCard key={id}>
+                    <p>{`${array.sum.toLocaleString('ru')}.00`}</p>
+                    <IconSvg title={array.category} onClick={getCategory}>
+                      <use
+                        xlinkHref={`${sprite}#${array.category}`}
+                        title={array.category}
+                        onClick={() => setCategory(category)}
+                      />
+                    </IconSvg>
+                    <ReportCardTitle>{array.category}</ReportCardTitle>
+                  </ReportCard>
+                );
+              })
+            )}
+          </ReportList>
+        </ReportWrapper>
+      </Container>
+      <ReportCharts data={typeDataForCarts} category={category} />
+    </>
   );
 };

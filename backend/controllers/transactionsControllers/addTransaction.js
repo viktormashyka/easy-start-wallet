@@ -22,6 +22,10 @@ const addTransaction = async (req, res, next) => {
   // console.table(req.user); //?
   // console.table([req.user]);
   console.log(req.body);
+  console.log(
+    '🚀 ~ file: addTransaction.js:25 ~ addTransaction ~ req.body:',
+    req.body
+  );
   //* =======================================================================
   const dateString = req.body.date;
   const [day, month, year] = dateString.split('.');
@@ -79,7 +83,7 @@ const addTransaction = async (req, res, next) => {
 
   res.status(201).json({
     transaction,
-    balanceNew //! как вариант дублирования user.balance (пока не надо)
+    balanceNew, //! как вариант дублирования user.balance (пока не надо)
   });
 };
 

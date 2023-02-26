@@ -1,5 +1,9 @@
-import { useDispatch } from 'react-redux';
-import { addTransaction } from '../../redux/transaction/transactionOperations';
+import { useDispatch, useSelector } from 'react-redux';
+import {
+  addTransaction,
+  // getAllTransactions //!
+} from '../../redux/transaction/transactionOperations';
+import { selectBalance } from '../../redux/auth/authSelectors';
 import * as Yup from 'yup';
 import moment from 'moment';
 import { Formik, ErrorMessage } from 'formik';
@@ -26,6 +30,7 @@ import {
   ErrorMessageWrapper,
 } from './ExpensesForm.styled';
 
+
 const options = [
   { value: 'Transport', label: 'Transport' },
   { value: 'Products', label: 'Products' },
@@ -46,17 +51,6 @@ const initialValues = {
   sum: '',
 };
 
-const schema = Yup.object().shape({
-  category: Yup.string().required('Select category'),
-  description: Yup.string()
-    .min(3)
-    .max(16)
-    .required('Enter product description'),
-  sum: Yup.number('Invalid sum, only numbers')
-    .positive('Only positive value')
-    .required('Enter sum'),
-});
-
 const FormError = ({ name }) => {
   return (
     <ErrorMessage
@@ -69,8 +63,20 @@ const FormError = ({ name }) => {
 const ExpensesForm = () => {
   const viewPort = useScreenResizing();
   const dispatch = useDispatch();
-
+  const currentBalance = useSelector(selectBalance);
   const date = moment().format('DD.MM.YYYY');
+
+  const schema = Yup.object().shape({
+    category: Yup.string().required('Select category'),
+    description: Yup.string()
+      .min(3)
+      .max(20)
+      .required('Enter product description'),
+    sum: Yup.number('Invalid sum, only numbers')
+      .positive('Only positive value')
+      .max(currentBalance, "Sum shouldn't be more then balance")
+      .required('Enter sum'),
+  });
 
   // const getFormData = values => {
   //   console.log('getFormData::', values);
@@ -89,6 +95,7 @@ const ExpensesForm = () => {
               date,
             })
           );
+          // dispatch(getAllTransactions()); //!
           resetForm();
         }}
       >
@@ -100,6 +107,7 @@ const ExpensesForm = () => {
           handleSubmit,
           isSubmitting,
           setFieldValue,
+          setFieldError,
           resetForm,
         }) => {
           return (

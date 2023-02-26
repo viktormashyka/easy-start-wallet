@@ -19,7 +19,6 @@ import { useDispatch } from 'react-redux';
 import moment from 'moment';
 import { UniversalModal } from 'components/UniversalModal/UniversalModal';
 import { useState } from 'react';
-import { Loader } from '../Loader/Loader';
 const modalQuestion = 'Are you sure?';
 // Mikhaylo Pobochikh
 
@@ -103,9 +102,8 @@ export const OperationList = ({ sortedTransactions, isLoading }) => {
         );
       })}
       {/* Для 769 px + */}
-      {viewPort.width > 767 && isLoading ? (
-        <Loader />
-      ) : (
+
+      {viewPort.width > 767 && !isLoading && (
         <TableStyle TableStyle>
           <Table
             columns={columns}
