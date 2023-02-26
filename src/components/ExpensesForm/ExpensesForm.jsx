@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { addTransaction } from '../../redux/transaction/transactionOperations';
+import { addTransaction, getAllTransactions } from '../../redux/transaction/transactionOperations';
 import { selectBalance } from '../../redux/auth/authSelectors';
 import * as Yup from 'yup';
 import moment from 'moment';
@@ -26,6 +26,7 @@ import {
   ErrorNotification,
   ErrorMessageWrapper,
 } from './ExpensesForm.styled';
+
 
 const options = [
   { value: 'Transport', label: 'Transport' },
@@ -91,6 +92,7 @@ const ExpensesForm = () => {
               date,
             })
           );
+          dispatch(getAllTransactions());
           resetForm();
         }}
       >
