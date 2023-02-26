@@ -52,7 +52,7 @@ export const Input = styled(Field)`
     border:  non;
   }
 `;
-export const ButtonGoogl = styled.button`
+export const ButtonGoogl = styled.a`
   justify-content: center;
   margin-left: auto;
   margin-right: auto;

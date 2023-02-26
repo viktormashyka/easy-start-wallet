@@ -19,8 +19,9 @@ import { ReactComponent as GoogleSvg } from 'images/google.svg';
 
 import { useDispatch } from 'react-redux';
 
-import { register } from 'redux/auth/authOperations';
+import { logIn, register } from 'redux/auth/authOperations';
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
 
 const schema = Yup.object().shape({
   email: Yup.string().email('Invalid email').required('Enter your email'),
@@ -38,17 +39,16 @@ const FormError = ({ name }) => {
 console.log('RegisterForm ---> start'); //!
 
 export const RegisterForm = () => {
-  const navigate = useNavigate(); ///для возможности переходить по ссылке при нажатии на кнопку типа баттон
-  const handleClick = () => {
-    navigate('/register'); //// у цьому місці треба прописати шлях до бекенду.нижче розшифрувала
-  };
-
   const dispatch = useDispatch();
-  // const [errorSymbol, setErrorSymbol] = useState('*');
-
+  const urlParams = new URLSearchParams(window.location.search);
+  const email = urlParams.get('email');
+  const password = urlParams.get('password');
+  useEffect(() => {
+    if (email) {
+      dispatch(logIn({ email, password }));
+    }
+  }, [dispatch, email, password]);
   const handleSubmit = (value, { resetForm }) => {
-    navigate('/register'); //// у цьому місці треба прописати шлях до бекенду.нижче розшифрувала
-    ///('   ')---'доменне ім'я серверу/шлях до ресурсу на сервері де відбувається аутентифікація/додатковий шлях де аутентифікація відбувається через google'
     console.log('RegisterForm ---> handleSubmit'); //!
     console.log('RegisterForm ---> value:', value); //!
     dispatch(register(value));
@@ -60,7 +60,7 @@ export const RegisterForm = () => {
     <Container>
       <P>You can log in with your Google Account:</P>
 
-      <ButtonGoogl type="button" onClick={handleClick}>
+      <ButtonGoogl href="http://localhost:3033/api/users/google/">
         <GoogleSvg />
       </ButtonGoogl>
 
