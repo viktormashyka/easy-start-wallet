@@ -1,4 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
+
 // import { useSelector } from 'react-redux';
 
 import { SectionHeader } from './Header.styled';
@@ -26,11 +27,14 @@ import { useState } from 'react';
 
 import { selectUser } from 'redux/auth/authSelectors';
 
+import { ModaldAvatarPage } from 'components/ModalAvatar/ModalAvatar';
+
 // Mikhaylo Pobochikh
 const modalQuestion = 'Do you really want to leave?';
 
 export const Header = ({ isLoggedIn }) => {
   const [showModal, setShowModal] = useState(false);
+  const [showAvatarModal, setShowAvatarModal] = useState(false);
   const user = useSelector(selectUser);
 
   console.log(isLoggedIn);
@@ -49,7 +53,7 @@ export const Header = ({ isLoggedIn }) => {
         </LogoWrapper>
         {isLoggedIn && (
           <AuthWrapper>
-            <UserLogo to="/avatar">
+            <UserLogo onClick={() => setShowAvatarModal(true)}>
               <img src={user?.avatarURL ?? DefaultAvatar} alt="" width="32" />
             </UserLogo>
             <UserTite>{user?.email ?? 'User Name'}</UserTite>
@@ -59,6 +63,9 @@ export const Header = ({ isLoggedIn }) => {
             </LogOutButton>
           </AuthWrapper>
         )}
+        {showAvatarModal && (
+          <ModaldAvatarPage closeModal={setShowAvatarModal} />
+        )}
         {showModal && (
           <UniversalModal
             closeModal={setShowModal}
@@ -66,6 +73,7 @@ export const Header = ({ isLoggedIn }) => {
             question={modalQuestion}
           />
         )}
+        {/* <ModaldAvatarPage /> */}
       </SectionHeader>
     </header>
   );
