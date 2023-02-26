@@ -5,6 +5,7 @@ import {
   SummaryExpenses,
   SummaryIncome,
   Strip,
+  Wrapper,
 } from './InOutSummary.styled';
 import { useSelector } from 'react-redux';
 import { selectAllTransactionsReport } from 'redux/transaction/transactionSelectors';
@@ -67,16 +68,18 @@ export const InOutSummary = () => {
   // );
 
   return (
-    <SummaryWrapper>
-      <SummaryContainer>
-        <SummaryTitle>Expenses:</SummaryTitle>
-        <SummaryExpenses>-{calculatedExpensesBalance}</SummaryExpenses>
-      </SummaryContainer>
-      <Strip></Strip>
-      <SummaryContainer>
-        <SummaryTitle>Income:</SummaryTitle>
-        <SummaryIncome>+{calculatedIncomeBalance}</SummaryIncome>
-      </SummaryContainer>
-    </SummaryWrapper>
+    <Wrapper>
+      <SummaryWrapper>
+        <SummaryContainer>
+          <SummaryTitle>Expenses:</SummaryTitle>
+          <SummaryExpenses>-{calculatedExpensesBalance}</SummaryExpenses>
+        </SummaryContainer>
+        <Strip></Strip>
+        <SummaryContainer>
+          <SummaryTitle>Income:</SummaryTitle>
+          <SummaryIncome>+{calculatedIncomeBalance}</SummaryIncome>
+        </SummaryContainer>
+      </SummaryWrapper>
+    </Wrapper>
   );
 };
