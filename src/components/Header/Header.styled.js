@@ -52,6 +52,7 @@ export const UserLogo = styled.div`
   align-items: center;
   justify-content: center;
   color: black;
+  cursor: pointer;
 
   &.active {
     color: orange;
@@ -72,6 +73,7 @@ export const LogOutButton = styled.button`
   background-color: transparent;
 
   padding: 0;
+  cursor: pointer;
 
   /* outline: 1px solid black; */
   @media screen and (min-width: 768px) {
