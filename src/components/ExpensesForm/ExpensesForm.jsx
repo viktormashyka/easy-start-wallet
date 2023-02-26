@@ -1,5 +1,8 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { addTransaction, getAllTransactions } from '../../redux/transaction/transactionOperations';
+import {
+  addTransaction,
+  // getAllTransactions //!
+} from '../../redux/transaction/transactionOperations';
 import { selectBalance } from '../../redux/auth/authSelectors';
 import * as Yup from 'yup';
 import moment from 'moment';
@@ -92,7 +95,7 @@ const ExpensesForm = () => {
               date,
             })
           );
-          dispatch(getAllTransactions());
+          // dispatch(getAllTransactions()); //!
           resetForm();
         }}
       >
