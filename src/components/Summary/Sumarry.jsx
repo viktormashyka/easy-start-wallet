@@ -11,7 +11,11 @@ import moment from 'moment';
 export const Summary = ({ sortedTransactions }) => {
   console.log(sortedTransactions);
   let result = sortedTransactions.reduce((accumulator, current) => {
-    const existing = accumulator.find(item => item.date === current.date);
+    const existing = accumulator.find(
+      item =>
+        item.date.toString().slice(0, 7) === current.date.toString().slice(0, 7)
+    );
+
     if (existing) {
       existing.sum += current.sum;
     } else {
