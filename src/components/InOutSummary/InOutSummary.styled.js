@@ -1,5 +1,15 @@
 import styled from 'styled-components';
 
+export const Wrapper = styled.div`
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  @media screen and (min-width: 768px) {
+    padding: 0;
+  }
+`;
+
 export const SummaryWrapper = styled.div`
   display: flex;
   gap: 10px;

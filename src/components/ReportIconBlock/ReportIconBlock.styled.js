@@ -39,6 +39,7 @@ export const ReportWrapper = styled.div`
     box-shadow: 0px 10px 60px rgba(170, 178, 197, 0.2);
     border-radius: 30px;
     padding-top: 20px;
+    max-width: 704px;
   }
   @media screen and (min-width: 1280px) {
     max-width: 1034px;
@@ -63,17 +64,27 @@ export const TransactionWrapper = styled.div`
     text-align: center;
   }
 `;
-export const ArrowСhangeMonth = styled.svg`
-  color: #ff751d;
-  cursor: pointer;
-  stroke-width: 3px;
-width: 4px;
-height:10px;
-viewBox: 0 0 7 12;
-fill:none;
-xmlns: http://www.w3.org/2000/svg;
+// export const ArrowСhangeMonth = styled.svg`
+//   color: #ff751d;
+//   cursor: pointer;
+//   stroke-width: 3px;
+//   width: 4px;
+//   height:10px;
+//   viewBox: 0 0 7 12;
+//   fill:none;
+//   xmlns: http://www.w3.org/2000/svg;
+// `;
 
+export const ArrowСhangeMonthButton = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
 `;
+
 export const ReportTitle = styled.h1`
   @media screen and (min-width: 320px) {
     font-weight: bold;
@@ -138,6 +149,15 @@ export const IconSvg = styled.svg`
     max-height: 56px;
     margin-top: 5px;
     margin-bottom: 5px;
+    background-image: radial-gradient(
+      75% 60% at 50% 50%,
+      #f5f6fb 15%,
+      #f5f6fb 15%,
+      #f5f6fb 40%,
+      #f5f6fb 40%,
+      #f5f6fb 65%,
+      #fff 65%
+    );
 
     &:hover {
       fill: #ff751d;
