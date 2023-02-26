@@ -3,7 +3,7 @@ import moment from 'moment';
 import { Formik, ErrorMessage } from 'formik';
 import useScreenResizing from '../../hooks/useScreenResizing';
 import { useDispatch } from 'react-redux';
-import { addTransaction } from '../../redux/transaction/transactionOperations';
+import { addTransaction, getAllTransactions } from '../../redux/transaction/transactionOperations';
 import { CustomSelect } from '../CustomSelect/CustomSelect';
 import { DataBox } from '../DataBox/DataBox';
 import { Loader } from '../Loader/Loader';
@@ -77,6 +77,7 @@ const IncomeForm = () => {
               date,
             })
           );
+          dispatch(getAllTransactions());
           resetForm();
         }}
       >
