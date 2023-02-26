@@ -1,11 +1,12 @@
 import * as Yup from 'yup';
 import moment from 'moment';
+import { nanoid } from 'nanoid';
 import { Formik, ErrorMessage } from 'formik';
 import useScreenResizing from '../../hooks/useScreenResizing';
 import { useDispatch } from 'react-redux';
 import {
   addTransaction,
-  // getAllTransactions //! 
+  // getAllTransactions //!
 } from '../../redux/transaction/transactionOperations';
 import { CustomSelect } from '../CustomSelect/CustomSelect';
 import { DataBox } from '../DataBox/DataBox';
@@ -30,8 +31,8 @@ import {
 } from '../ExpensesForm/ExpensesForm.styled';
 
 const options = [
-  { value: 'Salary', label: 'Salary' },
-  { value: 'Add.Income', label: 'Add.Income' },
+  { key: nanoid(), value: 'Salary', label: 'Salary' },
+  { key: nanoid(), value: 'Add.Income', label: 'Add.Income' },
 ];
 
 const initialValues = {
@@ -80,7 +81,7 @@ const IncomeForm = () => {
               date,
             })
           );
-          // dispatch(getAllTransactions()); //! 
+          // dispatch(getAllTransactions()); //!
           resetForm();
         }}
       >
@@ -94,7 +95,6 @@ const IncomeForm = () => {
           setFieldValue,
           resetForm,
         }) => {
-          // getFormData(values);
           return (
             <FormBox onSubmit={handleSubmit}>
               <FormTopWrapper>
@@ -114,6 +114,7 @@ const IncomeForm = () => {
                     />
                     <CustomSelect
                       name="category"
+                      id="category"
                       options={options}
                       value={values.category}
                       type="Category"
