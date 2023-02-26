@@ -7,7 +7,7 @@ import { MainReportsWrapper } from 'components/MainReportsWrapper/MainReportsWra
 
 export default function Report() {
   return (
-    <main>
+    <>
       <Helmet>
         <title>Report page</title>
       </Helmet>
@@ -17,6 +17,6 @@ export default function Report() {
         {/* <Outlet /> */}
         <ReportIconBlock />
       </MainReportsWrapper>
-    </main>
+    </>
   );
 }
