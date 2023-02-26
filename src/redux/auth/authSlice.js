@@ -4,17 +4,15 @@ import {
   deleteTransaction,
 } from 'redux/transaction/transactionOperations';
 import {
-    register,
-    logIn,
-    logOut,
-    refreshUser,
-    changeAvatar,
-    getBalance,
-    updateBalance,
-    changeIsNotNewUser
+  register,
+  logIn,
+  logOut,
+  refreshUser,
+  changeAvatar,
+  getBalance,
+  updateBalance,
+  changeIsNotNewUser,
 } from './authOperations';
-
-
 
 const initialState = {
   // user: { name: null, email: null },
@@ -27,7 +25,6 @@ const initialState = {
   error: null,
   isNotNewUser: true,
 };
-
 
 const authSlice = createSlice({
   name: 'auth',
@@ -45,10 +42,10 @@ const authSlice = createSlice({
     },
     [register.fulfilled](state, { payload }) {
       state.user = payload.newUser;
-      // state.token = payload.token; //? НЕ НАДО для Kapu$ta:
-      state.token = null; //? for Kapu$ta
+      state.token = payload.token; //? НЕ НАДО для Kapu$ta:
+      // state.token = null; //? for Kapu$ta
       // state.isLoggedIn = true; //? НЕ НАДО для Kapu$ta:
-      state.isLoggedIn = false; //? for Kapu$ta
+      state.isLoggedIn = true; //? for Kapu$ta
       state.isRegistrIn = true; //? for Kapu$ta
       state.isRefreshing = false;
       state.error = null;
