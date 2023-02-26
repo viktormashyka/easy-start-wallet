@@ -12,13 +12,12 @@ import {
   Block,
 } from './LoginForm.styled';
 import * as Yup from 'yup';
-import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { ReactComponent as GoogleSvg } from 'images/google.svg';
 
 import { logIn } from 'redux/auth/authOperations';
-import { Link } from 'react-router-dom';
-
+import { Link, useParams } from 'react-router-dom';
+import { useEffect } from 'react';
 const schema = Yup.object().shape({
   email: Yup.string().email('Invalid email').required('Enter your email'),
   password: Yup.string().min(8).max(20).required('Enter your password'),
@@ -35,12 +34,16 @@ const FormError = ({ name }) => {
 console.log('LoginForm ---> start'); //!
 
 export const LoginForm = () => {
-  const navigate = useNavigate(); ///для возможности переходить по ссылке при нажатии на кнопку типа баттон
-  const handleClick = () => {
-    navigate('/register'); //// у цьому місці треба прописати шлях до бекенду.нижче розшифрувала
-  };
-  ///('   ')---'доменне ім'я серверу/шлях до ресурсу на сервері де відбувається аутентифікація/додатковий шлях де аутентифікація відбувається через google'
   const dispatch = useDispatch();
+  const urlParams = new URLSearchParams(window.location.search);
+  const email = urlParams.get('email');
+  const password = urlParams.get('password');
+  useEffect(() => {
+    console.log(email);
+    if (email) {
+      dispatch(logIn({ email, password }));
+    }
+  }, [dispatch, email, password]);
 
   const handleSubmit = (value, { resetForm }) => {
     console.log('LoginForm ---> handleSubmit'); //!
@@ -53,8 +56,7 @@ export const LoginForm = () => {
   return (
     <Container>
       <P>You can log in with your Google Account:</P>
-
-      <ButtonGoogl type="button" onClick={handleClick}>
+      <ButtonGoogl href="http://localhost:3033/api/users/google/">
         <GoogleSvg />
       </ButtonGoogl>
 
