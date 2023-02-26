@@ -8,7 +8,8 @@ import {
   Container,
   ReportWrapper,
   TransactionWrapper,
-  ArrowСhangeMonth,
+  // ArrowСhangeMonth,
+  ArrowСhangeMonthButton,
   ReportList,
   ReportTitle,
   ReportCard,
@@ -16,6 +17,8 @@ import {
   ReportCardTitle,
   Notificate,
 } from './ReportIconBlock.styled';
+import { ReactComponent as LeftArrowIcon } from '../../images/date-period-left-arrow.svg';
+import { ReactComponent as RightArrowIcon } from '../../images/date-period-right-arrow.svg';
 
 export const ReportIconBlock = () => {
   // eslint-disable-next-line no-unused-vars
@@ -70,17 +73,23 @@ export const ReportIconBlock = () => {
       <Container>
         <ReportWrapper>
           <TransactionWrapper>
-            <ArrowСhangeMonth viewBox="0 0 7 12" onClick={onHandleChangeType}>
+            {/* <ArrowСhangeMonth viewBox="0 0 7 12" onClick={onHandleChangeType}>
               <path d="M6 1L2 6L6 11" stroke="#FF751D" />
-            </ArrowСhangeMonth>
+            </ArrowСhangeMonth> */}
+            <ArrowСhangeMonthButton type="button" onClick={onHandleChangeType}>
+              <LeftArrowIcon />
+            </ArrowСhangeMonthButton>
             {type === 'expenses' ? (
               <ReportTitle>Expenses</ReportTitle>
             ) : (
               <ReportTitle>Income</ReportTitle>
             )}
-            <ArrowСhangeMonth viewBox="0 0 7 12" onClick={onHandleChangeType}>
+            <ArrowСhangeMonthButton type="button" onClick={onHandleChangeType}>
+              <RightArrowIcon />
+            </ArrowСhangeMonthButton>
+            {/* <ArrowСhangeMonth viewBox="0 0 7 12" onClick={onHandleChangeType}>
               <path d="M1 1L5 6L1 11" stroke="#FF751D" width="4" height="10" />
-            </ArrowСhangeMonth>
+            </ArrowСhangeMonth> */}
           </TransactionWrapper>
           <ReportList>
             {!getTransactionByType(type) ||
