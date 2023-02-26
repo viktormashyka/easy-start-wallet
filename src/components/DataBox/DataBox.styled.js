@@ -5,9 +5,6 @@ export const DataContent = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  @media screen and (min-width: 768px) {
-    display: none;
-  }
 `;
 
 export const CalendarIcon = styled(Calendar)`

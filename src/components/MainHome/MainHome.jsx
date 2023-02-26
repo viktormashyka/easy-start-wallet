@@ -48,7 +48,7 @@ export const MainHome = ({ children }) => {
   console.log('dataFromBack:', dataFromBack);
 
   const handleClick = () => {
-    setIsTransactionsShown(!isTransactionsShown);
+    setIsTransactionsShown(isTransactionsShown => !isTransactionsShown);
   };
 
   const sortedTransactions =

@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 
 function getScreenResizing() {
-  const { clientWidth: width, clientHeight: height } = document.documentElement;
+  // const { clientWidth: width, clientHeight: height } = document.documentElement;
+  const { innerWidth: width, innerHeight: height } = window;
   return {
     width,
     height,
