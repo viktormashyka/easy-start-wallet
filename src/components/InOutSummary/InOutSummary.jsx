@@ -9,63 +9,44 @@ import {
 import { useSelector } from 'react-redux';
 import { selectAllTransactionsReport } from 'redux/transaction/transactionSelectors';
 
+const calculatedSums = sums =>
+  sums.map(sum => `${Number(sum).toFixed(2).padStart(5, 0)} UAH.`);
+
+const getExspensesAndIncomeSum = trans => {
+  if (!trans || trans.length === 0) {
+    console.log('!trans || trans.length === 0', !trans || trans.length === 0);
+    return [0, 0];
+  }
+
+  return trans.reduce(
+    (acc, tran) =>
+      //   [
+      //   el.transactionsType === 'expenses' ? acc[0] + el.sum : acc[0],
+      //   el.transactionsType === 'income' ? acc[1] + el.sum : acc[1],
+      // ],
+      {
+        if (tran.transactionsType === 'expenses') {
+          acc[0] = acc[0] + tran.sum;
+        }
+        if (tran.transactionsType === 'income') {
+          acc[1] = acc[1] + tran.sum;
+        }
+        return acc;
+      },
+    [0, 0]
+  );
+};
+
 export const InOutSummary = () => {
   const report = useSelector(selectAllTransactionsReport);
   console.log('report', report);
   const transactions = report.filterTransactions;
-  console.log('transactions', transactions);
-  // console.log('transactions.length', transactions.length);
-  // console.log(!transactions || transactions.length === 0);
 
-  const getTransactionByType = (transactions, type) => {
-    if (!transactions || transactions.length === 0) {
-      return 0;
-    }
-      if (transactions) {
-        // console.log('transactions', transactions);
-        const filteredTransactionsByType = transactions.filter(
-          ({ transactionsType }) => transactionsType === type
-        );
-        // console.log('filteredTransactionsByType', filteredTransactionsByType);
-        return filteredTransactionsByType;
-      }
-  };
-
-  const calculatedSum = sum => `${Number(sum).toFixed(2).padStart(5, 0)} UAH.`;
-
-  const calculatedBalance = (filteredTransactions) => {
-    if (filteredTransactions === 0 ||filteredTransactions.length === 0) {
-      // console.log(
-      //   'transactions.length === 0',
-      //   filteredTransactions.length === 0
-      // );
-      return calculatedSum(0);
-    }
-    const sum = filteredTransactions.reduce((acc, el) => acc + el.sum, 0);
-    console.log('sum', sum);
-    return calculatedSum(sum);
-  };
-
-  const expensesTransactions = getTransactionByType(transactions, 'expenses');
-  const calculatedExpensesBalance = calculatedBalance(expensesTransactions);
-
-  const incomeTransactions = getTransactionByType(transactions, 'income');
-  const calculatedIncomeBalance = calculatedBalance(incomeTransactions);
-
-  // const filteredBalances = transactions.reduce(
-  //   (acc, el) => {
-  //     if (el.transactionsType === 'expenses') {
-  //       console.log('acc[0]', acc[0]);
-  //       acc[0] = acc[0] + el.sum;
-  //     }
-  //     if (el.transactionsType === 'income') {
-  //       acc[1] = acc[1] + el.sum;
-  //     }
-  //     return acc;
-  //   },
-  //   [0, 0]
-  // );
-
+  const [calculatedExpensesBalance, calculatedIncomeBalance] = calculatedSums(
+    getExspensesAndIncomeSum(transactions)
+  );
+  console.log('calculatedBalance',calculatedExpensesBalance, calculatedIncomeBalance );
+ 
   return (
     <SummaryWrapper>
       <SummaryContainer>
