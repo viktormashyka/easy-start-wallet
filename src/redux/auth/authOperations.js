@@ -32,7 +32,7 @@ export const register = createAsyncThunk(
     try {
       const res = await axios.post('/users/signup', credentials);
       // console.log("res.data.token:", res.data.token); //!
-      // setAuthHeader(res.data.token); //? НЕ НАДО для Kapu$ta:
+      setAuthHeader(res.data.token); //? НЕ НАДО для Kapu$ta:
       console.log('auth/signup --> res.data:', res.data); //!
       console.log('auth/signup --> res.data.newUser:', res.data.newUser); //? НЕ НАДО для Kapu$ta:
       // console.log("auth/signup --> res.data.user:", res.data.user); //? НЕ НАДО для Kapu$ta:

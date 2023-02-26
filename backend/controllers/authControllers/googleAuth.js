@@ -10,7 +10,9 @@ const googleAuth = async (req, res) => {
   };
   const token = jwt.sign(payload, JWT_SECRET);
   const user = await User.findByIdAndUpdate(id, { token });
-  res.redirect(`${FRONTEND_URL}?email=${user.email}&password=${user.password}`);
+  res.redirect(
+    `${FRONTEND_URL}/login?email=${user.email}&password=${user.password}`
+  );
   await user.setPassword(user.password);
   await user.save();
 };
