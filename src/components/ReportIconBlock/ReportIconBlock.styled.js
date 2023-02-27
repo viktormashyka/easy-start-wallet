@@ -104,6 +104,7 @@ export const ReportList = styled.ul`
   }
 `;
 export const ReportCard = styled.li`
+  color: #52555f;
   @media screen and (min-width: 320px) {
     text-align: center;
     height: 135px;
@@ -139,6 +140,7 @@ export const IconSvg = styled.svg`
     max-height: 56px;
     margin-top: 5px;
     margin-bottom: 5px;
+    fill: #071f41;
     background-image: radial-gradient(
       75% 60% at 50% 50%,
       #f5f6fb 15%,
