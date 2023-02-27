@@ -16,17 +16,11 @@ export const ContainerBalance = styled.div`
     align-items: center;
     flex-direction: row-reverse;
     justify-content: space-between;
-    /* padding-left: 50px;
-    padding-right: 50px; закоментувала Юля Зозуля*/
-    /* width: 768px; */
     padding-top: 0;
     margin-bottom: 0;
     padding-left: 40px;
   }
   @media screen and (min-width: 1280px) {
-    /* width: 1260px; */
-    /* padding-left: 100px; закоментувала Юля Зозуля
-    padding-right: 100px; */
     padding-left: 380px;
   }
 `;

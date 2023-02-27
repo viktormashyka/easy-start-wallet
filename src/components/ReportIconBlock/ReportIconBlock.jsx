@@ -8,7 +8,6 @@ import {
   Container,
   ReportWrapper,
   TransactionWrapper,
-  // ArrowСhangeMonth,
   ArrowСhangeMonthButton,
   ReportList,
   ReportTitle,
@@ -73,9 +72,6 @@ export const ReportIconBlock = () => {
       <Container>
         <ReportWrapper>
           <TransactionWrapper>
-            {/* <ArrowСhangeMonth viewBox="0 0 7 12" onClick={onHandleChangeType}>
-              <path d="M6 1L2 6L6 11" stroke="#FF751D" />
-            </ArrowСhangeMonth> */}
             <ArrowСhangeMonthButton type="button" onClick={onHandleChangeType}>
               <LeftArrowIcon />
             </ArrowСhangeMonthButton>
@@ -87,9 +83,6 @@ export const ReportIconBlock = () => {
             <ArrowСhangeMonthButton type="button" onClick={onHandleChangeType}>
               <RightArrowIcon />
             </ArrowСhangeMonthButton>
-            {/* <ArrowСhangeMonth viewBox="0 0 7 12" onClick={onHandleChangeType}>
-              <path d="M1 1L5 6L1 11" stroke="#FF751D" width="4" height="10" />
-            </ArrowСhangeMonth> */}
           </TransactionWrapper>
           <ReportList>
             {!getTransactionByType(type) ||
