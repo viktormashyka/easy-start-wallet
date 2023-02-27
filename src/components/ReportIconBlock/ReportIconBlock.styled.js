@@ -64,17 +64,6 @@ export const TransactionWrapper = styled.div`
     text-align: center;
   }
 `;
-// export const ArrowСhangeMonth = styled.svg`
-//   color: #ff751d;
-//   cursor: pointer;
-//   stroke-width: 3px;
-// width: 4px;
-// height:10px;
-// viewBox: 0 0 7 12;
-// fill:none;
-// xmlns: http://www.w3.org/2000/svg;
-
-// `;
 
 export const ArrowСhangeMonthButton = styled.button`
   display: flex;

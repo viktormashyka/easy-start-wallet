@@ -6,11 +6,9 @@ export const DateContainer = styled.div`
   flex-direction: column;
   align-items: center;
   @media screen and (min-width: 768px) {
-    /* margin-left: 100px; */
     margin-bottom: 0;
   }
   @media screen and (min-width: 1280px) {
-    /* margin-left: 214px; */
   }
 `;
 
@@ -36,7 +34,6 @@ export const ArrowButton = styled.button`
   border: none;
   outline: none;
   cursor: pointer;
-  /* margin: 0 7px; */
 `;
 
 export const DateMonthAndYear = styled.p`

@@ -5,7 +5,7 @@ import { ModalComment } from '../ModalComment/ModalComment';
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateBalance, getBalance, changeIsNotNewUser } from 'redux/auth/authOperations';
-import { selectBalance, selectIsNotNewUser } from 'redux/auth/authSelectors';
+import { selectBalance, selectIsNotNewUser, selectIsRefreshing } from 'redux/auth/authSelectors';
 import {
   ReportBalance,
   BalanceLabel,
@@ -13,8 +13,10 @@ import {
   BalanceInput,
   BalanceButton,
   BalanceReportInput,
+  LoaderWrapper,
 } from './Balance.styled';
 import { useLocation } from 'react-router';
+import { Loader } from 'components/Loader/Loader';
 
 const Balance = () => {
   const dispatch = useDispatch();
@@ -23,6 +25,7 @@ const Balance = () => {
     dispatch(getBalance());
   }, [dispatch]);
 
+  const isLoading = useSelector(selectIsRefreshing)
   const userBalance = useSelector(selectBalance);
   const isNotNewUser = useSelector(selectIsNotNewUser);
   const isBalanceDisabled = isNotNewUser || userBalance !== 0;
@@ -33,14 +36,12 @@ const Balance = () => {
   const location = useLocation();
   const buttonIsShown =
     location.pathname === '/home' || location.pathname === '/home/income';
-  console.log('buttonIsShown', buttonIsShown);
 
   const [balance, setBalance] = useState('');
   const handleChangeInput = e => setBalance(e.currentTarget.value);
 
   const handleSetBalance = e => {
     e.preventDefault();
-    console.log(Number(balance));
     dispatch(updateBalance({ balance }));
     setBalance('');
     dispatch(changeIsNotNewUser({ isNotNewUser: true }));
@@ -79,6 +80,11 @@ const Balance = () => {
         </ButtonsGroup>
       </BalanceLabel>
       {!isBalanceDisabled && <ModalComment />}
+      {isLoading && (
+        <LoaderWrapper>
+          <Loader />
+        </LoaderWrapper>
+      )}
     </ReportBalance>
   );
 };
