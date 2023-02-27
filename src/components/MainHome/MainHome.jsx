@@ -1,5 +1,5 @@
-import { useLocation } from 'react-router-dom';
 import useScreenResizing from '../../hooks/useScreenResizing';
+import { useLocation } from 'react-router-dom';
 import { MainWrapper } from '../MainWrapper/MainWrapper';
 import { BottomBtnWrapper } from '../BottomBtnWrapper/BottomBtnWrapper';
 import { TopBtnList } from '../TopBtnList/TopBtnList';
