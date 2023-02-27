@@ -8,6 +8,22 @@ import {
   YAxis,
 } from 'recharts';
 
+const descriptionsLabels = ({ y, x, value }) => {
+  return (
+    <g>
+      <text
+        y={y - 3}
+        x={x + 3}
+        fill="#52555F"
+        fontSize={10}
+        fontWeight={400}
+        fontFamily="Roboto"
+      >
+        {value}
+      </text>
+    </g>
+  );
+};
 export const ChartsMobile = ({ data }) => {
   return data.length === 0 ? (
     <div>
@@ -15,18 +31,17 @@ export const ChartsMobile = ({ data }) => {
       click on one of them.
     </div>
   ) : (
-    <ResponsiveContainer width="100%" height={430}>
+    <ResponsiveContainer width="100%" height={280}>
       <BarChart
         width={280}
-        height={422}
         data={data}
         layout="vertical"
-        barCategoryGap="1%"
+        barCategoryGap="10%"
         margin={{
-          top: 30,
-          right: 30,
+          top: 5,
+          right: 15,
           bottom: 5,
-          left: 15,
+          left: 1,
         }}
       >
         <XAxis type="number" axisLine={false} tick={false} />
@@ -36,24 +51,20 @@ export const ChartsMobile = ({ data }) => {
         <Bar
           dataKey="sum"
           fill="#FF751D"
-          minPointSize={5}
+          minPointSize={0}
           radius={[0, 10, 10, 0]}
           barSize={15}
         >
           {' '}
           <LabelList
             dataKey="description"
+            content={descriptionsLabels}
             position="insideTopLeft"
-            offset={-15}
-            fill="#52555F"
-            fontSize={10}
-            fontWeight={400}
-            fontFamily="Roboto"
           />
           <LabelList
             dataKey="sum"
             position="insideTopRight"
-            offset={-15}
+            offset={-10}
             formatter={value => `${value} UAH`}
             fill="#52555F"
             fontSize={10}

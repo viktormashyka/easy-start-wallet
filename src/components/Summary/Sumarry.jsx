@@ -9,7 +9,6 @@ import {
 import moment from 'moment';
 
 export const Summary = ({ sortedTransactions }) => {
-  console.log(sortedTransactions);
   let result = sortedTransactions.reduce((accumulator, current) => {
     const existing = accumulator.find(
       item =>

@@ -9,15 +9,15 @@ export const Container = styled.div`
   margin: auto;
   @media screen and (min-width: 320px) {
     max-width: 480px;
-    margin-bottom: 31px;
+    margin-bottom: 1px;
   }
   @media screen and (min-width: 768px) {
     max-width: 768px;
-    margin-bottom: 32px;
+    margin-bottom: 31px;
   }
 
   @media screen and (min-width: 1280px) {
-    max-width: 1280px;
+    max-width: 1034px;
     margin-bottom: 40px;
   }
 `;
