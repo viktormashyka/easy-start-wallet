@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { selectAllTransactionsReport } from 'redux/transaction/transactionSelectors';
 import { ReportCharts } from 'components/ReportCharts/ReportCharts';
 import sprite from '../../images/icon.svg';
+
 import { nanoid } from 'nanoid/non-secure';
 import {
   Container,
@@ -20,23 +21,19 @@ import { ReactComponent as LeftArrowIcon } from '../../images/date-period-left-a
 import { ReactComponent as RightArrowIcon } from '../../images/date-period-right-arrow.svg';
 
 export const ReportIconBlock = () => {
-  // eslint-disable-next-line no-unused-vars
   const [category, setCategory] = useState('');
   const [type, setType] = useState('expenses');
   const report = useSelector(selectAllTransactionsReport);
   const transaction = report.filterTransactions;
+  const [hoveredIndex, setHoveredIndex] = useState(null);
+  const [defaultIndex, setDefaultIndex] = useState(0);
   let typeDataForCarts = [];
-
-  const getCategory = e => {
-    setCategory(e.target.attributes.title.nodeValue);
-  };
 
   const getTransactionByType = type => {
     if (transaction) {
       const filteredByType = transaction.filter(
         transaction => transaction.transactionsType === type
       );
-      // console.log('filteredByType', filteredByType);
       return filteredByType;
     }
   };
@@ -56,6 +53,21 @@ export const ReportIconBlock = () => {
     return Object.values(result).sort((a, b) => b.sum - a.sum);
   };
 
+  useEffect(() => {
+    if (getTransactionByType(type) || filterObjByTypeAndCategory()) {
+      const categoryFirstEl = filterObjByTypeAndCategory()
+        .map(element => element.category)
+        .splice(0, 1);
+      setCategory(categoryFirstEl[0]);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [transaction, type]);
+
+  const getCategory = (e, index) => {
+    setCategory(e.target.attributes.title.nodeValue);
+    setDefaultIndex(index);
+  };
+
   const onHandleChangeType = () => {
     if (type === 'expenses') {
       setType('income');
@@ -65,6 +77,14 @@ export const ReportIconBlock = () => {
       setType('expenses');
       setCategory('');
     }
+  };
+
+  const handleHover = index => {
+    setHoveredIndex(index);
+  };
+
+  const handleLeave = () => {
+    setHoveredIndex(null);
   };
 
   return (
@@ -94,12 +114,26 @@ export const ReportIconBlock = () => {
                 </Notificate>
               </li>
             ) : (
-              filterObjByTypeAndCategory().map(array => {
+              filterObjByTypeAndCategory().map((array, index) => {
                 const id = nanoid();
+                const style = {
+                  fill:
+                    hoveredIndex === index
+                      ? '#ff751d'
+                      : defaultIndex === index
+                      ? '#ff751d'
+                      : '#071f41',
+                };
                 return (
                   <ReportCard key={id}>
                     <p>{`${array.sum.toLocaleString('ru')}.00`}</p>
-                    <IconSvg title={array.category} onClick={getCategory}>
+                    <IconSvg
+                      title={array.category}
+                      onMouseEnter={() => handleHover(index)}
+                      onMouseLeave={handleLeave}
+                      onClick={getCategory}
+                      style={style}
+                    >
                       <use
                         xlinkHref={`${sprite}#${array.category}`}
                         title={array.category}
