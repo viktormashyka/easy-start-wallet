@@ -15,10 +15,13 @@ import { Loader } from './Loader/Loader';
 const RegisterPage = lazy(() => import('../pages/Register'));
 const LoginPage = lazy(() => import('../pages/Login'));
 const HomePage = lazy(() => import('../pages/Home'));
-const ExpensesForm = lazy(() =>
-  import('../components/ExpensesForm/ExpensesForm')
+// const ExpensesForm = lazy(() =>
+//   import('../components/ExpensesForm/ExpensesForm')
+// );
+// const IncomeForm = lazy(() => import('../components/IncomeForm/IncomeForm'));
+const TransactionsForm = lazy(() =>
+  import('../components/TransactionsForm/TransactionsForm')
 );
-const IncomeForm = lazy(() => import('../components/IncomeForm/IncomeForm'));
 const ReportPage = lazy(() => import('../pages/Report'));
 const ExpensesReportForm = lazy(() =>
   import('../components/ExpensesReportForm/ExpensesReportForm')
@@ -74,7 +77,7 @@ export const App = () => {
                 element={
                   <PrivateRoute
                     redirectTo="/login"
-                    component={<ExpensesForm />}
+                    component={<TransactionsForm />}
                   />
                 }
               />
@@ -83,7 +86,7 @@ export const App = () => {
                 element={
                   <PrivateRoute
                     redirectTo="/login"
-                    component={<IncomeForm />}
+                    component={<TransactionsForm />}
                   />
                 }
               />
