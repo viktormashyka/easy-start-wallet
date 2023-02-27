@@ -6,7 +6,20 @@ import {
   LabelList,
   ResponsiveContainer,
   YAxis,
+  Tooltip,
 } from 'recharts';
+
+const CustomTooltip = ({ active, payload }) => {
+  if (active && payload && payload.length) {
+    return (
+      <div className="custom-tooltip">
+        <p className="label">{payload[0].payload.transactionsType === 'expenses' ? `YOU SPENT ${payload[0].value} UAH FOR ${payload[0].payload.description}` : `YOU GOT ${payload[0].value} UAH FROM ${payload[0].payload.description}`}</p>
+      </div>
+    );
+  }
+
+  return null;
+}
 
 const descriptionsLabels = ({ y, x, value }) => {
   return (
@@ -47,7 +60,13 @@ export const ChartsMobile = ({ data }) => {
         <XAxis type="number" axisLine={false} tick={false} />
         <YAxis type="category" axisLine={false} tickLine={false} tick={false} />
         <CartesianGrid vertical={false} horizontal={false} />
-
+        <Tooltip
+          contentStyle={{ backgroundColor: '#fff' }}
+          cursor={{ fill: '#FFDAC0' }}
+          content={CustomTooltip}
+          position='top'
+          offset={-30}
+        />
         <Bar
           dataKey="sum"
           fill="#FF751D"

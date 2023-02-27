@@ -18,12 +18,18 @@ export const ReportCharts = ({ data, category }) => {
     }
     return accumulator;
   }, []);
+
+  const dataForRender = dataWithioutDouble.map(item => {
+    item.description = item.description.toUpperCase()
+    return item
+  })
+
   return (
     <Container>
       {viewPort.width >= 768 ? (
-        <ChartsDesktopTablet data={dataWithioutDouble} />
+        <ChartsDesktopTablet data={dataForRender} />
       ) : (
-        <ChartsMobile data={dataWithioutDouble} />
+        <ChartsMobile data={dataForRender} />
       )}
     </Container>
   );

@@ -1,3 +1,4 @@
+
 import {
   BarChart,
   Bar,
@@ -9,20 +10,16 @@ import {
   Tooltip,
 } from 'recharts';
 
-const CustomBar = ({ fill, active, ...props }) => {
-  const fillColor = active ? 'red' : fill;
-  return <Bar fill={fillColor} {...props} />;
-};
 
-const CustomTooltip = ({ active, payload, label }) => {
+
+const CustomTooltip = ({ active, payload }) => {
   if (active && payload && payload.length) {
     return (
-      <div className="custom-tooltip">
-        <p className="label">{`${label} : ${payload[0].value}`}</p>
+      <div className="custom-tooltip" >
+        <p className="label">{payload[0].payload.transactionsType === 'expenses' ? `YOU SPENT ${payload[0].value} UAH FOR ${payload[0].payload.description}` : `YOU GOT ${payload[0].value} UAH FROM ${payload[0].payload.description}`}</p>
       </div>
     );
   }
-
   return null;
 };
 
@@ -56,17 +53,18 @@ export const ChartsDesktopTablet = ({ data }) => {
           }}
         />
         <Tooltip
-          contentStyle={{ backgroundColor: '#fff' }}
-          cursor={{ fill: 'rgba(0, 0, 0, 0.1)' }}
+          labelStyle={{ color: 'blue', fontWeight: 'bold', width: "100%" }}
+          cursor={{ fill: '#FFDAC0' }}
           content={CustomTooltip}
+          position='top'
+          offset={-100}
         />
         <Bar
           dataKey="sum"
-          // fill="#FF751D"
+          fill="#FF751D"
           minPointSize={5}
           radius={[10, 10, 0, 0]}
           barSize={38}
-          shape={CustomBar}
         >
           <LabelList
             dataKey="sum"
