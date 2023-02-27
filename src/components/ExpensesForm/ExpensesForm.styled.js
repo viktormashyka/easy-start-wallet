@@ -119,11 +119,9 @@ export const SecondaryInputWrapper = styled.div`
   margin-bottom: 80px;
   @media screen and (min-width: 768px) {
     margin-bottom: 0px;
-    /* width: 110px; */
     border: none;
     border-top-left-radius: 0px;
     border-bottom-left-radius: 0px;
-    border-left: 2px solid #f5f6fb;
   }
 `;
 
