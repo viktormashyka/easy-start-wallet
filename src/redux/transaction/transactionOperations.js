@@ -16,17 +16,18 @@ export const getAllTransactions = createAsyncThunk(
         // data: { transactions },
         data,
       } = await axios.get('/transactions');
-
       // const { transactions } = data; //??  //???
-      console.log('contacts/getAllTransactions == >data.transactions:', data);
+      console.log('contacts/getAllTransactions == >data.transactions:', data.transactions);
+      await data.transactions.reverse();
+      console.log('contacts/getAllTransactions == >data.transactions.reverse():', data.transactions);
       return data.transactions;
+      // return data;
     } catch (error) {
       console.log(error); //!
       toast.error(
-        `Ошибка запроса: ${
-          error.message === 'Request failed with status code 404'
-            ? 'Нет такой коллекции пользователей'
-            : error.message
+        `Ошибка запроса: ${error.message === 'Request failed with status code 404'
+          ? 'Нет такой коллекции пользователей'
+          : error.message
         }`,
         { position: 'top-center', autoClose: 2000 }
       );
@@ -51,10 +52,9 @@ export const addTransaction = createAsyncThunk(
     } catch (error) {
       console.log(error); //!
       toast.error(
-        `Ошибка запроса: ${
-          error.message === 'Request failed with status code 400'
-            ? 'Ошибка при создании контакта'
-            : error.message
+        `Ошибка запроса: ${error.message === 'Request failed with status code 400'
+          ? 'Ошибка при создании контакта'
+          : error.message
         }`,
         { position: 'top-center', autoClose: 2000 }
       );
@@ -83,10 +83,9 @@ export const deleteTransaction = createAsyncThunk(
     } catch (error) {
       console.log(error); //!
       toast.error(
-        `Ошибка запроса: ${
-          error.message === 'Request failed with status code 404'
-            ? 'Нет такой коллекции пользователей'
-            : error.message
+        `Ошибка запроса: ${error.message === 'Request failed with status code 404'
+          ? 'Нет такой коллекции пользователей'
+          : error.message
         }`,
         { position: 'top-center', autoClose: 2000 }
       );

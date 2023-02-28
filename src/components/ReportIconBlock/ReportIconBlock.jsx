@@ -63,9 +63,9 @@ export const ReportIconBlock = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [transaction, type]);
 
-  const getCategory = (e, index) => {
+  const getCategory = e => {
     setCategory(e.target.attributes.title.nodeValue);
-    setDefaultIndex(index);
+    setDefaultIndex(hoveredIndex);
   };
 
   const onHandleChangeType = () => {

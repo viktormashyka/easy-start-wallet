@@ -1,19 +1,9 @@
 import React from 'react';
 import useScreenResizing from '../../hooks/useScreenResizing';
-import { OperationListWrapper } from './OperationList.styles';
-import { OperationListDiv } from './OperationList.styles';
-import { OperationListDivDate } from './OperationList.styles';
-import { OperationListDivBalance } from './OperationList.styles';
-import { OperationListTitle } from './OperationList.styles';
-import { OperationListDateTitle } from './OperationList.styles';
-import { OperationListDivBalanceText } from './OperationList.styles';
-import { OperationListDivBalanceTextMinus } from './OperationList.styles';
+import * as SC from './OperationList.styles';
 import { ReactComponent as DeleteIcon } from '../../images/delete.svg';
-import { DeleteBtn } from './OperationList.styles';
-import { List } from './OperationList.styles';
 import { Table } from 'components/Table/Table';
 import { TableStyle } from '../Table/Table.styled';
-
 import { deleteTransaction } from '../../redux/transaction/transactionOperations';
 import { useDispatch } from 'react-redux';
 import moment from 'moment';
@@ -71,34 +61,34 @@ export const OperationList = ({ sortedTransactions, isLoading }) => {
         return (
           // Від 320 px до 768
 
-          <List key={el._id}>
-            <OperationListWrapper>
-              <OperationListDiv>
-                <OperationListTitle>{el.description}</OperationListTitle>
-                <OperationListDivDate>
-                  <OperationListDateTitle>
+          <SC.List key={el._id}>
+            <SC.OperationListWrapper>
+              <SC.OperationListDiv>
+                <SC.OperationListTitle>{el.description}</SC.OperationListTitle>
+                <SC.OperationListDivDate>
+                  <SC.OperationListDateTitle>
                     {moment(el.date).format('DD.MM.YYYY')}
-                  </OperationListDateTitle>
-                  <OperationListDateTitle>{el.category}</OperationListDateTitle>
-                </OperationListDivDate>
-              </OperationListDiv>
-              <OperationListDivBalance>
+                  </SC.OperationListDateTitle>
+                  <SC.OperationListDateTitle>{el.category}</SC.OperationListDateTitle>
+                </SC.OperationListDivDate>
+              </SC.OperationListDiv>
+              <SC.OperationListDivBalance>
                 {expenses ? (
-                  <OperationListDivBalanceTextMinus>{`- ${el.sum} UAH`}</OperationListDivBalanceTextMinus>
+                  <SC.OperationListDivBalanceTextMinus>{`- ${el.sum} UAH`}</SC.OperationListDivBalanceTextMinus>
                 ) : (
-                  <OperationListDivBalanceText>{` ${el.sum} UAH`}</OperationListDivBalanceText>
+                  <SC.OperationListDivBalanceText>{` ${el.sum} UAH`}</SC.OperationListDivBalanceText>
                 )}
 
-                <DeleteBtn
+                <SC.DeleteBtn
                   type="button"
                   id={el._id}
                   onClick={() => clickButton(el._id)}
                 >
                   <DeleteIcon />
-                </DeleteBtn>
-              </OperationListDivBalance>
-            </OperationListWrapper>
-          </List>
+                </SC.DeleteBtn>
+              </SC.OperationListDivBalance>
+            </SC.OperationListWrapper>
+          </SC.List>
         );
       })}
       {/* Для 769 px + */}
