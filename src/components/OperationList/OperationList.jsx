@@ -69,14 +69,16 @@ export const OperationList = ({ sortedTransactions, isLoading }) => {
                   <SC.OperationListDateTitle>
                     {moment(el.date).format('DD.MM.YYYY')}
                   </SC.OperationListDateTitle>
-                  <SC.OperationListDateTitle>{el.category}</SC.OperationListDateTitle>
+                  <SC.OperationListDateTitle>
+                    {el.category}
+                  </SC.OperationListDateTitle>
                 </SC.OperationListDivDate>
               </SC.OperationListDiv>
               <SC.OperationListDivBalance>
                 {expenses ? (
-                  <SC.OperationListDivBalanceTextMinus>{`- ${el.sum} UAH`}</SC.OperationListDivBalanceTextMinus>
+                  <SC.OperationListDivBalanceTextMinus>{`- ${el.sum}.00 UAH.`}</SC.OperationListDivBalanceTextMinus>
                 ) : (
-                  <SC.OperationListDivBalanceText>{` ${el.sum} UAH`}</SC.OperationListDivBalanceText>
+                  <SC.OperationListDivBalanceText>{` ${el.sum}.00 UAH.`}</SC.OperationListDivBalanceText>
                 )}
 
                 <SC.DeleteBtn
