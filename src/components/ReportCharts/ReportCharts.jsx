@@ -23,6 +23,7 @@ export const ReportCharts = ({ data, category }) => {
     item.description = item.description.toUpperCase()
     return item
   })
+
   return (
     <Container>
       {viewPort.width >= 768 ? (
