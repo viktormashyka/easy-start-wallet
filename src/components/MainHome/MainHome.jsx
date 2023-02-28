@@ -25,7 +25,8 @@ import {
 import { OperationList } from 'components/OperationList/OperationList';
 import { Summary } from 'components/Summary/Sumarry';
 import { useDispatch, useSelector } from 'react-redux';
-import { getAllTransactions } from '1/redux/transaction/transactionOperations';
+// import { getAllTransactions } from '1/redux/transaction/transactionOperations'; //!!!
+import { getAllTransactions } from 'redux/transaction/transactionOperations';
 import { useEffect, useState } from 'react';
 import {
   selectAllTransactions,
