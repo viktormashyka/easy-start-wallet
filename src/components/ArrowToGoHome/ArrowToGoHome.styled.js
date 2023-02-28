@@ -36,11 +36,15 @@ export const StyledLink = styled(NavLink)`
   }
 `;
 
-export const Arrow = styled.svg`
+//Nataliia changed:
+export const Arrow = styled.svg.attrs({
+  version: '1.1',
+  xmlns: 'http://www.w3.org/2000/svg',
+  xmlnsXlink: 'http://www.w3.org/1999/xlink',
+})`
   width: 18px;
   height: 12px;
   fill: none;
-  xmlns: 'http://www.w3.org/2000/svg';
 `;
 
 export const Title = styled.p`
