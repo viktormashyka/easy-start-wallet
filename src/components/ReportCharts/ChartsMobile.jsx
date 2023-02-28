@@ -26,6 +26,7 @@ const CustomTooltip = ({ active, payload }) => {
 };
 
 const descriptionsLabels = ({ y, x, value }) => {
+
   return (
     <g>
       <text
@@ -63,6 +64,7 @@ export const ChartsMobile = ({ data }) => {
           cursor={{ fill: 'rgba(255, 117, 29, 0.2)' }}
           content={CustomTooltip}
           position="top"
+
         />
         <Bar
           dataKey="sum"

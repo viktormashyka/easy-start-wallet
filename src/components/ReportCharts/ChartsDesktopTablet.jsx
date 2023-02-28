@@ -10,6 +10,7 @@ import {
 } from 'recharts';
 import { P } from './ReportCharts.styled';
 
+
 const CustomTooltip = ({ active, payload }) => {
   if (active && payload && payload.length) {
     return (
@@ -18,6 +19,7 @@ const CustomTooltip = ({ active, payload }) => {
           ? `YOU SPENT ${payload[0].value} UAH FOR ${payload[0].payload.description}`
           : `YOU GOT ${payload[0].value} UAH FROM ${payload[0].payload.description}`}
       </P>
+
     );
   }
   return null;
@@ -33,6 +35,7 @@ export const ChartsDesktopTablet = ({ data }) => {
         barCategoryGap="1%"
         data={data}
         margin={{ top: 30, right: 20, bottom: 20, left: 20 }}
+
       >
         <CartesianGrid vertical={false} />
         <CartesianAxis width={100} height={10} />
@@ -56,6 +59,7 @@ export const ChartsDesktopTablet = ({ data }) => {
           }}
           content={CustomTooltip}
           position="top"
+
         />
         <Bar
           dataKey="sum"
@@ -63,6 +67,7 @@ export const ChartsDesktopTablet = ({ data }) => {
           minPointSize={5}
           radius={[10, 10, 0, 0]}
           barSize={38}
+
         >
           <LabelList
             dataKey="sum"
