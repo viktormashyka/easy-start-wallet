@@ -106,7 +106,7 @@ export const ReportIconBlock = () => {
           </TransactionWrapper>
           <ReportList>
             {!getTransactionByType(type) ||
-            getTransactionByType(type).length === 0 ? (
+              getTransactionByType(type).length === 0 ? (
               <li>
                 <Notificate>
                   The report will be available after you enter data on your
@@ -121,8 +121,8 @@ export const ReportIconBlock = () => {
                     hoveredIndex === index
                       ? '#ff751d'
                       : defaultIndex === index
-                      ? '#ff751d'
-                      : '#071f41',
+                        ? '#ff751d'
+                        : '#071f41',
                 };
                 return (
                   <ReportCard key={id}>

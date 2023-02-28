@@ -1,4 +1,4 @@
-import { Container } from './ReportCharts.styled.js';
+import { Container } from './ReportCharts.styled.jsx';
 import useScreenResizing from '../../hooks/useScreenResizing.js';
 import { ChartsDesktopTablet } from './ChartsDesktopTablet.jsx';
 import { ChartsMobile } from './ChartsMobile.jsx';
