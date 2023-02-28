@@ -12,7 +12,7 @@ export const OperationListWrapper = styled.li`
   justify-content: space-between;
   align-items: center;
   padding-left: 20px;
-  padding-right: 40px;
+  padding-right: 20px;
   padding-top: 8px;
   padding-bottom: 8px;
   border-bottom: 1px solid #f5f6fb;
@@ -42,13 +42,14 @@ export const OperationListTitle = styled.p`
 export const OperationListDateTitle = styled.p`
   margin: 0;
   padding: 0;
-  font-size: 12px;
+  font-size: 8px;
   color: #52555f;
 `;
 
 export const OperationListDivDate = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 20px;
   width: 100%;
   /* outline: 1px solid black; */
 `;
