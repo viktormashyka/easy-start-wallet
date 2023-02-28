@@ -19,6 +19,7 @@ export const CalendarIcon = styled(Calendar)`
 export const CurrentData = styled.p`
   font-family: Roboto, sans-serif;
   font-size: 12px;
+  font-weight: 900;
   line-height: 1.17;
   letter-spacing: 0.04em;
   color: #52555f;
