@@ -8,18 +8,22 @@ import {
   YAxis,
   Tooltip,
 } from 'recharts';
+import { PM } from './ReportCharts.styled';
 
 const CustomTooltip = ({ active, payload }) => {
   if (active && payload && payload.length) {
     return (
-      <div className="custom-tooltip">
-        <p className="label">{payload[0].payload.transactionsType === 'expenses' ? `YOU SPENT ${payload[0].value} UAH FOR ${payload[0].payload.description}` : `YOU GOT ${payload[0].value} UAH FROM ${payload[0].payload.description}`}</p>
+      <div>
+        <PM type={payload[0].payload.transactionsType}>
+          {payload[0].payload.transactionsType === 'expenses'
+            ? `YOU SPENT ${payload[0].value} UAH FOR ${payload[0].payload.description}`
+            : `YOU GOT ${payload[0].value} UAH FROM ${payload[0].payload.description}`}
+        </PM>
       </div>
     );
   }
-
   return null;
-}
+};
 
 const descriptionsLabels = ({ y, x, value }) => {
   return (
@@ -38,18 +42,13 @@ const descriptionsLabels = ({ y, x, value }) => {
   );
 };
 export const ChartsMobile = ({ data }) => {
-  return data.length === 0 ? (
-    <div>
-      You haven't selected any of the categories. For detailed information,
-      click on one of them.
-    </div>
-  ) : (
+  return data.length === 0 ? null : (
     <ResponsiveContainer width="100%" height={280}>
       <BarChart
         width={280}
         data={data}
         layout="vertical"
-        barCategoryGap="10%"
+        barCategoryGap="1%"
         margin={{
           top: 5,
           right: 15,
@@ -61,11 +60,9 @@ export const ChartsMobile = ({ data }) => {
         <YAxis type="category" axisLine={false} tickLine={false} tick={false} />
         <CartesianGrid vertical={false} horizontal={false} />
         <Tooltip
-          contentStyle={{ backgroundColor: '#fff' }}
-          cursor={{ fill: '#FFDAC0' }}
+          cursor={{ fill: 'rgba(255, 117, 29, 0.2)' }}
           content={CustomTooltip}
-          position='top'
-          offset={-30}
+          position="top"
         />
         <Bar
           dataKey="sum"
