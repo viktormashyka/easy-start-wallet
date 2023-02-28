@@ -9,6 +9,7 @@ export const Container = styled.div`
   justify-content: center;
   padding: 20px;
   margin: auto;
+  box-shadow: 0px 10px 60px rgba(170, 178, 197, 0.2);
 
   @media screen and (min-width: 320px) {
     max-width: 480px;
