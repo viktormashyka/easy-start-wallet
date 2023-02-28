@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-// import { NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 export const SectionHeader = styled.section`
   background-color: #ffffff;
@@ -9,7 +9,7 @@ export const SectionHeader = styled.section`
   justify-content: space-between;
 `;
 
-export const LogoWrapper = styled.div`
+export const LogoWrapper = styled(NavLink)`
   position: relative;
   /* outline: 1px solid black; */
 `;

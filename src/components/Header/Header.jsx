@@ -46,7 +46,7 @@ export const Header = ({ isLoggedIn }) => {
   return (
     <header>
       <SectionHeader>
-        <LogoWrapper>
+        <LogoWrapper to="/home" end>
           <Logo src={Rectangle19} alt="Logo" />
           <Logo2 src={Rectangle20} alt="Logo" />
           <LogoTitle src={Union} alt="Logo" />
