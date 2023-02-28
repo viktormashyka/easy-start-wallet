@@ -9,7 +9,6 @@ export const Container = styled.div`
   justify-content: center;
   padding: 20px;
   margin: auto;
-  box-shadow: 0px 10px 60px rgba(170, 178, 197, 0.2);
 
   @media screen and (min-width: 320px) {
     max-width: 480px;
@@ -22,3 +21,28 @@ export const Container = styled.div`
   }
 `;
 
+export const P = styled.p`
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: space-around;
+  letter-spacing: 0.02em;
+  color: ${props => (props.type === 'expenses' ? 'red' : 'green')};
+`;
+
+export const PM = styled.p`
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: space-around;
+  letter-spacing: 0.02em;
+  color: ${props => (props.type === 'expenses' ? 'red' : 'green')};
+`;

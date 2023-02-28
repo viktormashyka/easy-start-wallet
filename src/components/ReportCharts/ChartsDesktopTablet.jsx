@@ -1,4 +1,3 @@
-
 import {
   BarChart,
   Bar,
@@ -9,14 +8,17 @@ import {
   ResponsiveContainer,
   Tooltip,
 } from 'recharts';
-import { P } from './ReportCharts.styled'
+import { P } from './ReportCharts.styled';
 
 
 const CustomTooltip = ({ active, payload }) => {
   if (active && payload && payload.length) {
     return (
-
-      <P type={payload[0].payload.transactionsType}>{payload[0].payload.transactionsType === 'expenses' ? `YOU SPENT ${payload[0].value} UAH FOR ${payload[0].payload.description}` : `YOU GOT ${payload[0].value} UAH FROM ${payload[0].payload.description}`}</P>
+      <P type={payload[0].payload.transactionsType}>
+        {payload[0].payload.transactionsType === 'expenses'
+          ? `YOU SPENT ${payload[0].value} UAH FOR ${payload[0].payload.description}`
+          : `YOU GOT ${payload[0].value} UAH FROM ${payload[0].payload.description}`}
+      </P>
 
     );
   }
@@ -49,10 +51,15 @@ export const ChartsDesktopTablet = ({ data }) => {
           }}
         />
         <Tooltip
-          labelStyle={{ color: 'blue', fontWeight: 'bold', width: "100%" }}
-          cursor={{ stroke: '#FF751D', strokeWidth: 1, fill: 'rgba(255, 117, 29, 0.05)' }}
+          labelStyle={{ color: 'blue', fontWeight: 'bold', width: '100%' }}
+          cursor={{
+            stroke: '#FF751D',
+            strokeWidth: 1,
+            fill: 'rgba(255, 117, 29, 0.2)',
+          }}
           content={CustomTooltip}
-          position='top'
+          position="top"
+
         />
         <Bar
           dataKey="sum"

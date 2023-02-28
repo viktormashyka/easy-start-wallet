@@ -8,17 +8,22 @@ import {
   YAxis,
   Tooltip,
 } from 'recharts';
-import { PM } from './ReportCharts.styled'
+import { PM } from './ReportCharts.styled';
 
 const CustomTooltip = ({ active, payload }) => {
   if (active && payload && payload.length) {
-    return (<div>
-      <PM type={payload[0].payload.transactionsType}>{payload[0].payload.transactionsType === 'expenses' ? `YOU SPENT ${payload[0].value} UAH FOR ${payload[0].payload.description}` : `YOU GOT ${payload[0].value} UAH FROM ${payload[0].payload.description}`}</PM>
-    </div>
+    return (
+      <div>
+        <PM type={payload[0].payload.transactionsType}>
+          {payload[0].payload.transactionsType === 'expenses'
+            ? `YOU SPENT ${payload[0].value} UAH FOR ${payload[0].payload.description}`
+            : `YOU GOT ${payload[0].value} UAH FROM ${payload[0].payload.description}`}
+        </PM>
+      </div>
     );
   }
   return null;
-}
+};
 
 const descriptionsLabels = ({ y, x, value }) => {
 
@@ -56,9 +61,9 @@ export const ChartsMobile = ({ data }) => {
         <YAxis type="category" axisLine={false} tickLine={false} tick={false} />
         <CartesianGrid vertical={false} horizontal={false} />
         <Tooltip
-          cursor={{ fill: 'rgba(255, 117, 29, 0.05)' }}
+          cursor={{ fill: 'rgba(255, 117, 29, 0.2)' }}
           content={CustomTooltip}
-          position='top'
+          position="top"
 
         />
         <Bar
