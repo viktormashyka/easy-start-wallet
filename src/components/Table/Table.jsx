@@ -43,14 +43,14 @@ export const Table = ({ columns, data, onHandleClick }) => {
                 ) {
                   return (
                     <TdMinus {...cell.getCellProps()}>
-                      - {cell.render('Cell')} UAH
+                      - {cell.render('Cell')}.00 UAH.
                     </TdMinus>
                   );
                 }
                 if (cell.column.Header === 'Sum') {
                   return (
                     <TdPlus {...cell.getCellProps()}>
-                      {cell.render('Cell')} UAH
+                      {cell.render('Cell')}.00 UAH.
                     </TdPlus>
                   );
                 }
