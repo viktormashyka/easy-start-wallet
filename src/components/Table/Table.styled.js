@@ -38,6 +38,7 @@ export const TableStyle = styled.div`
   ::-webkit-scrollbar-thumb {
     background-color: #ff751d;
     width: 6px;
+
     border-radius: 9em;
   }
   button {

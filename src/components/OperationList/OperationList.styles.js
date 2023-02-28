@@ -82,9 +82,14 @@ export const DeleteBtn = styled.button`
   align-items: center;
   justify-content: center;
   background-color: transparent;
-  fill: red;
-  color: red;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
   cursor: pointer;
+  :hover,
+  :focus {
+    background-color: #f5f6fb;
+  }
 `;
 
 export const LoaderWrapper = styled.div`
