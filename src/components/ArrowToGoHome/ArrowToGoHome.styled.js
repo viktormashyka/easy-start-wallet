@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 export const GoHomeBox = styled.div`
   position: absolute;
   top: 16px;
-  left: 20px;
+  left: -70px;
   display: flex;
   align-items: center;
   justify-content: space-between;
