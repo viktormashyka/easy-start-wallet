@@ -4,13 +4,13 @@ import { Main } from '../components/Main/Main';
 
 export default function Login() {
   return (
-    <div>
+    <>
       <Helmet>
         <title>Login</title>
       </Helmet>
       <Main>
         <LoginForm />
       </Main>
-    </div>
+    </>
   );
 }
