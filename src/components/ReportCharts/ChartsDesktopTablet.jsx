@@ -9,27 +9,22 @@ import {
   ResponsiveContainer,
   Tooltip,
 } from 'recharts';
-
+import { P } from './ReportCharts.styled'
 
 
 const CustomTooltip = ({ active, payload }) => {
   if (active && payload && payload.length) {
     return (
-      <div className="custom-tooltip" >
-        <p className="label">{payload[0].payload.transactionsType === 'expenses' ? `YOU SPENT ${payload[0].value} UAH FOR ${payload[0].payload.description}` : `YOU GOT ${payload[0].value} UAH FROM ${payload[0].payload.description}`}</p>
-      </div>
+
+      <P type={payload[0].payload.transactionsType}>{payload[0].payload.transactionsType === 'expenses' ? `YOU SPENT ${payload[0].value} UAH FOR ${payload[0].payload.description}` : `YOU GOT ${payload[0].value} UAH FROM ${payload[0].payload.description}`}</P>
+
     );
   }
   return null;
 };
 
 export const ChartsDesktopTablet = ({ data }) => {
-  return data.length === 0 ? (
-    <div>
-      You haven't selected any of the categories. For detailed information,
-      click on one of them.
-    </div>
-  ) : (
+  return data.length === 0 ? null : (
     <ResponsiveContainer width="100%" height={430}>
       <BarChart
         width={704}
@@ -38,6 +33,7 @@ export const ChartsDesktopTablet = ({ data }) => {
         barCategoryGap="1%"
         data={data}
         margin={{ top: 30, right: 20, bottom: 20, left: 20 }}
+
       >
         <CartesianGrid vertical={false} />
         <CartesianAxis width={100} height={10} />
@@ -54,10 +50,9 @@ export const ChartsDesktopTablet = ({ data }) => {
         />
         <Tooltip
           labelStyle={{ color: 'blue', fontWeight: 'bold', width: "100%" }}
-          cursor={{ fill: '#FFDAC0' }}
+          cursor={{ stroke: '#FF751D', strokeWidth: 1, fill: 'rgba(255, 117, 29, 0.05)' }}
           content={CustomTooltip}
           position='top'
-          offset={-100}
         />
         <Bar
           dataKey="sum"
@@ -65,6 +60,7 @@ export const ChartsDesktopTablet = ({ data }) => {
           minPointSize={5}
           radius={[10, 10, 0, 0]}
           barSize={38}
+
         >
           <LabelList
             dataKey="sum"
