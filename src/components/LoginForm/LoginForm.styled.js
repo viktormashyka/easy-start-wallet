@@ -34,10 +34,9 @@ export const Container = styled.div`
 export const Input = styled(Field)`
   @media screen and (max-width: 767.9px) {
     width: 240px;
-   margin-bottom: 32px; 
- 
+    margin-bottom: 32px;
   }
- 
+
   width: 258.92px;
   height: 52px;
   font-size: 14px;
@@ -47,23 +46,22 @@ export const Input = styled(Field)`
   margin-top: 12px;
   display: flex;
   padding-left: 19.54px;
-  color: color: #000000;
+  color: #000000;
   border-radius: 30px;
   &::placeholder {
-    color: #A6ABB9;
- 
+    color: #a6abb9;
   }
   background: #f6f7fb;
   border-style: none;
   border: none;
-   &: hover,  &:focus {
-    border:  non;
-   
+  &:hover,
+  &:focus {
+    border: none;
   }
 `;
 export const ButtonGoogl = styled.a`
-@media screen and (min-width: 767.9px) {
-  margin-top: 16px;
+  @media screen and (min-width: 767.9px) {
+    margin-top: 16px;
   }
   justify-content: center;
   margin-left: auto;
@@ -88,13 +86,14 @@ export const ButtonGoogl = styled.a`
   transition: transform 0.2s ease-in-out;
   width: 119px;
   height: 40px;
-  &: hover {
+  &:hover {
     transform: scale(1.1);
-  } ;
-   &: hover,  &:focus {
+  }
+  &:hover,
+  &:focus {
     background: #ff751d;
     border: none;
-  } ;
+  }
 `;
 export const P = styled.p`
   @media screen and (min-width: 767.9px) {
@@ -110,10 +109,10 @@ export const P = styled.p`
   min-width: 222px;
   max-height: 28px;
   color: #52555f;
-  etter-spacing: 0.04em;
+  letter-spacing: 0.04em;
 `;
 export const Button = styled.button`
- @media screen and (max-width: 767px) {
+  @media screen and (max-width: 767px) {
     width: 116px;
   }
   width: 122.17px;
@@ -128,12 +127,13 @@ export const Button = styled.button`
   font-weight: 700;
   cursor: pointer;
   transition: transform 0.2s ease-in-out;
-  &: hover,  &:focus {
+  &:hover,
+  &:focus {
     background: #ff751d;
     color: #ffffff;
     border: none;
-  transform: scale(1.1);
-  } ;
+    transform: scale(1.1);
+  }
 `;
 export const Div = styled.div`
   @media screen and (min-width: 768px) {
@@ -190,9 +190,9 @@ export const LoginButton = styled.button`
   color: #ffffff;
   border: none;
   transition: transform 0.2s ease-in-out;
-  &: hover {
+  &:hover {
     transform: scale(1.1);
-  } ;
+  }
 `;
 export const Forma = styled(Form)`
   margin-top: 20px;
