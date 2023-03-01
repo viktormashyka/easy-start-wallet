@@ -28,7 +28,7 @@ export const OperationList = ({ sortedTransactions }) => {
       <SC.List >
       {sortedTransactions.map(el => {
         const expenses = el.transactionsType === 'expenses';
-        const newSum = `${Number(el.sum).toFixed(2).padStart(5, 0)}UAN.`
+        const newSum = `${Number(el.sum).toFixed(2).padStart(5, 0)} UAH.`
         // console.log('el._id', el._id);
         return (
             <SC.OperationListWrapper key={el._id}>

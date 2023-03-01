@@ -84,7 +84,7 @@ export const Table = ({ data }) => {
                   cell.row.original.transactionsType === 'expenses' &&
                   cell.column.Header === 'Sum'
                 ) {
-                  const newSum = `${Number(cell.value).toFixed(2).padStart(5, 0)}UAN.`;
+                  const newSum = `${Number(cell.value).toFixed(2).padStart(5, 0)} UAH.`;
                   return (
                     <TdMinus {...cell.getCellProps()}>
                       -{newSum}
@@ -92,7 +92,7 @@ export const Table = ({ data }) => {
                   );
                 }
                 if (cell.column.Header === 'Sum') {
-                  const newSum = `${Number(cell.value).toFixed(2).padStart(5, 0)}UAN.`;
+                  const newSum = `${Number(cell.value).toFixed(2).padStart(5, 0)} UAH.`;
                   return (
                     <TdPlus {...cell.getCellProps()}>
                       {newSum}
