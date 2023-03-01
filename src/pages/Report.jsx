@@ -9,7 +9,7 @@ export default function Report() {
   return (
     <>
       <Helmet>
-        <title>Report page</title>
+        <title>Kapu$ta</title>
       </Helmet>
       <MainReportsWrapper>
         <ReportsTopWrapper />

@@ -6,7 +6,7 @@ export default function Login() {
   return (
     <>
       <Helmet>
-        <title>Login</title>
+        <title>Kapu$ta</title>
       </Helmet>
       <Main>
         <LoginForm />

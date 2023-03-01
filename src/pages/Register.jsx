@@ -6,7 +6,7 @@ export default function Register() {
   return (
     <>
       <Helmet>
-        <title>Registration</title>
+        <title>Kapu$ta</title>
       </Helmet>
       <Main>
         <RegisterForm />

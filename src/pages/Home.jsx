@@ -18,7 +18,7 @@ export default function Home() {
   return (
     <>
       <Helmet>
-        <title>Home page</title>
+        <title>Kapu$ta</title>
       </Helmet>
       {/* <>This is home page</> */}
       {/* <BalanceWrapper /> */}
