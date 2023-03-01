@@ -41,16 +41,18 @@ export const Table = ({ columns, data, onHandleClick }) => {
                   cell.row.original.transactionsType === 'expenses' &&
                   cell.column.Header === 'Sum'
                 ) {
+                  const newSum = `${Number(cell.value).toFixed(2).padStart(5, 0)}UAN.`;
                   return (
                     <TdMinus {...cell.getCellProps()}>
-                      - {cell.render('Cell')}.00 UAH.
+                      -{newSum}
                     </TdMinus>
                   );
                 }
                 if (cell.column.Header === 'Sum') {
+                  const newSum = `${Number(cell.value).toFixed(2).padStart(5, 0)}UAN.`;
                   return (
                     <TdPlus {...cell.getCellProps()}>
-                      {cell.render('Cell')}.00 UAH.
+                      {newSum}
                     </TdPlus>
                   );
                 }
