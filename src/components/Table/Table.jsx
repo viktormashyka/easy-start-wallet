@@ -1,17 +1,60 @@
 import { useTable } from 'react-table';
-import React from 'react';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { TdMinus, TdPlus } from './Table.styled';
-
+import { UniversalModal } from 'components/UniversalModal/UniversalModal';
 import { ReactComponent as DeleteIcon } from '../../images/delete.svg';
+import { deleteTransaction } from '../../redux/transaction/transactionOperations';
 import moment from 'moment';
+const modalQuestion = 'Are you sure?';
 
 // Misha Pobochikh
 
-export const Table = ({ columns, data, onHandleClick }) => {
+export const Table = ({ data }) => {
+  const [showModal, setShowModal] = useState(false);
+  const [selectedId, setSelectedId] = useState(null);
+  const dispatch = useDispatch();
+
+  const columns = React.useMemo(
+    () => [
+      {
+        Header: 'Date',
+        accessor: 'date', // accessor is the "key" in the data
+      },
+      {
+        Header: 'Description',
+        accessor: 'description',
+      },
+      {
+        Header: 'Category',
+        accessor: 'category',
+      },
+      {
+        Header: 'Sum',
+        accessor: 'sum',
+      },
+      {
+        Header: '',
+        accessor: 'icon',
+      },
+    ],
+    []
+  );
+
+  const onHandleClick = () => {
+    // console.log('Click Delete on id', selectedId);
+    dispatch(deleteTransaction(selectedId));
+  };
+
+  const clickButton = id => {
+    setSelectedId(id);
+    setShowModal(true);
+  };
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
     useTable({ columns, data });
 
   return (
+    <>
     <table {...getTableProps()}>
       <thead>
         {headerGroups.map(headerGroup => (
@@ -63,7 +106,7 @@ export const Table = ({ columns, data, onHandleClick }) => {
                       <button
                         type="button"
                         id={cell.row.original._id}
-                        onClick={() => onHandleClick(cell.row.original._id)}
+                        onClick={() => clickButton(cell.row.original._id)}
                       >
                         <DeleteIcon />
                       </button>
@@ -106,6 +149,14 @@ export const Table = ({ columns, data, onHandleClick }) => {
           <td></td>
         </tr>
       </tbody>
-    </table>
+      </table>
+      {showModal && (
+        <UniversalModal
+          closeModal={setShowModal}
+          agreeLogout={onHandleClick}
+          question={modalQuestion}
+        />
+      )}
+      </>
   );
 };
