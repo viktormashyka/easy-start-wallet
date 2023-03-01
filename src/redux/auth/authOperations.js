@@ -124,9 +124,10 @@ export const logOut = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
   } catch (error) {
     console.log(error); //!
     toast.error(
-      `Ошибка запроса: ${error.message === 'Request failed with status code 401'
-        ? 'Missing header with authorization token'
-        : error.message
+      `Ошибка запроса: ${
+        error.message === 'Request failed with status code 401'
+          ? 'Missing header with authorization token'
+          : error.message
       }`,
       { position: 'top-center', autoClose: 2000 }
     );
@@ -245,9 +246,10 @@ export const getBalance = createAsyncThunk(
     } catch (error) {
       console.log(error); //!
       toast.error(
-        `Ошибка запроса: ${error.message === 'Request failed with status code 404'
-          ? 'No such user collection'
-          : error.message
+        `Ошибка запроса: ${
+          error.message === 'Request failed with status code 404'
+            ? 'No such user collection'
+            : error.message
         }`,
         { position: 'top-center', autoClose: 2000 }
       );
@@ -268,9 +270,10 @@ export const updateBalance = createAsyncThunk(
     } catch (error) {
       console.log(error); //!
       toast.error(
-        `Ошибка запроса: ${error.message === 'Request failed with status code 404'
-          ? 'No such user collection'
-          : error.message
+        `Ошибка запроса: ${
+          error.message === 'Request failed with status code 404'
+            ? 'No such user collection'
+            : error.message
         }`,
         { position: 'top-center', autoClose: 2000 }
       );
@@ -293,9 +296,10 @@ export const changeIsNotNewUser = createAsyncThunk(
     } catch (error) {
       console.log(error); //!
       toast.error(
-        `Ошибка запроса: ${error.message === 'Request failed with status code 404'
-          ? 'No such user collection'
-          : error.message
+        `Ошибка запроса: ${
+          error.message === 'Request failed with status code 404'
+            ? 'No such user collection'
+            : error.message
         }`,
         { position: 'top-center', autoClose: 2000 }
       );
