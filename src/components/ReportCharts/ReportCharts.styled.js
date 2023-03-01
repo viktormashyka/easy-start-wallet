@@ -10,12 +10,14 @@ export const Container = styled.div`
   padding: 20px;
   margin: auto;
   box-shadow: 0px 10px 60px rgba(170, 178, 197, 0.2);
+  margin-bottom: 20px;
 
   @media screen and (min-width: 320px) {
     max-width: 480px;
   }
   @media screen and (min-width: 768px) {
     max-width: 704px;
+    margin-bottom: 80px;
   }
   @media screen and (min-width: 1280px) {
     max-width: 1034px;

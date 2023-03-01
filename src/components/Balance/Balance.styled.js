@@ -114,8 +114,8 @@ export const BalanceButton = styled.button`
   }
 
   &:hover {
-    background-color: #f5f6fb;
-    color: #fff;
+    background-color: #ff751d;
+    color: #ffffff;
     transition: 0.5s linear;
   }
   :disabled {
