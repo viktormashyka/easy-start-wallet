@@ -52,7 +52,7 @@ export const register = createAsyncThunk(
           position: 'top-center',
           autoClose: 2000,
         });
-        console.log(`Ошибка создания пользователя`); //!
+        console.log(`User creation error`); //!
         return thunkAPI.rejectWithValue(error.message);
       }
       toast.error(error.message, { position: 'top-center', autoClose: 2000 });
@@ -125,7 +125,7 @@ export const logOut = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
     console.log(error); //!
     toast.error(
       `Ошибка запроса: ${error.message === 'Request failed with status code 401'
-        ? 'Отсутствует заголовок с токеном авторизации'
+        ? 'Missing header with authorization token'
         : error.message
       }`,
       { position: 'top-center', autoClose: 2000 }
@@ -162,7 +162,7 @@ export const refreshUser = createAsyncThunk(
       // console.log('auth/refresh --> res.data.user:', res.data.user); //!
       //! Проверка на старый токен
       if (persistedToken !== res.data.user.token) {
-        toast.error(`Ваш токен уже недействительный. Залогиньтесь снова!!!`, {
+        toast.error(`Your token is no longer valid. Log in again!!!`, {
           position: 'top-center',
           autoClose: 2000,
         });
@@ -177,14 +177,14 @@ export const refreshUser = createAsyncThunk(
       console.log(error); //!
 
       if (error.message === 'Request failed with status code 401') {
-        toast.error(`Отсутствует заголовок с токеном авторизации`, {
+        toast.error(`Missing header with authorization token`, {
           position: 'top-center',
           autoClose: 2000,
         });
         return thunkAPI.rejectWithValue(error.message);
       }
       if (error.message === 'Request failed with status code 500') {
-        toast.error(`Токен удален, так как был недействительный!!!`, {
+        toast.error(`Token removed because it was invalid!!!`, {
           position: 'top-center',
           autoClose: 2000,
         });
@@ -246,7 +246,7 @@ export const getBalance = createAsyncThunk(
       console.log(error); //!
       toast.error(
         `Ошибка запроса: ${error.message === 'Request failed with status code 404'
-          ? 'Нет такой коллекции пользователей'
+          ? 'No such user collection'
           : error.message
         }`,
         { position: 'top-center', autoClose: 2000 }
@@ -269,7 +269,7 @@ export const updateBalance = createAsyncThunk(
       console.log(error); //!
       toast.error(
         `Ошибка запроса: ${error.message === 'Request failed with status code 404'
-          ? 'Нет такой коллекции пользователей'
+          ? 'No such user collection'
           : error.message
         }`,
         { position: 'top-center', autoClose: 2000 }
@@ -294,7 +294,7 @@ export const changeIsNotNewUser = createAsyncThunk(
       console.log(error); //!
       toast.error(
         `Ошибка запроса: ${error.message === 'Request failed with status code 404'
-          ? 'Нет такой коллекции пользователей'
+          ? 'No such user collection'
           : error.message
         }`,
         { position: 'top-center', autoClose: 2000 }
