@@ -23,6 +23,8 @@ import {
   LoaderWrapperBig,
 } from './MainHome.styled';
 import { OperationList } from 'components/OperationList/OperationList';
+import { Table } from 'components/Table/Table';
+import { TableStyle } from '../Table/Table.styled';
 import { Summary } from 'components/Summary/Sumarry';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllTransactions } from 'redux/transaction/transactionOperations';
@@ -121,10 +123,9 @@ export const MainHome = ({ children }) => {
                       <Loader />
                     </LoaderWrapperBig>
                   ) : (
-                    <OperationList
-                      isLoading={isLoading}
-                      sortedTransactions={sortedTransactions}
-                    />
+                      <TableStyle TableStyle>
+                        <Table data={sortedTransactions} />
+                      </TableStyle>
                   )}
                 </FilterWrapper>
                 <Summary sortedTransactions={sortedTransactions} />
@@ -142,10 +143,9 @@ export const MainHome = ({ children }) => {
                     <Loader />
                   </LoaderWrapperBig>
                 ) : (
-                  <OperationList
-                    isLoading={isLoading}
-                    sortedTransactions={sortedTransactions}
-                  />
+                  <TableStyle TableStyle>
+                        <Table data={sortedTransactions} />
+                      </TableStyle>
                 )}
                 <Summary sortedTransactions={sortedTransactions} />
               </MainContentWrapper>

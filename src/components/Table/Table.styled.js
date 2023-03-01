@@ -13,10 +13,6 @@ export const TdPlus = styled.td`
 `;
 
 export const TableStyle = styled.div`
-  @media screen and (max-width: 767px) {
-    display: none;
-  }
-
   @media screen and (min-width: 1280px) {
     width: 746px;
   }
