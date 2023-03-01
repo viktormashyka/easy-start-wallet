@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 
 //! axios defaults baseURL
 // axios.defaults.baseURL = 'http://localhost:3033/api';
-axios.defaults.baseURL = 'https://easy-start-wallet-back.onrender.com';
+axios.defaults.baseURL = 'https://easy-start-wallet-back.onrender.com/api';
 
 //! Utility to add JWT
 const setAuthHeader = token => {
