@@ -59,6 +59,7 @@ export const ReportIconBlock = () => {
         .map(element => element.category)
         .splice(0, 1);
       setCategory(categoryFirstEl[0]);
+      setDefaultIndex(0);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [transaction, type]);
@@ -106,7 +107,7 @@ export const ReportIconBlock = () => {
           </TransactionWrapper>
           <ReportList>
             {!getTransactionByType(type) ||
-              getTransactionByType(type).length === 0 ? (
+            getTransactionByType(type).length === 0 ? (
               <li>
                 <Notificate>
                   The report will be available after you enter data on your
@@ -121,8 +122,8 @@ export const ReportIconBlock = () => {
                     hoveredIndex === index
                       ? '#ff751d'
                       : defaultIndex === index
-                        ? '#ff751d'
-                        : '#071f41',
+                      ? '#ff751d'
+                      : '#071f41',
                 };
                 return (
                   <ReportCard key={id}>
