@@ -1,8 +1,18 @@
 import styled from 'styled-components';
 
 export const List = styled.ul`
-  @media screen and (min-width: 768px) {
-    display: none;
+  max-height: 200px;
+  overflow-y: scroll;
+  ::-webkit-scrollbar {
+    width: 6px; /* ширина для вертикального скролла */
+    background-color: #f5f6fb;
+  }
+
+  /* ползунок скроллбара */
+  ::-webkit-scrollbar-thumb {
+    background-color: #ff751d;
+    width: 6px;
+    border-radius: 9em;
   }
 `;
 
