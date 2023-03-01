@@ -4,8 +4,8 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import { toast } from 'react-toastify';
 
 //! axios defaults baseURL
-axios.defaults.baseURL = 'http://localhost:3033/api';
-// axios.defaults.baseURL = 'https://contact-book-backend52.onrender.com/api';
+// axios.defaults.baseURL = 'http://localhost:3033/api';
+axios.defaults.baseURL = 'https://easy-start-wallet-back.onrender.com';
 
 //! Utility to add JWT
 const setAuthHeader = token => {
@@ -124,10 +124,9 @@ export const logOut = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
   } catch (error) {
     console.log(error); //!
     toast.error(
-      `Ошибка запроса: ${
-        error.message === 'Request failed with status code 401'
-          ? 'Отсутствует заголовок с токеном авторизации'
-          : error.message
+      `Ошибка запроса: ${error.message === 'Request failed with status code 401'
+        ? 'Отсутствует заголовок с токеном авторизации'
+        : error.message
       }`,
       { position: 'top-center', autoClose: 2000 }
     );
@@ -246,10 +245,9 @@ export const getBalance = createAsyncThunk(
     } catch (error) {
       console.log(error); //!
       toast.error(
-        `Ошибка запроса: ${
-          error.message === 'Request failed with status code 404'
-            ? 'Нет такой коллекции пользователей'
-            : error.message
+        `Ошибка запроса: ${error.message === 'Request failed with status code 404'
+          ? 'Нет такой коллекции пользователей'
+          : error.message
         }`,
         { position: 'top-center', autoClose: 2000 }
       );
@@ -270,10 +268,9 @@ export const updateBalance = createAsyncThunk(
     } catch (error) {
       console.log(error); //!
       toast.error(
-        `Ошибка запроса: ${
-          error.message === 'Request failed with status code 404'
-            ? 'Нет такой коллекции пользователей'
-            : error.message
+        `Ошибка запроса: ${error.message === 'Request failed with status code 404'
+          ? 'Нет такой коллекции пользователей'
+          : error.message
         }`,
         { position: 'top-center', autoClose: 2000 }
       );
@@ -296,10 +293,9 @@ export const changeIsNotNewUser = createAsyncThunk(
     } catch (error) {
       console.log(error); //!
       toast.error(
-        `Ошибка запроса: ${
-          error.message === 'Request failed with status code 404'
-            ? 'Нет такой коллекции пользователей'
-            : error.message
+        `Ошибка запроса: ${error.message === 'Request failed with status code 404'
+          ? 'Нет такой коллекции пользователей'
+          : error.message
         }`,
         { position: 'top-center', autoClose: 2000 }
       );
