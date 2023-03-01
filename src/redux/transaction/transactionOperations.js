@@ -25,9 +25,10 @@ export const getAllTransactions = createAsyncThunk(
     } catch (error) {
       console.log(error); //!
       toast.error(
-        `Ошибка запроса: ${error.message === 'Request failed with status code 404'
-          ? 'No such user collection'
-          : error.message
+        `Ошибка запроса: ${
+          error.message === 'Request failed with status code 404'
+            ? 'No such user collection'
+            : error.message
         }`,
         { position: 'top-center', autoClose: 2000 }
       );
@@ -52,9 +53,10 @@ export const addTransaction = createAsyncThunk(
     } catch (error) {
       console.log(error); //!
       toast.error(
-        `Ошибка запроса: ${error.message === 'Request failed with status code 400'
-          ? 'Error creating contact'
-          : error.message
+        `Ошибка запроса: ${
+          error.message === 'Request failed with status code 400'
+            ? 'Error creating contact'
+            : error.message
         }`,
         { position: 'top-center', autoClose: 2000 }
       );
@@ -83,9 +85,10 @@ export const deleteTransaction = createAsyncThunk(
     } catch (error) {
       console.log(error); //!
       toast.error(
-        `Ошибка запроса: ${error.message === 'Request failed with status code 404'
-          ? 'No such user collection'
-          : error.message
+        `Ошибка запроса: ${
+          error.message === 'Request failed with status code 404'
+            ? 'No such user collection'
+            : error.message
         }`,
         { position: 'top-center', autoClose: 2000 }
       );
@@ -93,7 +96,6 @@ export const deleteTransaction = createAsyncThunk(
     }
   }
 );
-
 
 export const getAllTransactionsReport = createAsyncThunk(
   'contacts/getAllTransactionsReport',
@@ -109,3 +111,11 @@ export const getAllTransactionsReport = createAsyncThunk(
     }
   }
 );
+
+export function toggleMenu(state = {}, action) {
+  switch (action.type) {
+    case 'toggleMenu':
+      return true;
+  }
+  return state;
+}
