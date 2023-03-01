@@ -210,7 +210,7 @@ export const BtnSubmitItem = styled.li`
   display: flex;
   align-items: center;
   justify-content: space-around;
-  font-size: 23px;
+  /* font-size: 23px; */
   border-radius: 16px;
   background-color: #f5f6fb;
   transition: background-color 250ms cubic-bezier(0.075, 0.82, 0.165, 1),
