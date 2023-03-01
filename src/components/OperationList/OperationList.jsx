@@ -57,6 +57,7 @@ export const OperationList = ({ sortedTransactions, isLoading }) => {
     <>
       {sortedTransactions.map(el => {
         const expenses = el.transactionsType === 'expenses';
+        const newSum = `${Number(el.sum).toFixed(2).padStart(5, 0)}UAN.`
         // console.log('el._id', el._id);
         return (
           // Від 320 px до 768
@@ -76,9 +77,9 @@ export const OperationList = ({ sortedTransactions, isLoading }) => {
               </SC.OperationListDiv>
               <SC.OperationListDivBalance>
                 {expenses ? (
-                  <SC.OperationListDivBalanceTextMinus>{`- ${el.sum}.00 UAH.`}</SC.OperationListDivBalanceTextMinus>
+                  <SC.OperationListDivBalanceTextMinus>{`- ${newSum}`}</SC.OperationListDivBalanceTextMinus>
                 ) : (
-                  <SC.OperationListDivBalanceText>{` ${el.sum}.00 UAH.`}</SC.OperationListDivBalanceText>
+                  <SC.OperationListDivBalanceText>{` ${newSum}`}</SC.OperationListDivBalanceText>
                 )}
 
                 <SC.DeleteBtn
