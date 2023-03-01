@@ -5,7 +5,6 @@ import {
   addTransaction,
   deleteTransaction,
   getAllTransactionsReport,
-  toggleMenu,
   // editContact,
   // fetchContactsFromMmockapiIo,
   // deleteContactFromMmockapiIo
@@ -19,7 +18,6 @@ const handlePending = state => {
 const handleRejected = (state, { payload }) => {
   state.isLoading = false;
   state.isDeleting = false;
-  state.areTransactionsShown = false;
   state.error = payload;
 };
 
@@ -35,7 +33,6 @@ const transactionsSlice = createSlice({
     //     sum: null,
     // },
     allTransactions: [],
-    areTransactionsShown: false,
     report: {},
     isLoading: false,
     isDeleting: false,
@@ -160,9 +157,6 @@ const transactionsSlice = createSlice({
       state.items = [];
       state.error = null;
       state.isLoading = false;
-    },
-    [toggleMenu.fulfilled](state) {
-      state.areTransactionsShown = !state.areTransactionsShown;
     },
   },
 });

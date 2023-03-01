@@ -111,11 +111,3 @@ export const getAllTransactionsReport = createAsyncThunk(
     }
   }
 );
-
-export function toggleMenu(state = {}, action) {
-  switch (action.type) {
-    case 'toggleMenu':
-      return true;
-  }
-  return state;
-}

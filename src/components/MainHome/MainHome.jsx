@@ -123,9 +123,9 @@ export const MainHome = ({ children }) => {
                       <Loader />
                     </LoaderWrapperBig>
                   ) : (
-                      <TableStyle TableStyle>
-                        <Table data={sortedTransactions} />
-                      </TableStyle>
+                    <TableStyle TableStyle>
+                      <Table data={sortedTransactions} />
+                    </TableStyle>
                   )}
                 </FilterWrapper>
                 <Summary sortedTransactions={sortedTransactions} />
@@ -144,8 +144,8 @@ export const MainHome = ({ children }) => {
                   </LoaderWrapperBig>
                 ) : (
                   <TableStyle TableStyle>
-                        <Table data={sortedTransactions} />
-                      </TableStyle>
+                    <Table data={sortedTransactions} />
+                  </TableStyle>
                 )}
                 <Summary sortedTransactions={sortedTransactions} />
               </MainContentWrapper>
