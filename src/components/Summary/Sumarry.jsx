@@ -45,7 +45,7 @@ export const Summary = ({ sortedTransactions }) => {
           {result.map(({ _id, date, sum }) => (
             <Tr key={_id}>
               <Td>{moment(date).format('MMMM')}</Td>
-              <Td>{sum}</Td>
+              <Td>{`${Number(sum).toFixed(2).padStart(5, 0)}`}</Td>
             </Tr>
           ))}
         </tbody>

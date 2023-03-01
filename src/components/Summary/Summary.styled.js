@@ -8,6 +8,7 @@ export const Tr = styled.tr`
   /* border: 1px solid; */
   background: #f5f6fb;
   font-size: 12px;
+  font-weight: 400;
   text-transform: uppercase;
   &:last-child td:last-child {
     border-bottom-right-radius: 20px;
@@ -19,12 +20,12 @@ export const Td = styled.td`
   border-width: 0 0 2px 0;
   border-color: white;
   padding: 15px 22px;
-  font-family: 'Roboto';
 `;
 
 export const Th = styled.th`
   background: #f5f6fb;
   font-size: 12px;
+  line-height: 14px;
   text-transform: uppercase;
   padding: 15px 77px;
   border-top-right-radius: 20px;
@@ -32,7 +33,6 @@ export const Th = styled.th`
   border-style: solid;
   border-width: 0 0 2px 0;
   border-color: white;
-  font-family: 'Roboto';
   font-weight: 700;
 `;
 
