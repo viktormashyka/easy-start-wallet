@@ -19,7 +19,7 @@ export const OperationList = ({ sortedTransactions, isLoading }) => {
   const dispatch = useDispatch();
 
   const onHandleClick = () => {
-    console.log('Click Delete on id', selectedId);
+    // console.log('Click Delete on id', selectedId);
     dispatch(deleteTransaction(selectedId));
   };
   const clickButton = id => {
@@ -57,7 +57,7 @@ export const OperationList = ({ sortedTransactions, isLoading }) => {
     <>
       {sortedTransactions.map(el => {
         const expenses = el.transactionsType === 'expenses';
-        console.log('el._id', el._id);
+        // console.log('el._id', el._id);
         return (
           // Від 320 px до 768
 

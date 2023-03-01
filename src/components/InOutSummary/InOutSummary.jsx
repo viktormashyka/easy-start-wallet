@@ -15,7 +15,7 @@ const calculatedSums = sums =>
 
 const getExspensesAndIncomeSum = trans => {
   if (!trans || trans.length === 0) {
-    console.log('!trans || trans.length === 0', !trans || trans.length === 0);
+    // console.log('!trans || trans.length === 0', !trans || trans.length === 0);
     return [0, 0];
   }
 
@@ -40,14 +40,14 @@ const getExspensesAndIncomeSum = trans => {
 
 export const InOutSummary = () => {
   const report = useSelector(selectAllTransactionsReport);
-  console.log('report', report);
+  // console.log('report', report);
   const transactions = report.filterTransactions;
 
   const [calculatedExpensesBalance, calculatedIncomeBalance] = calculatedSums(
     getExspensesAndIncomeSum(transactions)
   );
-  console.log('calculatedBalance',calculatedExpensesBalance, calculatedIncomeBalance );
- 
+  // console.log('calculatedBalance',calculatedExpensesBalance, calculatedIncomeBalance );
+
   return (
     <Wrapper>
       <SummaryWrapper>

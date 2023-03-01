@@ -1,7 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
 
-// import { useSelector } from 'react-redux';
-
 import { SectionHeader } from './Header.styled';
 // Icon for header
 import Rectangle19 from '../../images/Rectangle19.svg';
@@ -37,7 +35,7 @@ export const Header = ({ isLoggedIn }) => {
   const [showAvatarModal, setShowAvatarModal] = useState(false);
   const user = useSelector(selectUser);
 
-  console.log(isLoggedIn);
+  // console.log(isLoggedIn);
   const dispatch = useDispatch();
   const onHandleClick = () => {
     dispatch(logOut());

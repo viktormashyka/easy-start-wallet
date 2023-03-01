@@ -35,7 +35,7 @@ const FormError = ({ name }) => {
   );
 };
 
-console.log('RegisterForm ---> start'); //!
+// console.log('RegisterForm ---> start'); //!
 
 export const RegisterForm = () => {
   const dispatch = useDispatch();
@@ -48,13 +48,13 @@ export const RegisterForm = () => {
     }
   }, [dispatch, email, password]);
   const handleSubmit = (value, { resetForm }) => {
-    console.log('RegisterForm ---> handleSubmit'); //!
-    console.log('RegisterForm ---> value:', value); //!
+    // console.log('RegisterForm ---> handleSubmit'); //!
+    // console.log('RegisterForm ---> value:', value); //!
     dispatch(register(value));
     resetForm();
   };
 
-  console.log('RegisterForm ---> render'); //!
+  // console.log('RegisterForm ---> render'); //!
   return (
     <Container>
       <P>You can log in with your Google Account:</P>

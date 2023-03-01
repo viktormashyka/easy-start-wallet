@@ -31,7 +31,7 @@ const FormError = ({ name }) => {
   );
 };
 
-console.log('LoginForm ---> start'); //!
+// console.log('LoginForm ---> start'); //!
 
 export const LoginForm = () => {
   const dispatch = useDispatch();
@@ -39,21 +39,21 @@ export const LoginForm = () => {
   const email = urlParams.get('email');
   const password = urlParams.get('password');
   useEffect(() => {
-    console.log('LoginForm ---> value:', { email, password });
+    // console.log('LoginForm ---> value:', { email, password });
     if (email) {
       dispatch(logIn({ email, password }));
     }
   }, [dispatch, email, password]);
 
   const handleSubmit = (value, { resetForm }) => {
-    console.log('LoginForm ---> handleSubmit'); //!
-    console.log('LoginForm ---> value:', value); //!
+    // console.log('LoginForm ---> handleSubmit'); //!
+    // console.log('LoginForm ---> value:', value); //!
     dispatch(logIn(value));
 
     resetForm();
   };
 
-  console.log('LoginForm ---> render'); //!
+  // console.log('LoginForm ---> render'); //!
   return (
     <Container>
       <P>You can log in with your Google Account:</P>

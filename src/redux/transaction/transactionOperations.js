@@ -17,17 +17,18 @@ export const getAllTransactions = createAsyncThunk(
         data,
       } = await axios.get('/transactions');
       // const { transactions } = data; //??  //???
-      console.log('contacts/getAllTransactions == >data.transactions:', data.transactions);
+      // console.log('contacts/getAllTransactions == >data.transactions:', data.transactions);
       await data.transactions.reverse();
-      console.log('contacts/getAllTransactions == >data.transactions.reverse():', data.transactions);
+      // console.log('contacts/getAllTransactions == >data.transactions.reverse():', data.transactions);
       return data.transactions;
       // return data;
     } catch (error) {
       console.log(error); //!
       toast.error(
-        `Ошибка запроса: ${error.message === 'Request failed with status code 404'
-          ? 'Нет такой коллекции пользователей'
-          : error.message
+        `Ошибка запроса: ${
+          error.message === 'Request failed with status code 404'
+            ? 'Нет такой коллекции пользователей'
+            : error.message
         }`,
         { position: 'top-center', autoClose: 2000 }
       );
@@ -40,21 +41,22 @@ export const getAllTransactions = createAsyncThunk(
 export const addTransaction = createAsyncThunk(
   'transactions/addTransaction',
   async (credentials, thunkAPI) => {
-    console.log('transactions/addTransaction ==> credentials:', credentials); //!
+    // console.log('transactions/addTransaction ==> credentials:', credentials); //!
     try {
       const { data } = await axios.post('/transactions', credentials);
-      console.log('transactions/addTransaction ==> data:', data); //!
-      console.log(
-        'transactions/addTransaction ==> data.transaction:',
-        data.transaction
-      ); //!
+      // console.log('transactions/addTransaction ==> data:', data); //!
+      // console.log(
+      //   'transactions/addTransaction ==> data.transaction:',
+      //   data.transaction
+      // ); //!
       return data;
     } catch (error) {
       console.log(error); //!
       toast.error(
-        `Ошибка запроса: ${error.message === 'Request failed with status code 400'
-          ? 'Ошибка при создании контакта'
-          : error.message
+        `Ошибка запроса: ${
+          error.message === 'Request failed with status code 400'
+            ? 'Ошибка при создании контакта'
+            : error.message
         }`,
         { position: 'top-center', autoClose: 2000 }
       );
@@ -68,24 +70,25 @@ export const deleteTransaction = createAsyncThunk(
   'transactions/deleteTransaction',
   async (transactionId, thunkAPI) => {
     try {
-      console.log(
-        'transactions/deleteTransaction ==> transactionId:',
-        transactionId
-      ); //!
+      // console.log(
+      //   'transactions/deleteTransaction ==> transactionId:',
+      //   transactionId
+      // ); //!
       // const {
       //   data: { contactId },
       // } = await axios.delete(`/transactions/${transactionId}`);
       const { data } = await axios.delete(`/transactions/${transactionId}`);
       // console.log('transactions/deleteTransaction ==> contactId:', contactId); //!
       // return contactId;
-      console.log('transactions/deleteTransaction ==> data:', data);
+      // console.log('transactions/deleteTransaction ==> data:', data);
       return data;
     } catch (error) {
       console.log(error); //!
       toast.error(
-        `Ошибка запроса: ${error.message === 'Request failed with status code 404'
-          ? 'Нет такой коллекции пользователей'
-          : error.message
+        `Ошибка запроса: ${
+          error.message === 'Request failed with status code 404'
+            ? 'Нет такой коллекции пользователей'
+            : error.message
         }`,
         { position: 'top-center', autoClose: 2000 }
       );

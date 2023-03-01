@@ -50,15 +50,15 @@ export function ModaldAvatarPage({ closeModal }) {
 
   const handleSubmit = event => {
     event.preventDefault();
-    console.log('event.target.image:', event.target.avatar); //!
+    // console.log('event.target.image:', event.target.avatar); //!
     const avatar = event.target.avatar.files[0];
-    console.log('avatar:', avatar); //!
-    console.log('avatar.name:', avatar.name); //!
+    // console.log('avatar:', avatar); //!
+    // console.log('avatar.name:', avatar.name); //!
 
     const formData = new FormData();
     // data.append('avatar', avatar, avatar.name);
     formData.append('avatar', avatar);
-    console.log('formData:', formData); //!
+    // console.log('formData:', formData); //!
 
     dispatch(changeAvatar(formData));
     navigate('/home', { replace: true });
@@ -66,7 +66,7 @@ export function ModaldAvatarPage({ closeModal }) {
 
   const onClick = e => {
     const res = e.target.files[0]?.name ?? 'Choose file';
-    console.log('res', res);
+    // console.log('res', res);
     setFileAvatar(res);
     if (res !== 'Choose file') {
       return setIsChooseFile(true);

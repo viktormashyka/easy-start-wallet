@@ -46,7 +46,7 @@ export const MainHome = ({ children }) => {
     dispatch(getAllTransactions());
   }, [dispatch]);
 
-  console.log('dataFromBack:', dataFromBack);
+  // console.log('dataFromBack:', dataFromBack);
 
   const handleClick = () => {
     setIsTransactionsShown(isTransactionsShown => !isTransactionsShown);
@@ -60,7 +60,7 @@ export const MainHome = ({ children }) => {
       : dataFromBack.filter(
           ({ transactionsType }) => transactionsType === 'income'
         );
-  console.log('sortedTransactions:', sortedTransactions);
+  // console.log('sortedTransactions:', sortedTransactions);
 
   return (
     <MainWrapper>
