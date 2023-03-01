@@ -1,4 +1,4 @@
-import { Formik, Form, ErrorMessage } from 'formik';
+import { Formik,  ErrorMessage } from 'formik';
 import {
   Button,
   ButtonGoogl,
@@ -10,6 +10,8 @@ import {
   LoginButton,
   Span,
   Block,
+  SpanEmailPassword,
+  Forma,
 } from './LoginForm.styled';
 import * as Yup from 'yup';
 import { useDispatch } from 'react-redux';
@@ -68,9 +70,10 @@ export const LoginForm = () => {
         onSubmit={handleSubmit}
       >
         {({ errors, touched }) => (
-          <Form autoComplete="off">
+          <Forma autoComplete="off">
             <label htmlFor="login" style={{ position: 'relative' }}>
-              {errors.email && touched.email ? <Span>*</Span> : null} Email:
+              {errors.email && touched.email ? <Span>*</Span> : null}{' '}
+              <SpanEmailPassword>Email:</SpanEmailPassword>
               <Block>
                 <Input type="email" name="email" placeholder="Email address" />
                 <FormError name="email" component="div" />
@@ -80,7 +83,7 @@ export const LoginForm = () => {
             <Block>
               <label htmlFor="password">
                 {errors.password && touched.password ? <Span>*</Span> : null}{' '}
-                Password:
+                <SpanEmailPassword>Password:</SpanEmailPassword>
                 <Input
                   type="password"
                   name="password"
@@ -98,7 +101,7 @@ export const LoginForm = () => {
                 <Button type="button">REGISTRATION</Button>
               </Link>
             </Div>
-          </Form>
+          </Forma>
         )}
       </Formik>
     </Container>

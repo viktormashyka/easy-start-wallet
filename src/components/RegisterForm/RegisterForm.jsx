@@ -1,4 +1,4 @@
-import { Formik, Form, ErrorMessage } from 'formik';
+import { Formik,  ErrorMessage } from 'formik';
 
 import * as Yup from 'yup';
 
@@ -13,6 +13,8 @@ import {
   RegisterButton,
   Span,
   Block,
+  SpanEmailPassword,
+  Forma,
 } from './RegisterForm.styled';
 import { ReactComponent as GoogleSvg } from 'images/google.svg';
 
@@ -70,9 +72,10 @@ export const RegisterForm = () => {
         onSubmit={handleSubmit}
       >
         {({ errors, touched }) => (
-          <Form autoComplete="off">
+          <Forma autoComplete="off">
             <label htmlFor="login" style={{ position: 'relative' }}>
-              {errors.email && touched.email ? <Span>*</Span> : null} Email:
+              {errors.email && touched.email ? <Span>*</Span> : null}{' '}
+              <SpanEmailPassword>Email:</SpanEmailPassword>
               <Block>
                 <Input type="email" name="email" placeholder="Email address" />
                 <FormError name="email" component="div" />
@@ -82,7 +85,7 @@ export const RegisterForm = () => {
             <Block>
               <label htmlFor="password">
                 {errors.password && touched.password ? <Span>*</Span> : null}{' '}
-                Password:
+                <SpanEmailPassword>Password:</SpanEmailPassword>
                 <Input
                   type="password"
                   name="password"
@@ -100,7 +103,7 @@ export const RegisterForm = () => {
               </Link>
               <RegisterButton type="submit">REGISTRATION</RegisterButton>
             </Div>
-          </Form>
+          </Forma>
         )}
       </Formik>
     </Container>

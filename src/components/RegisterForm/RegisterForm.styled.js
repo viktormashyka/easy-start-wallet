@@ -1,11 +1,12 @@
 import styled from 'styled-components';
-import { Field } from 'formik';
+import { Field, Form } from 'formik';
 
 export const Container = styled.div`
   @media screen and (min-width: 768px) {
     width: 426px;
     height: 552px;
     padding: 56px 83px 56px 83px;
+    align-items: flex-start;
   }
   padding: 40px 29px 40px 29px;
 
@@ -31,20 +32,24 @@ export const Container = styled.div`
 `;
 
 export const Input = styled(Field)`
-@media screen and (max-width: 767px) {
+  @media screen and (max-width: 767.9px) {
     width: 240px;
-   margin-bottom: 20px; 
+   margin-bottom: 32px; 
+ 
   }
  
   width: 258.92px;
   height: 52px;
-  font-size: 12px;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.04em;
   margin-bottom: 32px;
   margin-top: 12px;
   display: flex;
   padding-left: 19.54px;
   
   border-radius: 30px;
+  color: #A6ABB9;
   background: #f6f7fb;
   border-style: none;
   border: none;
@@ -53,9 +58,13 @@ export const Input = styled(Field)`
   }
 `;
 export const ButtonGoogl = styled.a`
+@media screen and (min-width: 767.9px) {
+  margin-top: 16px;
+  }
   justify-content: center;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 20px;
   margin-bottom: 32px;
   display: inline-flex;
   align-items: center;
@@ -66,26 +75,38 @@ export const ButtonGoogl = styled.a`
   padding: 10px 18px 10px 20px;
   font-family: Roboto;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 500;
   font-size: 14px;
+  line-height: 16px;
   text-align: center;
   letter-spacing: 0.02em;
   color: #000000;
+  transition: transform 0.2s ease-in-out;
+  width: 119px;
+  height: 40px;
+  &: hover {
+    transform: scale(1.1);
+  } ;
+   &: hover,  &:focus {
+    background: #ff751d;
+    border: none;
+  } ;
 `;
 export const P = styled.p`
-  @media screen and (min-width: 767px) {
-    max-width: 222px;
+  @media screen and (min-width: 767.9px) {
+    max-width: 258px;
     margin-bottom: 16px;
     padding-right: 8px;
     padding-left: 8px;
   }
 
-  margin-bottom: 20px;
   font-size: 12px;
   line-height: 14px;
-  max-width: 210px;
+  letter-spacing: 0.04em;
+  min-width: 222px;
   max-height: 28px;
   color: #52555f;
+  etter-spacing: 0.04em;
 `;
 export const Button = styled.button`
  @media screen and (max-width: 767px) {
@@ -102,26 +123,26 @@ export const Button = styled.button`
   color: #52555f;
   font-weight: 700;
   cursor: pointer;
+  transition: transform 0.2s ease-in-out;
   &: hover,  &:focus {
     background: #ff751d;
     color: #ffffff;
-    // border-style: none;
     border: none;
+  transform: scale(1.1);
   } ;
 `;
 export const Div = styled.div`
   @media screen and (min-width: 768px) {
     padding-top: 8px;
-  }
+  } 
   display: flex;
-  padding-top: 20px;
   justify-content: space-between;
 `;
 export const Block = styled.div`
   position: relative;
 `;
 export const ErrorText = styled.p`
-  color: #eb5757;
+  color: #EB5757;
   position: absolute;
   bottom: -18px;
   left: 0;
@@ -134,6 +155,15 @@ export const Span = styled.span`
   font-size: 12px;
   line-height: 14px;
   letter-spacing: 0.04em;
+  margin-right: -8px;
+  
+`;
+export const SpanEmailPassword = styled.span`
+  color: #000000;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.04em;
+  margin-left: 8px;
 `;
 export const RegisterButton = styled.button`
   @media screen and (max-width: 767px) {
@@ -149,9 +179,18 @@ export const RegisterButton = styled.button`
   justify-content: center;
 
   font-weight: 700;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
   cursor: pointer;
   background: #ff751d;
   color: #ffffff;
-
   border: none;
+  transition: transform 0.2s ease-in-out;
+  &: hover {
+    transform: scale(1.1);
+  } ;
 `;
+export const Forma = styled(Form)`
+margin-top: 20px;
+`
