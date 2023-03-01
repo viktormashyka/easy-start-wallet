@@ -74,34 +74,34 @@ export const Table = ({ columns, data, onHandleClick }) => {
           );
         })}
         <tr>
-          <span></span>
+          <td></td>
         </tr>
         <tr>
-          <span></span>
+          <td></td>
         </tr>
         <tr>
-          <span></span>
+          <td></td>
         </tr>
         <tr>
-          <span></span>
+          <td></td>
         </tr>
         <tr>
-          <span></span>
+          <td></td>
         </tr>
         <tr>
-          <span></span>
+          <td></td>
         </tr>
         <tr>
-          <span></span>
+          <td></td>
         </tr>
         <tr>
-          <span></span>
+          <td></td>
         </tr>
         <tr>
-          <span></span>
+          <td></td>
         </tr>
         <tr>
-          <span></span>
+          <td></td>
         </tr>
       </tbody>
     </table>
