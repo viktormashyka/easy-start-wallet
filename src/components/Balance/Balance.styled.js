@@ -121,6 +121,9 @@ export const BalanceButton = styled.button`
   :disabled {
     color: #ffffff;
   }
+  &:hover:disabled {
+    background-color: transparent;
+  }
 
   @media screen and (min-width: 768px) {
     width: 125px;
