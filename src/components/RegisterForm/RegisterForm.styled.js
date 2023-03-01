@@ -49,10 +49,14 @@ export const Input = styled(Field)`
   padding-left: 19.54px;
   
   border-radius: 30px;
-  color: #A6ABB9;
+  color: #000000;
   background: #f6f7fb;
   border-style: none;
   border: none;
+   &::placeholder {
+    color: #A6ABB9;
+ 
+  }
    &: hover,  &:focus {
     border:  non;
   }
@@ -134,7 +138,7 @@ export const Button = styled.button`
 export const Div = styled.div`
   @media screen and (min-width: 768px) {
     padding-top: 8px;
-  } 
+  }
   display: flex;
   justify-content: space-between;
 `;
@@ -142,7 +146,7 @@ export const Block = styled.div`
   position: relative;
 `;
 export const ErrorText = styled.p`
-  color: #EB5757;
+  color: #eb5757;
   position: absolute;
   bottom: -18px;
   left: 0;
@@ -156,7 +160,6 @@ export const Span = styled.span`
   line-height: 14px;
   letter-spacing: 0.04em;
   margin-right: -8px;
-  
 `;
 export const SpanEmailPassword = styled.span`
   color: #000000;
@@ -192,5 +195,5 @@ export const RegisterButton = styled.button`
   } ;
 `;
 export const Forma = styled(Form)`
-margin-top: 20px;
-`
+  margin-top: 20px;
+`;

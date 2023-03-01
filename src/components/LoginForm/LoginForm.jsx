@@ -1,4 +1,4 @@
-import { Formik,  ErrorMessage } from 'formik';
+import { Formik, ErrorMessage } from 'formik';
 import {
   Button,
   ButtonGoogl,
@@ -59,7 +59,7 @@ export const LoginForm = () => {
   return (
     <Container>
       <P>You can log in with your Google Account:</P>
-      <ButtonGoogl href="http://localhost:3033/api/users/google/">
+      <ButtonGoogl href="https://easy-start-wallet-back.onrender.com/api/users/google/">
         <GoogleSvg />
       </ButtonGoogl>
 
