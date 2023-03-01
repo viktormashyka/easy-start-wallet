@@ -24,8 +24,11 @@ export const StyledLink = styled(NavLink)`
   text-decoration: none;
   color: inherit;
   cursor: pointer;
+  transition: transform 0.2s ease-in-out;
   &:hover {
-    color: #000;
+    color: #000000;
+    font-weight: 700;
+    transform: scale(1.1);
   }
 
   @media screen and (min-width: 768px) {
