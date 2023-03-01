@@ -16,9 +16,6 @@ export const TableStyle = styled.div`
   @media screen and (min-width: 1280px) {
     width: 746px;
   }
-  /*Наталія змінила з 150px*/
-  /* height: 300px; */
-  /* overflow-y: scroll; */
 
   border-radius: 20px;
   /* padding-right: 20px;
@@ -103,7 +100,6 @@ export const TableStyle = styled.div`
         padding-bottom: 14px;
         font-size: 12px;
         line-height: 14px;
-        font-family: 'Roboto';
         :first-child {
           padding-left: 20px;
         }
