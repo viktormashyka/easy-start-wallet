@@ -25,10 +25,9 @@ export const getAllTransactions = createAsyncThunk(
     } catch (error) {
       console.log(error); //!
       toast.error(
-        `Ошибка запроса: ${
-          error.message === 'Request failed with status code 404'
-            ? 'Нет такой коллекции пользователей'
-            : error.message
+        `Ошибка запроса: ${error.message === 'Request failed with status code 404'
+          ? 'No such user collection'
+          : error.message
         }`,
         { position: 'top-center', autoClose: 2000 }
       );
@@ -53,10 +52,9 @@ export const addTransaction = createAsyncThunk(
     } catch (error) {
       console.log(error); //!
       toast.error(
-        `Ошибка запроса: ${
-          error.message === 'Request failed with status code 400'
-            ? 'Ошибка при создании контакта'
-            : error.message
+        `Ошибка запроса: ${error.message === 'Request failed with status code 400'
+          ? 'Error creating contact'
+          : error.message
         }`,
         { position: 'top-center', autoClose: 2000 }
       );
@@ -85,10 +83,9 @@ export const deleteTransaction = createAsyncThunk(
     } catch (error) {
       console.log(error); //!
       toast.error(
-        `Ошибка запроса: ${
-          error.message === 'Request failed with status code 404'
-            ? 'Нет такой коллекции пользователей'
-            : error.message
+        `Ошибка запроса: ${error.message === 'Request failed with status code 404'
+          ? 'No such user collection'
+          : error.message
         }`,
         { position: 'top-center', autoClose: 2000 }
       );
@@ -97,32 +94,6 @@ export const deleteTransaction = createAsyncThunk(
   }
 );
 
-// //! PATCH @ /contacts/:id
-// export const editContact = createAsyncThunk(
-//     'contacts/editContact',
-//     // async ({ id, newName, newNumber }, thunkAPI) => { //! 1-й вариант
-//     // async ({ id: contactId, name, number }, thunkAPI) => { //! 2-й вариант
-//     async ({ id: contactId, name, phone }, thunkAPI) => { //! 2-й вариант
-//         // async (credentials, thunkAPI) => { //! 3-й вариант
-//         try {
-//             // console.log("contacts/editContact==>contactId:", contactId); //! 1-й и 2-й вариант
-//             // console.log("contacts/editContact==>name:", name); //! 2-й вариант
-//             // console.log("contacts/editContact==>number:", number); //! 2-й вариант
-//             // console.log("contacts/editContact==>credentials:", credentials); //! 3-й вариант
-//             // const response = await axios.patch(`/contacts/${id}`, { name: newName, number: newNumber }); //! 1-й вариант
-//             const { data } = await axios.patch(`/contacts/${contactId}`, { name, phone }); //! 2-й вариант
-//             // const response = await axios.patch(`/contacts/${credentials.id}`, { name: credentials.name, number: credentials.number }); //! 3-й вариант
-//             // console.log("editContact==>response.data", response.data); //!
-//             console.log("contacts/contacts/editContact ==> data:", data); //!
-//             console.log("contacts/contacts/editContact ==> data.contact:", data.contact); //!
-//             return data.contact;
-//         } catch (error) {
-//             console.log(error); //!
-//             toast.error(`Ошибка запроса: ${error.message === "Request failed with status code 500" ? "Не удалось обновить контакт" : error.message}`, { position: "top-center", autoClose: 2000 });
-//             return thunkAPI.rejectWithValue(error.message);
-//         }
-//     }
-// );
 
 export const getAllTransactionsReport = createAsyncThunk(
   'contacts/getAllTransactionsReport',
