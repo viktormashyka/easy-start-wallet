@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-// import { NavLink } from 'react-router-dom';
 import { ReactComponent as Calculator } from '../../images/Calculator.svg';
 import { Field, Form } from 'formik';
 
@@ -210,18 +209,8 @@ export const BtnSubmitItem = styled.li`
   display: flex;
   align-items: center;
   justify-content: space-around;
-  /* font-size: 23px; */
   border-radius: 16px;
-  background-color: #f5f6fb;
-  transition: background-color 250ms cubic-bezier(0.075, 0.82, 0.165, 1),
-    color 250ms cubic-bezier(0.075, 0.82, 0.165, 1);
-  &:hover {
-    background-color: #ff751d;
-    color: #ffffff;
-  }
   @media screen and (min-width: 768px) {
-    background-color: #ffffff;
-    border: 2px solid #f5f6fb;
     :not(:last-child) {
       margin-right: 15px;
     }
@@ -229,9 +218,9 @@ export const BtnSubmitItem = styled.li`
 `;
 
 export const BtnSubmit = styled.button`
-  background-color: transparent;
   text-transform: uppercase;
-  color: #52555f;
+  background-color: #ff751d;
+  color: #ffffff;
   width: 130px;
   padding-top: 15px;
   padding-bottom: 15px;
@@ -245,20 +234,30 @@ export const BtnSubmit = styled.button`
   transition: background-color 250ms cubic-bezier(0.075, 0.82, 0.165, 1),
     color 250ms cubic-bezier(0.075, 0.82, 0.165, 1);
   &:hover {
-    background-color: #ff751d;
-    color: #ffffff;
+    background-color: #f5f6fb;
+    color: #52555f;
   }
   @media screen and (min-width: 768px) {
     width: 125px;
+    box-sizing: border-box;
     box-shadow: none;
+    border: 2px solid transparent;
+    transition: background-color 250ms cubic-bezier(0.075, 0.82, 0.165, 1),
+      color 250ms cubic-bezier(0.075, 0.82, 0.165, 1),
+      border 250ms cubic-bezier(0.075, 0.82, 0.165, 1);
+    &:hover {
+      color: #52555f;
+      background-color: #ffffff;
+      border: 2px solid #f5f6fb;
+    }
   }
   @media screen and (min-width: 1280px) {
     width: 136px;
   }
 `;
 export const BtnSecondary = styled.button`
-  background-color: transparent;
   text-transform: uppercase;
+  background-color: #f5f6fb;
   color: #52555f;
   width: 130px;
   padding-top: 15px;
@@ -278,7 +277,18 @@ export const BtnSecondary = styled.button`
   }
   @media screen and (min-width: 768px) {
     width: 125px;
+    box-sizing: border-box;
     box-shadow: none;
+    border: 2px solid #f5f6fb;
+    background-color: #fff;
+    transition: background-color 250ms cubic-bezier(0.075, 0.82, 0.165, 1),
+      color 250ms cubic-bezier(0.075, 0.82, 0.165, 1),
+      border 250ms cubic-bezier(0.075, 0.82, 0.165, 1);
+    &:hover {
+      color: #ffffff;
+      background-color: #ff751d;
+      border: 2px solid transparent;
+    }
   }
   @media screen and (min-width: 1280px) {
     width: 136px;

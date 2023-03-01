@@ -86,6 +86,9 @@ export const LogOutButton = styled.button`
       height: 36px;
       margin-right: 20px;
     }
+    &:hover {
+      color: #ff751d;
+    }
   }
 `;
 
