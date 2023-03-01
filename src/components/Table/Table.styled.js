@@ -102,12 +102,12 @@ export const TableStyle = styled.div`
         background-color: #f5f6fb;
         text-transform: uppercase;
         font-size: 12px;
-
+        font-weight: 700;
         padding-top: 14px;
         padding-bottom: 14px;
         font-size: 12px;
         line-height: 14px;
-
+        font-family: 'Roboto';
         :first-child {
           padding-left: 20px;
         }

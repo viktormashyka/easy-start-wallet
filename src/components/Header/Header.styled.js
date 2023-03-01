@@ -7,6 +7,7 @@ export const SectionHeader = styled.section`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  font-family: 'Roboto';
 `;
 
 export const LogoWrapper = styled(NavLink)`

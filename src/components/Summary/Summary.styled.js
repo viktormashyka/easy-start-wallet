@@ -19,6 +19,7 @@ export const Td = styled.td`
   border-width: 0 0 2px 0;
   border-color: white;
   padding: 15px 22px;
+  font-family: 'Roboto';
 `;
 
 export const Th = styled.th`
@@ -31,6 +32,8 @@ export const Th = styled.th`
   border-style: solid;
   border-width: 0 0 2px 0;
   border-color: white;
+  font-family: 'Roboto';
+  font-weight: 700;
 `;
 
 export const SummaryFalse = styled.div`
@@ -41,7 +44,7 @@ export const SummaryFalse = styled.div`
   border-top-left-radius: 20px;
   border-bottom-right-radius: 20px;
   text-align: center;
-  font-weight: bold;
+  /* font-weight: bold; */
   font-size: 12px;
   padding-top: 15px;
 `;
