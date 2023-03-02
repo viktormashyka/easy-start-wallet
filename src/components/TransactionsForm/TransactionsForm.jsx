@@ -113,6 +113,8 @@ const TransactionsForm = () => {
     <>
       <Formik
         initialValues={initialValues}
+        validateOnBlur={false}
+        validateOnChange={false}
         validationSchema={mainHomeLocation ? schemaExpenses : schemaIncome}
         onSubmit={(values, { resetForm }) => {
           dispatch(
