@@ -2,7 +2,6 @@
   "name": "easy-start-wallet",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://viktormashyka.github.io/easy-start-wallet/",
   "dependencies": {
     "@mui/icons-material": "^5.11.9",
     "@mui/material": "^5.11.10",
