@@ -28,17 +28,22 @@ import { TableStyle } from '../Table/Table.styled';
 import { Summary } from 'components/Summary/Sumarry';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllTransactions } from 'redux/transaction/transactionOperations';
-import { useEffect, useState } from 'react';
+import {
+  useEffect,
+  // useState
+} from 'react';
 import {
   selectAllTransactions,
   selectLoadingTransactions,
 } from 'redux/transaction/transactionSelectors';
+import { showTransactions } from 'redux/transactionsToShow/transactionsToShowSlice';
 import { Loader } from 'components/Loader/Loader';
 
 export const MainHome = ({ children }) => {
   const isLoading = useSelector(selectLoadingTransactions);
+  const { isOpen } = useSelector(store => store.transactionsToShow);
   const viewPort = useScreenResizing();
-  const [isTransactionsShown, setIsTransactionsShown] = useState(false);
+  // const [isTransactionsShown, setIsTransactionsShown] = useState(false);
   const location = useLocation();
   const dispatch = useDispatch();
   const dataFromBack = useSelector(selectAllTransactions);
@@ -50,7 +55,8 @@ export const MainHome = ({ children }) => {
   // console.log('dataFromBack:', dataFromBack);
 
   const handleClick = () => {
-    setIsTransactionsShown(isTransactionsShown => !isTransactionsShown);
+    // setIsTransactionsShown(isTransactionsShown => !isTransactionsShown);
+    dispatch(showTransactions());
   };
 
   const sortedTransactions =
@@ -68,7 +74,7 @@ export const MainHome = ({ children }) => {
       <TopWrapper />
       <BCGLogoBox />
       <ContentContainer>
-        {viewPort.width < 768 && !isTransactionsShown && (
+        {viewPort.width < 768 && !isOpen && (
           <>
             <BackspaceWrapper>
               <BackspaceBtn handleClick={handleClick} title="to transactions" />
@@ -92,7 +98,7 @@ export const MainHome = ({ children }) => {
             </BottomBtnBox>
           </>
         )}
-        {viewPort.width < 768 && isTransactionsShown && (
+        {viewPort.width < 768 && isOpen && (
           <>
             <FilterWrapper>
               <BackspaceWrapper>
@@ -123,9 +129,9 @@ export const MainHome = ({ children }) => {
                       <Loader />
                     </LoaderWrapperBig>
                   ) : (
-                      <TableStyle TableStyle>
-                        <Table data={sortedTransactions} />
-                      </TableStyle>
+                    <TableStyle TableStyle>
+                      <Table data={sortedTransactions} />
+                    </TableStyle>
                   )}
                 </FilterWrapper>
                 <Summary sortedTransactions={sortedTransactions} />
@@ -144,8 +150,8 @@ export const MainHome = ({ children }) => {
                   </LoaderWrapperBig>
                 ) : (
                   <TableStyle TableStyle>
-                        <Table data={sortedTransactions} />
-                      </TableStyle>
+                    <Table data={sortedTransactions} />
+                  </TableStyle>
                 )}
                 <Summary sortedTransactions={sortedTransactions} />
               </MainContentWrapper>

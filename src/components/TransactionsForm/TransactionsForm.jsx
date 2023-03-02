@@ -1,18 +1,19 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
+import * as Yup from 'yup';
+import moment from 'moment';
+import { nanoid } from 'nanoid';
+import { Formik, ErrorMessage } from 'formik';
 import {
   addTransaction,
   // getAllTransactions //!
 } from '../../redux/transaction/transactionOperations';
 import { selectBalance } from '../../redux/auth/authSelectors';
-import * as Yup from 'yup';
-import moment from 'moment';
-import { Formik, ErrorMessage } from 'formik';
+import { showTransactions } from 'redux/transactionsToShow/transactionsToShowSlice';
 import useScreenResizing from '../../hooks/useScreenResizing';
 import { CustomSelect } from '../CustomSelect/CustomSelect';
 import { DataBox } from '../DataBox/DataBox';
 import { Loader } from '../Loader/Loader';
-import { nanoid } from 'nanoid';
 import {
   InputField,
   FormBox,
@@ -123,6 +124,7 @@ const TransactionsForm = () => {
           );
           // dispatch(getAllTransactions()); //!
           resetForm();
+          dispatch(showTransactions());
         }}
       >
         {({
