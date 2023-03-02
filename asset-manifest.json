@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.b2a8f3ba.css",
-    "main.js": "/static/js/main.af2116f9.js",
+    "main.js": "/static/js/main.393e0d4c.js",
     "static/js/649.9a2e4464.chunk.js": "/static/js/649.9a2e4464.chunk.js",
     "static/js/628.b267bb2d.chunk.js": "/static/js/628.b267bb2d.chunk.js",
     "static/js/720.62fae06a.chunk.js": "/static/js/720.62fae06a.chunk.js",
@@ -35,7 +35,7 @@
     "static/media/date-period-left-arrow.svg": "/static/media/date-period-left-arrow.7b73b0e17ede841e7c6a861453ce9b2c.svg",
     "static/media/date-period-right-arrow.svg": "/static/media/date-period-right-arrow.55fc299de937d224756cafce0ff35b50.svg",
     "main.b2a8f3ba.css.map": "/static/css/main.b2a8f3ba.css.map",
-    "main.af2116f9.js.map": "/static/js/main.af2116f9.js.map",
+    "main.393e0d4c.js.map": "/static/js/main.393e0d4c.js.map",
     "649.9a2e4464.chunk.js.map": "/static/js/649.9a2e4464.chunk.js.map",
     "628.b267bb2d.chunk.js.map": "/static/js/628.b267bb2d.chunk.js.map",
     "720.62fae06a.chunk.js.map": "/static/js/720.62fae06a.chunk.js.map",
@@ -57,6 +57,6 @@
   },
   "entrypoints": [
     "static/css/main.b2a8f3ba.css",
-    "static/js/main.af2116f9.js"
+    "static/js/main.393e0d4c.js"
   ]
 }
