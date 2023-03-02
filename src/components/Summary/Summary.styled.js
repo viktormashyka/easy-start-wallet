@@ -16,6 +16,7 @@ export const Tr = styled.tr`
 `;
 
 export const Td = styled.td`
+  color: #52555f;
   border-style: solid;
   border-width: 0 0 2px 0;
   border-color: white;
