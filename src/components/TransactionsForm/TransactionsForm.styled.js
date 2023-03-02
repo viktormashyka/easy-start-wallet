@@ -231,25 +231,29 @@ export const BtnSubmit = styled.button`
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.02em;
-  transition: background-color 250ms cubic-bezier(0.075, 0.82, 0.165, 1),
+  /* transition: background-color 250ms cubic-bezier(0.075, 0.82, 0.165, 1),
     color 250ms cubic-bezier(0.075, 0.82, 0.165, 1);
   &:hover {
     background-color: #f5f6fb;
     color: #52555f;
+  } */
+  transition: transform 0.2s ease-in-out;
+  &:hover {
+    transform: scale(1.1);
   }
   @media screen and (min-width: 768px) {
     width: 125px;
     box-sizing: border-box;
     box-shadow: none;
     border: 2px solid transparent;
-    transition: background-color 250ms cubic-bezier(0.075, 0.82, 0.165, 1),
+    /* transition: background-color 250ms cubic-bezier(0.075, 0.82, 0.165, 1),
       color 250ms cubic-bezier(0.075, 0.82, 0.165, 1),
       border 250ms cubic-bezier(0.075, 0.82, 0.165, 1);
     &:hover {
       color: #52555f;
       background-color: #ffffff;
       border: 2px solid #f5f6fb;
-    }
+    } */
   }
   @media screen and (min-width: 1280px) {
     width: 136px;
@@ -269,11 +273,15 @@ export const BtnSecondary = styled.button`
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.02em;
-  transition: background-color 250ms cubic-bezier(0.075, 0.82, 0.165, 1),
+  /* transition: background-color 250ms cubic-bezier(0.075, 0.82, 0.165, 1),
     color 250ms cubic-bezier(0.075, 0.82, 0.165, 1);
   &:hover {
     background-color: #ff751d;
     color: #ffffff;
+  } */
+  transition: transform 0.2s ease-in-out;
+  &:hover {
+    transform: scale(1.1);
   }
   @media screen and (min-width: 768px) {
     width: 125px;
@@ -281,14 +289,14 @@ export const BtnSecondary = styled.button`
     box-shadow: none;
     border: 2px solid #f5f6fb;
     background-color: #fff;
-    transition: background-color 250ms cubic-bezier(0.075, 0.82, 0.165, 1),
+    /* transition: background-color 250ms cubic-bezier(0.075, 0.82, 0.165, 1),
       color 250ms cubic-bezier(0.075, 0.82, 0.165, 1),
       border 250ms cubic-bezier(0.075, 0.82, 0.165, 1);
     &:hover {
       color: #ffffff;
       background-color: #ff751d;
       border: 2px solid transparent;
-    }
+    } */
   }
   @media screen and (min-width: 1280px) {
     width: 136px;
