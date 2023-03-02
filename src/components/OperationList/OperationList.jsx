@@ -6,6 +6,7 @@ import { useDispatch } from 'react-redux';
 import moment from 'moment';
 import { UniversalModal } from 'components/UniversalModal/UniversalModal';
 import { useState } from 'react';
+import { nanoid } from 'nanoid';
 const modalQuestion = 'Are you sure?';
 // Mikhaylo Pobochikh
 
@@ -25,12 +26,13 @@ export const OperationList = ({ sortedTransactions }) => {
 
   return (
     <>
-      <SC.List >
-      {sortedTransactions.map(el => {
-        const expenses = el.transactionsType === 'expenses';
-        const newSum = `${Number(el.sum).toFixed(2).padStart(5, 0)} UAH.`
-        // console.log('el._id', el._id);
-        return (
+      <SC.List>
+        {sortedTransactions.map(el => {
+          const expenses = el.transactionsType === 'expenses';
+          const newSum = `${Number(el.sum).toFixed(2).padStart(5, 0)} UAH.`;
+          // console.log('el._id', el._id);
+
+          return (
             <SC.OperationListWrapper key={el._id}>
               <SC.OperationListDiv>
                 <SC.OperationListTitle>{el.description}</SC.OperationListTitle>
@@ -58,9 +60,12 @@ export const OperationList = ({ sortedTransactions }) => {
                 </SC.DeleteBtn>
               </SC.OperationListDivBalance>
             </SC.OperationListWrapper>
-        );
-      })}
-        </SC.List>
+          );
+        })}
+        <SC.OperationListWrapper key={nanoid()} />
+        <SC.OperationListWrapper key={nanoid()} />
+      </SC.List>
+
       {showModal && (
         <UniversalModal
           closeModal={setShowModal}

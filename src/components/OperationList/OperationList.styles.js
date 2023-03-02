@@ -5,7 +5,7 @@ export const List = styled.ul`
   overflow-y: scroll;
   ::-webkit-scrollbar {
     width: 6px; /* ширина для вертикального скролла */
-    background-color: #f5f6fb;
+    background-color: transparent;
   }
 
   /* ползунок скроллбара */
@@ -18,6 +18,7 @@ export const List = styled.ul`
 
 export const OperationListWrapper = styled.li`
   width: 100%;
+  height: 46px;
   display: flex;
   justify-content: space-between;
   align-items: center;
