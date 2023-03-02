@@ -284,6 +284,8 @@ export const BtnSecondary = styled.button`
   &:hover,
   &:focus {
     transform: scale(1.1);
+    background-color: #ff751d;
+    color: #ffffff;
   }
   @media screen and (min-width: 768px) {
     width: 125px;
@@ -293,12 +295,12 @@ export const BtnSecondary = styled.button`
     background-color: #fff;
     /* transition: background-color 250ms cubic-bezier(0.075, 0.82, 0.165, 1),
       color 250ms cubic-bezier(0.075, 0.82, 0.165, 1),
-      border 250ms cubic-bezier(0.075, 0.82, 0.165, 1);
+      border 250ms cubic-bezier(0.075, 0.82, 0.165, 1); */
     &:hover {
       color: #ffffff;
       background-color: #ff751d;
       border: 2px solid transparent;
-    } */
+    }
   }
   @media screen and (min-width: 1280px) {
     width: 136px;
