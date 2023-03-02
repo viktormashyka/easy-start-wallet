@@ -238,7 +238,8 @@ export const BtnSubmit = styled.button`
     color: #52555f;
   } */
   transition: transform 0.2s ease-in-out;
-  &:hover {
+  &:hover,
+  &:focus {
     transform: scale(1.1);
   }
   @media screen and (min-width: 768px) {
@@ -280,7 +281,8 @@ export const BtnSecondary = styled.button`
     color: #ffffff;
   } */
   transition: transform 0.2s ease-in-out;
-  &:hover {
+  &:hover,
+  &:focus {
     transform: scale(1.1);
   }
   @media screen and (min-width: 768px) {
