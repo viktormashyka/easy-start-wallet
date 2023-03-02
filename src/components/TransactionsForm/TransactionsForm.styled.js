@@ -282,6 +282,8 @@ export const BtnSecondary = styled.button`
   transition: transform 0.2s ease-in-out;
   &:hover {
     transform: scale(1.1);
+    background-color: #ff751d;
+    color: #ffffff;
   }
   @media screen and (min-width: 768px) {
     width: 125px;
