@@ -5,7 +5,7 @@ import { SectionHeader } from './Header.styled';
 import Rectangle19 from '../../images/Rectangle19.svg';
 import Rectangle20 from '../../images/Rectangle20.svg';
 import Union from '../../images/Union.svg';
-import Logout from '../../images/logout.svg';
+import { ReactComponent as Logout } from '../../images/logout.svg';
 import DefaultAvatar from '../../images/defaultAvatar.svg';
 
 import { LogoWrapper } from './Header.styled';
@@ -56,7 +56,9 @@ export const Header = ({ isLoggedIn }) => {
             </UserLogo>
             <UserTite>{user?.email ?? 'User Name'}</UserTite>
             <LogOutButton type="button" onClick={() => setShowModal(true)}>
-              <LogOutIcon src={Logout} alt="Logout icon" />
+              <LogOutIcon>
+                <Logout />
+              </LogOutIcon>
               <LogOutTitle>Exit</LogOutTitle>
             </LogOutButton>
           </AuthWrapper>

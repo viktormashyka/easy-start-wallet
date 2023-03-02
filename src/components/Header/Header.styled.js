@@ -41,6 +41,7 @@ export const AuthWrapper = styled.div`
   /* outline: 1px solid red; */
   display: flex;
   align-items: center;
+  color: #52555f;
 `;
 
 export const UserLogo = styled.div`
@@ -59,7 +60,13 @@ export const UserLogo = styled.div`
     color: orange;
   }
 `;
-export const LogOutIcon = styled.img`
+export const LogOutIcon = styled.div`
+  color: #cbccd0;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  :hover,
+  :focus {
+    color: #ff751d;
+  }
   @media screen and (min-width: 768px) {
     display: none;
   }
@@ -93,6 +100,7 @@ export const LogOutButton = styled.button`
 `;
 
 export const LogOutTitle = styled.p`
+  color: #52555f;
   display: none;
   @media screen and (min-width: 768px) {
     font-size: 12px;
@@ -101,7 +109,7 @@ export const LogOutTitle = styled.p`
     display: inline-block;
     transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
     &:active {
-      color: red;
+      color: #ff751d;
     }
   } ;
 `;
